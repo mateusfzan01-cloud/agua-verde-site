@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Send, Check, MapPin, Calendar, Users, Briefcase, Plane, MessageSquare } from 'lucide-react'
+import { Send, Check, MapPin, Calendar, Users, Briefcase, Plane, MessageSquare, AlertCircle } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
 
 interface FormOrcamentoProps {
   initialOrigem?: string
@@ -11,14 +12,72 @@ interface FormOrcamentoProps {
 export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoProps = {}) {
   const [enviado, setEnviado] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [erro, setErro] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    // Simulação de envio
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    setErro(false)
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+    const dataHora = data.get('data_hora')
+      ? new Date(String(data.get('data_hora'))).toISOString()
+      : null
+
+    const { error } = await supabase.from('orcamentos_site').insert({
+      passageiro_nome: String(data.get('nome') || ''),
+      passageiro_telefone: String(data.get('telefone') || '') || null,
+      passageiro_email: String(data.get('email') || '') || null,
+      origem: String(data.get('origem') || '') || null,
+      destino: String(data.get('destino') || '') || null,
+      data_hora: dataHora,
+      quantidade_passageiros: parseInt(String(data.get('passageiros') || '1'), 10),
+      quantidade_bagagens: parseInt(String(data.get('bagagens') || '0'), 10),
+      numero_voo: String(data.get('voo') || '') || null,
+      observacoes: String(data.get('observacoes') || '') || null,
+    })
+
+    form.reset()
     setLoading(false)
-    setEnviado(true)
+
+    if (error) {
+      setErro(true)
+    } else {
+      setEnviado(true)
+    }
+  }
+
+  if (erro) {
+    return (
+      <div className="bg-white rounded-2xl p-8 sm:p-12 border border-[#1a5c38]/10 shadow-lg text-center">
+        <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+          <AlertCircle className="w-8 h-8 text-red-500" />
+        </div>
+        <h3 className="text-2xl font-heading font-bold text-[#1a1a2e] mb-3">
+          Não foi possível enviar
+        </h3>
+        <p className="text-[#5a6570] mb-6 max-w-md mx-auto">
+          Ocorreu um erro ao enviar seu orçamento. Por favor, tente novamente ou fale com a gente diretamente pelo WhatsApp.
+        </p>
+        <button
+          type="button"
+          onClick={() => setErro(false)}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#1a5c38] text-white font-medium rounded-full hover:bg-[#1a5c38]/90 transition-colors mr-3"
+        >
+          Tentar novamente
+        </button>
+        <a
+          href="https://wa.me/558199473200"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#25d366] text-white font-medium rounded-full hover:bg-[#25d366]/90 transition-colors"
+        >
+          <MessageSquare className="w-4 h-4" />
+          WhatsApp
+        </a>
+      </div>
+    )
   }
 
   if (enviado) {
@@ -56,6 +115,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           </label>
           <input
             type="text"
+            name="nome"
             required
             placeholder="Seu nome"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] placeholder:text-[#5a6570]/50 focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
@@ -69,6 +129,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           </label>
           <input
             type="tel"
+            name="telefone"
             required
             placeholder="+55 81 9947-3200"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] placeholder:text-[#5a6570]/50 focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
@@ -82,6 +143,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           </label>
           <input
             type="email"
+            name="email"
             placeholder="seu@email.com"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] placeholder:text-[#5a6570]/50 focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
           />
@@ -97,6 +159,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           </label>
           <input
             type="text"
+            name="origem"
             required
             placeholder="Ex: Aeroporto do Recife"
             defaultValue={initialOrigem}
@@ -114,6 +177,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           </label>
           <input
             type="text"
+            name="destino"
             required
             placeholder="Ex: Porto de Galinhas"
             defaultValue={initialDestino}
@@ -131,6 +195,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           </label>
           <input
             type="datetime-local"
+            name="data_hora"
             required
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
           />
@@ -145,6 +210,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
             </span>
           </label>
           <select
+            name="passageiros"
             required
             defaultValue=""
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
@@ -167,6 +233,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
             </span>
           </label>
           <select
+            name="bagagens"
             defaultValue="0"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
           >
@@ -188,6 +255,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           </label>
           <input
             type="text"
+            name="voo"
             placeholder="Ex: G3 1234 (opcional)"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] placeholder:text-[#5a6570]/50 focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
           />
@@ -199,6 +267,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
             Observações
           </label>
           <textarea
+            name="observacoes"
             rows={3}
             placeholder="Cadeira infantil, necessidades especiais, etc. (opcional)"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] placeholder:text-[#5a6570]/50 focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all resize-none"
