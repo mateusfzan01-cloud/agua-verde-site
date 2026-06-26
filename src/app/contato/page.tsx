@@ -185,7 +185,7 @@ export default function ContatoPage() {
                     {[
                       { destino: 'Porto de Galinhas', href: '/transfer-porto-de-galinhas' },
                       { destino: 'Praia de Carneiros', href: '/transfer-praia-de-carneiros' },
-                      { destino: 'Maragogi (AL)', href: null },
+                      { destino: 'Maragogi (AL)', href: '/transfer-maragogi' },
                       { destino: 'Recife — hotéis e eventos', href: null },
                       { destino: 'Aeroporto REC (Guararapes)', href: null },
                     ].map((item) => (

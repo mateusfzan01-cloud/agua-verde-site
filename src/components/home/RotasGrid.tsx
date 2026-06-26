@@ -30,7 +30,7 @@ const rotas = [
     pax: '1-3',
     imagem: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop',
     popular: false,
-    landingPage: null,
+    landingPage: '/transfer-maragogi',
   },
   {
     origem: 'Aeroporto do Recife (REC)',

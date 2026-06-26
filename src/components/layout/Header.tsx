@@ -14,6 +14,10 @@ const destinos = [
     label: 'Transfer Praia de Carneiros',
     href: '/transfer-praia-de-carneiros',
   },
+  {
+    label: 'Transfer Maragogi',
+    href: '/transfer-maragogi',
+  },
 ]
 
 export function Header() {

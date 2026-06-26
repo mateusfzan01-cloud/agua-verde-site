@@ -51,7 +51,7 @@ export function Footer() {
               {[
                 { label: 'Transfer Porto de Galinhas', href: '/transfer-porto-de-galinhas' },
                 { label: 'Transfer Praia de Carneiros', href: '/transfer-praia-de-carneiros' },
-                { label: 'Transfer para Maragogi', href: null },
+                { label: 'Transfer para Maragogi', href: '/transfer-maragogi' },
                 { label: 'Aeroporto do Recife (REC)', href: null },
               ].map((item) => (
                 <li key={item.label}>
