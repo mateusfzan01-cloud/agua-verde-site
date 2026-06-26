@@ -331,6 +331,19 @@ export default function QuemSomosPage() {
           </div>
         </section>
 
+        {/* ── DADOS INSTITUCIONAIS ──────────────────────────────── */}
+        <section className="py-16 bg-[#fafbfa] border-t border-[#1a5c38]/5">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-sm font-semibold text-[#5a6570] uppercase tracking-wider mb-4">
+              Água Verde Transfers
+            </h2>
+            <p className="text-sm text-[#5a6570] leading-relaxed">
+              R. Jonathas de Vasconcelos, 13 — Sala 7 e 8 — Boa Viagem, Recife — PE, 51021-140<br />
+              CNPJ: 17.427.292/0001-4
+            </p>
+          </div>
+        </section>
+
         {/* ── CTA ───────────────────────────────────────────────── */}
         <section className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

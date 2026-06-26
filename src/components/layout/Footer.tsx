@@ -110,9 +110,12 @@ export function Footer() {
                   contato@aguaverde.tur.br
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-white/70">
-                <MapPin className="w-4 h-4" />
-                Recife, PE — Brasil
+              <li className="flex items-start gap-3 text-sm text-white/70">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                <span>R. Jonathas de Vasconcelos, 13 — Sala 7 e 8<br />Boa Viagem, Recife — PE, 51021-140</span>
+              </li>
+              <li className="text-sm text-white/50">
+                CNPJ: 17.427.292/0001-4
               </li>
               <li>
                 <a

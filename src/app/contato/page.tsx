@@ -34,12 +34,12 @@ const canais = [
   },
   {
     icon: MapPin,
-    titulo: 'Área de atuação',
-    valor: 'Recife e litoral sul de PE',
-    desc: 'Porto de Galinhas, Carneiros, Maragogi',
-    href: null,
+    titulo: 'Endereço',
+    valor: 'R. Jonathas de Vasconcelos, 13 — Sala 7 e 8',
+    desc: 'Boa Viagem, Recife — PE, 51021-140 · CNPJ 17.427.292/0001-4',
+    href: 'https://maps.google.com/?q=Rua+Jonathas+de+Vasconcelos+13+Boa+Viagem+Recife+PE',
     cor: '#d4a853',
-    cta: null,
+    cta: 'Ver no mapa',
   },
 ]
 

@@ -5,12 +5,15 @@ export function getOrganizationSchema() {
     url: 'https://aguaverde.tur.br',
     telephone: '+55-81-9947-3200',
     email: 'contato@aguaverde.tur.br',
+    taxID: '17.427.292/0001-4',
     description:
       'Transfer privado de qualidade no Recife, Porto de Galinhas e região. Motoristas profissionais, frota nova e atendimento em português, inglês e espanhol.',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Rua Jonathas de Vasconcelos, 13 - Sala 7 e 8 - Boa Viagem',
       addressLocality: 'Recife',
       addressRegion: 'PE',
+      postalCode: '51021-140',
       addressCountry: 'BR',
     },
     geo: {
@@ -41,8 +44,10 @@ export function getOrganizationSchema() {
       name: 'Recife',
       address: {
         '@type': 'PostalAddress',
+        streetAddress: 'Rua Jonathas de Vasconcelos, 13 - Sala 7 e 8 - Boa Viagem',
         addressLocality: 'Recife',
         addressRegion: 'PE',
+        postalCode: '51021-140',
         addressCountry: 'BR',
       },
     },

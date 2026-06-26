@@ -57,8 +57,10 @@ const jsonLd = {
         telephone: '+55-81-9947-3200',
         address: {
           '@type': 'PostalAddress',
+          streetAddress: 'Rua Jonathas de Vasconcelos, 13 - Sala 7 e 8 - Boa Viagem',
           addressLocality: 'Recife',
           addressRegion: 'PE',
+          postalCode: '51021-140',
           addressCountry: 'BR',
         },
         priceRange: 'R$ 320 – R$ 580',
