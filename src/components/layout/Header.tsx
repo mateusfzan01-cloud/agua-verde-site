@@ -9,12 +9,10 @@ const destinos = [
   {
     label: 'Transfer Porto de Galinhas',
     href: '/transfer-porto-de-galinhas',
-    desc: 'Aeroporto REC → PDG · ~70 km',
   },
   {
     label: 'Transfer Praia de Carneiros',
     href: '/transfer-praia-de-carneiros',
-    desc: 'Aeroporto REC → Tamandaré · ~115 km',
   },
 ]
 
@@ -82,7 +80,6 @@ export function Header() {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-[#1a1a2e] leading-tight">{d.label}</p>
-                        <p className="text-xs text-[#5a6570] mt-0.5">{d.desc}</p>
                       </div>
                     </a>
                   ))}
