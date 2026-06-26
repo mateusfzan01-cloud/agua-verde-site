@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1518684079-3e8a6547d3e8?q=80&w=1200&auto=format&fit=crop',
+        url: 'https://images.pexels.com/photos/18146825/pexels-photo-18146825.jpeg?auto=compress&cs=tinysrgb&w=1200',
         width: 1200,
         height: 630,
         alt: 'Transfer privado para Maragogi - Água Verde Transfers',
@@ -210,8 +210,8 @@ export default function TransferMaragogiPage() {
         <section className="relative min-h-screen flex items-center pt-16">
           {/* Background */}
           <Image
-            src="https://images.unsplash.com/photo-1518684079-3e8a6547d3e8?q=80&w=2400&auto=format&fit=crop"
-            alt="Maragogi, Alagoas — piscinas naturais das Galés com águas verde-turquesa"
+            src="https://images.pexels.com/photos/18146825/pexels-photo-18146825.jpeg?auto=compress&cs=tinysrgb&w=2400"
+            alt="Maragogi, Alagoas — Praia de Antunes com águas verde-turquesa"
             fill
             priority
             className="object-cover"
@@ -474,8 +474,8 @@ export default function TransferMaragogiPage() {
               {/* Left: image */}
               <div className="relative h-80 lg:h-full min-h-[420px] rounded-3xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1518684079-3e8a6547d3e8?q=80&w=1200&auto=format&fit=crop"
-                  alt="Galés de Maragogi — piscinas naturais com águas verde-turquesa"
+                  src="https://images.pexels.com/photos/20993555/pexels-photo-20993555.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  alt="Galés de Maragogi — piscinas naturais com águas verde-turquesa e recifes de coral"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -552,7 +552,7 @@ export default function TransferMaragogiPage() {
               <div className="lg:col-span-2 space-y-6">
                 <div className="relative h-64 rounded-2xl overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1518684079-3e8a6547d3e8?q=80&w=1400&auto=format&fit=crop"
+                    src="https://images.pexels.com/photos/20993555/pexels-photo-20993555.jpeg?auto=compress&cs=tinysrgb&w=1400"
                     alt="Vista aérea das Galés de Maragogi com recifes de corais e piscinas naturais"
                     fill
                     className="object-cover"

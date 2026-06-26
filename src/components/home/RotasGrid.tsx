@@ -28,7 +28,7 @@ const rotas = [
     preco: 580,
     duracao: '2h 30min',
     pax: '1-3',
-    imagem: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000&auto=format&fit=crop',
+    imagem: 'https://images.pexels.com/photos/18146825/pexels-photo-18146825.jpeg?auto=compress&cs=tinysrgb&w=1000',
     popular: false,
     landingPage: '/transfer-maragogi',
   },
