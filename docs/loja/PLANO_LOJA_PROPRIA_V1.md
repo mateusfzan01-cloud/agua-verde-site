@@ -297,13 +297,50 @@ A IA que já responde no WhatsApp (`ia-responder-whatsapp`) passa a conhecer o c
 
 ### 7.3 Gateways de pagamento e WhatsApp: números verificados
 
-[PESQUISA EM ANDAMENTO]
+Relatório completo com fontes oficiais linha a linha: `docs/loja/pesquisa/pesquisa-custos-pagamento-whatsapp.md` (todos os números lidos em páginas oficiais em 2026-10-08).
+
+**Gateways (taxas publicadas, out/2026)**
+
+| Gateway | Mensalidade | Pix | Cartão nacional à vista | Cartão estrangeiro | Observação decisiva |
+|:--|:--|:--|:--|:--|:--|
+| **Mercado Pago** | R$ 0 | 0,99 % | 3,98 % (D30) · 4,49 % (D14) · 4,98 % (D0) | aceita Visa/Master/Amex do exterior no checkout pronto, sem adicional publicado | antifraude + 3DS inclusos; reembolso por API até 180 dias; Proteção ao Vendedor não cobre serviços |
+| Stripe Brasil | R$ 0 | 1,19 % só por convite | 3,99 % + R$ 0,39 | +2 %, sem Amex/Elo | "agências de viagem e serviços de transporte" é atividade **restrita** (aprovação prévia); não devolve tarifa no reembolso |
+| Pagar.me (Stone) | R$ 0 | 0,99 % | 4,19 % | só via API transparente com passaporte | link/checkout pronto não aceita estrangeiro; D+1, pode reter 30 dias para novos |
+| Asaas | R$ 0 | R$ 1,99 fixo | 2,99 % + R$ 0,49 | só com liberação prévia (até 4 dias úteis), sem Pix/parcelado/link | o mais barato por venda, mas falha no público estrangeiro |
+| PagBank | R$ 0 | não publicado (online) | 3,99 % + R$ 0,40 (30 d) | não publicado | menos transparente |
+
+Custo por venda (ticket R$ 400, metade Pix, metade cartão): Asaas R$ 7,22 · Mercado Pago D30 R$ 9,94 · Pagar.me R$ 10,36 · Stripe R$ 10,56 (R$ 14,56 com cartão estrangeiro). Nenhum gateway brasileiro cobra em USD/EUR para CNPJ brasileiro: a cobrança é sempre em reais e o banco do cliente converte (confirma a decisão 24).
+
+**Escolha [recomendação]: Mercado Pago**, Checkout Pro no lançamento (pagamento em página do Mercado Pago, mais rápido de integrar) e migração para Checkout Bricks (pagamento dentro do site) depois. Motivo: único com cartão estrangeiro, inclusive Amex, no checkout pronto sem adicional e sem cadastro prévio; custo fixo zero; antifraude e 3DS inclusos; SDK Node e contas de teste. Plano B para clientes brasileiros: Asaas.
+
+**WhatsApp Cloud API (Meta), tabela oficial em BRL vigente desde 1º/10/2026**
+
+| Categoria | Preço por mensagem | Uso na loja |
+|:--|:--|:--|
+| Utility (confirmação, voucher, lembrete) | R$ 0,035 | 3 por venda → R$ 0,105/venda |
+| Service (resposta livre na janela de 24 h) | R$ 0,035 após 1.000 grátis/mês | atendimento e IA, dentro da franquia |
+| Marketing | R$ 0,3217 | só campanhas com opt-in (fora da v1) |
+
+Regras que importam: templates utility precisam de aprovação da Meta por idioma (pt_BR, es, en); fora da janela de 24 h só template; faturamento em BRL pela Facebook Brasil desde jul/2026. Alternativas descartadas: Z-API (R$ 99,99/mês, API não oficial, risco de bloqueio do número), 360dialog (€ 49/mês, só revende a Meta), Twilio (+US$ 0,005 por mensagem, cobrado em dólar). Decisão: manter a integração direta que o PWA já tem.
 
 ---
 
 ## 8. Custos mensais estimados
 
-[PESQUISA EM ANDAMENTO — tabela para 50 / 100 / 150 vendas por mês]
+Premissas: ticket médio R$ 400; metade Pix, metade cartão à vista; 3 mensagens WhatsApp e 3 e-mails por venda; câmbio PTAX de 2026-10-08 (US$ 1 = R$ 5,01). Fontes no relatório de custos.
+
+| Linha | 50 vendas/mês | 100 vendas/mês | 150 vendas/mês |
+|:--|--:|--:|--:|
+| **Fixo** Vercel Pro (uso comercial exige; Hobby proíbe) | R$ 100 | R$ 100 | R$ 100 |
+| Fixo Supabase Pro (já pago; a loja não adiciona) | R$ 0 | R$ 0 | R$ 0 |
+| Fixo Resend Free (3.000 e-mails/mês; a loja usa ~450) | R$ 0 | R$ 0 | R$ 0 |
+| Fixo gateway, WhatsApp API, PDF (bibliotecas MIT) | R$ 0 | R$ 0 | R$ 0 |
+| **Subtotal fixo** | **R$ 100** | **R$ 100** | **R$ 100** |
+| Variável WhatsApp (utility) | R$ 5 | R$ 11 | R$ 16 |
+| Variável Mercado Pago D30 (descontado da venda, não é desembolso) | R$ 497 | R$ 994 | R$ 1.491 |
+| **Total** | ≈ R$ 602 (2,5 % de R$ 20 mil) | ≈ R$ 1.105 (2,8 % de R$ 40 mil) | ≈ R$ 1.607 (2,7 % de R$ 60 mil) |
+
+Leitura: o custo **fixo** cai de R$ 250 (Paytour) para **R$ 100** (Vercel Pro), bem abaixo do teto de R$ 250–300, e isso já inclui o chatbot de IA (OpenAI já pago hoje) e as reservas automatizadas. O custo variável é taxa de pagamento, que a Paytour também cobrava por fora via PagSeguro/PayPal. Se a conta Vercel já for Pro, o fixo adicional é zero.
 
 ---
 
@@ -329,7 +366,7 @@ Esforço estimado: ~6 semanas de construção + 2 de folga. Se o Drive de fotos 
 | Risco | Impacto | Tratamento |
 |:--|:--|:--|
 | Gateway recusar cartão estrangeiro ou exigir cadastro longo | Alto (público ES/EN) | escolher gateway com cartão internacional confirmado (§7.3); abrir cadastro na semana 1 |
-| Plano Vercel Hobby (uso comercial proibido) | Médio | confirmar plano; se Hobby, migrar para Pro (custo em §8) |
+| Plano Vercel Hobby (uso comercial proibido pelos termos) | Médio | confirmar plano; se Hobby, migrar para Pro (US$ 20/mês ≈ R$ 100, já contado no §8) |
 | Template de WhatsApp não aprovado a tempo pela Meta | Médio | submeter templates na semana 1; e-mail cobre enquanto isso |
 | Preços da Paytour desatualizados | Médio | dono revisa a tabela no §3 antes da semana 2 |
 | Perda de posições no Google na troca de domínio | Médio | redirects 301 slug a slug; sitemap; monitorar Search Console por 30 dias |
