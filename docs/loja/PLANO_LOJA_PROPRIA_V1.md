@@ -289,7 +289,28 @@ A IA que já responde no WhatsApp (`ia-responder-whatsapp`) passa a conhecer o c
 
 ### 7.1 Como os grandes vendem (sites de referência)
 
-[PESQUISA EM ANDAMENTO]
+Relatório completo, com texto literal, URL e data de cada observação: `docs/loja/pesquisa/pesquisa-benchmark.md`. Observados de fato em 2026-10-08: Welcome Pickups, Suntransfers, Hoppa, Transfeero, Blacklane, Mozio, Kiwitaxi (Europa/global); 4Trip, Enter.travel, Luck Viagens, Book Transfer, Transfer Águia RJ, Ever Transfer, CHM (Brasil). Inacessíveis: CVC (bloqueio de robô) e Vivo Porto de Galinhas (domínio estacionado).
+
+**O que 80 % deles fazem igual [fatos]**
+
+1. Widget Origem → Destino → Data → Passageiros na primeira tela (7 de 7 europeus; no Brasil só Enter e Book Transfer).
+2. Preço **por veículo**, com classe e capacidade ("até 3 pax + 3 malas"), nunca por pessoa no privativo. Confirma a decisão 6.
+3. Quatro promessas repetidas quase literalmente: preço fixo sem surpresas · cancelamento grátis (24 h na maioria) · monitoramento de voo · espera grátis (60 min no desembarque). A Água Verde já opera todas, mas o site atual não diz.
+4. Pedágios, taxas e estacionamento declarados como inclusos.
+5. Prova social com número: nota + volume (Trustpilot 4,8 com 40.705 avaliações; TripAdvisor 4,3 com 45 mil) e contadores operacionais ("295.350 transfers neste aeroporto", "1,4 milhão de corridas").
+6. Checkout **sem conta**, em 3 a 5 passos, pedindo: nome, e-mail, celular com DDI, nº do voo, hotel/endereço, cadeirinha, observações. Confirma as decisões 15 e 23.
+7. Extras simples e visíveis: cadeirinha (por faixa de idade), parada extra, espera extra, pet, água; "ida e volta" com desconto.
+8. Página de rota como landing de SEO: km, minutos, "a partir de", comparação com táxi/ônibus, FAQ.
+9. Europeus: 5 a 14 idiomas e várias moedas; no Brasil só a Enter é trilíngue. Suntransfers e Kiwitaxi **já vendem REC, GIG e GRU em reais**.
+10. Brasil: Pix é a forma de pagamento âncora (5 de 6); WhatsApp é canal em 6 de 6 operadores brasileiros e quase ausente nos europeus. 5 de 6 brasileiros vendem só pelo WhatsApp, sem checkout.
+
+**Concorrente local mais próximo: Enter.travel.** Preço fechado por rota (REC↔PdG R$ 235, ↔Carneiros R$ 355, ↔Maragogi R$ 345, contra R$ 180 / 320 / 360 da Paytour), PT/ES/EN, Pix e cartão em até 12×, espera de 60 min, ponto de encontro descrito ("saída B5"), mas reserva em subdomínio de terceiro. A Luck Viagens, maior receptivo local, não vende transfer online.
+
+**O que a Água Verde tem que nenhum concorrente observado tem [fato]**: acompanhamento da viagem em tempo real pelo link `/acompanhar/:token`, app próprio de motoristas e 8.211 viagens registradas para usar como prova operacional ("X viagens REC→PdG nos últimos 12 meses", calculado do banco).
+
+**O que copiar (10 recomendações do relatório, já absorvidas no §4)**: widget de rota na home; preço por veículo com classes e capacidade; faixa das 4 promessas em toda página de produto e no checkout; páginas de rota com fatos e prova operacional real; checkout próprio em 3 passos sem conta, ligado ao `/acompanhar/:token`; Pix + cartão sem taxa com parcelamento visível; catálogo de extras simples (cadeirinha grátis, parada extra); prova social numérica e perfis de motoristas (foto, carro, idiomas, já em `motoristas`/`perfis`); trilíngue de verdade com seletor no header; WhatsApp como canal padrão com mensagem pré-preenchida por produto e autoatendimento pós-venda (reenviar voucher, alterar, cancelar, "não encontro meu motorista").
+
+**Nota sobre uma regra antiga**: o `CLAUDE.md` do site ainda diz que e-commerce só com ">20 orçamentos/mês por 2 meses". Essa regra foi escrita quando a loja seria uma novidade; aqui ela **substitui uma loja que já existe** (Paytour), então a decisão 2 do dono a supera. O `CLAUDE.md` será atualizado quando a implementação começar.
 
 ### 7.2 O que a comunidade recomenda em 2026 (Reddit e fontes técnicas)
 
