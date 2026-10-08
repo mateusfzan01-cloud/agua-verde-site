@@ -255,6 +255,16 @@ As 3 landing pages de rota já existentes ganham o **widget de reserva na primei
 
 A IA que já responde no WhatsApp (`ia-responder-whatsapp`) passa a conhecer o catálogo e os preços (consulta a `produtos`) e, quando o cliente quer reservar, envia um **link de checkout pré-preenchido** (produto, data, pax). O pagamento continua no site; a IA não cobra nem confirma sozinha. Custo adicional: só tokens da OpenAI, já pagos hoje.
 
+### 4.7 Padrão técnico do checkout (anti-erros conhecidos)
+
+1. O pedido é criado como `pendente_pagamento` **antes** de abrir o pagamento; o id do pedido é a chave de idempotência enviada ao gateway.
+2. A página "pagamento aprovado" só mostra estado; quem confirma é o **webhook**, verificado pela assinatura no corpo cru da requisição.
+3. Tabela `gateway_eventos (evento_id primary key, pedido_id, payload, recebido_em)`: duplicatas falham no banco (`on conflict do nothing`), nunca são reprocessadas.
+4. **Uma única função** `confirmar_pedido(pedido_id)` (RPC `SECURITY DEFINER`, transacional): marca `pago`, cria as viagens (uma por perna), grava `viagem_id` em `pedido_itens`, dispara avisos. Chamada pelo webhook e, como reconciliação, pela página de sucesso.
+5. Responder 2xx ao gateway só depois de persistir; esperar eventos fora de ordem e repetidos.
+6. Cron a cada 15 min expira pedidos pendentes com mais de 45 min e libera nada (nenhuma vaga é segurada antes do pagamento).
+7. A integração com o gateway fica atrás de uma interface própria (`criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook`), para trocar Mercado Pago por Stripe ou Asaas sem mexer no checkout.
+
 ---
 
 ## 5. O que muda em cada sistema
@@ -314,7 +324,29 @@ Relatório completo, com texto literal, URL e data de cada observação: `docs/l
 
 ### 7.2 O que a comunidade recomenda em 2026 (Reddit e fontes técnicas)
 
-[PESQUISA EM ANDAMENTO]
+Relatório completo com ~70 discussões de 2025–2026 (r/Tourguide, r/brdev, r/empreendedorismo, r/stripe, r/Supabase, r/whatsapp, r/n8n, r/PPC, r/googleads, Hacker News, TabNews) e citações com link e data: `docs/loja/pesquisa/pesquisa-comunidade-2026.md`.
+
+**Motor próprio vs. plataforma (Paytour, Bókun, FareHarbor, Rezdy)** [fatos citados]: em 2026 a queixa dominante é pagar comissão ou mensalidade sobre a **venda direta**; o checkout em si é considerado pequeno. Regra técnica unânime: **uma única fonte de verdade** para reservas (dois casos de overbooking em 2026 por sistemas paralelos). Paytour: ~R$ 249/mês, críticas de lentidão e de remanejamento de datas. Confirma a decisão 2.
+
+**Checkout em Next.js + Supabase** [padrão convergente em r/stripe, r/Supabase e equipe da Stripe, jul–set/2026]:
+- a página "pagamento aprovado" **não** confirma nada; o **webhook** do gateway é a fonte de verdade;
+- **uma única função** de confirmação, idempotente, chamada pelo webhook e pela página de sucesso;
+- tabela de eventos recebidos com restrição `unique` no id do evento (duplicata falha no banco, não no código);
+- assinatura verificada no corpo cru; responder ao gateway só depois de gravar;
+- pedido criado como pendente **antes** de abrir o pagamento, com expiração por cron; nada entra em `viagens` antes de `pago`.
+Tudo isso está incorporado no §4.7.
+
+**Gateway: onde as duas pesquisas divergem.** A pesquisa de comunidade prefere **Stripe** (melhor experiência de desenvolvedor, checkout localizado, cartão estrangeiro) e registra em r/brdev relatos de **bugs no Checkout do Mercado Pago** (botão "pagar" cinza sem erro, dez/2025), documentação confusa e suporte lento. A pesquisa de custos (§7.3), lendo as páginas oficiais, recomenda **Mercado Pago**, porque a Stripe: (a) lista "hotéis, agências de viagem e serviços de transporte" como atividade **restrita** no Brasil, sujeita a aprovação prévia; (b) cobra +2 % no cartão estrangeiro e não aceita Amex; (c) oferece Pix "somente por convite". Os dois relatórios concordam que a diferença de custo é pequena. **Decisão proposta [recomendação]**: Mercado Pago como gateway principal, pelo fato objetivo de aceitar cartão estrangeiro (inclusive Amex) no checkout pronto sem aprovação prévia; com três mitigações para o risco apontado pela comunidade: (1) usar o Checkout Pro hospedado, a modalidade mais estável, e não o Transparente; (2) isolar a integração atrás de uma camada própria no código, para trocar de gateway sem reescrever o checkout; (3) abrir a conta Stripe em paralelo na semana 1 e passar pela aprovação de atividade restrita, para ter um reserva pronto se o Mercado Pago falhar nos testes de homologação. O dono decide se prefere inverter a ordem.
+
+**WhatsApp** [fatos]: desde 1º/10/2026 as mensagens de serviço na janela de 24 h são cobradas após 1.000 por mês (R$ 0,035 cada); a reação da comunidade brasileira foi forte, mas quem calculou operação pequena viu impacto de dezenas de reais. Consenso dos desenvolvedores com produto sério: **API oficial**; a não oficial (Z-API, Evolution/Baileys) "é perfeita até o primeiro banimento". A Meta baniu bots de IA de propósito geral desde jan/2026; **bots de reserva e suporte com passagem para humano continuam permitidos**. A Água Verde já está no desenho recomendado (Cloud API direta, coexistência, IA com guardrails e handoff). Ajustes: consolidar a resposta do bot em uma mensagem só; monitorar a franquia de 1.000; a IA **nunca** confirma reserva por conta própria (grava, relê, só então confirma), o que bate com o §4.6.
+
+**IA em pequenas agências** [fatos]: donos de negócio relatam que funciona um caso de uso de alto volume e baixo risco (responder rápido, não perder a primeira resposta) com passagem real para humano; exagero: agentes de voz, "90 % de automação", CRMs caros sem uso. Para a Água Verde, a automação de maior retorno é a que já existe (resposta imediata no WhatsApp) mais o link de checkout pré-preenchido.
+
+**Conversão mobile** [fatos e benchmarks 2026]: 84 % das reservas de transfer em celular; páginas de transporte bem feitas convertem ~14,8 %; 62 % abandonam quando o preço aparece tarde (caso real de transfer de Paris em r/PPC, mar/2026). Remédio: preço fixo no anúncio e na primeira tela, "o que está incluído" comparado a Uber/táxi, avaliação ao lado do preço, WhatsApp como segunda via medida à parte. Não há evidência independente de ganho com "reserve agora, pague depois" em transfer; fica fora da v1.
+
+**Google Ads** [fatos de r/PPC e r/googleads 2026]: **só campanhas de Busca** no início, por rota e idioma, correspondência exata e de frase; Performance Max perde para Busca em 84 % dos casos de geração de leads e precisa de ~30 conversões/mês para funcionar; "AI Max" tem relatos de 72 % do gasto fora do tema e **migração automática desde 1º/09/2026** (conferir se a conta existente foi migrada); conversão primária = reserva paga; lances manuais até o rastreamento estar validado. Entra no §12.
+
+**10 decisões sugeridas pelo relatório e como ficaram**: 1 substituir Paytour por checkout próprio (aceita); 2 Stripe (ver divergência acima: Mercado Pago principal, Stripe reserva); 3 webhook idempotente com função única (aceita, §4.7); 4 Supabase como única fonte de verdade, viagem só após pago (aceita); 5 Cloud API oficial sem intermediário (aceita); 6 bot nunca promete reserva (aceita); 7 formulário de orçamento com aviso imediato (já existe); 8 preço na primeira tela com "o que está incluído" e avaliação ao lado (aceita, §4.4); 9 Ads só Busca, PMax e AI Max desligados (aceita, §12); 10 "pague depois", agente de voz e marketplaces de IA como testes futuros (aceita).
 
 ### 7.3 Gateways de pagamento e WhatsApp: números verificados
 
@@ -412,7 +444,7 @@ Esforço estimado: ~6 semanas de construção + 2 de folga. Se o Drive de fotos 
 
 ## 12. Frente separada: Google Ads
 
-Escopo (sessão/subagente própria, após o site no ar): auditoria da conta existente; campanha de Busca por rota (PT/ES/EN) com variantes de página por anúncio (plano SEO v5.1 §10); textos e peças (imagens/vídeos) geradas por IA com os conectores disponíveis; entrega em arquivo de importação do **Google Ads Editor** (gratuito) para o irmão importar; medição de conversão pelo evento `compra_concluida` do site. Sem ferramenta paga: o Adspirer Free (15 tarefas/mês, dados puxados uma vez) serve só para a auditoria inicial, se quiserem conectar a conta.
+Escopo (sessão/subagente própria, após o site no ar): auditoria da conta existente (inclusive conferir se foi migrada automaticamente para "AI Max" em set/2026 e desligar); **só campanhas de Busca** no início, por rota e idioma (PT para quem está no Brasil; ES/EN por país de origem), correspondência exata e de frase, preço fixo no título do anúncio, Performance Max e AI Max desligados, conversão primária = reserva paga, lances manuais até o rastreamento estar validado (§7.2); variantes de página por anúncio (plano SEO v5.1 §10); textos rascunhados por IA e revisados, peças (imagens/vídeos) geradas por IA com os conectores disponíveis; entrega em arquivo de importação do **Google Ads Editor** (gratuito) para o irmão importar; medição pelo evento `compra_concluida` do site. Sem ferramenta paga: o Adspirer Free (15 tarefas/mês, dados puxados uma vez) serve só para a auditoria inicial, se quiserem conectar a conta.
 
 ---
 
