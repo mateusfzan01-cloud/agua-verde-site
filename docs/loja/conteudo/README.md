@@ -1,6 +1,6 @@
 # Conteúdo dos produtos da loja (`produtos.json`)
 
-Gerado em 09/10/2026. Este arquivo é o **rascunho do catálogo da loja própria**: os 46 produtos que a Paytour vendia em julho de 2025, com o texto corrigido e traduzido para **português, espanhol e inglês**. Ele já está no formato da futura tabela `produtos` (plano §4.2), então pode ser importado direto quando a tabela existir.
+Gerado em 09/10/2026 e atualizado no mesmo dia com a **coleta da loja Paytour** (`paytour-coleta-2026-10.json`, feita pelo dono no Chrome). Este arquivo é o **rascunho do catálogo da loja própria**: os 46 produtos da Paytour, com o texto corrigido e traduzido para **português, espanhol e inglês**. Ele já está no formato da futura tabela `produtos` (plano §4.2), então pode ser importado direto quando a tabela existir.
 
 Nada aqui está publicado. É material para o dono e o sócio revisarem.
 
@@ -18,11 +18,14 @@ Cada produto é um bloco com os campos abaixo. Os campos em três idiomas têm s
 | `nome`, `descricao` | Nome e texto da página, nos 3 idiomas | Descrição curta do CSV, corrigida e reescrita; traduções feitas agora |
 | `inclusos`, `nao_inclusos` | Listas do que está e do que não está incluído | Só o que aparece no texto da Paytour ou no levantamento do plano (§1.2). Ficou vazio quando a fonte não dizia |
 | `origem_padrao`, `destino_padrao`, `sentido` | Trajeto e sentido | Nome do produto. "Ida ou volta" ficou como `ida`; o cliente escolhe o sentido na compra |
-| `preco_base` | Preço em reais | **Exatamente** o do CSV (julho/2025) |
-| `veiculos`, `max_por_compra` | Preço por veículo, igual à Paytour | Só Maragogi ida e volta preenchido (print de 09/10/2026); os outros estão `null`. Gerado por `scripts/aplicar_veiculos.py` a partir de `veiculos-paytour.json` |
+| `modelo_preco` | `por_veiculo` (42 produtos) ou `por_pessoa` (4: os 2 mergulhos, o catamarã em Noronha e a Trilha dos Escravos) | Coleta de 09/10/2026 |
+| `preco_base` | Preço "a partir de" em reais | Coleta de 09/10/2026: veículo mais barato, ou o preço por pessoa |
+| `preco_por_pessoa` | Preço por pessoa (só nos 4 produtos `por_pessoa`) | Coleta de 09/10/2026 |
+| `veiculos`, `max_por_compra` | Lista de veículos do produto (tipo + preço) e limite por compra | Coleta de 09/10/2026, preços do dia 24/11/2026. Os tipos (nome e capacidade nos 3 idiomas) estão em `veiculos-paytour.json` |
+| `descricao_paytour`, `nome_paytour`, `categoria_paytour` | Texto, nome e categoria originais da Paytour, sem correção | Coleta de 09/10/2026 (só para conferência) |
 | `duracao_min` | Duração em minutos | Ficou vazio (`null`) em todos: a fonte não trazia a duração com segurança |
 | `confirmacao` | `imediata` (transfer) ou `24h` (passeio) | Regra do plano (decisão 20) |
-| `imagens` | Fotos do produto | Vazio em todos. Ver "Fotos" abaixo |
+| `imagens` | Fotos do produto, na ordem da galeria (408 no total) | Coleta de 09/10/2026 (endereços do CDN da Paytour; baixar antes de desligar a Paytour) |
 | `ativo` | Se aparece na loja | `false` só para Caruaru São João e Curitiba (plano §3) |
 | `seo` | Título (até 60 caracteres) e descrição (até 155) para o Google | Escritos agora |
 | `descricao_completa` | Se o texto veio da página completa | `false` em todos (ver abaixo) |
@@ -45,16 +48,19 @@ Se alguém conseguir abrir as páginas antigas (ou tiver os textos guardados), b
 - Mergulho: retirado o "tarifas 2023" do texto (o preço é o do CSV).
 - Espanhol escrito para o público argentino ("vos": *elegís*, *reservás*; "chofer", "hall de arribos"), sem gírias.
 
-## Fotos
+## Preços e fotos (coleta de 09/10/2026)
 
-As 69 URLs de `imagens-paytour-2025-07.txt` não dizem a que produto pertencem, e sem as páginas antigas não deu para ligar foto a produto. Para não arriscar foto errada, o campo `imagens` ficou vazio. A sugestão é usar as fotos originais do Drive.
+- O dono rodou no Chrome o prompt de `docs/loja/PROMPT_COLETA_PAYTOUR_CHROME.md`. Resultado: 46 produtos, 42 com lista de veículos, 4 com preço por pessoa, 408 fotos.
+- 40 produtos estavam sem data no calendário da Paytour porque a loja está sendo renovada (informação do dono). Os preços vieram da mesma consulta que a página faz ao escolher a data (24/11/2026).
+- Preços que mudaram desde jul/2025: Porto de Galinhas ida 180 → 220 e ida e volta 340 → 400; Boa Viagem → Porto de Galinhas 180 → 220; Maragogi ida 360 → 380 e ida e volta 700 → 740; City tour Recife e Olinda 450 → 550; City tour Olinda e Brennand 540 → 620.
+- Para refazer: `python3 docs/loja/conteudo/scripts/aplicar_coleta.py` (da raiz do repositório).
 
 ## Pendências para o dono decidir
 
 1. **Textos completos**: os 46 produtos estão com texto curto. Faltam roteiro, horários, duração e o que não está incluído, principalmente nos passeios. Vale mandar os textos (ou revisar produto a produto).
-2. **Preço por veículo** (decidido em 09/10: copiar a Paytour): falta a lista de veículos e preços atuais de 45 produtos. Os preços de jul/2025 estão desatualizados (Maragogi ida e volta passou de R$ 700 para R$ 740).
+2. **Preço por veículo**: resolvido com a coleta de 09/10/2026 (42 produtos por veículo, 4 por pessoa).
 3. **Serrambi × Sirinhaém** (produtos 14 e 46): parecem o mesmo trajeto com preços diferentes (R$ 250 e R$ 300). Qual fica?
-4. **Mergulhos e carro para noivas**: o preço é por pessoa ou por grupo? A regra de passageiros dos transfers não serve para eles. O carro de noivas não tem descrição (o texto original era só "Motorista Agua veículo privativo"); talvez seja melhor vender por orçamento no WhatsApp.
+4. **Mergulhos e carro para noivas**: resolvido pela coleta. Mergulhos são por pessoa; carro para noivas é por veículo (Sedan Executivo R$ 600, BMW X1 R$ 850, Sprinter R$ 1.200).
 5. **Pedágio**: confirmar os trajetos que ficaram sem pedágio (lista acima). Se a empresa paga o pedágio também nesses, é só avisar.
 6. **Placa com nome e estacionamento no aeroporto**: foram colocados em todos os transfers de aeroporto com base no levantamento do plano (§1.2). Confirmar, inclusive em Noronha.
 7. **Produtos desativados**: Caruaru São João (sazonal, com ano no nome) e Curitiba (fora da área, parece teste). Remover de vez ou manter guardados?
@@ -63,4 +69,5 @@ As 69 URLs de `imagens-paytour-2025-07.txt` não dizem a que produto pertencem, 
 10. **4 praias do Cabo**: quais são as quatro praias? Isso melhora o texto e o Google.
 11. **Trilha dos Escravos** (R$ 200 × R$ 700 com saída do Recife): o que muda entre os dois além do transporte?
 12. **Suape**: vale também para a volta (Suape → Recife)? É um serviço para empresas?
-13. **Preços**: são os de julho/2025. Revisar antes de publicar.
+13. **Preços**: atualizados com a coleta de 09/10/2026 (preços do dia 24/11/2026). Conferir se mudam depois da renovação da Paytour.
+14. **Máximo por compra**: três passeios têm limite 2 (Porto de Galinhas, Carneiros e 4 praias do Cabo), Curitiba tem 50 e noivas não tem limite informado. Manter assim?

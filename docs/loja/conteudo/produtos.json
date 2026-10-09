@@ -42,7 +42,18 @@
     "preco_base": 550.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b95bd2490c75e5c6a73dfcf6d255bd37/F09EF7A9-0874-467E-BE32-6EF8F986891E.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bae4047167296efc96a3581621d943b9/C75D3222-5304-4076-9F6C-1FDDE37CABC8.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bbf83a0e739be147b4f5c9e27c5b32e9/BA2EE7A5-89FD-4678-AA22-DB395C106EC1.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1bb0a992050f18a9c4057923d8081595/5833B8B9-ED96-423B-AF74-660FF73F263C.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9ebc82b65809f403ffe1c567c56c2025/AD17D0B4-7DB0-402C-89CB-0D2C02224A83.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/779515b15eace4a965d537918f08ce80/B7F64D8D-199F-4BC8-B1C0-FAE8419EF0C8.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/028c323cf37280c032f2b47dd171474e/BF90BE8E-9344-4031-8BC3-94582F4AE372.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6e09f0549b246128931dcdb77db436cb/7C045ED2-9126-495D-A524-28EB85C83971.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/774c3ea01e2fef3dbb63e44a24d5c99e/FA39F893-ACBB-41C9-8864-AB7DDD9A4501.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6a5b5928d6db09d1b9b748ab2f7c670a/2A54F3D3-A298-4134-B364-50DC677C27FD.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -66,10 +77,36 @@
       "não inclusos desconhecidos (alimentação? taxas locais?) — informar",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 10,
-    "veiculos": null
+    "max_por_compra": 2,
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 550.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1700.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nPasseio inesquecível e imperdível quando estiver em Recife.\n\nEm veículo privativo com saída de Boa Viagem, Pina ou Piedade (horário a definifir pois depende da tabua de marés do dia) com destino a Praia de Porto de Galinhas, com duração de 45 min aproximadamente a ida.\n\nNo passeio, os visitantes usarão a infra estrutura do Restaurante Peixe na Telha em frente as piscinas naturais, apreciam belas paisagens, bebidas refrescantes e comidas regionais. Embarque na jnagada é realizado no horário da maré seca e quase em frente ao restaurante. À bordo, contamos com a presença de um guia local que relata histórias e curiosidades da região, além do passeio de jangada até as piscinas naturais com duraçao de 60 min.\n\nTempo livre para aproveitar a vila, compras e comidas.\n\nRetorno ao hotel às 15:00.\n\nVenha conhecer a praia eleita 10x consecutivas a mais bonita do Brasil.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 2,
@@ -111,7 +148,13 @@
     "preco_base": 620.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ad6bbc8dbcf00cfb7bde098674e63be3/BB4EB1DE-1A9D-4541-A174-C25265F33C70.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0b0406ace9900cc0cf69cfc90a589dd5/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/17bea94f71e677493b20f45865b68982/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d85dcf8ebc90ec36319a161144f49017/4CC0B654-8064-4E93-90BE-F379A2F9F9BB.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/aa8d87a663f8aba7a8d02d1580aabb15/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -135,10 +178,36 @@
       "inclusos além de veículo/motorista desconhecidos (catamarã? capela de São Benedito?) — enviar texto completo",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 10,
-    "veiculos": null
+    "max_por_compra": 2,
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 620.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 620.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 660.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1900.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nPasseio inesquecível e bucket list quando estiver em Recife.\n\nEm veículo privativo com saída de Boa Viagem, Pina ou Piedade às 07:45 com destino a Praia dos Carneiros, com duração de 1,5 horas aproximadamente a ida.\n\nNo passeio, os visitantes usarão a infra estrutura do Restaurante Bora Bora em Carneiros, apreciam belas paisagens, bebidas refrescantes e comidas regionais. Embarque do Catamarã é realizado entre 10:30 e 11:00 em frente ao restaurante. À bordo, contamos com a presença de um guia que relata histórias e curiosidades da região, além de música e muita alegria. Paradas na bancada de areia, banho de argila e igrejinha.\n\nVenha conhecer uma das mais belas praias do Brasil.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 3,
@@ -195,10 +264,24 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Porto de Galinhas / Muro Alto",
     "sentido": "ida_volta",
-    "preco_base": 340.0,
+    "preco_base": 400.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/660258cc700eb2a02e13bbacc439cfbd/2E1A525A-73FB-4303-B039-6764455D4786.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6ca5d43a5657a9369dd0f8806f321422/4CC0B654-8064-4E93-90BE-F379A2F9F9BB.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5fe3fbc3c25ef2adac5075efb247461f/2F42A3A1-D32D-4FD8-BC05-15BC2F140DAF.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8f2363ed65700541f90a8dc2d35c4237/2E0B250C-1258-4F31-957B-EDA3018D82E5.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a8ea4467c5c4c64d0ac5be2db2824127/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/32f1fcbd10a5be9e928109875e4e3ad7/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7ae7a6f44626b1b959284e5849b7a2a7/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b9bee685a6885619c9b95f0e68c1c3d4/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1f147c1a7af81a10396cc8bb5a829025/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c0caba48d90edbe21eba4b321658f823/20998F90-0937-4B04-98DA-B79117CE43F8.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/82365ff18a572965d4a92a730f700281/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b30895e61261ebf42b053e612dd95a95/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2fb68df9e9f542d9527f51c3a81ce6f6/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -222,10 +305,43 @@
       "nome original '( ida e volta )' com espaços tortos nos parênteses; limpo",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 440.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3000.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 800.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "O que está incluso\n\nPedágio\n\nReceptivo no Aeroporto\n\nKit de boas vindas\n\nSobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nSaída do retorno ao Aeroporto de Recife é geralmente 3 horas antes do seu voo, caso tenha transito alteramos para 3,5 horas antes do seu voo.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 4,
@@ -285,7 +401,20 @@
     "preco_base": 540.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/95bc2552a64b3c2a0a36049cf10a5a7b/D6D0F98A-1EDA-4F2B-ADC6-A76B24A47A2B.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/770bb4983958e6326f10d4709c483f4a/3F0394E2-2A03-4431-B690-6E38C7058359.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a6bc9105ddb813780b6bd5d8bcf426e7/o-que-fazer-catamaran-topo-mobile.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fbb76e65ae9a2b7ff91c4d63af6e67e5/3A1463DF-1BC0-4822-94D1-F52462B54457.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/aac9975dcda51047d7111e8440708ec8/165D0C3F-D617-4BB4-ACEB-E57FB76D84E5.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e2052bfa1d0fc3280cd7f3fd5333d188/o-que-fazer-catamaran-destaque.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5f9966394565290bc243015769b0aba1/4F194EE0-2C2E-44B1-8FEE-0B6044AAA40E.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/656861bab20b4f0d4a19be5f3ae5b85a/A309578A-9E19-411C-9A75-BBFFB2BEB512.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e0567c2ad32d3fcbe4f05eedd82c9552/E1A2AD32-1757-4F9C-A9D3-9FE74F4EBB6A.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/eb5f6b3d8d273f21fe8c596b9c7a2074/DECA0A49-229F-4D76-B2C8-38F6514DE41B.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e6d76d4e8269dd8e93c66be2f92b59cf/B1067CBA-D7B4-4754-A9C3-4AA23D4BD8C6.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/365555c44f2f668d7039b611b47dcf33/AAD729A5-C610-44B5-A516-398BA7042D63.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -307,10 +436,36 @@
       "roteiro cortado em 'Saída do se...' (provavelmente 'seu hotel'); ordem das paradas, horários e duração desconhecidos",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 540.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 540.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 650.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1250.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nUm passeio ímperdível quando estiver em Pernambuco.\n\nInclui: Veículo privativo, motorista, guia local e ingresso do Catamarã\n\nNão inclui: Alimentação, bebidas e demais ingressos\n\nRoteiro:\n\nSaída do seu hotel aprox às 10:00, com destino ao Catamarã:\n\nNo passeio, os visitantes apreciam belas paisagens de vários pontos turísticos a Praça do Marco Zero, Parque das Esculturas, a Assembleia Legislativa, o Teatro de Santa Isabel e o casario da Rua da Aurora. À bordo, contamos com a presença de um guia que relata histórias e curiosidades do Recife. Opção de almoçar no restaurante do Catamarã com vista para a Bacia do Pina.\n\nDepois do almoço iremos até Olinda, primeira parada é no Convento de São Francisco, local com maior acervo de azuleijos portugueses no estado. Encontro com o guia local que explicará sobre o local e seguirão de carro até o Alta da Sé, daqui o percurso é feito a pé , com parada na Catedral da Sé, Bonecos de Olinda, Casas de Artesanato, Igreja da Misericórdia, Ladeira da Misericórida, Mercado da Ribeira e Mosteiro de São Bento. Por ultimo paramos na Igreja do Carmo. Retorno ao Hotel aprox 16:30.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 5,
@@ -367,10 +522,29 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Porto de Galinhas / Muro Alto",
     "sentido": "ida",
-    "preco_base": 180.0,
+    "preco_base": 220.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fb060bd0b725ecd119bb40326c1396e4/A496B1D1-A6B0-454B-8B18-45C4062D6113.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/09d1aab1fa69008b4295a4aea6a94e2d/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/12b5f5717956cff18fc40404dca40d84/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2ab60ae4fbabfb33af67f612f6386900/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1e6494fb8ad4643a3ce4bcfe43d31b98/A69C4769-C657-45D5-B72C-ABCA23D91E62.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/eb4185d3192a3aad2eda7caca5338e72/A475DD6B-8962-4F87-91A8-3F2CB52B09AA.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a4b14f8b9d5a8abf173412d9e69b2bb5/IMG-20181105-WA0040.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/dee1aa744f4bb8e34e167a8886727a8b/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/435b10e1dabea7bc99ce17db3dbabeab/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fcf29397c81e09a9f0c4f18164b9c468/AC7563B1-A354-410D-8997-E2EC4C49DAB0.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/791df760ff702fee7f3bc06866ad90e7/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/08ca1e4b4c551d62c5e738790e640922/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/640d85a097fc2ce158a51c9186f1c39d/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/98c9e6a1331814e8e4156fbbabf25278/IMG-20181102-WA0153.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8c979aa99fcf69002a91ce0bbaee306e/IMG-20181031-WA0065.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1ad803d52fc04a3a8fe59e773f326235/IMG-20181022-WA0002.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bc71d8ef5637ff11963d9176f5100261/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/191548b596e09a6ad79848483a523267/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -395,10 +569,43 @@
       "3º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 220.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 250.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 280.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 700.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 450.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 6,
@@ -443,7 +650,16 @@
     "preco_base": 460.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/07c6f595f79380861358eb56ca520509/6492726D-B80D-4504-9FB8-C7767164327F.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/cda59065e45705a8d109fe3e909e1ce4/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/dd514a28fc77ed73389600fb35ebb282/exemplo-galeria-instituto.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ac8161b8984d4236352cc44f5d34bd87/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/11fc1dafce7deb594e4f0d9616313136/8525C6A6-CA03-4B2D-87C4-4B3509555CEF.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4452110a7b82e49bdd7163afa26d5332/2722CAA3-3A5F-431C-814F-8C64D6F0EC15.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b9a5e0700d1470a07ade3d99bb6c45ab/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2053a975f3b951ea3a46a0ce0bda107b/5ED2DEB8-739C-41F2-AB52-50773D9E57D6.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -467,10 +683,36 @@
       "ingressos dos dois espaços: incluídos ou não? Não consta no trecho disponível",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 460.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 460.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 600.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1600.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nImperdível para quem está visitando Recife.\n\nSaída de hoteís em Boa Viagem, Piedade e Pina com destino a Oficina Francisco Brennand , em veículo privativo às 10:00, parada de aproximadamente 2 horas na Oficina e depois iremos ao Instituto Ricardo Brennand aonde terão mais 2 horas de visitação. Retorno ao hotel aproximadamente às 15:00.\n\nA Oficina Francisco Brennand é um local único no cenário artístico brasileiro e mundial, por abrigar em seu conjunto arquitetônico monumental a obra de Francisco Brennand e a produção da Cerâmica Brennand. Ocupada em 1971 pelo artista pernambucano, as ruínas da antiga Cerâmica São João, fábrica de telhas e tijolos fundada por seu pai e desativada na década de 1940, tornou-se, ao longo de quase cinco décadas, seu espaço de pesquisa e prática artística, possibilitando, com esse conjunto de instalações fabris e fornos cerâmicos, a construção de um universo onírico próprio.\n\nO Instituto Ricardo Brennand é um espaço cultural sem fins lucrativos inaugurado em 2002, que salvaguarda um valioso acervo artístico e histórico originário da coleção particular do industrial pernambucano Ricardo Coimbra de Almeida Brennand.\n\nTem como missão a preservação, a difusão e o acesso à cultura e herança material e imaterial, visando a promoção do capital humano e cultural.\n\nLocalizado nas terras do antigo engenho São João, no bairro da Várzea, ocupa uma área de 77.603 m² cercada por uma reserva de mata atlântica preservada.\n\nPossui uma das mais modernas instalações museológicas do Brasil, abrangendo um complexo de edificações constituído pelo Museu Castelo São João (museu de armas brancas), Pinacoteca, Biblioteca, Auditório, Jardins das Esculturas e uma Galeria para exposições temporárias e eventos.\n\nEleito um dos melhores museus da América do Sul\n\nIncluso veículo privativo, motorista e ingressos.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 7,
@@ -530,7 +772,16 @@
     "preco_base": 320.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4d6b1bc2510bb0962b000fc463f15ad9/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c7c1461e715acd1e1c1861b16b2c08da/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4a0d0fa1a508fbf1cff373f9df3e1bc6/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/14f3a7e150cd58f321b659ffe48866f9/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1a041d17e938e0555b1ea31602caf1d5/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/47d0daf7f352c6108238591916563ba0/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b568e87243663a6eb8bb8f2722fa08cd/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1425d256ba86c35d940a06c0f2844052/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -554,10 +805,39 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 320.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 350.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 400.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 750.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 850.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1700.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 8,
@@ -614,10 +894,20 @@
     "origem_padrao": "Hospedagem do cliente (Recife)",
     "destino_padrao": "Olinda e Instituto Ricardo Brennand",
     "sentido": "n/a",
-    "preco_base": 540.0,
+    "preco_base": 620.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a4783ce5ced2047de38945e3ab12399e/23303D6C-2BAC-44DF-A03D-21A2A912F507.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/78583de070bfc6f7d1be9b71ee8e9ed0/38AE0766-D3D0-4AE8-9822-AFCCF2B581F3.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5e97b33285fe7b038d001af1223b8709/165D0C3F-D617-4BB4-ACEB-E57FB76D84E5.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9ccf8af16cad8e17d369809daeebbe2d/AAD729A5-C610-44B5-A516-398BA7042D63.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bb63fe8c4703cbbbce9704203a8b158e/40E4B3E1-732C-40B0-B3CA-0391F34033B4.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ee7321c48d5400a730117cae96058d28/IMG-20181105-WA0040.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1299fbc0ca18295c677d8442aa2f6367/exemplo-galeria-instituto.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f5ab128154ca8bb645220d31a0599568/A309578A-9E19-411C-9A75-BBFFB2BEB512.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/074c52fd02b0e2909a3c756d345a4149/3F0394E2-2A03-4431-B690-6E38C7058359.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -639,10 +929,36 @@
       "roteiro cortado em 'Roteiro: ...'; ordem das paradas, horários e duração desconhecidos",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 620.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 640.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 760.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1350.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2650.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nUm passeio ímperdível quando estiver em Pernambuco.\n\nInclui: Veículo privativo, motorista, guia e ingresso do Instituto Ricardo Brennand\n\nNão inclui: Alimentação, bebidas e demais ingressos\n\nRoteiro:\n\nSaída do seu hotel às 08:00, passagem pelo Recife Antigo até Olinda, primeira parada é no Convento de São Francisco, local com maior acervo de azuleijos portugueses no estado. Encontro com o guia local que explicará sobre o local e seguirão de carro até o Alta da Sé, daqui o percurso é feito a pé , com parada na Catedral da Sé, Bonecos de Olinda, Casas de Artesanato, Igreja da Misericórdia, Ladeira da Misericórida, Mercado da Ribeira e Mosteiro de São Bento. Por ultimo paramos na Igreja do Carmo.\n\nDepois disso subimos ao Alto da Sé com parada de 1 hora para almoço ou compras.\n\nSeguimos ao Instituto Ricardo Brennand para visita de 2 horas no museu e retorno ao Hotel aprox 15:30.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 9,
@@ -675,7 +991,20 @@
     "preco_base": 550.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bfce12e96cea2bcd0b4387989e8dd614/_SC06808.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/732fd40834fdf66ed3c772cd2d695ecf/foto-5.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/802e9d4f96791af797bffeb2aacd6669/6E7DC553-351B-4018-9A1E-C534663D3467.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5e520dd193ced375b85e8721f55a1744/E14C67C4-6125-4858-8290-0219E481DB72.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/989ea3dad0b56d10ecc3867c655f289f/foto-1.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/48628b8010ee389fe31de30b91ffe931/foto-2.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6812654b7a5a6bcf621d7581887b7049/DSC05384.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/785f33adf10e7d71557339026daee2a2/E78C4DC3-AAE8-4768-8698-BB3F8F658200.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/658cfce7da3ed090f79e78621781a270/8334557A-E182-4351-8BBE-48A81517B08D.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6876f3784835ff121a71ce33358dc5d9/187DC8DF-73F6-48BC-854A-FF02DB1F0E41.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/30197044ac5d89b20bc9f12b27c6239e/74A52B53-B14C-42E2-AD84-448B3D740945.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2e735b97031fb62c0926eeee7e470e6e/F069DD29-E972-44F9-A125-B959DE3D05A7.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -699,10 +1028,15 @@
       "taxa de preservação ambiental de Noronha não é citada; convém avisar que não está incluída",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por pessoa (R$ 550.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": null,
+    "modelo_preco": "por_pessoa",
+    "preco_por_pessoa": 550.0,
+    "descricao_paytour": "Sobre a atividade\n\nRoteiro:\n\nSai da Praia do Porto pela manhã acompanhando toda a rota dos golfinhos pelo mar de dentro, tendo como primeiro roteiro uma passagem para conhecer as outras ilhas do arquipélago e o famoso “rugido do leão” fenômeno que acontece devido ao movimento das ondulações ecoando em uma caverna de formação natural de rochas vulcânicas, segue em destino a Baía de Sancho (Considerara a praia mais bonita do mundo) onde será feito uma longa parada para mergulho, em seguida retorna ao Porto para desembarque\n\nDiferencial: Ao atracar (parada) na Baía do Sancho após o mergulho que é liberado é servido abordo um Buffet com peixe fresco da ilha preparado de diversas maneiras. O cardápio pode ter desde sashimi à postas de filé com uma qualidade excepcional além de acompanhar diversas guarnições.\n\n– Horários: 8:30h às 14:30h",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 10,
@@ -744,7 +1078,11 @@
     "preco_base": 600.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/95b8a2af0c8b95f349eb8ebe7f55e413/IMG_8131_optimized.webp",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/28550e511f6b9398adf378d9b86cca16/A4B44A32-FAE5-446C-8C1F-D0228F69F24A_optimized.webp",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/40b548bf27b89edc64bf1e3dbaa7266d/9045C48F-9B4E-4C1E-9EC1-367042E746D1_optimized.webp"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -767,10 +1105,28 @@
       "o nome Paytour usava 'Aluguel de veículo'; trocado por 'Carro com motorista' porque não é locação sem motorista",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 10,
-    "veiculos": null
+    "max_por_compra": null,
+    "veiculos": [
+      {
+        "tipo": "bmw_x1",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 600.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "O que está incluso\n\nMotorista\n\nAgua\n\nveículo privativo\n\nSobre a atividade\n\nUma data especial merece um transporte de acordo com a noiva. Dispomos de veículo privativo que fará do seu dia mais confortavel e exclusivo.\n\nMotorista uniformizado e serviço de bordo com água gelada .",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 11,
@@ -812,7 +1168,13 @@
     "preco_base": 300.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/65db71de8b33f03a7bf3802c1bcb8ed2/o-que-fazer-catamaran-destaque.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/3b1cf11160697f20bfc07506cd798700/_passeio_de_catamaram.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a4a7a6b824e8d0ffea69512b6b9e62fa/o-que-fazer-catamaran-topo-mobile.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/365b3c2c9b9ea55a755fd0463d0fe2a5/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a341bf96a16c9ad7a2021dfcb6730bdc/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -836,10 +1198,40 @@
       "ingresso do catamarã listado como incluso porque o produto é o passeio; confirmar. Horários de saída e duração desconhecidos",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 340.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 300.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 440.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1700.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2750.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nPasseio maravilhoso pelas águas do rio Capibaribe, percorrendo as três Ilhas do Centro de Recife (Santo Antônio, Recife Antigo e Boa Vista) passando por baixo da Ponte do Limeiro, Ponte Princesa Isabel e Ponte Duarte Coelho.\n\nNo passeio, os visitantes apreciam belas paisagens de vários pontos turísticos a Praça do Marco Zero, o Parque das Esculturas, a Assembleia Legislativa, o Teatro de Santa Isabel e o casario da Rua da Aurora. À bordo, contamos com a presença de um guia que relata histórias e curiosidades do Recife.\n\nVenha conhecer a Veneza Brasileira no tradicional passeio de Catamarã.\n\nROTEIRO REALIZADO TODOS OS DIAS DO ANO\n\nVerifique os horários disponíveis do passeio na data escolhida. (11:00 / 16:00 / 20:00 ) saída 1 hora antes do hotel com destino ao Catamarã.\n\nTemos também a versão noturna desse roteiro pelo Recife Iluminado.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 12,
@@ -899,7 +1291,23 @@
     "preco_base": 740.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4e53f7e684f5edd9d0e5c14c141486fa/A475DD6B-8962-4F87-91A8-3F2CB52B09AA.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a88a5eb5054fe1944db377ea23b026e4/707C7ED9-E262-4D98-ABF7-8A4BC1F2D680.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5da603cd88713bb5c7ab88b0ceba57ea/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ef22a480ba02ead6ed8e457b275d488d/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9886a2ed324bb36c453c29fd10132d05/4CC0B654-8064-4E93-90BE-F379A2F9F9BB.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/62773df3f86bf4dc5a03e4a641765193/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ddcdb1ba194495facd84df991271fcbb/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1c291b6eff4990c40e06208eafefdbf7/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2f17e4dddf058c783adf710ec8736b6a/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9e7cbb4989a882012d553f00b642a793/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/22a283b6c7a528f2dfb656626e3e8ed7/AD17D055-6926-479F-A875-B7269E794BE2.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9d0bb7f9ef5d92335ddb8771f8095388/A45EFD56-01F3-4DCD-80ED-E6EAE6FD24B7.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8d17382c639ad9287f399cca37fcd8bc/A28C877B-D343-4AFE-A5A0-264B9EAAA3EF.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8d8f45f104449816d626cdb7001ce86f/A43A9DA5-6544-4D30-8E3C-42D17A8F74CA.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6b8c5117767a1777dd2a6a9cd80000a9/A43CBF28-FB58-4ECF-8F6F-E0EBEEC87E54.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -922,7 +1330,7 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo copiado da Paytour (prints/paytour-maragogi-ida-e-volta-2026-10-09.webp); preco_base = veículo mais barato."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -950,7 +1358,11 @@
         "tipo": "micro_onibus",
         "preco": 3800.0
       }
-    ]
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPara o retorno sairemos aproximadamente 4 horas antes do seu voo , caso tenha transito em Recife, alteramos para 5 horas antes do seu voo.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 13,
@@ -995,10 +1407,20 @@
     "origem_padrao": "Boa Viagem, Pina ou Piedade (Recife/Jaboatão)",
     "destino_padrao": "Porto de Galinhas",
     "sentido": "ida",
-    "preco_base": 180.0,
+    "preco_base": 220.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6481b79903bdcc4384e74db1968745b6/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/85ca2d584adc113a7815ece9e7655bb7/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0bb2983eb44483ef0a52fa36b94ab6b6/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b1da30b9b21c7095ea53c1548071eb39/707C7ED9-E262-4D98-ABF7-8A4BC1F2D680.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4b20d073d3df977b8f0f349b4659b593/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a4b2b3a133c1f9a0e7e0fc24f048cf60/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/18d52f87b4aebfabe1ae329d3165b483/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ba4513b2bd7aa0aa9176c503e629410c/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/3d6248e6fc544acaecbf70f511c58ca0/IMG-20181022-WA0002.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1022,10 +1444,39 @@
       "o texto original também aceita embarque no Pina (não aparece no nome); mantido na descrição",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 220.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 250.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 280.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 700.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nVeículo privativo, motorista e pedágio inclusos.\n\nNossa equipe estará aguardando em frente ao endereço em Boa Viagem, PIna ou Piedade, 5 minutos antes do horário solicitado para embarque das bagagens e seguir viagem até endereço em Maragogi.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 14,
@@ -1085,7 +1536,20 @@
     "preco_base": 250.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/925b995e20dda843b568ec8057b985e9/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/05e2f4dbb48a46c8422f93165376109f/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/71663b60ac81bb654d4d26234928db3d/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9d4c7fa32b6f570178526482e869b6c6/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6bffd7a97be4ec7be665721b5e2ef94e/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c7c246516c870ea9c317542e4e0784b3/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/98baa20aa09f9d02c0623c09929c3570/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/40c481e48506ad9497d476eb26de7b5c/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b14686f7dec9c6dc40d1a5815570adf3/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/3a96ff9fab86904e6e5dda8271c24f64/IMG-20181026-WA0106.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6a458d4869475cda0257f217f9f78954/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/37fa28aab64e299a1fd7068461e49468/IMG-20181027-WA0057.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1111,10 +1575,39 @@
       "Serrambi fica em Sirinhaém; existe outro produto 'Aeroporto → Sirinhaém' (ordem 46) por R$ 300 com slug Paytour '...-para-serrambi'. Confirmar se são o mesmo serviço e qual preço vale",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 250.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 300.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 300.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 600.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1100.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 15,
@@ -1174,7 +1667,17 @@
     "preco_base": 80.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b0f5af75da7028b5a9ed5131041b1ade/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ab749712a4448cffc417844d15973c9f/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d6d618212b0e212cd30ff47fd8c277aa/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/05476a853e10fecb5444eb3ff909c698/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5fd28e0d3a3834eaece982052e0cd66e/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2ca70d1648ee03e66f2303307fdbd77c/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0247a5550fd87807af9d5a8da7d926d1/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/58f4da0240848ed8ad949cc0192e720b/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/eea16b94220f4244247d2ede700610ca/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1199,10 +1702,39 @@
       "nome original 'Aeroporto de Recife para Recife' é ambíguo; reescrito como hotéis/endereços no Recife. Confirmar quais bairros cabem nos R$ 80 (ex.: Boa Viagem, Pina, centro)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 80.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 100.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 100.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 300.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 600.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 16,
@@ -1241,7 +1773,17 @@
     "preco_base": 1020.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c169ba0f6b3eb9e763cb13ed4a1d93d1/f2118953-c17c-42e8-908e-86c271fd9ac4.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/964f18acdd8ac9197d192f2819049510/19d317fd-3207-40b8-9c77-547cb9bd8643.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/37bd351b0678a8a9f69af82c5ce5b13f/407c8eda-20fe-4dec-8be6-abfa05e8654e.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f7669d9f67bc67c75f40f0241962d101/530df35d-9d23-4f99-b39a-b6df4c792342.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fa5abc07d43a0b6a84c8e637e91e881a/3593d9a2-8dc7-4197-ac7e-5f5df4674e29.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/dd3e6d381ecacddce34b6b39d19356d7/c805c8e6-8d26-4e3c-baf1-0098db449ffe.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0e178f1831e4b63584e789a0a67f8ebf/ce41afb6-19df-4f61-a0d6-4648a466ee65.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a6f705b2c0d09353a6eb22218e36d8a5/6693c1a7-86b8-462c-af6e-0a5b5a503315.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/30cc3bca4a59d6078777d4f2c8ba3005/e3a306c3-af42-4f0f-83ce-4c83bca28e3f.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1265,10 +1807,15 @@
       "atividade de risco: avaliar termo de responsabilidade/declaração médica no checkout",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por pessoa (R$ 1020.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": null,
+    "modelo_preco": "por_pessoa",
+    "preco_por_pessoa": 1020.0,
+    "descricao_paytour": "Sobre a atividade\n\n*BATISMO*\nPara quem não tem experiência com mergulho ou nunca fez um curso, podemos fazer um Mergulho de Batismo.\n\nEle acontece da seguinte forma: no dia escolhido, nós iremos buscar no endereço solicitado em Recife às 06:20 aprox e às 7h para ter um aula pratica na piscina, onde o instrutor transmitirá as informações básicas sobre o mergulho, procedimentos e equipamentos utilizados. Após a aula, às 8h, você embarcará para fazer seu mergulho de Batismo em naufrágio no mar aberto, sendo guiado e monitorado de perto por um instrutor. É um primeiro contato seguro e divertido na atividade do mergulho.\n\n*BATISMO*: Inclui prática na piscina, 02 mergulhos em naufrágio, instrutor exclusivo, todo equipamento necessário e lanche a bordo.\n\nSó uma observação: o mergulho de batismo não equivale a um curso, pois não proporciona credenciamento.\nTrata-se de um Discovery, uma experiência para quem não é mergulhador autônomo credenciado.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 17,
@@ -1328,7 +1875,18 @@
     "preco_base": 120.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d40d32b3ebbe9b2f4a977911d024bfb5/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0da69f862654e6b7a0b9e7803d8cfa5f/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f915480f116f8ad8a2311d0c50763d8b/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2bc199231af9f4a1b4bce19595055fed/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8d35a5c71af088d24c4bc231db5387a4/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8d22e95bb9bcecd701c9dafb876f75f3/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/26d56a54bb8a4ec534bd00742d3b7ec5/IMG-20181027-WA0057.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fe60ec9d88ebb9c64994afda03a12e14/IMG-20181022-WA0002.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7f42f3d28c1e3d9925d8e77738dc89ca/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/81be16febd94b1325b047a83ee65deb0/IMG-20181026-WA0106.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1352,10 +1910,39 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 120.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 150.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 160.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 320.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 380.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 720.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 18,
@@ -1403,7 +1990,15 @@
     "preco_base": 170.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a7a18a4168880d49bd18d1d0b04ecad5/PHOTO-2021-12-01-10-02-59.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7b5259578cba62843d482e237ed34e99/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/760d78df44814eb42acaeb3de3d3930d/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/56ef5d9bae7ba7607aa8c82d52f91dbc/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bb008772347a1f7187ea39a4e16883e2/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/eac1bc1fc7304a30b442bbbc020da70d/GPTempDownload.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/be6aa617bea25e30d707825147e23814/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1427,10 +2022,35 @@
       "nome original não diz 'ida ou volta'; sentido gravado como 'ida' e o nome ficou sem '(ida ou volta)'. Confirmar se vale para a volta (Suape → Recife) e se é corporativo (faturamento p/ empresa?)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 170.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 190.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 190.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 550.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nInclui: veículo privativo, motorista, pedágio.\n\nNossa equipe estará aguardando em frente ao endereço solicitado.Temos 15 minutos de espera.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 19,
@@ -1487,10 +2107,25 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Maragogi (AL)",
     "sentido": "ida",
-    "preco_base": 360.0,
+    "preco_base": 380.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/45d085e58838017268279fe5a511837b/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/870550b3af21914d30fe3bee5b1e6628/AD17D055-6926-479F-A875-B7269E794BE2.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ef082a74166d8bd9e56af0ac4cd4209c/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ebe7e36bdc68fbe4dd083561815b99f8/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8f686f311521f290ab0b2afe26a60bc6/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/cf18adf28f8264e524a1a98a6d4a99bf/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/54ddd41d5f45082a3536e00d22e0c641/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6566e5c293822219e36ab686ff80b7fa/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/962e67e76c2de29262dec26251f05d17/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/41a2d124bd890d6f069786ed33a5b441/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/033b3f3bfb41b8a57f9e1ad2c7ffc8e1/AA4BDDE9-0D60-4AFE-B537-68E9BAE5EE02.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fc448c8c07b9e47d9fac347aa5cc255a/A496B1D1-A6B0-454B-8B18-45C4062D6113.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/46a7c3c0193729dd8cb71bd7e94e23a5/A475DD6B-8962-4F87-91A8-3F2CB52B09AA.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/095ede8355b26c242cc8f604462b7e8b/AC7563B1-A354-410D-8997-E2EC4C49DAB0.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1514,10 +2149,43 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 380.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 900.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1400.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2200.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 750.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 20,
@@ -1577,7 +2245,14 @@
     "preco_base": 200.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/037324700ba5dfcc5b3fb32b81827260/4CC0B654-8064-4E93-90BE-F379A2F9F9BB.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f2cffe421c5e4c4853cbb6f36937bb0d/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e6eab1cd04676729393c9da81d2d6fa5/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f006b7e57cb0be4499b997e63e123e7e/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/36ad206add2c45931c633a68dca604fd/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6151d873c8c10614ecf3b8655d9e55b8/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1602,10 +2277,35 @@
       "embarque pode ser no aeroporto ou em Boa Viagem pelo mesmo preço (conforme nome original)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 200.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 250.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 250.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 450.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 550.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 21,
@@ -1659,10 +2359,15 @@
     "origem_padrao": "Hospedagem do cliente (Recife)",
     "destino_padrao": "Recife e Olinda",
     "sentido": "n/a",
-    "preco_base": 450.0,
+    "preco_base": 550.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c5605aa62176b50bbaad601dd849a153/4e37ea58-ecf6-47ff-b688-9eee12097e36.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c3e9c7c648d1b435e743b1d4ecc8c6c3/PHOTO-2023-09-11-11-48-20.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/aacb408d141b0bce4670b24ea1269e0b/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e9fe521557f94241b69b0e83c7efe9c5/9ab35b7f-d878-4f97-89b0-797be076140f.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1683,10 +2388,32 @@
       "roteiro cortado em 'Saída do se...'; paradas, horários e duração desconhecidos",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 550.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 650.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 900.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nCom certeza esse é o passeio que todo turista deve fazer quando visitar Recife.\n\nInclui: Veículo privativo, motorista e guia local.\n\nNão inclui: Alimentação, bebidas e ingressos\n\nRoteiro:\n\nSaída do seu hotel aprox às 08:00, com destino ao Recife Antigo:\n\nNo passeio, os visitantes apreciam belas paisagens de vários pontos turísticos a Praça do Marco Zero, Parque das Esculturas, a Assembleia Legislativa, o Teatro de Santa Isabel e o casario da Rua da Aurora. Com paradas na Casa da Cultura ( Artesanatos), Capela Dourada, Teatro Santa Izabel e Rua do Bom Jesus.\n\nDepois de Recife iremos até Olinda para almoço no Alto da Sé. Depois da refeição a primeira parada é no Convento de São Francisco, local com maior acervo de azuleijos portugueses no estado. Encontro com o guia local que explicará sobre o local e seguirão de carro até o Alta da Sé, daqui o percurso é feito a pé , com parada na Catedral da Sé, Bonecos de Olinda, Casas de Artesanato, Igreja da Misericórdia, Ladeira da Misericórida, Mercado da Ribeira e Mosteiro de São Bento. Por ultimo paramos na Igreja do Carmo. Retorno ao Hotel aprox 16:30.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 22,
@@ -1731,7 +2458,20 @@
     "preco_base": 500.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6791fa0d8ef689f509678ae1e51ed24d/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7832b7f594cf3d4e364afb71aff0c554/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bf36e153d931b2c6d238f063e47c71aa/6280C3A5-F119-4BD0-AD8D-BFBB72779D0D.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/02b0ce0b324b6d8c14c94edafbd27da2/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bc8ed6f7d1aa65cd6cd323a9afbef998/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/78c9d85a74e8a62fb3e98e9913eac9a5/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/25f8c66c79f752f06119b9e919453681/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/229a56a2f9826c1d1c3a886635b5bb1c/IMG-20181026-WA0106.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7abea6353bb3da2354ea02b89090ffc7/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/874d87212b31cc008de39e34f93b8d37/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/da213917d9c8de8cad9dc59409dd1d83/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b2d53aa74731923971d7d0fd9edc34b1/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1754,10 +2494,39 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 500.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 600.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1300.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3000.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nVeículo privativo e motorista inclusos.\n\nNossa equipe estará aguardando em frente ao endereço em Olinda, 5 minutos antes do horário solicitado para embarque das bagagens e seguir viagem até endereço em Maragogi.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 23,
@@ -1817,7 +2586,19 @@
     "preco_base": 600.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c0699f8964db32337c7afdee8296ce15/4D435702-47EF-4653-A77A-9171310C74B6.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2ceaaf1a502676ef4eb19aed94a44e0f/4CC0B654-8064-4E93-90BE-F379A2F9F9BB.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b372635a94dd93c93aba78aa4a34bb65/4EDCC339-DAC0-44BD-9567-DC03C628E423.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bcd7b720276f9e91a6710052025710b4/4D352892-D9A4-45CB-A73B-2F6C7B9A7FB6.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/02af93b791a3ae76b732a048b551f04d/4B73AC3F-0ED8-470B-9E5A-B70C06D981F3.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9a9201f4151587c013ae4c5047f5cd9e/IMG-20181026-WA0106.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ac1265ad0b4f19acc45c48ac80652626/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8e39b2bf6b2603ac973d558ec90942fc/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/35a653c74d9cd01c83f17feda8cdddba/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6b38ceb5f5b9654107be4bbb8dcd3c0f/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c09dd208a3b733ec3988d124e7127cea/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1840,10 +2621,39 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 640.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1400.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1600.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3200.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nSaída do retorno ao Aeroporto de Recife é geralmente 4 horas antes do seu voo, caso tenha transito alteramos para 4,5 horas antes do seu voo.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 24,
@@ -1885,7 +2695,14 @@
     "preco_base": 450.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a3ecf41c3aa04a6c8a5276d94f068d5d/5BABE3E3-273D-40B4-A702-10CA0A8E9979.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fd81153e7b2d7f2c1e17a935733ea9a5/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c19eb35beecc1432f261540655577833/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/11c562d96563feadde3e75d08c9205ab/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c3ad364c35fb55311dec6ddbde729179/4CC0B654-8064-4E93-90BE-F379A2F9F9BB.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/91b27d460567b84d420f0e3cfea2b760/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1907,10 +2724,36 @@
       "texto cortado em 'com destino a Pra...'; QUAIS são as 4 praias (ex.: Gaibu, Calhetas, Paraíso, Suape?) não consta — informar para o texto e o SEO",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 10,
-    "veiculos": null
+    "max_por_compra": 2,
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 450.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 600.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 600.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1400.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nPasseio inesquecível e imperdível quando estiver em Recife.\n\nEm veículo privativo com saída de Boa Viagem, Pina ou Piedade (horário a definifir pois depende da tabua de marés do dia) com destino a Praia do Paiva, com duração de 30 min aproximadamente a ida.\n\nNo passeio, os visitantes irão aproveitar das piscinas naturais, apreciam belas paisagens. Parada com 45 min de espera e seguiremos para Calhetas, no mirante poderão ver Gaibu e optar por descer a trilha ou então seguir para o Bar & Restaurante do Arthur. No caminho tem a possibilidade fazer a descida por uma Tirolesa. No restaurante poderão aproveitar da praia, bebidas refrescantes e comidas regionais. Tempo livre e saída depois do almoço com direção ao Mirante do Paraíso e Praia de Suape.\n\nRetorno ao hotel às 15:00.\n\nVenha conhecer esse destino maravilhoso.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 25,
@@ -1970,7 +2813,12 @@
     "preco_base": 400.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9f8f8051d5f1556aa4e696140e34cd5a/C8529B56-C9A1-4822-8290-F5E67AF45FCE.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5da0ed60ec036df71a47ab5e04302488/C52CF016-5206-4172-8635-30B9FCEFB5C1.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/156a1bf051cfe699419248dce10b73f5/C3352021-37CE-49E6-A411-2ECA143E6B53.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bc797eeec2eba2d80ceac070b16242b9/C3D64BD7-F6A9-44EB-9A2D-C8F1E5548C61.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -1993,10 +2841,32 @@
       "prancha/aula de surfe inclusa? O texto só cita equipamento de snorkel e de praia — confirmar",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 800.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nUm passeio ímperdível quando estiver em Pernambuco.\n\nInclui: Veículo privativo, motorista e equipamento de snorkelling e de praia.\n\nNão inclui: Alimentação, bebidas e demais ingressos\n\nRoteiro:\n\nSaída do seu hotel no inicio da maré seca ( equipe irá comunicar horário de saída do hotel depois da reserva realizada )\n\nNo passeio, os visitantes apreciam belas paisagens da Praia do Paiva, uma antiga fazenda de cocos que hoje tem uma reserva que protege a linha de 7 km de coqueiros na praia.\n\nParada em frente as piscinas naturais, aonde o motorista irá montar cadeira de praia e guarda sol. Tempo livre de 4 horas para aproveitar as piscinas naturais e fazer snorkelling.\n\nOpcional : aluguel de prancha de surfe e parada para almoço",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 26,
@@ -2029,7 +2899,15 @@
     "preco_base": 200.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c70042454091ca1641968ff49e482a16/PHOTO-2023-03-26-08-42-02%203.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d230f7116fbaa74cd54bb6d9e98ea2d8/PHOTO-2023-03-26-08-42-02%202.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d02a2364e159ba6eaea0eda8f587cca8/PHOTO-2023-03-26-08-42-02.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bc2e5977b0c68167d4fabc32faabe967/PHOTO-2023-03-26-08-42-02%208.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6203b6a49c5cbabf9e6e90ff309dd2cc/PHOTO-2023-03-26-08-42-02%207.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/63a33fa9e8067fb21f4996f8710ec5de/PHOTO-2023-03-26-08-42-02%209.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/31ce0b8786e992be7aa547e685e47d30/PHOTO-2023-03-26-08-43-48.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2052,10 +2930,15 @@
       "ponto de encontro, transporte (incluso ou não), guia, duração e horário desconhecidos; inclusos vazios por falta de fonte",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por pessoa (R$ 200.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": null,
+    "modelo_preco": "por_pessoa",
+    "preco_por_pessoa": 200.0,
+    "descricao_paytour": "Sobre a atividade\n\nPasseio Trilha dos Escravos em Maracaípe , um passeio imperdivel para quem está visitando a região. Vamos atravessar o Rio Maracaípe, até a estrada secreta da Trilha do Aratu, fazendo assim uma imersão no manguezal, Caminhos historicamente usados pelos povos indigenas da região e posteriormente por colonizadores e escravizados.\n\nRetornamos pelo rio, flutuando em boas e coletes salva vida enquanto a subida da maré nos leva até o ponto de chegada.\n\nDuração Mínima de 04 horas de trilha, máxima 05 horas .\n\nDificuldade física: Leve\n\nPercurso 7,5 km ida e volta já incluindo a trilha flutuante.\n\nRoteiro\nVisita Studio Maracaipe\nApresentação Nilo baj\nApresentação Beto Guedes Idealizador da GAITERO ECOTURISMO\nApresentação Romero Marques ( artista plastico )\nTravessia Rio Maracaipe\nInicio trilha dos Gaiteros ( Escravizados)\nTrilha do Aterro dos padres\nTrilha na mata do oitero\nSubida ao monte do oitero\nAlto do monte , Vista do mar e ilha de sto Alexo e explicação sobre a história da igreja e Escravisados Africanos da Região\nVisita a casa de farinha da Dilma\nRota dos Escravizados\nFlutuação Rio Maracaipe",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 27,
@@ -2100,7 +2983,18 @@
     "preco_base": 400.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/795f20e1b81776023430b79d1155e9e7/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0172f23b90f428c63e5d3d1531f4c29d/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/621df9d76e25dca42826866a1d0e8c29/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7b24a29285417524c0e32d6aec00c1a2/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4b1e220ebc870429c8086b9fbfa450f3/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/50a19aab18de8390d8a6329b0ac02c6d/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/666409d733ac5a155fd188afc64d77c2/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/14b5987d87a21f8081d1380dfbb19f8d/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/beb9b24db2cf75c0451055029192775c/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7e80f023997e0f803824d8dd595eea02/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2123,10 +3017,39 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 450.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 500.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2000.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nVeículo privativo e motorista inclusos.\n\nNossa equipe estará aguardando em frente ao endereço em Porto de Galinhas ou Muro Alto, 5 minutos antes do horário solicitado para embarque das bagagens e seguir viagem até endereço em Maragogi.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 28,
@@ -2186,7 +3109,22 @@
     "preco_base": 550.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/53011a081644f1b36685946c3d10d8f6/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f1df22452c0c2b76c102844b13217aed/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/329f62f67ccd2863687a385e3e419416/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/374d2463a432ecbbad19305471fa1540/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/dbf735e4b3b623dd3723b41251f21466/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6aafce39203f5138186e70c8c44bc08c/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4f6ee06c1eb235fd8a633b024c22ce69/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c15557fee3a52600281b911c47b1f6f2/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9483c0acde15c85c3a44e9719a24f144/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/37d9b396dd0bef80c2e6753be9f721cf/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/40e1f8a7c097fb53fe865b5a6c14f919/IMG-20181027-WA0057.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/761b9ec99d2f1d4c72d33a005a763a59/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/34afd7c99eccac362879f3ae545068f0/IMG-20181104-WA0022.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/22e6cd3e243f2cd09a65da453b3a506d/IMG-20181102-WA0153.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2210,10 +3148,39 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 650.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 750.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1300.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 29,
@@ -2273,7 +3240,21 @@
     "preco_base": 800.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f2318974ed6040109159aaebd45d9740/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/eb39c6f368d4e808fb4a9986d8632adb/BF100F5D-5124-450F-8F37-3FC9E4F443B7.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bb4027db5537027ac21a989a60614a88/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/af0ae03562cd4b27fe1da89ab2890ff6/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1a7fb7e20b10f19d063c981d06729098/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/517554711a6d10bbe46679626ef4b540/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/24ff24b516072fe1b14754f3eb91a55b/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b122ee7df07fa2adfdd849f30a4013e6/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e01caaa82c99f1a14a5465c9a5494f7d/IMG-20181026-WA0106.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fa7ee983dc4d15a0cb3b19b80abbe5f1/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e962049729306a876afbf73cd3dd7197/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/751fefcc76d2d62d996826b44a70c79c/IMG-20181105-WA0040.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2c01e7d7488fac5a8481988849c7ae0c/IMG-20181031-WA0065.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2297,10 +3278,39 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 900.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 3500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 6000.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 30,
@@ -2342,7 +3352,17 @@
     "preco_base": 780.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c660a688afb5285834dec3263b7a0a7c/c805c8e6-8d26-4e3c-baf1-0098db449ffe.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ade191f4b5bde2da45f0f40bc8640e11/3593d9a2-8dc7-4197-ac7e-5f5df4674e29.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9e6f8775751f115337049fcea80121a1/407c8eda-20fe-4dec-8be6-abfa05e8654e.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1aa4385fb47ca7540e4d7d48f4931289/f2118953-c17c-42e8-908e-86c271fd9ac4.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ec9faa26560f19e5bb63a223d4b69ef8/6693c1a7-86b8-462c-af6e-0a5b5a503315.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/05f721cf8f93ac7e5a951db698d800db/e3a306c3-af42-4f0f-83ce-4c83bca28e3f.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8f65013293641494ad30b449c10b6cf0/ce41afb6-19df-4f61-a0d6-4648a466ee65.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/434cbf21424b654b1079ee592f70a0a0/19d317fd-3207-40b8-9c77-547cb9bd8643.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/856d4716a055a37b4a889f3ed9d4350f/530df35d-9d23-4f99-b39a-b6df4c792342.jpeg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2366,10 +3386,15 @@
       "R$ 780 é por pessoa ou por grupo? Regra de pax provavelmente não se aplica — definir",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por pessoa (R$ 780.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": null,
+    "modelo_preco": "por_pessoa",
+    "preco_por_pessoa": 780.0,
+    "descricao_paytour": "Sobre a atividade\n\n*- Tarifas de saídas credenciadas 2023*\n\nSAÍDA DE MERGULHO DUPLO DIURNO (para credenciados)\n\nEle acontece da seguinte forma: no dia escolhido, nós iremos buscar no endereço solicitado em Recife às 06:20 aprox e às 7h para ter um aula pratica na piscina, onde o instrutor transmitirá as informações básicas sobre o mergulho, procedimentos e equipamentos utilizados. Após a aula, às 8h, você embarcará para fazer seu mergulho em naufrágio no mar aberto. ( consulte-nos para mergulhos noturnos )\n\nPara credenciados nível básicos pontos como, Pirapama, Vapor de baixo, Servemar, Taurus/Virgo entre outros são recomendados porque são abaixo de 30m\n(Inclusos: Transfer ida e volta, 02 cilindros, lastro, barco e guia)\n\nNão está incluído:\n* Aluguel de colete R$ 60,00/saída;\n* Aluguel de regulador R$ 60,00/saída;\n* Aluguel de Roupa R$ 50,00,/saída;\n* Aluguel de Máscara R$ 30,00/saída;\n* Aluguel de Nadadeira R$ 30,00/saída;\n* Nitrox: R$ 50,00/cilindro",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 31,
@@ -2429,7 +3454,16 @@
     "preco_base": 380.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ca7fa6a15d8d9c0cc4295756fcfa5df4/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e920c94bd591599ad9785208d1bee1f3/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/3f96f5194022f6ce0a1142732b81fa51/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d1680dce5747b581e5423ddaf897e8b9/IMG-20181026-WA0106.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/3b6b86457173369f9383f8200e4e403e/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5febed9bdb66a5fed71de0dcf6520de9/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/cdc8508c35a3ef7be6fd5c4f793f3815/IMG-20181031-WA0065.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e8e30e500c7a65f86c6a779099fedf94/IMG-20181105-WA0040.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2454,10 +3488,39 @@
       "2º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 380.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 440.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 4000.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 32,
@@ -2514,7 +3577,13 @@
     "preco_base": 200.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/08083c525240a729bae6451b05d4992d/xRS_MPbl.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/667dc01c1b1796af7e7c282bba479c5b/yyRQUMIE.png",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2318200b1033f5e2ee662c3a36f0ef6d/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9ce8192d1578902ffba4947dc53af30b/xRS_MPbl.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b434f96185b05cf70dd457d737c28903/yyRQUMIE.png"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2541,10 +3610,27 @@
       "'estacionamento no aeroporto' e 'placa' mantidos por padrão dos transfers de aeroporto; confirmar se valem em Noronha",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 200.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 350.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Fernando de Noronha, veículo privativo, motorista e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Noronha e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nEquipe informara melhor horário para sua saída da acomodação ate o Aeroporto no dia do seu voo de retorno.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 33,
@@ -2577,7 +3663,15 @@
     "preco_base": 700.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e125db398483b1c573f109f9cabfab8e/PHOTO-2023-03-26-08-42-02%208.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ebce803787349407d0242497e2a3810e/PHOTO-2023-03-26-08-42-02%202.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2080288dd197a529bf7fbb9661f5c24f/PHOTO-2023-03-26-08-42-02%207.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/23af9e71990e523862694e546bf2ad18/PHOTO-2023-03-26-08-42-02%203.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f93e7453ddf008f1284a14232b0e944e/PHOTO-2023-03-26-08-42-02%209.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f061f52a7b8dae848638ad25dad6b167/PHOTO-2023-03-26-08-43-48.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d151f450c3e072180267afb157f705ea/PHOTO-2023-03-26-08-42-02.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2600,10 +3694,28 @@
       "inclusos vazios por falta de fonte",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 700.0
+      },
+      {
+        "tipo": "sedan_economico",
+        "preco": 900.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 1200.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nPasseio Trilha dos Escravos em Maracaípe , um passeio imperdivel para quem está visitando a região. Vamos atravessar o Rio Maracaípe, até a estrada secreta da Trilha do Aratu, fazendo assim uma imersão no manguezal, Caminhos historicamente usados pelos povos indigenas da região e posteriormente por colonizadores e escravizados.\n\nRetornamos pelo rio, flutuando em boas e coletes salva vida enquanto a subida da maré nos leva até o ponto de chegada.\n\nDuração Mínima de 04 horas de trilha, máxima 05 horas.\n\nDificuldade física: Leve\n\nPercurso 7,5 km ida e volta já incluindo a trilha flutuante.\n\nRoteiro\nVisita Studio Maracaipe\nApresentação Nilo baj\nApresentação Beto Guedes Idealizador da GAITERO ECOTURISMO\nApresentação Romero Marques ( artista plastico )\nTravessia Rio Maracaipe\nInicio trilha dos Gaiteros ( Escravizados)\nTrilha do Aterro dos padres\nTrilha na mata do oitero\nSubida ao monte do oitero\nAlto do monte , Vista do mar e ilha de sto Alexo e explicação sobre a história da igreja e Escravisados Africanos da Região\nVisita a casa de farinha da Dilma\nRota dos Escravizados\nFlutuação Rio Maracaipe",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 34,
@@ -2645,7 +3757,14 @@
     "preco_base": 550.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/dc4332ef417f97f0a150d447ae525c31/DJI_0020_post-1024x576.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/959348e7ed54bf0d4b4b9cca46878563/C0AD800B-46CF-4BC1-BCED-89F05C2A826F%202.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d91858c6e50056bf72e9cef49bc603ed/a94e43d3-d348-4f3e-89be-8a274460d252.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/57ddaa108065e95994fd02e6327ec0b5/F17FEBAF-E304-4E9C-B291-5BFC75324A23%204.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/159cb0782e8b83ed2bdb43a1113cf021/27ce942b-c815-4bf7-82f4-6d91304379df.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/99347d85ecda820e25951e767defb8c7/0e71f4e9-164a-40ce-aeb4-c1f4dce7771c.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2668,10 +3787,28 @@
       "Caminho de Moisés depende da maré baixa? Se sim, informar regra de horário como nos outros passeios de maré",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 550.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 650.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1200.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nCom saída de Hoteís em Boa Viagem , Piedade ou Pina em veículo privativo com destino a Praia de Barra Grande em Maragogi. Em frente ao caminho de Moisés aonde utilizarão a infra estrutura do restaurante Caminho da Barra ou Barramares. Terão tempo livre para desfrutar da praia, bebidas, refeições além de passeio de catamara ou lancha para as piscinas naturais de Maragogi.\n\nSaída de acordo com a maré seca no dia do passeio.\n\nNão está incluso: ingressos, bebidas e alimentação.",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 35,
@@ -2716,7 +3853,12 @@
     "preco_base": 550.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bacebe8d1bda992337969bd151704fe2/f1801592-5f40-4333-b82a-4ad19b1fac71.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e85b4ef3f0cc82fbdc71ab42602f7b99/9542dbfe-6841-46af-92d7-f988c0b64109.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d1f78c1ff6a4bb64b48b8237c0d75004/da31790c-f56b-4e17-965b-60200cb4a130.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4efab958d1d6ce146abdece743c66e06/073f84e2-104d-4310-a262-670ec21f62ba.jpeg"
+    ],
     "ativo": false,
     "seo": {
       "titulo": {
@@ -2742,10 +3884,23 @@
       "frase 'horários combinados na reserva' foi acrescentada para explicar o produto de ida e volta; texto original era só 'veículo privativo com motorista'",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (2 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "O que está incluso\n\nveiculo privativo com motorista\n\nO que não está incluso\n\ningressos\n\nalimentação e bebidas\n\nSobre a atividade\n\nVeículo e motorista irão busca-lo no endereço solicitado ( saída e retorno de local único ) em Recife com destino ao Polo de São João de Caruaru com parada no Rei das Coxinhas de Gravatá ( opcional )\n\nMotorista ficará aguardando final do evento para retorno diretamente para o endereço de saída em Recife.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 36,
@@ -2784,7 +3939,14 @@
     "preco_base": 520.0,
     "duracao_min": null,
     "confirmacao": "24h",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9283071b80052442fb06128ad78ee4e8/290d1faa-0b02-4950-a869-a713de5e684c.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0b35cc2664b074d4a59fa53208ac9b41/97385ff1-831a-4be6-9aa6-c621efd8a5cc.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/763f658067495f38f093101e96c65bb8/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a19f718fcc23425796f2f6a8b62e1562/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5e794cca67e8272851ff5f5baadc275c/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/569ae58335759e090dae4cfdb8ceb6c2/_passeio_de_catamaram.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2807,10 +3969,32 @@
       "R$ 520 vs 'City Tour Olinda com Catamarã' R$ 540 e 'Catamarã com transfer' R$ 300: conferir se não há sobreposição",
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 520.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1300.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "O que está incluso\n\ningresso catamara\n\nO que não está incluso\n\nalimentos e bebidas\n\nSobre a atividade\n\nUm passeio ímperdível quando estiver em Pernambuco.\n\nInclui: Veículo privativo, motorista/ guia e ingresso do Catamarã\n\nNão inclui: Alimentação, bebidas e demais ingressos\n\nRoteiro:\n\nSaída do seu hotel aprox às 08:00, com destino ao Recife Antigo.\n\nNo passeio, os visitantes apreciam belas paisagens de vários pontos turísticos como: Parque das Esculturas, a Assembleia Legislativa, o Teatro de Santa Isabel e o casario da Rua da Aurora. Com paradas na Casa da Cultura, Capela Dourada, Rua do Bom Jesus e praça do Marco Zero, aonde iremos embarcar no Catamarã: À bordo, contamos com a presença de um guia que relata histórias e curiosidades do Recife, passando pelo Rio Capeberibe e sua pontes. Finalmente terão opção de almoçar no restaurante do Catamarã com vista para a Bacia do Pina e seguiremos ao hotel por volta das 14:00",
+    "categoria_paytour": "Serviços"
   },
   {
     "ordem": 37,
@@ -2855,7 +4039,21 @@
     "preco_base": 250.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d50d099847569d55cf4857433252d05e/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/dc7792425dcf93d78e60b5316e1723e5/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/99da7813ad0fa4bf4528140da395ede0/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/40d3da56fb9e8c517cba48b5a6f08e9f/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d6e55a3da9b8b36338cdfcd0cc8e8f20/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c4772208c64a9f2fdadea49ba1df71f9/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/78e5e63cd639b6d514610c1e1dce7ab1/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7276d892c6f168e1dc4da9d38958a548/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1df3ef7a2b0e5bbf52804268416275fc/IMG-20181027-WA0057.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d8b9d4442bf94e247040642ecd8b54b2/IMG-20181026-WA0106.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bd4c3dbccec39805f5af487e841625e5/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0cef7d2fb05361b05452848a82415992/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2e8cb25053eb0e34ace3ff1c3ab7bd16/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2878,10 +4076,39 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 250.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 300.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 350.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 700.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 800.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1600.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nVeículo privativo e motorista inclusos.\n\nNossa equipe estará aguardando em frente ao endereço em Olinda, 5 minutos antes do horário solicitado para embarque das bagagens e seguir viagem até endereço em Maragogi.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 38,
@@ -2941,7 +4168,17 @@
     "preco_base": 400.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/edc7624c51dadcd12367e7e2dc8633a3/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/37e0bbb9d04f7e66972fd0ab0db96251/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2c25662234211006aa72105e059c75f3/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/718004d688b8651ebafd862aa818b450/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/3e1f04872e154f2df0d694d10e04244a/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/795fc155c92aff367aedbce9a12dc381/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/23eacd4f6585453693c6a9804c2de020/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fe432f1c9b1bfb95930903cd3352caa5/IMG-20181105-WA0040.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -2966,10 +4203,43 @@
       "1º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 450.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 900.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1700.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 650.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 39,
@@ -3014,7 +4284,18 @@
     "preco_base": 350.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8b5f9debb4faaedbab31717028c33848/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/56ac8cf7c37ed5a788dd8f655543ef36/58F7368E-196C-461D-AD47-B61FBFE1E813.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/10d87af4da942f789a466a673d6be519/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/cb3ef1d745bc3c0dda07823981bec59f/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4b3bab4234e265379692a7290fd0b7cc/IMG-20181027-WA0057.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c7fec5504b18d70ec1afe1173955ef26/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c212a82003b60d1a417b032ccccba381/IMG-20181022-WA0002.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/fdb4d23ab90a8968f5673839c3d22de4/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/293eb3567e92fd24fb8e8d1c77970115/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b235eb5c7ffd073f0a80b4d7e75a0408/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -3038,10 +4319,39 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 350.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1800.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nVeículo privativo e motorista inclusos.\n\nNossa equipe estará aguardando em frente ao endereço em Porto de Galinhas ou Murto Alto, 5 minutos antes do horário solicitado para embarque das bagagens e seguir viagem até endereço em Tamandaré ( Praia dos Carneiros )\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 40,
@@ -3098,7 +4408,16 @@
     "preco_base": 800.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c14f68152425163cd9efb9b5aa9d5594/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4a499fe9428cb9ea8ff111a86b66a40b/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f1aee73f125076354025140c2d2bf150/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/200f304542503a22c44a92a85f575c6b/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2e709deef68b8806027a5400874e1e8c/IMG-20181105-WA0040.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4815be6751ea9a98734ce61d00cb2762/IMG-20181031-WA0065.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/0a5a51cdcf1f88944fce1508f3fbdb66/IMG-20181026-WA0106.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -3123,10 +4442,31 @@
       "texto original NÃO lista pedágio como incluso; mantido sem pedágio (não inventado). Confirmar com a operação",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 900.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 950.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1800.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 41,
@@ -3186,7 +4526,13 @@
     "preco_base": 380.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/43b604b89376a292ddb01627f55c9553/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/54fc457d543ac384a4126b8053c7fdd3/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/475df3314cb75566746f09f1be081cff/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8781d5502b63ca6ab794a6a5595396fd/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4a152adb700d352632b68ba1c84b7d83/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -3211,10 +4557,39 @@
       "embarque pode ser no aeroporto ou em Boa Viagem pelo mesmo preço (conforme nome original)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 380.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 450.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 950.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2000.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 42,
@@ -3274,7 +4649,16 @@
     "preco_base": 180.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e344c89fc364086f7b15d09cea23bd5a/C0AD800B-46CF-4BC1-BCED-89F05C2A826F.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/861dc499473bacb012afbe278f06c9c4/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/e7be16e8b4abc0819f14680993254d9f/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8ebd889cac1c5c22d65dbadd2f77ed0f/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/43dd6e11b3b67ac87225f3b8bbc1e9c4/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ab96cd42384b17c15c687f7f2936913e/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/dc64ba3b48711bfb0fafb12a398c79e8/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/8bdf1101e590e3820d4cd236c4c66b18/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -3300,10 +4684,43 @@
       "slug Paytour não cita Vila Galé (o nome foi ampliado depois); redirect 301 continua valendo",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 180.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 200.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 220.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 440.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 300.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 43,
@@ -3363,7 +4780,18 @@
     "preco_base": 750.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/80574b5c890001d2b354bb6812c9fe58/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/f65f322bfbcc8a6033d440960c065947/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/b18190d15d3213db66ed1b21c23a08ca/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/196cf4fd124d64259235f76d9790dce3/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/421430ee6ae3fbca682a75bcda27f0a4/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/42c09cec446670953d7d35969bc32373/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/639199b95524b79d8ba4fa4c4968fad0/IMG-20181022-WA0002.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2a64cf25dddc949ee7a1e233c953e008/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6f5383c87a12c49cd9adb34e7d4eb5f7/468a4044-1bf0-4949-8d8e-00b02b9f91ad.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4986b765532e8fca5d767f91267d4b19/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -3387,10 +4815,43 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 750.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 850.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 950.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1700.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 3000.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 6000.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 1200.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 44,
@@ -3450,7 +4911,18 @@
     "preco_base": 80.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/d336303b732a3f5221452f294a1a2ba8/F17FEBAF-E304-4E9C-B291-5BFC75324A23.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/7219936242206f13ca27c79e991dd0bb/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/5c431c9e800ed7c95fe47390f0714f5a/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/95985860b18d0e079df90f95edb8cd1d/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/38af8030549710f387e7397f410aad64/9ab35b7f-d878-4f97-89b0-797be076140f.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/14f9e33b5e56e944c1c41189aac0e029/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1a678cb406b47a2b1ea88b92a15867c1/d7e87593-fcc7-4bfa-99fc-7e4dff9e35aa.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1dc5dfce1b67583ca0a52d1ea21cb48f/IMG-20181105-WA0040.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/ef05deeb7e54b0469cbce5c71299d39c/2d0c1b3c-3c08-41d1-b7fc-fb991a20a199.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/2031ae79eacc493303af8f72f1029370/IMG-20181104-WA0022.jpg"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -3475,10 +4947,39 @@
       "Piedade e Candeias ficam em Jaboatão; confirmar se o preço de R$ 80 cobre todo o município",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 80.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 100.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 100.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 250.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 45,
@@ -3535,7 +5036,14 @@
     "preco_base": 200.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/11a6f3e8a33395df3326cc9ed67621b0/7DAA1670-6E8D-4704-8E34-CD2ECB8D5C41.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a48f55d4bf4366b20da3c9706445e016/75E98A8B-383D-4D00-AABC-27BDC949CCBE.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c02566fdc74f04bfd1e67fbeac5d7b8d/7E3C2111-17B0-42CE-B430-50B9A296B759.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/52568e70f71f8fb54a9101b79a9069ed/70F44EA2-C079-49CE-B461-869FEEDD32B8.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/47deafe57e22b9233ce83d08cde6ec53/706397CE-2F60-44A6-BDD6-0288E5DEA038.jpeg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9f37e8e123f16124506be84a40982dca/77D284EB-28CB-413F-9A9D-2865C8C915CC.jpeg"
+    ],
     "ativo": false,
     "seo": {
       "titulo": {
@@ -3562,10 +5070,31 @@
       "nome original não diz 'ida ou volta'; sentido gravado como 'ida'",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 10,
-    "veiculos": null
+    "max_por_compra": 50,
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 200.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 250.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 450.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 850.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de São José dos Pinhais, veículo privativo, motorista e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada no Aeroporto e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPara o retorno sairemos aproximadamente 3 horas antes do seu voo , caso tenha transito em Curitiba, alteramos para 4 horas antes do seu voo.\n\nPontualide, conforto e segurança que você merece.",
+    "categoria_paytour": "Transfer"
   },
   {
     "ordem": 46,
@@ -3625,7 +5154,17 @@
     "preco_base": 300.0,
     "duracao_min": null,
     "confirmacao": "imediata",
-    "imagens": [],
+    "imagens": [
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/1d01b52e617078f322e84b30c81af67b/4CC0B654-8064-4E93-90BE-F379A2F9F9BB.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/91b2c51903e4b10fe7006da7e3dc2c6f/IMG-20181026-WA0106.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/c83d65bb7f171ea9c97263b1517346f6/C0AD800B-46CF-4BC1-BCED-89F05C2A826F-1.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/bee6be6fa6a08e8142441394aca60e1b/C1DC9439-EB7F-4D8C-8CBC-E15B31D37C3A.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/a538e496f40c6a83225257646a5909a0/IMG-20181022-WA0002.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/6baeec0ab6f93b179fe22e937e6eca21/IMG-20181027-WA0090.jpg",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/4b7bfc228210e10f57de01683193056b/C3DD310E-56DC-4A3C-B9C8-51133A111F67.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/588796422a722d429847657eea11fabd/0137a5c4-e370-467e-a8be-10e7ea4a2c21.JPG",
+      "https://cdn.paytour.com.br/assets/images/passeios-2500470/9d0a45f70466333ea2231a7d4515bc0a/C45F0197-CCEC-41E3-938B-4657FD02A9F1.JPG"
+    ],
     "ativo": true,
     "seo": {
       "titulo": {
@@ -3652,9 +5191,38 @@
       "slug Paytour é '...-para-serrambi' mas o nome é Sirinhaém e o preço (R$ 300) difere do produto Serrambi (ordem 14, R$ 250). Possível duplicata: decidir qual manter",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
-    "veiculos": null
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 300.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 350.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 320.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 650.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1500.0
+      }
+    ],
+    "modelo_preco": "por_veiculo",
+    "preco_por_pessoa": null,
+    "descricao_paytour": "Sobre a atividade\n\nReceptivo no Aeroporto de Recife, veículo privativo, motorista, pedágio e kit de boas vindas inclusos.\n\nNossa equipe estará aguardando e monitando o seu voo com chegada em Recife e ficará aguarando em frente o portão de desembarque com um papel em seu nome.\n\nCom estacionamento dentro do Aeroporto, em menos de 5 minutos estarão dentro do veículo rumo ao seu hotel de destino.\n\nPontualide, conforto e segurança.",
+    "categoria_paytour": "Transfer"
   }
 ]

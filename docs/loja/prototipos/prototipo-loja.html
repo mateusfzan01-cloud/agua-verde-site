@@ -506,12 +506,12 @@ var ORIGENS = {
 };
 // [origem, destino(pt/es/en), preço ida, preço ida e volta|null]
 var ROTAS = [
- ["rec","Porto de Galinhas / Muro Alto",180,340],["rec","Praia dos Carneiros",320,600],["rec","Maragogi",360,740],
+ ["rec","Porto de Galinhas / Muro Alto",220,400],["rec","Praia dos Carneiros",320,600],["rec","Maragogi",380,740],
  ["rec","Japaratinga",400,null],["rec","João Pessoa e Cabedelo",380,null],["rec","Recife (Boa Viagem e centro)",80,null],
  ["rec","Olinda",120,null],["rec","Jaboatão dos Guararapes",80,null],["rec","Cabo de Santo Agostinho / Vila Galé",180,null],
  ["rec","Serrambi",250,null],["rec","Sirinhaém",300,null],["rec","Itamaracá",200,null],["rec","São Miguel dos Milagres",550,null],
  ["rec","Caruaru",380,null],["rec","Maceió (hotéis)",800,null],["rec","Praia da Pipa",750,null],["rec","Natal",800,null],
- ["bv","Porto de Galinhas / Muro Alto",180,null],["bv","Itamaracá",200,null],["bv","Caruaru",380,null],["bv","Suape (refinaria, estaleiro ou porto)",170,null],
+ ["bv","Porto de Galinhas / Muro Alto",220,null],["bv","Itamaracá",200,null],["bv","Caruaru",380,null],["bv","Suape (refinaria, estaleiro ou porto)",170,null],
  ["olinda","Porto de Galinhas / Muro Alto",250,null],["olinda","Maragogi",500,null],
  ["pdg","Maragogi",400,null],["pdg","Praia dos Carneiros",350,null],
  ["fen","Pousadas na ilha",200,null]
@@ -523,12 +523,12 @@ var MAIS = {
  transfer:[
   {img:"praia",nome:{pt:"Aeroporto do Recife → Japaratinga",es:"Aeropuerto de Recife → Japaratinga",en:"Recife Airport → Japaratinga"},p:400,rank:1},
   {img:"carro",nome:{pt:"Aeroporto do Recife → João Pessoa e Cabedelo",es:"Aeropuerto de Recife → João Pessoa y Cabedelo",en:"Recife Airport → João Pessoa & Cabedelo"},p:380,rank:2},
-  {img:"pdg",nome:{pt:"Aeroporto do Recife → Porto de Galinhas / Muro Alto",es:"Aeropuerto de Recife → Porto de Galinhas / Muro Alto",en:"Recife Airport → Porto de Galinhas / Muro Alto"},p:180,rank:3},
+  {img:"pdg",nome:{pt:"Aeroporto do Recife → Porto de Galinhas / Muro Alto",es:"Aeropuerto de Recife → Porto de Galinhas / Muro Alto",en:"Recife Airport → Porto de Galinhas / Muro Alto"},p:220,rank:3},
   {img:"carneiros",nome:{pt:"Aeroporto do Recife → Praia dos Carneiros",es:"Aeropuerto de Recife → Playa de Carneiros",en:"Recife Airport → Carneiros Beach"},p:320},
   {img:"frota",nome:{pt:"Aeroporto do Recife → Maragogi (ida e volta)",es:"Aeropuerto de Recife → Maragogi (ida y vuelta)",en:"Recife Airport → Maragogi (round trip)"},p:740,abre:true}
  ],
  passeio:[
-  {img:"olinda",nome:{pt:"City tour Recife e Olinda",es:"City tour Recife y Olinda",en:"Recife & Olinda city tour"},p:450},
+  {img:"olinda",nome:{pt:"City tour Recife e Olinda",es:"City tour Recife y Olinda",en:"Recife & Olinda city tour"},p:550},
   {img:"carneiros",nome:{pt:"Passeio privativo para a Praia dos Carneiros",es:"Paseo privado a la Playa de Carneiros",en:"Private trip to Carneiros Beach"},p:620},
   {img:"pdg",nome:{pt:"Porto de Galinhas com jangada às piscinas naturais",es:"Porto de Galinhas con jangada a las piscinas naturales",en:"Porto de Galinhas with raft ride to the natural pools"},p:550},
   {img:"catamara",nome:{pt:"Catamarã em Recife com transfer privativo",es:"Catamarán en Recife con traslado privado",en:"Recife catamaran with private transfer"},p:300}
@@ -559,8 +559,8 @@ pt:{"hero.chip":"Transfer privativo em Pernambuco","hero.titulo":"Do aeroporto d
 "r.cx.t":"Cancelar sem custo?","r.cx.d":"Faltam mais de 24 h para a viagem, então o reembolso é integral: R$ {v}, pelo mesmo meio de pagamento. Prazo de cancelamento grátis: até {d}.","r.cx.sim":"Sim, cancelar","r.cx.nao":"Manter reserva","r.cx.ok":"Reserva cancelada (simulação). O reembolso de R$ {v} foi pedido ao Mercado Pago. Você recebe a confirmação por e-mail.",
 "m.t":"Minha reserva","m.d":"Perdeu o link? Digite o número da reserva e o e-mail usado na compra. Se os dois baterem, reenviamos o link para o seu e-mail e WhatsApp.","m.num":"Número da reserva","m.btn":"Reenviar meu link","m.ok":"Se os dados estiverem certos, o link chega em alguns minutos no e-mail e no WhatsApp da reserva. Por segurança, não mostramos a reserva nesta tela.","m.vazio":"Preencha o número e o e-mail.",
 "n.t":"Notas do protótipo (para o dono)",
-"n.home":["Widget de rota na primeira tela, com preço na hora: 26 rotas da tabela Paytour. Rota fora da tabela vira orçamento no WhatsApp.","As 4 promessas aparecem logo abaixo, e de novo na rota e no pagamento.","Selo Tripadvisor usa os números do plano (4,7 · 112 avaliações). Conferir antes de publicar.","“8.211 viagens” vem do banco (08/10/2026); no site real o número será calculado automaticamente.","Mais vendidos: ordem do selo da Paytour (Japaratinga, João Pessoa, Porto de Galinhas). Só Maragogi ida e volta está com preço atual (R$ 740); os demais são de jul/2025.","Qualquer rota escolhida abre a tela 2 de exemplo (Maragogi ida e volta)."],
-"n.produto":["Copia a Paytour: preço por veículo, com a lista de carros do próprio produto e botões − / + (máximo 10 por compra).","Exemplo com dados reais: Maragogi ida e volta, preços da Paytour em 09/10/2026 (R$ 740 a R$ 3.800).","Igual à Paytour: o cliente só escolhe os veículos. Não há campo de passageiros nem de malas; a capacidade aparece na descrição de cada carro.","Cada produto terá a própria lista: nem todos têm os 7 veículos (o BMW X1 não aparece em Maragogi).","Os outros produtos ainda estão com o preço de jul/2025 e sem a lista de veículos."],
+"n.home":["Widget de rota na primeira tela, com preço na hora: 26 rotas da tabela Paytour. Rota fora da tabela vira orçamento no WhatsApp.","As 4 promessas aparecem logo abaixo, e de novo na rota e no pagamento.","Selo Tripadvisor usa os números do plano (4,7 · 112 avaliações). Conferir antes de publicar.","“8.211 viagens” vem do banco (08/10/2026); no site real o número será calculado automaticamente.","Mais vendidos: ordem do selo da Paytour (Japaratinga, João Pessoa, Porto de Galinhas). Preços atuais da Paytour (coleta de 09/10/2026).","Qualquer rota escolhida abre a tela 2 de exemplo (Maragogi ida e volta)."],
+"n.produto":["Copia a Paytour: preço por veículo, com a lista de carros do próprio produto e botões − / + (máximo 10 por compra).","Exemplo com dados reais: Maragogi ida e volta, preços da Paytour em 09/10/2026 (R$ 740 a R$ 3.800).","Igual à Paytour: o cliente só escolhe os veículos. Não há campo de passageiros nem de malas; a capacidade aparece na descrição de cada carro.","Cada produto tem a própria lista: nem todos têm os 7 veículos (o BMW X1 aparece em 7 produtos, não em Maragogi ida e volta).","Os 46 produtos já têm preço e lista de veículos da coleta de 09/10/2026; 4 passeios (2 mergulhos, catamarã em Noronha e Trilha dos Escravos) são cobrados por pessoa."],
 "n.checkout":["3 passos, sem criar conta. Campos da decisão 23; CPF opcional.","Exemplo preenchido com uma cliente argentina, porque o espanhol é o idioma mais comum nos lembretes.","Pix ou cartão pelo Mercado Pago (Checkout Pro). O Pix aqui é ilustrativo.","Aceite dos termos obrigatório; desmarque para ver a mensagem de erro."],
 "n.reserva":["O endereço real da página será /reserva/[segredo], nunca o número da reserva.","Autoatendimento: reenviar voucher, alterar, não encontro o motorista, cancelar.","Cancelar mostra o prazo de 24 h e o valor do reembolso antes de confirmar.","“Minha reserva” não mostra dados: só reenvia o link (§4.4 do plano)."]
 },
