@@ -28,7 +28,7 @@ export function ContactForm() {
           Nossa equipe responderá em breve pelo WhatsApp ou e-mail.
         </p>
         <a
-          href="https://wa.me/558199473200"
+          href="https://wa.me/5581999473200"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#1a5c38] text-white font-medium rounded-full hover:bg-[#27ae60] transition-colors text-sm"
@@ -57,7 +57,7 @@ export function ContactForm() {
           <input
             type="tel"
             required
-            placeholder="+55 81 9947-3200"
+            placeholder="+55 81 99947-3200"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] placeholder:text-[#5a6570]/50 focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all text-sm"
           />
         </div>

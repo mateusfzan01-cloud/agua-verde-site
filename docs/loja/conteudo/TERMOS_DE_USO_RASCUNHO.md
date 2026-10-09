@@ -94,7 +94,7 @@ Antecedência mínima para reservar pelo site: [CONFERIR: ex. 12 h para transfer
 
 **Ida e volta:** [CONFERIR: o prazo de 24 h vale para cada trecho separadamente? É possível cancelar só a volta? Com reembolso de quanto? O produto "ida e volta" tem preço único].
 
-**Direito de arrependimento (compras pela internet):** [CONFERIR: o art. 49 do Código de Defesa do Consumidor dá 7 dias para desistir de compras feitas fora do estabelecimento. O dono decide como conciliar com a regra de 24 h. Ver opções na §D.1. Texto sugerido para a opção A: "Se você comprou pelo site, pode desistir em até 7 dias da compra, com reembolso integral, desde que a viagem ainda não tenha acontecido."]
+**Direito de arrependimento (compras pela internet):** se você comprou pelo site, pode desistir em até **48 horas depois da compra**, com reembolso integral, desde que a viagem ainda não tenha começado. Depois desse prazo, vale a regra de cancelamento grátis até 24 h antes do horário marcado. [CONFERIR: o art. 49 do CDC prevê 7 dias; prazo de 48 h decidido pelo dono em 09/10/2026, ver §D.1.]
 
 ## 7. Alterações
 
@@ -245,7 +245,7 @@ Antelación mínima para reservar en el sitio: [CONFERIR]. Para fechas más cerc
 
 **Ida y vuelta:** [CONFERIR: regla para cada tramo].
 
-**Derecho de arrepentimiento (compras por internet):** [CONFERIR: art. 49 del Código de Defensa del Consumidor de Brasil; ver §D.1. Texto sugerido para la opción A: "Si compraste en el sitio, puedes desistir en hasta 7 días desde la compra, con reembolso total, siempre que el viaje aún no se haya realizado."]
+**Derecho de arrepentimiento (compras por internet):** si compraste en el sitio, podés desistir hasta **48 horas después de la compra**, con reembolso total, siempre que el viaje todavía no haya empezado. Después de ese plazo, vale la regla de cancelación gratis hasta 24 h antes del horario reservado.
 
 ## 7. Cambios
 
@@ -395,7 +395,7 @@ Minimum notice to book online: [CONFERIR]. For closer dates, contact us on Whats
 
 **Round trip:** [CONFERIR: rule for each leg].
 
-**Right of withdrawal (online purchases):** [CONFERIR: Art. 49 of the Brazilian Consumer Protection Code; see §D.1. Suggested text for option A: "If you booked on our website, you may withdraw within 7 days of purchase with a full refund, as long as the trip has not yet taken place."]
+**Right of withdrawal (online purchases):** if you booked on our website, you may cancel within **48 hours of purchase** for a full refund, as long as the trip has not started. After that, the free-cancellation rule applies: up to 24 h before the scheduled time.
 
 ## 7. Changes
 
@@ -476,6 +476,8 @@ These terms are governed by Brazilian law. The courts of Recife/PE are chosen, w
 
 ## D.1 Art. 49 do CDC × regra das 24 h
 
+> **Decisão do dono (09/10/2026): arrependimento de 48 horas depois da compra**, desde que a viagem não tenha começado; depois disso vale a regra das 24 h. As opções abaixo ficam como histórico. Ponto de atenção: o art. 49 fixa 7 dias, e um prazo menor pode ser questionado.
+
 O art. 49 do CDC dá ao consumidor 7 dias para desistir de compra feita fora do estabelecimento (internet incluída), com devolução de tudo o que pagou. O Decreto nº 7.962/2013 trata do comércio eletrônico e exige informar com clareza os meios de exercer esse direito. A regra de "sem reembolso com menos de 24 h" pode conflitar quando a compra é feita a menos de 7 dias da viagem. Há discussão sobre a aplicação do art. 49 a serviços com data marcada (transporte, turismo), mas não pesquisei jurisprudência; fica para o dono decidir. Opções para escolher:
 
 - **Opção A (mais segura):** reconhecer os 7 dias de arrependimento a partir da compra, desde que o serviço ainda não tenha começado. A regra das 24 h passa a valer para compras com mais de 7 dias. Efeito prático: quem compra a 3 dias da viagem pode cancelar até a hora da busca com reembolso integral.
@@ -512,7 +514,7 @@ A política atual não cobre o que a loja passa a tratar: CPF (opcional), dados 
 8. Prazo de estorno no Pix e no cartão (Mercado Pago).
 9. Definição de "horário marcado" na chegada ao aeroporto.
 10. Regra de cancelamento de ida e volta (por trecho, parcial).
-11. Art. 49 do CDC: opção A, B ou C.
+11. Art. 49 do CDC: decidido, arrependimento de 48 h após a compra (09/10/2026).
 12. Alterações: diferença de preço para mais e para menos.
 13. Ponto de encontro no Aeroporto do Recife.
 14. Valor da espera extra.
@@ -528,4 +530,4 @@ A política atual não cobre o que a loja passa a tratar: CPF (opcional), dados 
 24. Horário de atendimento humano no WhatsApp.
 25. Foro e lei aplicável (inclusive para estrangeiros); prevalência da versão em português.
 26. Rotas da Política de Privacidade em ES/EN.
-27. Número de WhatsApp correto (99947-3200 × 9947-3200).
+27. Número de WhatsApp: decidido, (81) 99947-3200 (com o 9), em 09/10/2026.

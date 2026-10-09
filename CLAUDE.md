@@ -127,7 +127,7 @@ No Header, usar `public/images/logo-agua-verde.png`. Não substituir por texto "
 | Serviço | Detalhe |
 |:--------|:--------|
 | Supabase | Project ID: `yblywknncmrbtxyhwbzr` |
-| WhatsApp | `https://wa.me/558199473200` |
+| WhatsApp | `https://wa.me/5581999473200` |
 | Instagram | `https://www.instagram.com/aguaverdeviagens/` |
 | E-mail | `contato@aguaverde.tur.br` |
 | TripAdvisor | `https://www.tripadvisor.com.br/Attraction_Review-g304560-d12087015-Reviews-Uluwatour_Viagens_Receptivos-Recife_State_of_Pernambuco.html` |

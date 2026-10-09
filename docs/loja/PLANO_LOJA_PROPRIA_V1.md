@@ -98,6 +98,8 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 30 | Google Ads: o irmão investe **R$ 2.000/mês em 3 campanhas que funcionam e ficam**. A frente de Ads passa a ser: auditar e otimizar as 3 existentes, apontá-las para a loja nova no lançamento e, se fizer sentido, criar **uma** campanha nova (2026-10-09) | dono |
 | 31 | Site e loja (público) só no **modo claro**, igual ao site atual. As telas novas "Pedidos do site" no **PWA** e no **app nativo** seguem o padrão de tema de cada app (modo escuro e claro, como as telas que já existem) (2026-10-09) | dono |
 | 32 | Máximo de **10** veículos (ou pessoas, nos produtos por pessoa) por compra, igual para todos os produtos (2026-10-09) | dono |
+| 33 | Direito de arrependimento: **48 horas após a compra**, com reembolso integral, se a viagem não tiver começado; depois, cancelamento grátis até 24 h antes (2026-10-09) | dono |
+| 34 | WhatsApp oficial: **(81) 99947-3200**, com o 9 (`wa.me/5581999473200`); o link antigo sem o 9 foi corrigido no site (2026-10-09) | dono |
 
 Pendências de fato que **não travam** o plano: número CADASTUR e regra exata do adicional por passageiro (o dono envia depois; até lá, o site não exibe selo CADASTUR e usa a regra provisória "preço base até 3 passageiros" para revisão), plano atual da Vercel (Hobby ou Pro). Resolvidos em 2026-10-09: porte do Supabase (Micro, subida para Small autorizada), verba de Ads (R$ 2.000/mês já em uso), Drive de fotos e vídeos (recebido, ver §6).
 

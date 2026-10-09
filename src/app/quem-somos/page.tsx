@@ -361,7 +361,7 @@ export default function QuemSomosPage() {
                 Solicitar orçamento grátis
               </a>
               <a
-                href="https://wa.me/558199473200"
+                href="https://wa.me/5581999473200"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#1a5c38]/20 text-[#1a5c38] font-semibold rounded-full hover:border-[#1a5c38]/40 transition-colors"
