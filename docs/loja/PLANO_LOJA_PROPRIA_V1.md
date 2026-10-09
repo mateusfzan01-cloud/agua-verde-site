@@ -96,7 +96,7 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 28 | Supabase está em **Micro** (o dono reduziu o porte; o `CLAUDE.md` do PWA ficou desatualizado). Subida para Small **autorizada** para o lançamento (2026-10-09) | dono |
 | 29 | Plano aprovado com as recomendações do documento (2026-10-09). CADASTUR e regra do adicional por passageiro ficam para depois; não travam a construção | dono |
 | 30 | Google Ads: o irmão investe **R$ 2.000/mês em 3 campanhas que funcionam e ficam**. A frente de Ads passa a ser: auditar e otimizar as 3 existentes, apontá-las para a loja nova no lançamento e, se fizer sentido, criar **uma** campanha nova (2026-10-09) | dono |
-| 31 | Site e loja só no **modo claro** (sem modo escuro), igual ao site atual (2026-10-09) | dono |
+| 31 | Site e loja (público) só no **modo claro**, igual ao site atual. As telas novas "Pedidos do site" no **PWA** e no **app nativo** seguem o padrão de tema de cada app (modo escuro e claro, como as telas que já existem) (2026-10-09) | dono |
 
 Pendências de fato que **não travam** o plano: número CADASTUR e regra exata do adicional por passageiro (o dono envia depois; até lá, o site não exibe selo CADASTUR e usa a regra provisória "preço base até 3 passageiros" para revisão), plano atual da Vercel (Hobby ou Pro). Resolvidos em 2026-10-09: porte do Supabase (Micro, subida para Small autorizada), verba de Ads (R$ 2.000/mês já em uso), Drive de fotos e vídeos (recebido, ver §6).
 
@@ -295,8 +295,8 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
 |:--|:--|:--|
 | Supabase | 4 tabelas novas, 1 RPC, 1 Edge Function de webhook, 1 cron | **Baixo**: nada existente é alterado; INSERT em `viagens` usa o mesmo contrato do PWA |
 | Site Next.js | rotas novas, i18n com prefixo, redirects, widget, checkout | Zero para PWA e app |
-| PWA | tela "Pedidos do site" (lista, confirmar, reembolsar) | Baixo: tela nova, sem mexer nas existentes |
-| App nativo | tela nova **"Pedidos do site"** no stack de admin (lista com filtro por status, detalhe do pedido, confirmar passeio, acionar reembolso via Edge Function, abrir a viagem gerada), além do push já existente | Baixo: tela nova, sem mexer nas existentes nem em `perfis.tipo` |
+| PWA | tela "Pedidos do site" (lista, confirmar, reembolsar), seguindo o tema escuro/claro do PWA (decisão 31) | Baixo: tela nova, sem mexer nas existentes |
+| App nativo | tela nova **"Pedidos do site"** (seguindo o tema escuro/claro do app, decisão 31) no stack de admin (lista com filtro por status, detalhe do pedido, confirmar passeio, acionar reembolso via Edge Function, abrir a viagem gerada), além do push já existente | Baixo: tela nova, sem mexer nas existentes nem em `perfis.tipo` |
 | WhatsApp IA | prompt ganha catálogo + função "gerar link de checkout"; modelo migra para Claude Sonnet 5.5 (§4.6) | Médio: troca de provedor; mitigado por adaptador por modelo, teste em 50 conversas reais e kill switch `ia_ativa` já existente |
 
 ---
