@@ -1,7 +1,7 @@
 # AGENTS.md — Água Verde Site (agua-verde-site)
 
 > Documentação de referência completa para agentes de IA trabalhando neste projeto.
-> Última atualização: 2026-05-27
+> Última atualização: 2026-10-09
 
 ---
 
@@ -204,10 +204,9 @@ CHECK (tipo = ANY (ARRAY['admin','gerente','motorista','guia','estagiario']))
 ```
 Alterar quebra o app para todos os motoristas ativos. Se precisar de passageiro autenticado (Fase 3), criar tabela `passageiros` separada com FK para `auth.users(id)`.
 
-### 6.2 E-commerce só após validação de demanda
+### 6.2 Loja própria aprovada (regra de demanda substituída em 2026-10-09)
 
-Gatilho rígido: **>20 orçamentos/mês por 2 meses consecutivos**.
-Não criar antes: `pedidos`, `carrinho_itens`, `rotas` (tabela).
+A regra "e-commerce só após >20 orçamentos/mês por 2 meses" foi escrita para uma loja nova sem demanda. Ela **não se aplica** à substituição da loja Paytour (já paga e em operação) pela loja própria, aprovada pelo dono em 2026-10-09 com o plano `docs/loja/PLANO_LOJA_PROPRIA_V1.md`. Tabelas da loja: `produtos`, `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos`, por migration versionada. Continua proibido: `carrinho_itens` (não há carrinho) e qualquer alteração em `perfis.tipo`.
 
 ### 6.3 Dados do Supabase — avisos
 
@@ -229,7 +228,7 @@ Não criar antes: `pedidos`, `carrinho_itens`, `rotas` (tabela).
 | Fase 0 | Setup + reconhecimento Starter + redirects 301 | Parcialmente feito |
 | **Fase 1** | Site institucional + landing pages de destino + SEO | **✅ Concluída** |
 | Fase 2 | Webhook orçamentos + blog MDX + redirects Starter | Próxima |
-| Fase 3 | E-commerce pacotes de transfer (Mercado Pago) | Opcional — só com demanda |
+| Fase 3 | Loja própria substituindo a Paytour (Mercado Pago) | **Aprovada em 2026-10-09** — `docs/loja/PLANO_LOJA_PROPRIA_V1.md` |
 | Fase 4 | SEO conteúdo contínuo (blog) | Paralela à Fase 2 |
 
 ### Fase 2 — o que fazer
