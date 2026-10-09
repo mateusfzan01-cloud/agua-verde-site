@@ -240,11 +240,7 @@ button,input,select,textarea{font:inherit;color:inherit}
           <select id="w-origem"></select></div>
         <div class="campo"><label for="w-destino" data-t="w.destino">Indo para</label>
           <select id="w-destino"></select></div>
-        <div class="linha2">
-          <div class="campo"><label for="w-data" data-t="w.data">Data</label><input id="w-data" type="date" value="2026-12-15"></div>
-          <div class="campo"><label for="w-pax" data-t="w.pax">Passageiros</label>
-            <select id="w-pax"><option>1</option><option>2</option><option selected>3</option><option>4</option></select></div>
-        </div>
+        <div class="campo"><label for="w-data" data-t="w.data">Data</label><input id="w-data" type="date" value="2026-12-15"></div>
         <div class="resultado" id="w-res"></div>
         <button class="btn btn-pri" type="submit" id="w-btn" data-t="w.ver">Ver e reservar</button>
       </form>
@@ -333,12 +329,6 @@ button,input,select,textarea{font:inherit;color:inherit}
       <h2 data-t="p.veic.t">Escolha o veículo</h2>
       <p class="aprox" data-t="p.veic.d">O preço é por veículo, ida e volta. Grupo grande? Some mais de um.</p>
       <div class="veiculos" id="p-veiculos"></div>
-      <div class="linha2">
-        <div class="campo"><span style="font-size:12.5px;font-weight:600;color:var(--texto2)" data-t="w.pax">Passageiros</span>
-          <div class="contador"><button type="button" data-cont="pax" data-d="-1" aria-label="menos">−</button><output id="p-pax" class="tab">3</output><button type="button" data-cont="pax" data-d="1" aria-label="mais">+</button></div></div>
-        <div class="campo"><span style="font-size:12.5px;font-weight:600;color:var(--texto2)" data-t="p.malas">Malas grandes</span>
-          <div class="contador"><button type="button" data-cont="malas" data-d="-1" aria-label="menos">−</button><output id="p-malas" class="tab">2</output><button type="button" data-cont="malas" data-d="1" aria-label="mais">+</button></div></div>
-      </div>
       <p class="aviso" id="p-aviso" hidden></p>
       <p class="aprox" data-t="p.max">Máximo de 10 veículos por compra.</p>
     </div>
@@ -570,7 +560,7 @@ pt:{"hero.chip":"Transfer privativo em Pernambuco","hero.titulo":"Do aeroporto d
 "m.t":"Minha reserva","m.d":"Perdeu o link? Digite o número da reserva e o e-mail usado na compra. Se os dois baterem, reenviamos o link para o seu e-mail e WhatsApp.","m.num":"Número da reserva","m.btn":"Reenviar meu link","m.ok":"Se os dados estiverem certos, o link chega em alguns minutos no e-mail e no WhatsApp da reserva. Por segurança, não mostramos a reserva nesta tela.","m.vazio":"Preencha o número e o e-mail.",
 "n.t":"Notas do protótipo (para o dono)",
 "n.home":["Widget de rota na primeira tela, com preço na hora: 26 rotas da tabela Paytour. Rota fora da tabela vira orçamento no WhatsApp.","As 4 promessas aparecem logo abaixo, e de novo na rota e no pagamento.","Selo Tripadvisor usa os números do plano (4,7 · 112 avaliações). Conferir antes de publicar.","“8.211 viagens” vem do banco (08/10/2026); no site real o número será calculado automaticamente.","Mais vendidos: ordem do selo da Paytour (Japaratinga, João Pessoa, Porto de Galinhas). Só Maragogi ida e volta está com preço atual (R$ 740); os demais são de jul/2025.","Qualquer rota escolhida abre a tela 2 de exemplo (Maragogi ida e volta)."],
-"n.produto":["Copia a Paytour: preço por veículo, com a lista de carros do próprio produto e botões − / + (máximo 10 por compra).","Exemplo com dados reais: Maragogi ida e volta, preços da Paytour em 09/10/2026 (R$ 740 a R$ 3.800).","Melhoria sobre a Paytour: o site confere se os veículos escolhidos comportam o número de passageiros.","Cada produto terá a própria lista: nem todos têm os 7 veículos (o BMW X1 não aparece em Maragogi).","Os outros produtos ainda estão com o preço de jul/2025 e sem a lista de veículos."],
+"n.produto":["Copia a Paytour: preço por veículo, com a lista de carros do próprio produto e botões − / + (máximo 10 por compra).","Exemplo com dados reais: Maragogi ida e volta, preços da Paytour em 09/10/2026 (R$ 740 a R$ 3.800).","Igual à Paytour: o cliente só escolhe os veículos. Não há campo de passageiros nem de malas; a capacidade aparece na descrição de cada carro.","Cada produto terá a própria lista: nem todos têm os 7 veículos (o BMW X1 não aparece em Maragogi).","Os outros produtos ainda estão com o preço de jul/2025 e sem a lista de veículos."],
 "n.checkout":["3 passos, sem criar conta. Campos da decisão 23; CPF opcional.","Exemplo preenchido com uma cliente argentina, porque o espanhol é o idioma mais comum nos lembretes.","Pix ou cartão pelo Mercado Pago (Checkout Pro). O Pix aqui é ilustrativo.","Aceite dos termos obrigatório; desmarque para ver a mensagem de erro."],
 "n.reserva":["O endereço real da página será /reserva/[segredo], nunca o número da reserva.","Autoatendimento: reenviar voucher, alterar, não encontro o motorista, cancelar.","Cancelar mostra o prazo de 24 h e o valor do reembolso antes de confirmar.","“Minha reserva” não mostra dados: só reenvia o link (§4.4 do plano)."]
 },
@@ -634,9 +624,8 @@ var MAX_VEIC = 10;
 var L = "pt";
 try{ var s = localStorage.getItem("av-lang"); if(s && T[s]) L = s; }catch(e){}
 function t(k){ var v = T[L][k]; if(v===undefined) v = T.pt[k]; return v; }
-var st = {origem:"rec", destino:"Maragogi", data:"2026-12-15", data2:"2026-12-22", hora2:"10:00", pax:3, hora:"14:30", malas:2, aba:"transfer", passo:"1", qtd:{sedan_economico:1}};
+var st = {origem:"rec", destino:"Maragogi", data:"2026-12-15", data2:"2026-12-22", hora2:"10:00", hora:"14:30", aba:"transfer", passo:"1", qtd:{sedan_economico:1}};
 function qtdTotal(){ return VEIC.reduce(function(s,v){return s+(st.qtd[v.k]||0);},0); }
-function capTotal(){ return VEIC.reduce(function(s,v){return s+(st.qtd[v.k]||0)*v.cap;},0); }
 function listaVeic(){ return VEIC.filter(function(v){return st.qtd[v.k];}).map(function(v){return st.qtd[v.k]+"× "+v.n[L];}).join(", "); }
 
 function brl(v){ return "R$ " + v.toLocaleString("pt-BR",{minimumFractionDigits:0}); }
@@ -696,11 +685,8 @@ function renderProduto(){
     return '<div class="veic'+(q?" sel":"")+'"><div style="min-width:0"><b>'+v.n[L]+'</b><span>'+v.d[L]+'</span><div class="vp tab">'+brl2(v.p)+(aprox(v.p)?' <small class="aprox">'+aprox(v.p)+'</small>':"")+'</div></div>'+
       '<div class="contador"><button type="button" data-veic="'+v.k+'" data-d="-1" aria-label="menos">−</button><output class="tab">'+q+'</output><button type="button" data-veic="'+v.k+'" data-d="1" aria-label="mais">+</button></div></div>';
   }).join("");
-  document.getElementById("p-pax").textContent = st.pax;
-  document.getElementById("p-malas").textContent = st.malas;
   var av = document.getElementById("p-aviso"), msg = "";
   if(!qtdTotal()) msg = t("p.aviso0");
-  else if(st.pax > capTotal()) msg = t("p.avisocap").replace("{n}",capTotal());
   av.hidden = !msg; av.textContent = msg;
   document.getElementById("p-inclusos").innerHTML = t("p.inc").map(function(x){return "<li>"+x+"</li>";}).join("");
   var v = precoProduto();
@@ -718,7 +704,6 @@ function renderCheckout(){
     '<div class="l"><span>'+t("c.rota")+'</span><span style="text-align:right">'+rotaCurta()+'<br><small class="aprox">'+t("p.idavolta")+'</small></span></div>'+
     '<div class="l"><span>'+t("c.ida")+'</span><span class="tab">'+fmtData(st.data,st.hora)+'</span></div>'+
     '<div class="l"><span>'+t("c.volta")+'</span><span class="tab">'+fmtData(st.data2,st.hora2)+'</span></div>'+
-    '<div class="l"><span>'+t("c.pessoas")+'</span><span class="tab">'+st.pax+' · '+st.malas+' '+t("p.malas").toLowerCase()+'</span></div>'+
     '<div class="l"><span>'+t("c.carro")+'</span><span style="text-align:right">'+(listaVeic()||"—")+'</span></div>'+
     '<div class="l total"><span>Total</span><span class="tab">'+brl2(v)+(aprox(v)?' <small class="aprox">'+aprox(v)+'</small>':"")+'</span></div>'+
     '<p class="aprox">'+t("c.cobrado")+' '+t("c.cancel")+prazoCancel()+'.</p>';
@@ -729,7 +714,7 @@ function renderReserva(){
   var v = precoProduto();
   var dl = [["r.k.trajeto",rotaCurta()+" ("+t("p.idavolta").toLowerCase()+")"],
     ["r.k.data",fmtData(st.data,st.hora)],["r.k.volta",fmtData(st.data2,st.hora2)],["r.k.voo",document.getElementById("c-voo").value+" · "+document.getElementById("c-cia").value],
-    ["r.k.veic",listaVeic()],["r.k.pax",st.pax+" · "+st.malas+" "+t("p.malas").toLowerCase()],["r.k.hotel",document.getElementById("c-hotel").value],["r.k.pago",brl2(v)+" · Pix"]];
+    ["r.k.veic",listaVeic()],["r.k.hotel",document.getElementById("c-hotel").value],["r.k.pago",brl2(v)+" · Pix"]];
   document.getElementById("r-dl").innerHTML = dl.map(function(x){return "<dt>"+t(x[0])+"</dt><dd>"+esc(x[1])+"</dd>";}).join("");
   document.querySelector(".ok-topo h1").textContent = t("r.titulo").replace("Lucía", esc(document.getElementById("c-nome").value.split(" ")[0]||"Lucía"));
 }
@@ -783,9 +768,7 @@ document.addEventListener("click", function(e){
   var vb = e.target.closest("[data-veic]");
   if(vb){ var k = vb.dataset.veic, d = +vb.dataset.d, q = (st.qtd[k]||0)+d;
     if(q<0 || (d>0 && qtdTotal()>=MAX_VEIC)) return; st.qtd[k]=q; renderProduto(); return; }
-  var ct = e.target.closest("[data-cont]");
-  if(ct){ var k = ct.dataset.cont, d = +ct.dataset.d; if(k==="pax") st.pax = Math.min(260,Math.max(1,st.pax+d)); else st.malas = Math.min(260,Math.max(0,st.malas+d)); renderProduto(); return; }
-  if(e.target.closest("#p-reservar")){ if(!qtdTotal() || st.pax>capTotal()){ renderProduto(); document.getElementById("p-aviso").scrollIntoView({block:"center"}); return; } ir("checkout"); return; }
+  if(e.target.closest("#p-reservar")){ if(!qtdTotal()){ renderProduto(); document.getElementById("p-aviso").scrollIntoView({block:"center"}); return; } ir("checkout"); return; }
   var av = e.target.closest("[data-avanca]");
   if(av){ st.passo = av.dataset.avanca; renderCheckout(); document.getElementById("passos").scrollIntoView({block:"start"}); return; }
   if(e.target.closest("#c-pagar")){
@@ -820,7 +803,6 @@ document.addEventListener("change", function(e){
   if(id==="w-origem"){ st.origem = e.target.value; st.destino=""; renderWidget(); }
   else if(id==="w-destino"){ st.destino = e.target.value; renderWidget(); }
   else if(id==="w-data" || id==="p-data"){ st.data = e.target.value || st.data; document.getElementById("w-data").value = st.data; document.getElementById("p-data").value = st.data; renderCheckout(); }
-  else if(id==="w-pax"){ st.pax = +e.target.value; renderProduto(); }
   else if(id==="p-hora"){ st.hora = e.target.value || st.hora; }
   else if(id==="p-data2"){ st.data2 = e.target.value || st.data2; }
   else if(id==="p-hora2"){ st.hora2 = e.target.value || st.hora2; }
