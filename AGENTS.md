@@ -204,10 +204,9 @@ CHECK (tipo = ANY (ARRAY['admin','gerente','motorista','guia','estagiario']))
 ```
 Alterar quebra o app para todos os motoristas ativos. Se precisar de passageiro autenticado (Fase 3), criar tabela `passageiros` separada com FK para `auth.users(id)`.
 
-### 6.2 E-commerce só após validação de demanda
+### 6.2 Loja própria aprovada (regra de demanda substituída em 2026-10-09)
 
-Gatilho rígido: **>20 orçamentos/mês por 2 meses consecutivos**.
-Não criar antes: `pedidos`, `carrinho_itens`, `rotas` (tabela).
+A regra "e-commerce só após >20 orçamentos/mês por 2 meses" foi escrita para uma loja nova sem demanda. Ela **não se aplica** à substituição da loja Paytour (já paga e em operação) pela loja própria, aprovada pelo dono em 2026-10-09 com o plano `docs/loja/PLANO_LOJA_PROPRIA_V1.md`. Tabelas da loja: `produtos`, `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos`, por migration versionada. Continua proibido: `carrinho_itens` (não há carrinho) e qualquer alteração em `perfis.tipo`.
 
 ### 6.3 Dados do Supabase — avisos
 

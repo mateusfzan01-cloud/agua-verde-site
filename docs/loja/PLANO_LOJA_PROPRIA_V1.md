@@ -207,7 +207,8 @@ produtos (
 
 -- Pedidos (a transação comercial; a viagem é a operação)
 pedidos (
-  id uuid pk, numero text unique,            -- AV-2026-000123
+  id uuid pk, numero text unique,            -- AV-2026-000123 (só para humanos: e-mail, atendimento)
+  token_acesso text unique not null,         -- segredo aleatório (32+ caracteres) que dá acesso à página da reserva
   produto_id uuid references produtos,
   idioma text, moeda text default 'BRL',
   passageiro_nome text, passageiro_telefone text (E.164), passageiro_email text, passageiro_cpf text,
@@ -230,7 +231,7 @@ pedido_itens (
 pedido_eventos (id, pedido_id, tipo, detalhes jsonb, criado_em)   -- auditoria
 ```
 
-RLS: `produtos` leitura pública; `pedidos`/`pedido_itens` sem acesso anon (checkout roda no servidor com service role); leitura no PWA para `is_admin_or_gerente()`. "Minha reserva" consulta por `numero + e-mail` via RPC `SECURITY DEFINER` que devolve só o necessário.
+RLS: `produtos` leitura pública; `pedidos`/`pedido_itens` sem acesso anon (checkout roda no servidor com service role); leitura no PWA para `is_admin_or_gerente()`. A página da reserva lê pelo `token_acesso` via RPC `SECURITY DEFINER` que devolve só o necessário; "minha reserva" (número + e-mail) não devolve dados, só dispara o reenvio do link.
 
 ### 4.3 Regras de preço
 
@@ -243,8 +244,8 @@ RLS: `produtos` leitura pública; `pedidos`/`pedido_itens` sem acesso anon (chec
 | `/transfers`, `/passeios` | catálogo por categoria |
 | `/transfers/[slug]`, `/passeios/[slug]` | página do produto com widget de reserva (data, hora, pax) |
 | `/checkout/[pedido]` | dados do passageiro + pagamento |
-| `/reserva/[numero]` | confirmação, voucher, link de acompanhamento, botão "cancelar" (regra 24 h) |
-| `/minha-reserva` | consulta por número + e-mail |
+| `/reserva/[token_acesso]` | confirmação, voucher, link de acompanhamento, botão "cancelar" (regra 24 h). O endereço usa o **segredo aleatório** do pedido, nunca o número sequencial, para que ninguém consiga abrir ou cancelar a reserva de outra pessoa tentando números |
+| `/minha-reserva` | consulta por número + e-mail; se os dois baterem, o sistema **reenvia o link secreto** por e-mail/WhatsApp (não exibe dados na tela) |
 | `/es/...`, `/en/...` | mesmas rotas com prefixo de idioma (next-intl) |
 | `/passeio/[slug-paytour]` | redirect 301 para a rota nova (preserva links antigos) |
 
@@ -253,7 +254,7 @@ As 3 landing pages de rota já existentes ganham o **widget de reserva na primei
 ### 4.5 Fluxos especiais
 
 - **Passeios (confirmação em 24 h)**: pedido pago entra como `aguardando_confirmacao`; admin confirma no PWA (vira viagem) ou recusa (reembolso pelo gateway). Cron diário: pedidos sem resposta em 24 h → reembolso automático + alerta.
-- **Cancelamento pelo cliente**: botão em `/reserva/[numero]`; se faltar > 24 h, reembolso automático e viagem `cancelada`; senão, orienta a falar no WhatsApp.
+- **Cancelamento pelo cliente**: botão em `/reserva/[token_acesso]` (só quem tem o link secreto); se faltar > 24 h, reembolso automático e viagem `cancelada`; senão, orienta a falar no WhatsApp.
 - **Pedido não pago**: expira em 30 min (Pix) / imediato (cartão recusado); nada é criado em `viagens`.
 - **Fora da tabela** (origem/destino não cadastrados): formulário de orçamento já existente, com os campos pré-preenchidos.
 
@@ -278,7 +279,7 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
 1. O pedido é criado como `pendente_pagamento` **antes** de abrir o pagamento; o id do pedido é a chave de idempotência enviada ao gateway.
 2. A página "pagamento aprovado" só mostra estado; quem confirma é o **webhook**, verificado pela assinatura no corpo cru da requisição.
 3. Tabela `gateway_eventos (evento_id primary key, pedido_id, payload, recebido_em)`: duplicatas falham no banco (`on conflict do nothing`), nunca são reprocessadas.
-4. **Uma única função** `confirmar_pedido(pedido_id)` (RPC `SECURITY DEFINER`, transacional): marca `pago`, cria as viagens (uma por perna), grava `viagem_id` em `pedido_itens`, dispara avisos. Chamada pelo webhook e, como reconciliação, pela página de sucesso.
+4. **Uma única função** `confirmar_pedido(pedido_id, gateway_ref, evento_id)` (RPC `SECURITY DEFINER`, transacional): só executa se existir em `gateway_eventos` um evento **aprovado** para aquele `gateway_ref` (gravado após verificação de assinatura); marca `pago`, cria as viagens (uma por perna), grava `viagem_id` em `pedido_itens`, dispara avisos. É chamada pelo webhook. A **página de sucesso é somente leitura**: mostra o estado atual do pedido; se ainda estiver `pendente_pagamento`, o servidor consulta o gateway (`consultarPagamento`), e só se o gateway responder "aprovado" é que grava o evento em `gateway_eventos` e chama a mesma função. Um visitante que abrir ou recarregar a página de sucesso sem pagamento aprovado nunca gera viagem.
 5. Responder 2xx ao gateway só depois de persistir; esperar eventos fora de ordem e repetidos.
 6. Cron a cada 15 min expira pedidos pendentes com mais de 45 min e libera nada (nenhuma vaga é segurada antes do pagamento).
 7. A integração com o gateway fica atrás de uma interface própria (`criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook`), para trocar Mercado Pago por Stripe ou Asaas sem mexer no checkout.
@@ -338,7 +339,7 @@ Relatório completo, com texto literal, URL e data de cada observação: `docs/l
 
 **O que copiar (10 recomendações do relatório, já absorvidas no §4)**: widget de rota na home; preço por veículo com classes e capacidade; faixa das 4 promessas em toda página de produto e no checkout; páginas de rota com fatos e prova operacional real; checkout próprio em 3 passos sem conta, ligado ao `/acompanhar/:token`; Pix + cartão sem taxa com parcelamento visível; catálogo de extras simples (cadeirinha grátis, parada extra); prova social numérica e perfis de motoristas (foto, carro, idiomas, já em `motoristas`/`perfis`); trilíngue de verdade com seletor no header; WhatsApp como canal padrão com mensagem pré-preenchida por produto e autoatendimento pós-venda (reenviar voucher, alterar, cancelar, "não encontro meu motorista").
 
-**Nota sobre uma regra antiga**: o `CLAUDE.md` do site ainda diz que e-commerce só com ">20 orçamentos/mês por 2 meses". Essa regra foi escrita quando a loja seria uma novidade; aqui ela **substitui uma loja que já existe** (Paytour), então a decisão 2 do dono a supera. O `CLAUDE.md` será atualizado quando a implementação começar.
+**Nota sobre a regra antiga de e-commerce**: o `CLAUDE.md` e o `AGENTS.md` do site diziam que e-commerce só com ">20 orçamentos/mês por 2 meses". Essa regra foi escrita em maio, quando a loja seria uma novidade sem demanda comprovada. Aqui a loja **substitui uma loja paga que já existe** (Paytour, R$ 250/mês, ~10 reservas/mês), com aprovação explícita do dono em 2026-10-09. Os dois arquivos foram **atualizados neste mesmo PR** para registrar a exceção e a nova regra (ver §2, decisão 2).
 
 ### 7.2 O que a comunidade recomenda em 2026 (Reddit e fontes técnicas)
 
@@ -348,7 +349,7 @@ Relatório completo com ~70 discussões de 2025–2026 (r/Tourguide, r/brdev, r/
 
 **Checkout em Next.js + Supabase** [padrão convergente em r/stripe, r/Supabase e equipe da Stripe, jul–set/2026]:
 - a página "pagamento aprovado" **não** confirma nada; o **webhook** do gateway é a fonte de verdade;
-- **uma única função** de confirmação, idempotente, chamada pelo webhook e pela página de sucesso;
+- **uma única função** de confirmação, idempotente, chamada pelo webhook; a página de sucesso só a aciona depois de o servidor consultar o gateway e receber "aprovado";
 - tabela de eventos recebidos com restrição `unique` no id do evento (duplicata falha no banco, não no código);
 - assinatura verificada no corpo cru; responder ao gateway só depois de gravar;
 - pedido criado como pendente **antes** de abrir o pagamento, com expiração por cron; nada entra em `viagens` antes de `pago`.

@@ -103,8 +103,8 @@ src/
 ### 1. NÃO alterar `perfis.tipo` no Supabase
 O app nativo (`agua-verde-transfers`) tem constraint `CHECK (tipo = ANY (ARRAY['admin','gerente','motorista','guia','estagiario']))`. Alterar quebra o app para todos os motoristas. Se precisar de passageiro autenticado, criar tabela `passageiros` separada.
 
-### 2. E-commerce (Fase 3) só com demanda comprovada
-Gatilho rígido: >20 orçamentos/mês por 2 meses consecutivos. Não criar tabelas `pedidos`, `carrinho_itens` ou `rotas` antes disso.
+### 2. Loja própria aprovada (substitui a regra de "e-commerce só com demanda comprovada")
+A regra anterior (">20 orçamentos/mês por 2 meses" antes de criar `pedidos`) valia para uma loja nova sem demanda. Em 2026-10-09 o dono aprovou substituir a loja Paytour (paga, já em operação) por uma loja própria dentro deste site: plano em `docs/loja/PLANO_LOJA_PROPRIA_V1.md`. Tabelas da loja (`produtos`, `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos`) são criadas por migration versionada, sem tocar em tabelas existentes. Continua proibido criar `carrinho_itens` (não há carrinho) e alterar `perfis.tipo`.
 
 ### 3. Supabase — variáveis de ambiente obrigatórias para `/acompanhar`
 A página `/acompanhar/[token]` precisa de `.env.local` com:
