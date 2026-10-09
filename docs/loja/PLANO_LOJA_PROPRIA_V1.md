@@ -494,6 +494,8 @@ Quando começa: a auditoria (item 1) pode começar **antes** do site novo, porqu
 
 ## 13. Próximos passos imediatos (atualizado em 2026-10-09)
 
+> Log da sessão de planejamento: `docs/loja/LOG_SESSAO_2026-10-08_PLANO_LOJA_PROPRIA.md`. Prompts prontos para as próximas sessões e o que está liberado ou bloqueado: `docs/loja/HANDOFF_PROXIMAS_SESSOES.md`.
+
 **Você (dono) faz**
 1. Compartilha a página do plano com o sócio (menu Share da página).
 2. Confere o plano da Vercel (Hobby ou Pro) e, se Hobby, faz a troca para Pro no painel (US$ 20/mês).
