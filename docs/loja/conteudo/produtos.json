@@ -81,16 +81,16 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'definifir' → 'definir', 'tabua de marés' → 'tábua das marés', 'jnagada' → 'jangada', 'duraçao' → 'duração', 'infra estrutura' → 'infraestrutura', 'À bordo' → 'A bordo', 'em frente as' → 'em frente às'",
       "Texto completo (09/10/2026): '10x consecutivas' → '10 vezes seguidas'; confirmar se o título ainda vale antes de publicar",
       "Texto completo (09/10/2026): a ida 'de 45 min aproximadamente' parece curta para Boa Viagem → Porto de Galinhas (~60 km); confirmar",
       "Texto completo (09/10/2026): duracao_min = null: a saída depende da maré e só o retorno (15h) é fixo",
       "Texto completo (09/10/2026): o original não diz o que NÃO está incluído; alimentação e bebidas no Peixe na Telha são pagas à parte? Se sim, acrescentar",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 2,
+    "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
@@ -189,16 +189,16 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'infra estrutura' → 'infraestrutura', 'À bordo' → 'A bordo'; 'bucket list' → 'lista de desejos'",
       "Texto completo (09/10/2026): confirmado pelo texto completo: '1,5 hora' é o tempo da ida até Carneiros, não a duração do passeio",
       "Texto completo (09/10/2026): o catamarã está incluído no preço? O texto descreve o embarque mas não diz. Se estiver, acrescentar aos inclusos",
       "Texto completo (09/10/2026): horário de retorno ao hotel não informado; duracao_min = null",
       "Texto completo (09/10/2026): o original não diz o que NÃO está incluído (alimentação? bebidas? catamarã?)",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 2,
+    "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
@@ -316,13 +316,13 @@
       "nome original '( ida e volta )' com espaços tortos nos parênteses; limpo",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): mantido o horário operacional de saída para o voo de volta (3 h antes do voo; 3,5 h com trânsito). Possível conflito para o dono decidir: com a espera grátis de 15 min no hotel, o cliente atrasado ainda chega com folga? E o cliente pode pedir outro horário?",
       "Texto completo (09/10/2026): o original tinha a seção 'O que está incluso' com pedágio, receptivo no aeroporto e kit de boas-vindas; todos mantidos",
-      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'"
+      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -454,11 +454,11 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'ímperdível' → 'imperdível', 'azuleijos' → 'azulejos', 'Alta da Sé' → 'Alto da Sé', 'Ladeira da Misericórida' → 'Misericórdia', 'À bordo' → 'A bordo', 'ultimo' → 'último', espaço antes de vírgula",
       "Texto completo (09/10/2026): duracao_min = 390: calculado da saída (~10h) ao retorno (~16h30), horários aproximados do original",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -584,11 +584,11 @@
       "3º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -703,14 +703,14 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'hoteís' → 'hotéis', 'aonde' → 'onde', espaço antes de vírgula",
       "Texto completo (09/10/2026): o original diz só 'ingressos'; entendido como os ingressos dos dois lugares visitados. Confirmar",
       "Texto completo (09/10/2026): resumido o parágrafo de 'missão' do Instituto (preservação e difusão da cultura), que era texto institucional; nenhum fato foi acrescentado",
       "Texto completo (09/10/2026): duracao_min = 300: calculado da saída (10h) ao retorno (~15h)",
       "Texto completo (09/10/2026): o original não diz o que NÃO está incluído (alimentação?)",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -825,11 +825,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -954,12 +954,12 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'ímperdível' → 'imperdível', 'azuleijos' → 'azulejos', 'Alta da Sé' → 'Alto da Sé', 'Ladeira da Misericórida' → 'Misericórdia', 'À bordo' → 'A bordo', 'ultimo' → 'último', espaço antes de vírgula",
       "Texto completo (09/10/2026): o original manda 'subir ao Alto da Sé' para o almoço depois de já ter passado por lá a pé; mantida a ordem ('volta ao Alto da Sé'). Confirmar",
       "Texto completo (09/10/2026): duracao_min = 450: calculado da saída (8h) ao retorno (~15h30)",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -1070,14 +1070,14 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por pessoa (R$ 550.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Considerara' → 'considerada', 'abordo' → 'a bordo', 'Buffet' → 'bufê'; 'Baía de Sancho' padronizado como 'Baía do Sancho'",
       "Texto completo (09/10/2026): duracao_min = 360: horário do original (8h30 às 14h30)",
       "Texto completo (09/10/2026): o bufê aparece como 'diferencial'; entendido como incluído. Confirmar",
       "Texto completo (09/10/2026): o original não fala de transfer da pousada até a Praia do Porto, nem de equipamento de mergulho, nem das taxas da ilha (TPA, parque nacional). Informar o que está e o que não está incluído",
       "Texto completo (09/10/2026): a empresa ainda vende este passeio? (dúvida que continua aberta sobre Noronha)",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por pessoa (R$ 550.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
     "veiculos": null,
@@ -1157,13 +1157,13 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Agua' → 'Água', 'confortavel' → 'confortável', espaço antes do ponto; 'de acordo com a noiva' → 'à altura da noiva'",
       "Texto completo (09/10/2026): o texto completo é curto: falta dizer quantas horas de serviço o preço cobre, o trajeto (casa → cerimônia → festa?), o modelo do carro e se há decoração. Vender por orçamento no WhatsApp continua sendo uma opção",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": null,
+    "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "bmw_x1",
@@ -1254,13 +1254,13 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Ponte do Limeiro' → 'Ponte do Limoeiro', 'À bordo' → 'A bordo'; caixa-alta 'ROTEIRO REALIZADO TODOS OS DIAS DO ANO' passada para texto normal",
       "Texto completo (09/10/2026): o original não diz se o ingresso do catamarã e a volta ao hotel estão incluídos (o nome diz só 'com transfer privativo'). Nos outros produtos com catamarã o ingresso está incluído. Confirmar e ajustar os inclusos",
       "Texto completo (09/10/2026): a 'versão noturna pelo Recife iluminado' é a saída das 20h ou outro produto? Confirmar",
       "Texto completo (09/10/2026): duração do passeio de barco não informada; duracao_min = null",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -1385,12 +1385,12 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): mantido o horário operacional de saída para o voo de volta (cerca de 4 h antes do voo; 5 h com trânsito no Recife). Possível conflito para o dono decidir: com a espera grátis de 15 min no hotel, o cliente atrasado ainda chega com folga? E o cliente pode pedir outro horário?",
-      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito' e espaço antes de vírgula"
+      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito' e espaço antes de vírgula",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -1501,13 +1501,13 @@
       "o texto original também aceita embarque no Pina (não aparece no nome); mantido na descrição",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Pontualide' → 'Pontualidade'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes",
       "Texto completo (09/10/2026): o original descreve só o sentido de ida; na volta o embarque é no endereço do destino",
       "Texto completo (09/10/2026): ERRO NO ORIGINAL corrigido: o texto dizia 'seguir viagem até endereço em Maragogi'; trocado por Porto de Galinhas (destino do produto). Confirmar",
-      "Texto completo (09/10/2026): corrigido 'PIna' → 'Pina'"
+      "Texto completo (09/10/2026): corrigido 'PIna' → 'Pina'",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -1632,11 +1632,11 @@
       "Serrambi fica em Sirinhaém; existe outro produto 'Aeroporto → Sirinhaém' (ordem 46) por R$ 300 com slug Paytour '...-para-serrambi'. Confirmar se são o mesmo serviço e qual preço vale",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -1757,12 +1757,12 @@
       "nome original 'Aeroporto de Recife para Recife' é ambíguo; reescrito como hotéis/endereços no Recife. Confirmar quais bairros cabem nos R$ 80 (ex.: Boa Viagem, Pina, centro)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
-      "Texto completo (09/10/2026): o original diz 'pedágio incluso' também neste trajeto dentro do Recife; mantido — confirmar se há pedágio"
+      "Texto completo (09/10/2026): o original diz 'pedágio incluso' também neste trajeto dentro do Recife; mantido — confirmar se há pedágio",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -1883,13 +1883,13 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por pessoa (R$ 1020.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'aula pratica' → 'aula prática', 'um aula' → 'uma aula'; asteriscos de WhatsApp (*BATISMO*) retirados",
       "Texto completo (09/10/2026): o original diz 'iremos buscar', mas não diz se o cliente é levado de volta ao endereço. Confirmar e, se sim, trocar o item por 'Transfer de ida e volta'",
       "Texto completo (09/10/2026): horário de término não informado; duracao_min = null",
       "Texto completo (09/10/2026): preço por pessoa: confirmar se o valor é por mergulhador",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por pessoa (R$ 1020.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
     "veiculos": null,
@@ -1985,11 +1985,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -2098,11 +2098,11 @@
       "nome original não diz 'ida ou volta'; sentido gravado como 'ida' e o nome ficou sem '(ida ou volta)'. Confirmar se vale para a volta (Suape → Recife) e se é corporativo (faturamento p/ empresa?)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Pontualide' → 'Pontualidade' e espaço que faltava depois do ponto ('solicitado.Temos')",
       "Texto completo (09/10/2026): os '15 minutos de espera' do original batem com a política nova (15 min em endereço); acrescentado cancelamento grátis até 24 h",
-      "Texto completo (09/10/2026): vale também para a volta (Suape → Recife)? (dúvida que continua aberta)"
+      "Texto completo (09/10/2026): vale também para a volta (Suape → Recife)? (dúvida que continua aberta)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -2223,11 +2223,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -2349,12 +2349,12 @@
       "embarque pode ser no aeroporto ou em Boa Viagem pelo mesmo preço (conforme nome original)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
-      "Texto completo (09/10/2026): o nome fala em saída do Aeroporto OU de Boa Viagem, mas o texto original só descreve a recepção no aeroporto; na saída de Boa Viagem vale a espera de 15 min em endereço"
+      "Texto completo (09/10/2026): o nome fala em saída do Aeroporto OU de Boa Viagem, mas o texto original só descreve a recepção no aeroporto; na saída de Boa Viagem vale a espera de 15 min em endereço",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -2466,13 +2466,13 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'ímperdível' → 'imperdível', 'azuleijos' → 'azulejos', 'Alta da Sé' → 'Alto da Sé', 'Ladeira da Misericórida' → 'Misericórdia', 'À bordo' → 'A bordo', 'ultimo' → 'último', espaço antes de vírgula",
       "Texto completo (09/10/2026): corrigido 'Teatro Santa Izabel' → 'Teatro de Santa Isabel' e espaço dentro do parêntese '( Artesanatos)'",
       "Texto completo (09/10/2026): o original põe o almoço no Alto da Sé e depois manda 'seguir de carro até o Alto da Sé' de novo; mantida a ordem. Confirmar",
       "Texto completo (09/10/2026): duracao_min = 510: calculado da saída (~8h) ao retorno (~16h30)",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -2574,12 +2574,12 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Pontualide' → 'Pontualidade'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes",
       "Texto completo (09/10/2026): o original descreve só o sentido de ida; na volta o embarque é no endereço do destino",
-      "Texto completo (09/10/2026): o original diz só 'veículo privativo e motorista inclusos'; pedágio ficou fora dos inclusos — confirmar"
+      "Texto completo (09/10/2026): o original diz só 'veículo privativo e motorista inclusos'; pedágio ficou fora dos inclusos — confirmar",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -2700,12 +2700,12 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): mantido o horário operacional de saída para o voo de volta (4 h antes do voo; 4,5 h com trânsito). Possível conflito para o dono decidir: com a espera grátis de 15 min no hotel, o cliente atrasado ainda chega com folga? E o cliente pode pedir outro horário?",
-      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'"
+      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -2809,15 +2809,15 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'definifir' → 'definir', 'tabua de marés' → 'tábua das marés'; 'Parada com 45 min de espera' → 'parada de 45 minutos'",
       "Texto completo (09/10/2026): as praias citadas no texto são Paiva, Calhetas, Gaibu (só vista do mirante) e Suape. São essas as 4? Confirmar",
       "Texto completo (09/10/2026): a tirolesa é paga à parte? Alimentação e bebidas no restaurante do Arthur são pagas à parte? O original não tem 'não incluso'",
       "Texto completo (09/10/2026): duracao_min = null: a saída depende da maré e só o retorno (15h) é fixo",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (5 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 2,
+    "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
@@ -2935,12 +2935,12 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'ímperdível' → 'imperdível', 'inicio' → 'início', 'aonde' → 'onde', 'em frente as' → 'em frente às', espaços dentro dos parênteses; 'snorkelling' → 'snorkel'",
       "Texto completo (09/10/2026): 'equipamento de praia' detalhado como cadeira e guarda-sol, que é o que o próprio texto diz que o motorista monta",
       "Texto completo (09/10/2026): duracao_min = null: a saída depende da maré; o texto só fixa as 4 horas livres na praia",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -3035,14 +3035,14 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por pessoa (R$ 200.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'imperdivel' → 'imperdível', 'indigenas' → 'indígenas', 'boas' → 'boias', 'coletes salva vida' → 'coletes salva-vidas', 'Escravisados' → 'escravizados', 'artista plastico' → 'artista plástico', 'sto Alexo' → 'Santo Aleixo', 'Maracaipe' → 'Maracaípe', 'Inicio' → 'Início', espaços antes de vírgula e dentro de parênteses",
       "Texto completo (09/10/2026): conferir a grafia de nomes próprios: 'Nilo Baj', 'Gaitero Ecoturismo', 'Trilha dos Gaiteros', 'mata/Monte do Oitero' (seria 'Oiteiro'?)",
       "Texto completo (09/10/2026): duracao_min = null: o texto dá de 4 a 5 horas só de trilha, sem contar visitas e deslocamento",
       "Texto completo (09/10/2026): o original não diz quem conduz a trilha (guia/condutor incluído?) nem o ponto de encontro",
       "Texto completo (09/10/2026): preço por pessoa e sem transporte: o que muda em relação ao produto 33 (com saída do Recife) é só o transporte? (dúvida que continua aberta)",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por pessoa (R$ 200.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
     "veiculos": null,
@@ -3125,12 +3125,12 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Pontualide' → 'Pontualidade'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes",
       "Texto completo (09/10/2026): o original descreve só o sentido de ida; na volta o embarque é no endereço do destino",
-      "Texto completo (09/10/2026): o original diz só 'veículo privativo e motorista inclusos'; pedágio ficou fora dos inclusos — confirmar"
+      "Texto completo (09/10/2026): o original diz só 'veículo privativo e motorista inclusos'; pedágio ficou fora dos inclusos — confirmar",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -3255,11 +3255,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -3383,11 +3383,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -3526,7 +3526,6 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por pessoa (R$ 780.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): retirado o título '- Tarifas de saídas credenciadas 2023' (ano e preço)",
       "Texto completo (09/10/2026): retirados os preços dos itens não incluídos: colete R$ 60/saída, regulador R$ 60/saída, roupa R$ 50/saída, máscara R$ 30/saída, nadadeira R$ 30/saída, Nitrox R$ 50/cilindro (valores de 2023). Decidir se esses aluguéis serão vendidos no checkout, cobrados no local ou mostrados com preço atualizado",
@@ -3534,7 +3533,8 @@
       "Texto completo (09/10/2026): o texto do original repete a 'aula prática na piscina' do batismo; credenciados fazem mesmo essa aula? Pode ter sido copiado do produto 16",
       "Texto completo (09/10/2026): horário de término não informado; duracao_min = null",
       "Texto completo (09/10/2026): preço por pessoa: confirmar se o valor é por mergulhador",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por pessoa (R$ 780.00) na coleta Paytour de 2026-10-09; produto sem lista de veículos."
     ],
     "max_por_compra": 10,
     "veiculos": null,
@@ -3629,11 +3629,11 @@
       "2º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -3749,13 +3749,13 @@
       "'estacionamento no aeroporto' e 'placa' mantidos por padrão dos transfers de aeroporto; confirmar se valem em Noronha",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): corrigido 'informara' → 'informará' e 'ate' → 'até'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): o original não cita pedágio (correto para a ilha); ficou fora dos inclusos",
-      "Texto completo (09/10/2026): a empresa ainda atende Noronha? (dúvida que continua aberta)"
+      "Texto completo (09/10/2026): a empresa ainda atende Noronha? (dúvida que continua aberta)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -3849,14 +3849,14 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'imperdivel' → 'imperdível', 'indigenas' → 'indígenas', 'boas' → 'boias', 'coletes salva vida' → 'coletes salva-vidas', 'Escravisados' → 'escravizados', 'artista plastico' → 'artista plástico', 'sto Alexo' → 'Santo Aleixo', 'Maracaipe' → 'Maracaípe', 'Inicio' → 'Início', espaços antes de vírgula e dentro de parênteses",
       "Texto completo (09/10/2026): conferir a grafia de nomes próprios: 'Nilo Baj', 'Gaitero Ecoturismo', 'Trilha dos Gaiteros', 'mata/Monte do Oitero' (seria 'Oiteiro'?)",
       "Texto completo (09/10/2026): duracao_min = null: o texto dá de 4 a 5 horas só de trilha, sem contar visitas e deslocamento",
       "Texto completo (09/10/2026): o original não diz quem conduz a trilha (guia/condutor incluído?) nem o ponto de encontro",
       "Texto completo (09/10/2026): o texto da Paytour é idêntico ao do produto 26 e não fala do transporte; a primeira frase e o item 'Transporte privativo com saída do Recife' vêm do nome do produto. Confirmar horário de saída, se inclui a volta ao Recife e se o ingresso da trilha está incluído",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -3961,12 +3961,12 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Hoteís' → 'hotéis', 'catamara' → 'catamarã', 'aonde' → 'onde', 'infra estrutura' → 'estrutura', espaço antes de vírgula",
       "Texto completo (09/10/2026): o passeio de catamarã ou lancha até as piscinas naturais está incluído ou é pago à parte (seria um dos 'ingressos' não incluídos)? Confirmar",
       "Texto completo (09/10/2026): horário de retorno não informado; duracao_min = null",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (3 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4068,12 +4068,12 @@
       "frase 'horários combinados na reserva' foi acrescentada para explicar o produto de ida e volta; texto original era só 'veículo privativo com motorista'",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (2 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'busca-lo' → 'buscá-lo' (reescrito como 'busca você') e 'veiculo' → 'veículo'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes",
       "Texto completo (09/10/2026): o motorista espera até o fim do evento: o preço cobre quantas horas de espera? Há limite de horário?",
-      "Texto completo (09/10/2026): pedágio não citado no original; ficou fora dos inclusos (produto inativo)"
+      "Texto completo (09/10/2026): pedágio não citado no original; ficou fora dos inclusos (produto inativo)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (2 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4177,13 +4177,13 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'ímperdível' → 'imperdível', 'Capeberibe' → 'Capibaribe', 'sua pontes' → 'suas pontes', 'aonde' → 'onde', 'À bordo' → 'A bordo'",
       "Texto completo (09/10/2026): a seção 'O que está incluso' do original listava só 'ingresso catamara', mas o 'Sobre a atividade' diz 'veículo privativo, motorista/guia e ingresso do catamarã'; usada a lista mais completa",
       "Texto completo (09/10/2026): 'motorista/ guia' entendido como motorista que também é guia (motorista-guia). Confirmar",
       "Texto completo (09/10/2026): duracao_min = 360: calculado da saída (~8h) ao retorno (~14h)",
-      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+      "Texto completo (09/10/2026): política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4286,13 +4286,13 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Pontualide' → 'Pontualidade'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes",
       "Texto completo (09/10/2026): o original descreve só o sentido de ida; na volta o embarque é no endereço do destino",
       "Texto completo (09/10/2026): o original diz só 'veículo privativo e motorista inclusos'; pedágio ficou fora dos inclusos — confirmar",
-      "Texto completo (09/10/2026): ERRO NO ORIGINAL corrigido: o texto dizia 'seguir viagem até endereço em Maragogi' (copiado de Olinda → Maragogi); trocado por Porto de Galinhas. Confirmar"
+      "Texto completo (09/10/2026): ERRO NO ORIGINAL corrigido: o texto dizia 'seguir viagem até endereço em Maragogi' (copiado de Olinda → Maragogi); trocado por Porto de Galinhas. Confirmar",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4413,11 +4413,11 @@
       "1º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4530,13 +4530,13 @@
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'Pontualide' → 'Pontualidade'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes",
       "Texto completo (09/10/2026): o original descreve só o sentido de ida; na volta o embarque é no endereço do destino",
       "Texto completo (09/10/2026): o original diz só 'veículo privativo e motorista inclusos'; pedágio ficou fora dos inclusos — confirmar",
-      "Texto completo (09/10/2026): corrigido 'Murto Alto' → 'Muro Alto'"
+      "Texto completo (09/10/2026): corrigido 'Murto Alto' → 'Muro Alto'",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4653,12 +4653,12 @@
       "texto original NÃO lista pedágio como incluso; mantido sem pedágio (não inventado). Confirmar com a operação",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
-      "Texto completo (09/10/2026): o original não cita pedágio neste trajeto; ficou fora dos inclusos"
+      "Texto completo (09/10/2026): o original não cita pedágio neste trajeto; ficou fora dos inclusos",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4767,12 +4767,12 @@
       "embarque pode ser no aeroporto ou em Boa Viagem pelo mesmo preço (conforme nome original)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
-      "Texto completo (09/10/2026): o nome fala em saída do Aeroporto OU de Boa Viagem, mas o texto original só descreve a recepção no aeroporto; na saída de Boa Viagem vale a espera de 15 min em endereço"
+      "Texto completo (09/10/2026): o nome fala em saída do Aeroporto OU de Boa Viagem, mas o texto original só descreve a recepção no aeroporto; na saída de Boa Viagem vale a espera de 15 min em endereço",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -4893,11 +4893,11 @@
       "slug Paytour não cita Vila Galé (o nome foi ampliado depois); redirect 301 continua valendo",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -5022,11 +5022,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (7 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -5152,11 +5152,11 @@
       "Piedade e Candeias ficam em Jaboatão; confirmar se o preço de R$ 80 cobre todo o município",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [
@@ -5273,15 +5273,15 @@
       "nome original não diz 'ida ou volta'; sentido gravado como 'ida'",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): mantido o horário operacional de saída para o voo de volta (cerca de 3 h antes do voo; 4 h com trânsito em Curitiba). Possível conflito para o dono decidir: com a espera grátis de 15 min no hotel, o cliente atrasado ainda chega com folga? E o cliente pode pedir outro horário?",
-      "Texto completo (09/10/2026): o texto fala do retorno, mas o nome não diz 'ida ou volta': o produto cobre os dois sentidos? (produto inativo)"
+      "Texto completo (09/10/2026): o texto fala do retorno, mas o nome não diz 'ida ou volta': o produto cobre os dois sentidos? (produto inativo)",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (4 veículos); preco_base = veículo mais barato."
     ],
-    "max_por_compra": 50,
+    "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
@@ -5394,12 +5394,12 @@
       "slug Paytour é '...-para-serrambi' mas o nome é Sirinhaém e o preço (R$ 300) difere do produto Serrambi (ordem 14, R$ 250). Possível duplicata: decidir qual manter",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
-      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato.",
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
-      "Texto completo (09/10/2026): texto idêntico ao de Serrambi (produto 14); continua a dúvida se são o mesmo trajeto"
+      "Texto completo (09/10/2026): texto idêntico ao de Serrambi (produto 14); continua a dúvida se são o mesmo trajeto",
+      "Preço por veículo da coleta Paytour de 2026-10-09 (6 veículos); preco_base = veículo mais barato."
     ],
     "max_por_compra": 10,
     "veiculos": [

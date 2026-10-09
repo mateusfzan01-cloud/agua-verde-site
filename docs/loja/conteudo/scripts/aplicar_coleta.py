@@ -77,7 +77,7 @@ for p in produtos:
         p["preco_base"] = valor
         notas.append(f"Preço por pessoa (R$ {valor:.2f}) na coleta Paytour de {coleta['coletado_em']}; produto sem lista de veículos.")
 
-    p["max_por_compra"] = c["max_por_compra"] or None
+    p["max_por_compra"] = 10  # decisão do dono (09/10/2026): limite 10 para todos os produtos
     p["imagens"] = c["fotos"]
     p["descricao_paytour"] = c["descricao_completa"]
     p["nome_paytour"] = c["nome"]

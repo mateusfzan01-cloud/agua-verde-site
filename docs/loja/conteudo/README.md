@@ -67,4 +67,4 @@ O texto de cada produto foi reescrito a partir do original completo da Paytour (
 11. **Trilha dos Escravos** (R$ 200 × R$ 700 com saída do Recife): o que muda entre os dois além do transporte?
 12. **Suape**: vale também para a volta (Suape → Recife)? É um serviço para empresas?
 13. **Preços**: atualizados com a coleta de 09/10/2026 (preços do dia 24/11/2026). Conferir se mudam depois da renovação da Paytour.
-14. **Máximo por compra**: três passeios têm limite 2 (Porto de Galinhas, Carneiros e 4 praias do Cabo), Curitiba tem 50 e noivas não tem limite informado. Manter assim?
+14. **Máximo por compra**: decidido em 09/10/2026: **10 para todos os produtos** (na Paytour três passeios tinham 2, Curitiba 50 e noivas sem limite).
