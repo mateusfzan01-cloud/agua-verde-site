@@ -1,6 +1,6 @@
 # Plano v1 — Loja própria aguaverde.tur.br (substituição da Paytour)
 
-> Data: 2026-10-08 · Autor: Claude Code com Mateus Zanlorenzi · Status: **rascunho para aprovação do sócio**
+> Data: 2026-10-08, ajustes 2026-10-09 (decisões 25–27) · Autor: Claude Code com Mateus Zanlorenzi · Status: **rascunho para aprovação do sócio**
 >
 > Este documento é o resultado de uma entrevista estruturada (2 rodadas, 30 perguntas) + levantamento de fatos no banco Supabase, na cópia arquivada do site Paytour (Wayback Machine, jul/2025), no site Next.js publicado e em três pesquisas de mercado (sites de referência, comunidade 2026, custos). Nada aqui foi presumido: cada decisão tem origem marcada como **[decisão do dono]**, **[fato verificado]** ou **[recomendação]**.
 
@@ -90,6 +90,9 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 22 | Avisos: empresa recebe push no app nativo + e-mail; passageiro recebe página de confirmação + e-mail + WhatsApp (voucher e link de acompanhamento); PDF só sob demanda | dono |
 | 23 | Checkout pede: nome, WhatsApp, e-mail, voo, hotel/endereço, passageiros, malas, observações; CPF opcional | dono |
 | 24 | Cobrança sempre em BRL; versões ES/EN mostram valor aproximado em USD/EUR com aviso | dono |
+| 25 | App nativo ganha tela "Pedidos do site", além do push (ajuste de 2026-10-09) | dono |
+| 26 | IA do WhatsApp migra de gpt-4o-mini (OpenAI) para Claude Sonnet 5.5 (ajuste de 2026-10-09) | dono |
+| 27 | Verificar o Supabase; alta chance de precisar subir o porte de computação (ajuste de 2026-10-09) | dono |
 
 Pendências de fato que **não travam** o plano: número CADASTUR, regra exata do adicional por passageiro, verba mensal de Ads, plano atual da Vercel (Hobby ou Pro). Drive de fotos e vídeos: recebido em 2026-10-08 (ver §6).
 
@@ -253,7 +256,19 @@ As 3 landing pages de rota já existentes ganham o **widget de reserva na primei
 
 ### 4.6 Reservas automatizadas pelo WhatsApp (diferencial que justifica o teto de R$ 300)
 
-A IA que já responde no WhatsApp (`ia-responder-whatsapp`) passa a conhecer o catálogo e os preços (consulta a `produtos`) e, quando o cliente quer reservar, envia um **link de checkout pré-preenchido** (produto, data, pax). O pagamento continua no site; a IA não cobra nem confirma sozinha. Custo adicional: só tokens da OpenAI, já pagos hoje.
+A IA que já responde no WhatsApp (`ia-responder-whatsapp`) passa a conhecer o catálogo e os preços (consulta a `produtos`) e, quando o cliente quer reservar, envia um **link de checkout pré-preenchido** (produto, data, pax). O pagamento continua no site; a IA não cobra nem confirma sozinha.
+
+**Migração do modelo para Claude Sonnet 5.5 [decisão 26]**
+
+| Item | Hoje | Depois |
+|:--|:--|:--|
+| Modelo | `gpt-4o-mini` (OpenAI), coluna `configuracoes_whatsapp.ia_modelo` | `claude-sonnet-5-5` (Anthropic) |
+| Formato da resposta | `response_format: json_schema` (OpenAI) | saída estruturada nativa da API Anthropic (`output_config.format`) com o mesmo esquema; sem `tool_choice` forçado (o 5.5 rejeita) |
+| Raciocínio | n/a | `thinking: between_tools` com esforço `low`, ou esforço `low` com raciocínio adaptativo; medir os dois |
+| Preço de lista | ~US$ 0,15 / 0,60 por milhão de tokens | US$ 2 / US$ 10 por milhão (entrada / saída) |
+| Custo estimado | ~R$ 1/mês | ~400 mensagens/mês × (~3 mil tokens de entrada + ~200 de saída) ≈ US$ 3,2 ≈ **R$ 16/mês** |
+
+Fatos que orientam a implementação: a função de e-mails (`processar-reserva-email/ia.ts`) já chama a API da Anthropic por `fetch` e serve de base, mas usa `tool_choice: tool`, que o Sonnet 5.5 recusa (HTTP 400); a tentativa de migrar os e-mails para o 5.5 foi encerrada em 30/09/2026 por regressões na extração de PDFs, um caso bem mais sensível que o chat. Por isso a migração do chat segue o mesmo rito, em escala menor: adaptador por modelo, 50 conversas reais reprocessadas sem escrita comparando gpt-4o-mini × Sonnet 5.5 (tempo, custo, taxa de handoff, respostas fora do esquema), e troca só com ganho demonstrado. Os 6 guardrails e o handoff humano não mudam. Chave `ANTHROPIC_API_KEY` já existe nos segredos das Edge Functions.
 
 ### 4.7 Padrão técnico do checkout (anti-erros conhecidos)
 
@@ -274,8 +289,8 @@ A IA que já responde no WhatsApp (`ia-responder-whatsapp`) passa a conhecer o c
 | Supabase | 4 tabelas novas, 1 RPC, 1 Edge Function de webhook, 1 cron | **Baixo**: nada existente é alterado; INSERT em `viagens` usa o mesmo contrato do PWA |
 | Site Next.js | rotas novas, i18n com prefixo, redirects, widget, checkout | Zero para PWA e app |
 | PWA | tela "Pedidos do site" (lista, confirmar, reembolsar) | Baixo: tela nova, sem mexer nas existentes |
-| App nativo | nada; recebe push pelo gatilho já existente | Zero |
-| WhatsApp IA | prompt ganha catálogo + função "gerar link de checkout" | Baixo: comportamento atual preservado quando não é pedido de reserva |
+| App nativo | tela nova **"Pedidos do site"** no stack de admin (lista com filtro por status, detalhe do pedido, confirmar passeio, acionar reembolso via Edge Function, abrir a viagem gerada), além do push já existente | Baixo: tela nova, sem mexer nas existentes nem em `perfis.tipo` |
+| WhatsApp IA | prompt ganha catálogo + função "gerar link de checkout"; modelo migra para Claude Sonnet 5.5 (§4.6) | Médio: troca de provedor; mitigado por adaptador por modelo, teste em 50 conversas reais e kill switch `ia_ativa` já existente |
 
 ---
 
@@ -386,14 +401,29 @@ Premissas: ticket médio R$ 400; metade Pix, metade cartão à vista; 3 mensagen
 |:--|--:|--:|--:|
 | **Fixo** Vercel Pro (uso comercial exige; Hobby proíbe) | R$ 100 | R$ 100 | R$ 100 |
 | Fixo Supabase Pro (já pago; a loja não adiciona) | R$ 0 | R$ 0 | R$ 0 |
+| **Fixo** Supabase: subir o porte de Micro para Small (US$ 15; decisão 27) | R$ 75 | R$ 75 | R$ 75 |
+| Variável Claude Sonnet 5.5 na IA do WhatsApp (decisão 26) | R$ 16 | R$ 16 | R$ 16 |
 | Fixo Resend Free (3.000 e-mails/mês; a loja usa ~450) | R$ 0 | R$ 0 | R$ 0 |
 | Fixo gateway, WhatsApp API, PDF (bibliotecas MIT) | R$ 0 | R$ 0 | R$ 0 |
-| **Subtotal fixo** | **R$ 100** | **R$ 100** | **R$ 100** |
+| **Subtotal fixo** | **R$ 175** | **R$ 175** | **R$ 175** |
 | Variável WhatsApp (utility) | R$ 5 | R$ 11 | R$ 16 |
 | Variável Mercado Pago D30 (descontado da venda, não é desembolso) | R$ 497 | R$ 994 | R$ 1.491 |
-| **Total** | ≈ R$ 602 (2,5 % de R$ 20 mil) | ≈ R$ 1.105 (2,8 % de R$ 40 mil) | ≈ R$ 1.607 (2,7 % de R$ 60 mil) |
+| **Total** | ≈ R$ 693 | ≈ R$ 1.196 | ≈ R$ 1.698 |
 
-Leitura: o custo **fixo** cai de R$ 250 (Paytour) para **R$ 100** (Vercel Pro), bem abaixo do teto de R$ 250–300, e isso já inclui o chatbot de IA (OpenAI já pago hoje) e as reservas automatizadas. O custo variável é taxa de pagamento, que a Paytour também cobrava por fora via PagSeguro/PayPal. Se a conta Vercel já for Pro, o fixo adicional é zero.
+Leitura: o custo **fixo** cai de R$ 250 (Paytour) para **R$ 175** (Vercel Pro + Supabase Small), abaixo do teto de R$ 250–300, já com o chatbot em Claude Sonnet 5.5 e as reservas automatizadas. O custo variável é taxa de pagamento, que a Paytour também cobrava por fora via PagSeguro/PayPal. Se a conta Vercel já for Pro, o fixo adicional cai para R$ 75.
+
+**Supabase, estado verificado em 2026-10-09 [fatos]**
+
+| Item | Valor |
+|:--|:--|
+| Plano | Pro (US$ 25/mês, já pago), Postgres 17, região us-east-2 |
+| Porte de computação | configurações observadas (60 conexões, 1 GB de RAM, `shared_buffers` 256 MB) correspondem a **Micro**, incluso no Pro; o `CLAUDE.md` do PWA diz "Small", conferir no painel |
+| Banco | 1,76 GB de 8 GB inclusos |
+| Maiores tabelas | `net._http_response` 379 MB com só 1.221 linhas (inchaço de respostas do pg_net); `automacao_email_fila` 354 MB e `automacao_email_arquivos` 353 MB (anexos de e-mail guardados no banco, 4.829 linhas); `viagens` 9,6 MB |
+| Avisos de desempenho | 24 chaves estrangeiras sem índice (quase todas da automação de e-mails), 32 índices nunca usados, índice duplicado em `driver_locations`, 2 políticas RLS redundantes em `perfis`, inchaço em `net._http_response` |
+| Histórico | esgotamento do orçamento de Disk IO em jun/2026 (mitigado com limpeza de `driver_locations` e GPS a 300 m/120 s) |
+
+Leitura [recomendação]: a loja em si pesa pouco (tabelas de pedidos na casa dos megabytes). O que consome o banco é a automação de e-mails e o inchaço do pg_net. Plano em duas partes: (1) **manutenção sem custo na semana 1**: limpar `net._http_response` (recupera ~370 MB e reduz IO), remover o índice duplicado, criar índices nas chaves estrangeiras mais usadas, mover anexos de e-mail para o Storage em pacote próprio; (2) **subir para Small (+US$ 15/mês ≈ R$ 75) no lançamento**, que dobra RAM e conexões e dá folga de IO para a alta temporada. Medium (+US$ 60 ≈ R$ 300) só se o painel mostrar IO esgotando de novo depois da limpeza; estouraria o teto e precisa de decisão sua.
 
 ---
 
@@ -401,12 +431,12 @@ Leitura: o custo **fixo** cai de R$ 250 (Paytour) para **R$ 100** (Vercel Pro), 
 
 | Semana | Período | Entrega | Critério de pronto |
 |:--|:--|:--|:--|
-| 1 | 13–17 out | Aprovação deste plano; Figma das 4 telas (home, produto, checkout, confirmação); tabelas no Supabase; importação dos 46 produtos e imagens | sócio aprovou as 4 telas; `produtos` populada |
+| 1 | 13–17 out | Aprovação deste plano; Figma das 4 telas (home, produto, checkout, confirmação); tabelas no Supabase; importação dos 46 produtos e imagens; **manutenção do Supabase** (limpeza do pg_net, índice duplicado, índices em FKs) e subida para Small | sócio aprovou as 4 telas; `produtos` populada; painel do Supabase sem aviso de IO |
 | 2 | 20–24 out | Páginas de catálogo e produto em PT/ES/EN; widget de reserva com preço; redirects dos slugs Paytour | todas as páginas abrem nos 3 idiomas no staging |
 | 3 | 27–31 out | Checkout + gateway (Pix e cartão) + webhook + criação de viagem + e-mail e WhatsApp ao passageiro + push/e-mail à empresa | compra de teste de R$ 1 vira viagem e dispara os avisos |
-| 4 | 3–7 nov | "Minha reserva", voucher, cancelamento 24 h com reembolso; tela "Pedidos do site" no PWA; fluxo de confirmação de passeios + cron | reembolso de teste concluído; passeio confirmado pelo PWA |
+| 4 | 3–7 nov | "Minha reserva", voucher, cancelamento 24 h com reembolso; tela "Pedidos do site" no PWA **e no app nativo**; fluxo de confirmação de passeios + cron | reembolso de teste concluído; passeio confirmado pelo PWA e pelo app |
 | 5 | 10–14 nov | Landing pages de rota com widget (plano SEO v5.1), consent LGPD, GA4 + Clarity, eventos de conversão, termos e política de cancelamento publicados | Lighthouse mobile ≥ 90; eventos chegam no GA4 |
-| 6 | 17–21 nov | IA do WhatsApp com catálogo e link de checkout; testes de ponta a ponta nos 3 idiomas; correções | 10 cenários de teste passam |
+| 6 | 17–21 nov | IA do WhatsApp migrada para Claude Sonnet 5.5 (teste em 50 conversas reais) + catálogo e link de checkout; testes de ponta a ponta nos 3 idiomas; correções | comparação 4o-mini × 5.5 sem regressão; 10 cenários de teste passam |
 | 7 | 24–28 nov | Homologação com o sócio e o irmão; migração das reservas futuras da Paytour; troca de DNS; Search Console | site no domínio; Paytour em modo consulta |
 | 8 | 1–5 dez | Folga para ajustes; início da frente de Google Ads (sessão separada) | primeira venda real registrada |
 
@@ -453,4 +483,5 @@ Escopo (sessão/subagente própria, após o site no ar): auditoria da conta exis
 1. Sócio aprova este plano (ou aponta ajustes).
 2. Dono envia: número CADASTUR, link do Drive de fotos, regra do adicional por passageiro, plano atual da Vercel.
 3. Eu abro o cadastro no gateway escolhido (precisa de CNPJ e conta bancária da empresa: o dono faz, eu guio passo a passo).
-4. Semana 1 começa.
+4. Dono confirma no painel do Supabase o porte atual (Micro ou Small) e autoriza a subida para Small no lançamento.
+5. Semana 1 começa.
