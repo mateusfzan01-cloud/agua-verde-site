@@ -1,6 +1,6 @@
 # Plano v1 — Loja própria aguaverde.tur.br (substituição da Paytour)
 
-> Data: 2026-10-08, ajustes 2026-10-09 (decisões 25–27) · Autor: Claude Code com Mateus Zanlorenzi · Status: **rascunho para aprovação do sócio**
+> Data: 2026-10-08, ajustes 2026-10-09 (decisões 25–30) · Autor: Claude Code com Mateus Zanlorenzi · Status: **aprovado pelo dono em 2026-10-09, com as recomendações do documento** (gateway Mercado Pago principal e Stripe reserva; Vercel Pro se a conta for Hobby; Supabase Small no lançamento)
 >
 > Este documento é o resultado de uma entrevista estruturada (2 rodadas, 30 perguntas) + levantamento de fatos no banco Supabase, na cópia arquivada do site Paytour (Wayback Machine, jul/2025), no site Next.js publicado e em três pesquisas de mercado (sites de referência, comunidade 2026, custos). Nada aqui foi presumido: cada decisão tem origem marcada como **[decisão do dono]**, **[fato verificado]** ou **[recomendação]**.
 
@@ -93,8 +93,11 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 25 | App nativo ganha tela "Pedidos do site", além do push (ajuste de 2026-10-09) | dono |
 | 26 | IA do WhatsApp migra de gpt-4o-mini (OpenAI) para Claude Sonnet 5.5 (ajuste de 2026-10-09) | dono |
 | 27 | Verificar o Supabase; alta chance de precisar subir o porte de computação (ajuste de 2026-10-09) | dono |
+| 28 | Supabase está em **Micro** (o dono reduziu o porte; o `CLAUDE.md` do PWA ficou desatualizado). Subida para Small **autorizada** para o lançamento (2026-10-09) | dono |
+| 29 | Plano aprovado com as recomendações do documento (2026-10-09). CADASTUR e regra do adicional por passageiro ficam para depois; não travam a construção | dono |
+| 30 | Google Ads: o irmão investe **R$ 2.000/mês em 3 campanhas que funcionam e ficam**. A frente de Ads passa a ser: auditar e otimizar as 3 existentes, apontá-las para a loja nova no lançamento e, se fizer sentido, criar **uma** campanha nova (2026-10-09) | dono |
 
-Pendências de fato que **não travam** o plano: número CADASTUR, regra exata do adicional por passageiro, verba mensal de Ads, plano atual da Vercel (Hobby ou Pro). Drive de fotos e vídeos: recebido em 2026-10-08 (ver §6).
+Pendências de fato que **não travam** o plano: número CADASTUR e regra exata do adicional por passageiro (o dono envia depois; até lá, o site não exibe selo CADASTUR e usa a regra provisória "preço base até 3 passageiros" para revisão), plano atual da Vercel (Hobby ou Pro). Resolvidos em 2026-10-09: porte do Supabase (Micro, subida para Small autorizada), verba de Ads (R$ 2.000/mês já em uso), Drive de fotos e vídeos (recebido, ver §6).
 
 ---
 
@@ -417,7 +420,7 @@ Leitura: o custo **fixo** cai de R$ 250 (Paytour) para **R$ 175** (Vercel Pro + 
 | Item | Valor |
 |:--|:--|
 | Plano | Pro (US$ 25/mês, já pago), Postgres 17, região us-east-2 |
-| Porte de computação | configurações observadas (60 conexões, 1 GB de RAM, `shared_buffers` 256 MB) correspondem a **Micro**, incluso no Pro; o `CLAUDE.md` do PWA diz "Small", conferir no painel |
+| Porte de computação | **Micro** (confirmado pelo dono em 2026-10-09: o porte foi reduzido e o `CLAUDE.md` do PWA não foi atualizado; corrigir esse documento no pacote de manutenção da semana 1). Subida para Small autorizada |
 | Banco | 1,76 GB de 8 GB inclusos |
 | Maiores tabelas | `net._http_response` 379 MB com só 1.221 linhas (inchaço de respostas do pg_net); `automacao_email_fila` 354 MB e `automacao_email_arquivos` 353 MB (anexos de e-mail guardados no banco, 4.829 linhas); `viagens` 9,6 MB |
 | Avisos de desempenho | 24 chaves estrangeiras sem índice (quase todas da automação de e-mails), 32 índices nunca usados, índice duplicado em `driver_locations`, 2 políticas RLS redundantes em `perfis`, inchaço em `net._http_response` |
@@ -474,14 +477,32 @@ Esforço estimado: ~6 semanas de construção + 2 de folga. Se o Drive de fotos 
 
 ## 12. Frente separada: Google Ads
 
-Escopo (sessão/subagente própria, após o site no ar): auditoria da conta existente (inclusive conferir se foi migrada automaticamente para "AI Max" em set/2026 e desligar); **só campanhas de Busca** no início, por rota e idioma (PT para quem está no Brasil; ES/EN por país de origem), correspondência exata e de frase, preço fixo no título do anúncio, Performance Max e AI Max desligados, conversão primária = reserva paga, lances manuais até o rastreamento estar validado (§7.2); variantes de página por anúncio (plano SEO v5.1 §10); textos rascunhados por IA e revisados, peças (imagens/vídeos) geradas por IA com os conectores disponíveis; entrega em arquivo de importação do **Google Ads Editor** (gratuito) para o irmão importar; medição pelo evento `compra_concluida` do site. Sem ferramenta paga: o Adspirer Free (15 tarefas/mês, dados puxados uma vez) serve só para a auditoria inicial, se quiserem conectar a conta.
+**Situação real [informada pelo dono em 2026-10-09]**: o irmão já investe **R$ 2.000/mês em 3 campanhas** que estão funcionando e vão continuar. Não se trata de criar uma campanha do zero.
+
+Escopo da frente (sessão/subagente própria, sem ferramenta paga):
+
+1. **Auditoria das 3 campanhas existentes** (leitura, sem alterar nada): estrutura, palavras-chave e termos de pesquisa, correspondências, lances, páginas de destino, acompanhamento de conversão, e se a conta foi migrada automaticamente para "AI Max" em set/2026 (§7.2). Entrega: relatório com o que está gerando reserva e o que está gastando sem retorno.
+2. **Otimizações propostas, só com o irmão aprovando cada uma**: negativação de termos, correspondência exata/frase onde estiver ampla, preço fixo no título, extensões; nada de Performance Max; lances manuais até o rastreamento de conversão estar validado.
+3. **Troca das páginas de destino no lançamento**: as campanhas passam a apontar para as páginas de rota da loja nova (com variantes por anúncio do plano SEO v5.1 §10), e a conversão primária passa a ser **reserva paga** (`compra_concluida`), medida no site. Hoje a conversão medida é o que a Paytour permite; isso é um dos maiores ganhos da loja própria.
+4. **Uma campanha nova, se a auditoria mostrar espaço**: a candidata natural é Busca em espanhol para o público argentino/chileno (o maior nos lembretes), por rota. Só com verba remanejada ou adicional que o irmão decidir.
+5. Textos rascunhados por IA e revisados; peças (imagens/vídeos) geradas por IA com os conectores disponíveis; entrega em arquivo de importação do **Google Ads Editor** (gratuito). O Adspirer Free (15 tarefas/mês, dados puxados uma vez) serve só para a auditoria inicial, se quiserem conectar a conta; senão, a auditoria é feita com acesso de leitura à conta (o irmão exporta os relatórios ou dá acesso de visualização).
+
+Quando começa: a auditoria (item 1) pode começar **antes** do site novo, porque é só leitura; os itens 3 e 4 esperam o lançamento.
 
 ---
 
-## 13. Próximos passos imediatos
+## 13. Próximos passos imediatos (atualizado em 2026-10-09)
 
-1. Sócio aprova este plano (ou aponta ajustes).
-2. Dono envia: número CADASTUR, link do Drive de fotos, regra do adicional por passageiro, plano atual da Vercel.
-3. Eu abro o cadastro no gateway escolhido (precisa de CNPJ e conta bancária da empresa: o dono faz, eu guio passo a passo).
-4. Dono confirma no painel do Supabase o porte atual (Micro ou Small) e autoriza a subida para Small no lançamento.
-5. Semana 1 começa.
+**Você (dono) faz**
+1. Compartilha a página do plano com o sócio (menu Share da página).
+2. Confere o plano da Vercel (Hobby ou Pro) e, se Hobby, faz a troca para Pro no painel (US$ 20/mês).
+3. Abre o cadastro no Mercado Pago com o CNPJ 17.427.292/0001-46 e conta bancária da empresa; eu guio passo a passo. Em paralelo, cadastro na Stripe (reserva), que pede aprovação prévia para "serviços de transporte".
+4. Sobe o porte do Supabase para Small no painel (Settings → Compute), de preferência fora do horário comercial; leva alguns minutos de indisponibilidade.
+5. Pede ao irmão acesso de leitura à conta do Google Ads (ou exportação das 3 campanhas) para a auditoria.
+6. Envia quando tiver: número CADASTUR, regra do adicional por passageiro.
+
+**Eu faço (semana 1)**
+7. Figma das 4 telas (home, produto, checkout, confirmação) e página HTML das mesmas telas para ver no celular.
+8. Tabelas da loja no Supabase (`produtos`, `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos`) com RLS, em migration versionada.
+9. Importação dos 46 produtos e das imagens para `produtos` e Storage.
+10. Pacote de manutenção do Supabase (limpeza do pg_net, índice duplicado, índices nas chaves estrangeiras usadas, correção do `CLAUDE.md`), **só depois do seu "pode" explícito**, porque mexe no banco de produção compartilhado com o PWA e o app.
