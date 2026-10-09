@@ -33,12 +33,9 @@ Cada produto é um bloco com os campos abaixo. Os campos em três idiomas têm s
 
 ## Texto completo ou texto curto?
 
-- **Com texto completo: 0 produtos.**
-- **Com texto curto (do CSV): 46 produtos.**
+- **Com texto completo: 46 produtos** (desde a coleta de 09/10/2026).
 
-O plano era buscar o texto inteiro de cada produto na cópia da loja Paytour guardada no Wayback Machine (julho/2025). Em 09/10/2026, todas as tentativas falharam: a conexão com `web.archive.org` era cortada pela rede antes de responder (5 tentativas por página, com espera crescente). O site atual da loja também bloqueia acesso automático. Por isso o texto de cada produto foi montado só com o trecho curto do CSV, que vinha cortado no meio (com "..."). **Nada foi inventado para completar o trecho cortado**; onde faltou informação, isso está escrito nas `notas_revisao`.
-
-Se alguém conseguir abrir as páginas antigas (ou tiver os textos guardados), basta mandar que o arquivo é atualizado.
+O texto de cada produto foi reescrito a partir do original completo da Paytour (`descricao_paytour`), corrigido e traduzido para espanhol e inglês por `scripts/textos_completos.py`. Nada foi inventado: onde o original não dizia algo (horário de busca na volta, o que inclui um passeio), isso ficou anotado em `notas_revisao` (itens que começam com "Texto completo (09/10/2026)"). A duração (`duracao_min`) foi preenchida em 6 passeios, calculada pelos horários de saída e retorno do original.
 
 ## O que foi padronizado em todos os produtos
 
@@ -57,7 +54,7 @@ Se alguém conseguir abrir as páginas antigas (ou tiver os textos guardados), b
 
 ## Pendências para o dono decidir
 
-1. **Textos completos**: os 46 produtos estão com texto curto. Faltam roteiro, horários, duração e o que não está incluído, principalmente nos passeios. Vale mandar os textos (ou revisar produto a produto).
+1. **Textos completos**: resolvido. Revisar as dúvidas anotadas produto a produto (`notas_revisao`), principalmente: horário de busca para o voo de volta, inclusos dos passeios de barco, mergulho para credenciados e carro para noivas (quantas horas o preço cobre).
 2. **Preço por veículo**: resolvido com a coleta de 09/10/2026 (42 produtos por veículo, 4 por pessoa).
 3. **Serrambi × Sirinhaém** (produtos 14 e 46): parecem o mesmo trajeto com preços diferentes (R$ 250 e R$ 300). Qual fica?
 4. **Mergulhos e carro para noivas**: resolvido pela coleta. Mergulhos são por pessoa; carro para noivas é por veículo (Sedan Executivo R$ 600, BMW X1 R$ 850, Sprinter R$ 1.200).
