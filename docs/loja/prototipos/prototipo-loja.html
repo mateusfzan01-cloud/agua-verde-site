@@ -3,22 +3,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Layout: coluna de celular (máx. 460px) centrada; no computador, notas do protótipo ao lado. Tokens do CLAUDE.md. */
+/* Layout: coluna de celular (máx. 460px) centrada; no computador, notas do protótipo ao lado. Tokens do CLAUDE.md. Só modo claro (decisão do dono, 09/10/2026). */
 :root{
   --verde:#1a5c38; --verde-claro:#27ae60; --dourado:#d4a853; --hero:#0d2e1c;
   --bg:#eef2ef; --secao:#fafbfa; --surface:#ffffff; --texto:#1a1a2e; --texto2:#5a6570;
   --linha:#dde5df; --verde-suave:#e6f2ea; --dourado-suave:#f8efd9; --on-verde:#ffffff;
   --link:#1a5c38; --alerta:#9a3412; --alerta-bg:#fdecdf; --sombra:0 1px 2px rgba(13,46,28,.08),0 6px 20px rgba(13,46,28,.07);
+  color-scheme:light;
   --f-titulo:"Outfit",ui-sans-serif,system-ui,sans-serif; --f-texto:"Inter",ui-sans-serif,system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#08140d; --secao:#0d1c13; --surface:#13251a; --texto:#e8efe9; --texto2:#9fb0a5; --linha:#24392c;
-  --verde-suave:#173323; --dourado-suave:#3a3018; --link:#5fd08f; --alerta:#fdba8c; --alerta-bg:#3b2213;
-  --sombra:0 1px 2px rgba(0,0,0,.4); color-scheme:dark }}
-:root[data-theme="dark"]{
-  --bg:#08140d; --secao:#0d1c13; --surface:#13251a; --texto:#e8efe9; --texto2:#9fb0a5; --linha:#24392c;
-  --verde-suave:#173323; --dourado-suave:#3a3018; --link:#5fd08f; --alerta:#fdba8c; --alerta-bg:#3b2213;
-  --sombra:0 1px 2px rgba(0,0,0,.4); color-scheme:dark }
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--texto);font:15px/1.5 var(--f-texto);-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--f-titulo);font-weight:600;text-wrap:balance;margin:0;line-height:1.15}
