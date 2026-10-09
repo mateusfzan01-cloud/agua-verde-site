@@ -40,9 +40,6 @@
     "destino_padrao": "Porto de Galinhas",
     "sentido": "n/a",
     "preco_base": 550.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -70,7 +67,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 2,
@@ -110,9 +109,6 @@
     "destino_padrao": "Praia dos Carneiros (Tamandaré)",
     "sentido": "n/a",
     "preco_base": 620.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -140,7 +136,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 3,
@@ -198,9 +196,6 @@
     "destino_padrao": "Porto de Galinhas / Muro Alto",
     "sentido": "ida_volta",
     "preco_base": 340.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -226,8 +221,11 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "nome original '( ida e volta )' com espaços tortos nos parênteses; limpo",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 4,
@@ -285,9 +283,6 @@
     "destino_padrao": "Olinda e Recife",
     "sentido": "n/a",
     "preco_base": 540.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -313,7 +308,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 5,
@@ -371,9 +368,6 @@
     "destino_padrao": "Porto de Galinhas / Muro Alto",
     "sentido": "ida",
     "preco_base": 180.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -400,8 +394,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "3º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 6,
@@ -444,9 +441,6 @@
     "destino_padrao": "Oficina Francisco Brennand e Instituto Ricardo Brennand",
     "sentido": "n/a",
     "preco_base": 460.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -474,7 +468,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 7,
@@ -532,9 +528,6 @@
     "destino_padrao": "Praia dos Carneiros",
     "sentido": "ida",
     "preco_base": 320.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -560,8 +553,11 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 8,
@@ -619,9 +615,6 @@
     "destino_padrao": "Olinda e Instituto Ricardo Brennand",
     "sentido": "n/a",
     "preco_base": 540.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -647,7 +640,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 9,
@@ -678,9 +673,6 @@
     "destino_padrao": "Mar de Dentro (Fernando de Noronha)",
     "sentido": "n/a",
     "preco_base": 550.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -708,7 +700,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 10,
@@ -748,9 +742,6 @@
     "destino_padrao": "Local da cerimônia (Recife ou Olinda)",
     "sentido": "n/a",
     "preco_base": 600.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -777,7 +768,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 11,
@@ -817,9 +810,6 @@
     "destino_padrao": "Rio Capibaribe (centro do Recife)",
     "sentido": "n/a",
     "preco_base": 300.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -847,7 +837,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 12,
@@ -904,10 +896,7 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Maragogi (AL)",
     "sentido": "ida_volta",
-    "preco_base": 700.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
+    "preco_base": 740.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -932,7 +921,35 @@
       "texto original não dizia o tempo de espera no aeroporto; aplicada a política nova (60 min no aeroporto / 15 min em endereço) e cancelamento grátis até 24 h",
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo copiado da Paytour (prints/paytour-maragogi-ida-e-volta-2026-10-09.webp); preco_base = veículo mais barato."
+    ],
+    "max_por_compra": 10,
+    "veiculos": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 740.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 800.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 850.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3800.0
+      }
     ]
   },
   {
@@ -979,9 +996,6 @@
     "destino_padrao": "Porto de Galinhas",
     "sentido": "ida",
     "preco_base": 180.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1007,8 +1021,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "o texto original também aceita embarque no Pina (não aparece no nome); mantido na descrição",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 14,
@@ -1066,9 +1083,6 @@
     "destino_padrao": "Serrambi (Sirinhaém)",
     "sentido": "ida",
     "preco_base": 250.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1096,8 +1110,11 @@
       "categoria corrigida: estava como 'Serviços' na Paytour, agora é transfer (§3)",
       "Serrambi fica em Sirinhaém; existe outro produto 'Aeroporto → Sirinhaém' (ordem 46) por R$ 300 com slug Paytour '...-para-serrambi'. Confirmar se são o mesmo serviço e qual preço vale",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 15,
@@ -1155,9 +1172,6 @@
     "destino_padrao": "Recife (hotéis e endereços)",
     "sentido": "ida",
     "preco_base": 80.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1184,8 +1198,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "nome original 'Aeroporto de Recife para Recife' é ambíguo; reescrito como hotéis/endereços no Recife. Confirmar quais bairros cabem nos R$ 80 (ex.: Boa Viagem, Pina, centro)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 16,
@@ -1222,9 +1239,6 @@
     "destino_padrao": "Ponto de mergulho (Recife)",
     "sentido": "n/a",
     "preco_base": 1020.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -1252,7 +1266,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 17,
@@ -1310,9 +1326,6 @@
     "destino_padrao": "Olinda",
     "sentido": "ida",
     "preco_base": 120.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1338,8 +1351,11 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 18,
@@ -1385,9 +1401,6 @@
     "destino_padrao": "Complexo de Suape (refinaria, estaleiro ou porto)",
     "sentido": "ida",
     "preco_base": 170.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1413,8 +1426,11 @@
       "texto original já dizia 15 min de espera — coincide com a política nova",
       "nome original não diz 'ida ou volta'; sentido gravado como 'ida' e o nome ficou sem '(ida ou volta)'. Confirmar se vale para a volta (Suape → Recife) e se é corporativo (faturamento p/ empresa?)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 19,
@@ -1472,9 +1488,6 @@
     "destino_padrao": "Maragogi (AL)",
     "sentido": "ida",
     "preco_base": 360.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1500,8 +1513,11 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 20,
@@ -1559,9 +1575,6 @@
     "destino_padrao": "Ilha de Itamaracá",
     "sentido": "ida",
     "preco_base": 200.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1588,8 +1601,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "embarque pode ser no aeroporto ou em Boa Viagem pelo mesmo preço (conforme nome original)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 21,
@@ -1644,9 +1660,6 @@
     "destino_padrao": "Recife e Olinda",
     "sentido": "n/a",
     "preco_base": 450.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -1671,7 +1684,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 22,
@@ -1714,9 +1729,6 @@
     "destino_padrao": "Maragogi (AL)",
     "sentido": "ida",
     "preco_base": 500.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1741,8 +1753,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 23,
@@ -1800,9 +1815,6 @@
     "destino_padrao": "Praia dos Carneiros",
     "sentido": "ida_volta",
     "preco_base": 600.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -1827,8 +1839,11 @@
       "texto original não dizia o tempo de espera no aeroporto; aplicada a política nova (60 min no aeroporto / 15 min em endereço) e cancelamento grátis até 24 h",
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 24,
@@ -1868,9 +1883,6 @@
     "destino_padrao": "Praias do Cabo de Santo Agostinho",
     "sentido": "n/a",
     "preco_base": 450.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -1896,7 +1908,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 25,
@@ -1954,9 +1968,6 @@
     "destino_padrao": "Praia do Paiva (Cabo de Santo Agostinho)",
     "sentido": "n/a",
     "preco_base": 400.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -1983,7 +1994,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 26,
@@ -2014,9 +2027,6 @@
     "destino_padrao": "Trilha do Aratu (Maracaípe)",
     "sentido": "n/a",
     "preco_base": 200.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -2043,7 +2053,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 27,
@@ -2086,9 +2098,6 @@
     "destino_padrao": "Maragogi (AL)",
     "sentido": "ida",
     "preco_base": 400.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2113,8 +2122,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 28,
@@ -2172,9 +2184,6 @@
     "destino_padrao": "São Miguel dos Milagres (AL)",
     "sentido": "ida",
     "preco_base": 550.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2200,8 +2209,11 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 29,
@@ -2259,9 +2271,6 @@
     "destino_padrao": "Natal (RN)",
     "sentido": "ida",
     "preco_base": 800.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2287,8 +2296,11 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 30,
@@ -2328,9 +2340,6 @@
     "destino_padrao": "Pontos de mergulho (Recife)",
     "sentido": "n/a",
     "preco_base": 780.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -2358,7 +2367,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 31,
@@ -2416,9 +2427,6 @@
     "destino_padrao": "João Pessoa / Cabedelo (PB)",
     "sentido": "ida",
     "preco_base": 380.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2445,8 +2453,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "2º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 32,
@@ -2501,9 +2512,6 @@
     "destino_padrao": "Pousadas em Fernando de Noronha",
     "sentido": "ida",
     "preco_base": 200.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2532,8 +2540,11 @@
       "operação em Fernando de Noronha: confirmar se a empresa ainda atende a ilha (veículo/parceiro local)",
       "'estacionamento no aeroporto' e 'placa' mantidos por padrão dos transfers de aeroporto; confirmar se valem em Noronha",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 33,
@@ -2564,9 +2575,6 @@
     "destino_padrao": "Trilha do Aratu (Maracaípe)",
     "sentido": "n/a",
     "preco_base": 700.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -2593,7 +2601,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 34,
@@ -2633,9 +2643,6 @@
     "destino_padrao": "Praia de Barra Grande — Caminho de Moisés (Maragogi, AL)",
     "sentido": "n/a",
     "preco_base": 550.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -2662,7 +2669,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 35,
@@ -2705,9 +2714,6 @@
     "destino_padrao": "Caruaru",
     "sentido": "ida_volta",
     "preco_base": 550.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2735,8 +2741,11 @@
       "slug Paytour cita 'sao-joao-2023' e o nome cita 2024 — usar o slug Paytour exato no redirect 301",
       "frase 'horários combinados na reserva' foi acrescentada para explicar o produto de ida e volta; texto original era só 'veículo privativo com motorista'",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 36,
@@ -2773,9 +2782,6 @@
     "destino_padrao": "Recife",
     "sentido": "n/a",
     "preco_base": 520.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "24h",
     "imagens": [],
@@ -2802,7 +2808,9 @@
       "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
       "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 37,
@@ -2845,9 +2853,6 @@
     "destino_padrao": "Porto de Galinhas",
     "sentido": "ida",
     "preco_base": 250.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2872,8 +2877,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 38,
@@ -2931,9 +2939,6 @@
     "destino_padrao": "Japaratinga (AL)",
     "sentido": "ida",
     "preco_base": 400.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -2960,8 +2965,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "1º mais vendido da loja Paytour (selo da loja, plano §1.2)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 39,
@@ -3004,9 +3012,6 @@
     "destino_padrao": "Praia dos Carneiros",
     "sentido": "ida",
     "preco_base": 350.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3032,8 +3037,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "texto original diz só 'veículo privativo e motorista' — pedágio NÃO incluído (não inventado). Confirmar se há pedágio no trajeto e quem paga",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 40,
@@ -3088,9 +3096,6 @@
     "destino_padrao": "Maceió (AL) — hotéis",
     "sentido": "ida",
     "preco_base": 800.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3117,8 +3122,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "texto original NÃO lista pedágio como incluso; mantido sem pedágio (não inventado). Confirmar com a operação",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 41,
@@ -3176,9 +3184,6 @@
     "destino_padrao": "Caruaru",
     "sentido": "ida",
     "preco_base": 380.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3205,8 +3210,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "embarque pode ser no aeroporto ou em Boa Viagem pelo mesmo preço (conforme nome original)",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 42,
@@ -3264,9 +3272,6 @@
     "destino_padrao": "Cabo de Santo Agostinho (hotéis / Vila Galé Eco Resort)",
     "sentido": "ida",
     "preco_base": 180.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3294,8 +3299,11 @@
       "'Ecoresort' grafado como 'Eco Resort' (nome comercial do hotel; conferir)",
       "slug Paytour não cita Vila Galé (o nome foi ampliado depois); redirect 301 continua valendo",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 43,
@@ -3353,9 +3361,6 @@
     "destino_padrao": "Praia da Pipa (RN)",
     "sentido": "ida",
     "preco_base": 750.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3381,8 +3386,11 @@
       "'placa com o nome' e 'estacionamento no aeroporto' vieram do levantamento dos transfers de aeroporto na Paytour (plano §1.2), não do texto deste produto; confirmar",
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 44,
@@ -3440,9 +3448,6 @@
     "destino_padrao": "Jaboatão dos Guararapes",
     "sentido": "ida",
     "preco_base": 80.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3469,8 +3474,11 @@
       "produto 'ida ou volta': sentido gravado como 'ida'; o cliente escolhe o sentido no checkout",
       "Piedade e Candeias ficam em Jaboatão; confirmar se o preço de R$ 80 cobre todo o município",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 45,
@@ -3525,9 +3533,6 @@
     "destino_padrao": "Curitiba",
     "sentido": "ida",
     "preco_base": 200.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3556,8 +3561,11 @@
       "ATIVO=false: fora da área de atuação (Paraná); o §3 recomenda avaliar — parece produto de teste. Decidir se publica ou remove",
       "nome original não diz 'ida ou volta'; sentido gravado como 'ida'",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   },
   {
     "ordem": 46,
@@ -3615,9 +3623,6 @@
     "destino_padrao": "Sirinhaém",
     "sentido": "ida",
     "preco_base": 300.0,
-    "pax_incluidos": 3,
-    "adicional_por_pax": 0,
-    "pax_max": 4,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [],
@@ -3646,7 +3651,10 @@
       "nome original não diz 'ida ou volta'; sentido gravado como 'ida' — confirmar",
       "slug Paytour é '...-para-serrambi' mas o nome é Sirinhaém e o preço (R$ 300) difere do produto Serrambi (ordem 14, R$ 250). Possível duplicata: decidir qual manter",
       "pax_incluidos=3, adicional_por_pax=0 e pax_max=4 são provisórios (§4.3); confirmar regra do adicional por passageiro e capacidade do veículo",
-      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive"
-    ]
+      "imagens: não foi possível associar as URLs de imagens-paytour-2025-07.txt a este produto sem a página original; preencher com as fotos do Drive",
+      "Preço por veículo pendente: copiar a lista de veículos e preços desta página na Paytour. preco_base ainda é o valor de jul/2025."
+    ],
+    "max_por_compra": 10,
+    "veiculos": null
   }
 ]

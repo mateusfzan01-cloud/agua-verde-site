@@ -1,0 +1,47 @@
+{
+  "_sobre": "Preços por veículo copiados da loja Paytour (prints enviados pelo dono em 09/10/2026). Cada produto da Paytour tem a sua própria lista de veículos; nem todos têm os mesmos. 'max_por_compra' é o limite que a Paytour mostra: 10 por compra.",
+  "tipos": {
+    "sedan_economico": {"pt": "Carro Sedan Econômico", "es": "Auto sedán económico", "en": "Economy sedan",
+      "capacidade": {"pt": "Até 3 pessoas com 1 mala de 23 kg e 2 de mão", "es": "Hasta 3 personas con 1 valija de 23 kg y 2 de mano", "en": "Up to 3 people with 1 checked bag (23 kg) and 2 carry-ons"}, "pax_max": 3},
+    "sedan_executivo": {"pt": "Carro Sedan Executivo", "es": "Auto sedán ejecutivo", "en": "Executive sedan",
+      "capacidade": {"pt": "Até 2 pessoas com 1 mala de 23 kg e 2 de mão", "es": "Hasta 2 personas con 1 valija de 23 kg y 2 de mano", "en": "Up to 2 people with 1 checked bag (23 kg) and 2 carry-ons"}, "pax_max": 2},
+    "spin": {"pt": "Carro Spin", "es": "Auto Spin (monovolumen)", "en": "Chevrolet Spin (MPV)",
+      "capacidade": {"pt": "Até 4 pessoas com no máximo 4 malas de 23 kg", "es": "Hasta 4 personas con máximo 4 valijas de 23 kg", "en": "Up to 4 people with up to 4 checked bags (23 kg)"}, "pax_max": 4},
+    "mini_van": {"pt": "Mini Van", "es": "Minivan", "en": "Minivan",
+      "capacidade": {"pt": "Até 8 pessoas com no máximo 6 malas de 23 kg", "es": "Hasta 8 personas con máximo 6 valijas de 23 kg", "en": "Up to 8 people with up to 6 checked bags (23 kg)"}, "pax_max": 8},
+    "sprinter": {"pt": "Van Sprinter Mercedes-Benz", "es": "Van Sprinter Mercedes-Benz", "en": "Mercedes-Benz Sprinter van",
+      "capacidade": {"pt": "Até 17 pessoas com até 17 malas de mão", "es": "Hasta 17 personas con hasta 17 valijas de mano", "en": "Up to 17 people with up to 17 carry-ons"}, "pax_max": 17},
+    "micro_onibus": {"pt": "Micro-ônibus", "es": "Minibús", "en": "Minibus",
+      "capacidade": {"pt": "Até 26 pessoas com no máximo 26 malas de 10 kg", "es": "Hasta 26 personas con máximo 26 valijas de 10 kg", "en": "Up to 26 people with up to 26 bags (10 kg)"}, "pax_max": 26},
+    "bmw_x1": {"pt": "BMW X1", "es": "BMW X1", "en": "BMW X1",
+      "capacidade": {"pt": "Até 3 pessoas com 1 mala de 23 kg e 2 de mão", "es": "Hasta 3 personas con 1 valija de 23 kg y 2 de mano", "en": "Up to 3 people with 1 checked bag (23 kg) and 2 carry-ons"}, "pax_max": 3}
+  },
+  "produtos": {
+    "transfer-privativo-aeroporto-de-recife-para-maragogi-ida-e-volta-": {
+      "fonte": "prints/paytour-maragogi-ida-e-volta-2026-10-09.webp",
+      "max_por_compra": 10,
+      "veiculos": [
+        {"tipo": "sedan_economico", "preco": 740.00},
+        {"tipo": "sedan_executivo", "preco": 800.00},
+        {"tipo": "spin", "preco": 850.00},
+        {"tipo": "mini_van", "preco": 1600.00},
+        {"tipo": "sprinter", "preco": 2500.00},
+        {"tipo": "micro_onibus", "preco": 3800.00}
+      ]
+    }
+  },
+  "nao_identificado": {
+    "fonte": "prints/paytour-veiculos-produto-nao-identificado.png",
+    "nota": "Produto não identificado no print (cabeçalho 'Quantidade de transfers ida e volta'). Preços: Sedan Econômico 400, Sedan Executivo 440, Spin 450, Mini Van 1.000, Sprinter 1.200, Micro-ônibus 3.000, BMW X1 800. Perguntar ao dono qual produto é.",
+    "max_por_compra": 10,
+    "veiculos": [
+      {"tipo": "sedan_economico", "preco": 400.00},
+      {"tipo": "sedan_executivo", "preco": 440.00},
+      {"tipo": "spin", "preco": 450.00},
+      {"tipo": "mini_van", "preco": 1000.00},
+      {"tipo": "sprinter", "preco": 1200.00},
+      {"tipo": "micro_onibus", "preco": 3000.00},
+      {"tipo": "bmw_x1", "preco": 800.00}
+    ]
+  }
+}

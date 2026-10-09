@@ -19,7 +19,7 @@ Cada produto é um bloco com os campos abaixo. Os campos em três idiomas têm s
 | `inclusos`, `nao_inclusos` | Listas do que está e do que não está incluído | Só o que aparece no texto da Paytour ou no levantamento do plano (§1.2). Ficou vazio quando a fonte não dizia |
 | `origem_padrao`, `destino_padrao`, `sentido` | Trajeto e sentido | Nome do produto. "Ida ou volta" ficou como `ida`; o cliente escolhe o sentido na compra |
 | `preco_base` | Preço em reais | **Exatamente** o do CSV (julho/2025) |
-| `pax_incluidos`, `adicional_por_pax`, `pax_max` | Regra de passageiros | Provisória (3 incluídos, R$ 0 de adicional, máximo 4), conforme o plano §4.3 |
+| `veiculos`, `max_por_compra` | Preço por veículo, igual à Paytour | Só Maragogi ida e volta preenchido (print de 09/10/2026); os outros estão `null`. Gerado por `scripts/aplicar_veiculos.py` a partir de `veiculos-paytour.json` |
 | `duracao_min` | Duração em minutos | Ficou vazio (`null`) em todos: a fonte não trazia a duração com segurança |
 | `confirmacao` | `imediata` (transfer) ou `24h` (passeio) | Regra do plano (decisão 20) |
 | `imagens` | Fotos do produto | Vazio em todos. Ver "Fotos" abaixo |
@@ -52,7 +52,7 @@ As 69 URLs de `imagens-paytour-2025-07.txt` não dizem a que produto pertencem, 
 ## Pendências para o dono decidir
 
 1. **Textos completos**: os 46 produtos estão com texto curto. Faltam roteiro, horários, duração e o que não está incluído, principalmente nos passeios. Vale mandar os textos (ou revisar produto a produto).
-2. **Regra de passageiros**: confirmar quantos passageiros cabem no preço base, quanto custa cada passageiro extra e o máximo por veículo (hoje: 3 incluídos, sem adicional, máximo 4).
+2. **Preço por veículo** (decidido em 09/10: copiar a Paytour): falta a lista de veículos e preços atuais de 45 produtos. Os preços de jul/2025 estão desatualizados (Maragogi ida e volta passou de R$ 700 para R$ 740).
 3. **Serrambi × Sirinhaém** (produtos 14 e 46): parecem o mesmo trajeto com preços diferentes (R$ 250 e R$ 300). Qual fica?
 4. **Mergulhos e carro para noivas**: o preço é por pessoa ou por grupo? A regra de passageiros dos transfers não serve para eles. O carro de noivas não tem descrição (o texto original era só "Motorista Agua veículo privativo"); talvez seja melhor vender por orçamento no WhatsApp.
 5. **Pedágio**: confirmar os trajetos que ficaram sem pedágio (lista acima). Se a empresa paga o pedágio também nesses, é só avisar.
