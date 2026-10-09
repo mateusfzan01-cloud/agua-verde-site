@@ -1,7 +1,7 @@
 # AGENTS.md — Água Verde Site (agua-verde-site)
 
 > Documentação de referência completa para agentes de IA trabalhando neste projeto.
-> Última atualização: 2026-05-27
+> Última atualização: 2026-10-09
 
 ---
 
@@ -228,7 +228,7 @@ A regra "e-commerce só após >20 orçamentos/mês por 2 meses" foi escrita para
 | Fase 0 | Setup + reconhecimento Starter + redirects 301 | Parcialmente feito |
 | **Fase 1** | Site institucional + landing pages de destino + SEO | **✅ Concluída** |
 | Fase 2 | Webhook orçamentos + blog MDX + redirects Starter | Próxima |
-| Fase 3 | E-commerce pacotes de transfer (Mercado Pago) | Opcional — só com demanda |
+| Fase 3 | Loja própria substituindo a Paytour (Mercado Pago) | **Aprovada em 2026-10-09** — `docs/loja/PLANO_LOJA_PROPRIA_V1.md` |
 | Fase 4 | SEO conteúdo contínuo (blog) | Paralela à Fase 2 |
 
 ### Fase 2 — o que fazer

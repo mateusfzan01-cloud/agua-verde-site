@@ -1,7 +1,7 @@
 # CLAUDE.md — agua-verde-site
 
 > Guia principal para o Claude Code trabalhar neste projeto.
-> Última atualização: 2026-05-27
+> Última atualização: 2026-10-09
 
 ---
 
@@ -153,7 +153,7 @@ No Header, usar `public/images/logo-agua-verde.png`. Não substituir por texto "
 | Fase | Prioridade | Gatilho |
 |:-----|:-----------|:--------|
 | **Fase 2** — Webhook orçamentos + Blog | Alta | Imediato após deploy |
-| **Fase 3** — E-commerce pacotes transfer | Opcional | >20 orçamentos/mês × 2 meses |
+| **Fase 3** — Loja própria (substitui a Paytour) | **Aprovada em 2026-10-09** | Plano em `docs/loja/PLANO_LOJA_PROPRIA_V1.md`; semana 1 em 13/10 |
 | **Fase 4** — SEO conteúdo contínuo | Média | Paralela à Fase 2 |
 
 **Fase 2 inclui:**
