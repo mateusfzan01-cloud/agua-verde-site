@@ -135,6 +135,27 @@ button,input,select,textarea{font:inherit;color:inherit}
 .veic .contador{border:0;background:none;padding:0;gap:6px}
 .veic .contador button{width:34px;height:34px}
 .veic .contador output{min-width:22px;text-align:center}
+.pickbtn{width:100%;display:flex;align-items:center;gap:8px;border:1.5px solid var(--linha);background:var(--surface);border-radius:10px;padding:11px 12px;min-height:46px;cursor:pointer;text-align:left;font-weight:500;color:var(--texto)}
+.pickbtn svg{flex:none;color:var(--link)}
+.pickbtn span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.folha-fundo{position:fixed;inset:0;background:rgba(13,46,28,.45);z-index:90;display:flex;align-items:flex-end;justify-content:center}
+.folha{background:var(--surface);width:100%;max-width:460px;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));display:grid;gap:12px;box-shadow:0 -10px 30px rgba(0,0,0,.2)}
+@media (min-width:600px){.folha-fundo{align-items:center}.folha{border-radius:18px}}
+.folha-cab{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.folha-cab b{font-family:var(--f-titulo);font-size:18px}
+.folha-cab button{border:0;background:var(--verde-suave);color:var(--link);width:38px;height:38px;border-radius:10px;font-size:20px;font-weight:700;cursor:pointer}
+.folha-cab button:disabled{opacity:.35;cursor:default}
+.semana,.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.semana span{font-size:11.5px;font-weight:600;color:var(--texto2);text-transform:uppercase}
+.dias button{aspect-ratio:1;max-width:100%;border:0;border-radius:10px;background:transparent;font-weight:600;font-size:15px;cursor:pointer;color:var(--texto)}
+.dias button:hover{background:var(--verde-suave)}
+.dias button.hoje{box-shadow:inset 0 0 0 1.5px var(--linha)}
+.dias button.sel{background:var(--verde);color:var(--on-verde)}
+.dias button:disabled{color:var(--linha);cursor:default;background:transparent}
+.horas{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.horas button{border:1.5px solid var(--linha);background:var(--surface);border-radius:10px;padding:9px 0;font-weight:600;cursor:pointer;color:var(--texto);font-variant-numeric:tabular-nums}
+.horas button.sel{background:var(--verde);border-color:var(--verde);color:var(--on-verde)}
+.folha .rotulo{margin-top:2px}
 .check{display:grid;gap:7px;margin:0;padding:0;list-style:none}
 .check li{display:flex;gap:8px;font-size:14px}
 .check li::before{content:"✓";color:var(--verde-claro);font-weight:800}
@@ -615,7 +636,7 @@ var MAIS = {
 
 /* ---------- Textos ---------- */
 var T = {
-pt:{"tr.rot":"Prévia da página de acompanhamento","tr.carro":"Chevrolet Spin branca · placa QWE-1A23","tr.eta":"chega em 12 min","tr.nota":"Exemplo. No dia, este link abre o mapa ao vivo com o motorista (página /acompanhar que já existe). Antes disso, mostra os dados do motorista assim que ele for escalado.","ps.tag":"Dia inteiro com guia","ps.cat":"Passeio privativo","ps.nome":"City tour Recife e Olinda","ps.conf":"Confirmação em até 24 h","ps.f1":"de passeio","ps.f2":"saída do hotel","ps.f3b":"Guia","ps.f3":"local em Olinda","ps.data":"Data do passeio","ps.data.d":"Buscamos você no hotel por volta das 8h e trazemos de volta por volta das 16h30.","ps.veic.d":"O preço é por veículo, para o dia inteiro. Grupo grande? Some mais de um.","ps.comof":"Como funciona a confirmação","ps.comof1":"Você paga agora para garantir o pedido.","ps.comof2":"Confirmamos a vaga em até 24 h, por WhatsApp e e-mail.","ps.comof3":"Sem vaga? Devolvemos todo o valor, automaticamente.","ps.comof4":"Cancelamento grátis até 24 h antes do passeio.","ps.roteiro":"Roteiro","ps.nao":"Não está incluso","ps.q1":"O passeio é compartilhado com outras pessoas?","ps.q1r":"Não. O veículo e o motorista são só do seu grupo. O guia local acompanha a parte a pé em Olinda.","ps.q2r":"Por veículo, para o dia inteiro. Cada carro mostra quantas pessoas cabem.","ps.q3":"E se não houver vaga na data?","ps.q3r":"Avisamos em até 24 h e devolvemos todo o valor automaticamente, pelo mesmo meio de pagamento.","ps.1veic":"1 veículo, dia inteiro","ps.nveic":"veículos, dia inteiro",
+pt:{"pk.fechar":"Fechar","pk.ok":"Confirmar","pk.hora":"Hora","pk.min":"Minutos","pk.escolha":"Escolha a data","pk.escolhah":"Escolha o horário","tr.rot":"Prévia da página de acompanhamento","tr.carro":"Chevrolet Spin branca · placa QWE-1A23","tr.eta":"chega em 12 min","tr.nota":"Exemplo. No dia, este link abre o mapa ao vivo com o motorista (página /acompanhar que já existe). Antes disso, mostra os dados do motorista assim que ele for escalado.","ps.tag":"Dia inteiro com guia","ps.cat":"Passeio privativo","ps.nome":"City tour Recife e Olinda","ps.conf":"Confirmação em até 24 h","ps.f1":"de passeio","ps.f2":"saída do hotel","ps.f3b":"Guia","ps.f3":"local em Olinda","ps.data":"Data do passeio","ps.data.d":"Buscamos você no hotel por volta das 8h e trazemos de volta por volta das 16h30.","ps.veic.d":"O preço é por veículo, para o dia inteiro. Grupo grande? Some mais de um.","ps.comof":"Como funciona a confirmação","ps.comof1":"Você paga agora para garantir o pedido.","ps.comof2":"Confirmamos a vaga em até 24 h, por WhatsApp e e-mail.","ps.comof3":"Sem vaga? Devolvemos todo o valor, automaticamente.","ps.comof4":"Cancelamento grátis até 24 h antes do passeio.","ps.roteiro":"Roteiro","ps.nao":"Não está incluso","ps.q1":"O passeio é compartilhado com outras pessoas?","ps.q1r":"Não. O veículo e o motorista são só do seu grupo. O guia local acompanha a parte a pé em Olinda.","ps.q2r":"Por veículo, para o dia inteiro. Cada carro mostra quantas pessoas cabem.","ps.q3":"E se não houver vaga na data?","ps.q3r":"Avisamos em até 24 h e devolvemos todo o valor automaticamente, pelo mesmo meio de pagamento.","ps.1veic":"1 veículo, dia inteiro","ps.nveic":"veículos, dia inteiro",
 "ps.inc":["Veículo privativo","Motorista","Guia local"],"ps.naoinc":["Alimentação","Bebidas","Ingressos"],
 "ps.rot":[["8h","Saída do seu hotel","Rumo ao Recife Antigo."],["Manhã","Recife Antigo","Marco Zero, Parque das Esculturas e Rua da Aurora. Paradas na Casa da Cultura, Capela Dourada, Teatro de Santa Isabel e Rua do Bom Jesus."],["Almoço","Alto da Sé, em Olinda","Almoço por sua conta."],["Tarde","Olinda a pé, com guia local","Convento de São Francisco, Catedral da Sé, Bonecos de Olinda, Igreja da Misericórdia, Mercado da Ribeira, Mosteiro de São Bento e Igreja do Carmo."],["16h30","Retorno ao hotel",""]],
 "c.s2t":"2. Voo e hotel","c.s2p":"2. Hotel","c.h2t":"Voo e hotel","c.h2p":"Onde buscamos você?","c.hotelt":"Hotel ou endereço de destino","c.hotelp":"Hotel ou endereço para buscar","c.passeio":"Passeio","c.dia":"Data","c.saida":"Saída","c.saidav":"Do hotel, por volta das 8h","c.conf24":"Confirmação em até 24 h. Sem vaga, reembolso integral automático.",
@@ -653,7 +674,7 @@ pt:{"tr.rot":"Prévia da página de acompanhamento","tr.carro":"Chevrolet Spin b
 "n.checkout":["3 passos, sem criar conta. Campos da decisão 23; CPF opcional.","Exemplo preenchido com uma cliente argentina, porque o espanhol é o idioma mais comum nos lembretes.","Pix ou cartão pelo Mercado Pago (Checkout Pro). O Pix aqui é ilustrativo.","Aceite dos termos obrigatório; desmarque para ver a mensagem de erro."],
 "n.reserva":["O endereço real da página será /reserva/[segredo], nunca o número da reserva.","Autoatendimento: reenviar voucher, alterar, não encontro o motorista, cancelar.","Cancelar mostra o prazo de 24 h e o valor do reembolso antes de confirmar.","“Minha reserva” não mostra dados: só reenvia o link (§4.4 do plano)."]
 },
-es:{"tr.rot":"Vista previa del seguimiento","tr.carro":"Chevrolet Spin blanca · patente QWE-1A23","tr.eta":"llega en 12 min","tr.nota":"Ejemplo. El día del viaje, este link abre el mapa en vivo con el chofer. Antes, muestra los datos del chofer apenas se asigna.","ps.tag":"Día completo con guía","ps.cat":"Excursión privada","ps.nome":"City tour por Recife y Olinda","ps.conf":"Confirmación en hasta 24 h","ps.f1":"de excursión","ps.f2":"salida del hotel","ps.f3b":"Guía","ps.f3":"local en Olinda","ps.data":"Fecha de la excursión","ps.data.d":"Te buscamos en el hotel alrededor de las 8 y te traemos de vuelta alrededor de las 16:30.","ps.veic.d":"El precio es por vehículo, por el día completo. ¿Grupo grande? Sumá más de uno.","ps.comof":"Cómo funciona la confirmación","ps.comof1":"Pagás ahora para asegurar el pedido.","ps.comof2":"Confirmamos el lugar en hasta 24 h, por WhatsApp y e-mail.","ps.comof3":"¿No hay lugar? Te devolvemos todo, automáticamente.","ps.comof4":"Cancelación gratis hasta 24 h antes de la excursión.","ps.roteiro":"Recorrido","ps.nao":"No incluye","ps.q1":"¿La excursión es compartida con otras personas?","ps.q1r":"No. El vehículo y el chofer son solo para tu grupo. El guía local acompaña la parte a pie en Olinda.","ps.q2r":"Por vehículo, por el día completo. Cada auto indica cuántas personas entran.","ps.q3":"¿Y si no hay lugar en la fecha?","ps.q3r":"Te avisamos en hasta 24 h y te devolvemos todo automáticamente, al mismo medio de pago.","ps.1veic":"1 vehículo, día completo","ps.nveic":"vehículos, día completo",
+es:{"pk.fechar":"Cerrar","pk.ok":"Confirmar","pk.hora":"Hora","pk.min":"Minutos","pk.escolha":"Elegí la fecha","pk.escolhah":"Elegí el horario","tr.rot":"Vista previa del seguimiento","tr.carro":"Chevrolet Spin blanca · patente QWE-1A23","tr.eta":"llega en 12 min","tr.nota":"Ejemplo. El día del viaje, este link abre el mapa en vivo con el chofer. Antes, muestra los datos del chofer apenas se asigna.","ps.tag":"Día completo con guía","ps.cat":"Excursión privada","ps.nome":"City tour por Recife y Olinda","ps.conf":"Confirmación en hasta 24 h","ps.f1":"de excursión","ps.f2":"salida del hotel","ps.f3b":"Guía","ps.f3":"local en Olinda","ps.data":"Fecha de la excursión","ps.data.d":"Te buscamos en el hotel alrededor de las 8 y te traemos de vuelta alrededor de las 16:30.","ps.veic.d":"El precio es por vehículo, por el día completo. ¿Grupo grande? Sumá más de uno.","ps.comof":"Cómo funciona la confirmación","ps.comof1":"Pagás ahora para asegurar el pedido.","ps.comof2":"Confirmamos el lugar en hasta 24 h, por WhatsApp y e-mail.","ps.comof3":"¿No hay lugar? Te devolvemos todo, automáticamente.","ps.comof4":"Cancelación gratis hasta 24 h antes de la excursión.","ps.roteiro":"Recorrido","ps.nao":"No incluye","ps.q1":"¿La excursión es compartida con otras personas?","ps.q1r":"No. El vehículo y el chofer son solo para tu grupo. El guía local acompaña la parte a pie en Olinda.","ps.q2r":"Por vehículo, por el día completo. Cada auto indica cuántas personas entran.","ps.q3":"¿Y si no hay lugar en la fecha?","ps.q3r":"Te avisamos en hasta 24 h y te devolvemos todo automáticamente, al mismo medio de pago.","ps.1veic":"1 vehículo, día completo","ps.nveic":"vehículos, día completo",
 "ps.inc":["Vehículo privado","Chofer","Guía local"],"ps.naoinc":["Comidas","Bebidas","Entradas"],
 "ps.rot":[["8:00","Salida de tu hotel","Rumbo a Recife Antiguo."],["Mañana","Recife Antiguo","Marco Zero, Parque de las Esculturas y Rua da Aurora. Paradas en la Casa da Cultura, Capilla Dorada, Teatro de Santa Isabel y Rua do Bom Jesus."],["Almuerzo","Alto da Sé, en Olinda","El almuerzo corre por tu cuenta."],["Tarde","Olinda a pie, con guía local","Convento de São Francisco, Catedral da Sé, Muñecos de Olinda, Iglesia de la Misericordia, Mercado da Ribeira, Monasterio de São Bento e Iglesia del Carmo."],["16:30","Regreso al hotel",""]],
 "c.s2t":"2. Vuelo y hotel","c.s2p":"2. Hotel","c.h2t":"Vuelo y hotel","c.h2p":"¿Dónde te buscamos?","c.hotelt":"Hotel o dirección de destino","c.hotelp":"Hotel o dirección para buscarte","c.passeio":"Excursión","c.dia":"Fecha","c.saida":"Salida","c.saidav":"Del hotel, alrededor de las 8","c.conf24":"Confirmación en hasta 24 h. Si no hay lugar, reembolso total automático.",
@@ -685,7 +706,7 @@ es:{"tr.rot":"Vista previa del seguimiento","tr.carro":"Chevrolet Spin blanca ·
 "r.cx.t":"¿Cancelar sin costo?","r.cx.d":"Faltan más de 24 h para el viaje, así que el reembolso es total: R$ {v}, al mismo medio de pago. Cancelación gratis hasta el {d}.","r.cx.sim":"Sí, cancelar","r.cx.nao":"Mantener reserva","r.cx.ok":"Reserva cancelada (simulación). Pedimos el reembolso de R$ {v} a Mercado Pago. Te llega la confirmación por e-mail.",
 "m.t":"Mi reserva","m.d":"¿Perdiste el link? Escribí el número de reserva y el e-mail de la compra. Si coinciden, te reenviamos el link por e-mail y WhatsApp.","m.num":"Número de reserva","m.btn":"Reenviar mi link","m.ok":"Si los datos son correctos, el link llega en unos minutos al e-mail y WhatsApp de la reserva. Por seguridad no mostramos la reserva en esta pantalla.","m.vazio":"Completá el número y el e-mail.",
 "n.t":"Notas del prototipo (para el dueño)"},
-en:{"tr.rot":"Tracking page preview","tr.carro":"White Chevrolet Spin · plate QWE-1A23","tr.eta":"12 min away","tr.nota":"Example. On the day, this link opens the live map with your driver. Before that, it shows your driver's details once assigned.","ps.tag":"Full day with a guide","ps.cat":"Private tour","ps.nome":"Recife and Olinda city tour","ps.conf":"Confirmed within 24 h","ps.f1":"tour","ps.f2":"hotel pickup","ps.f3b":"Guide","ps.f3":"local, in Olinda","ps.data":"Tour date","ps.data.d":"We pick you up at your hotel around 8 am and bring you back around 4:30 pm.","ps.veic.d":"Prices are per vehicle, for the full day. Big group? Add more than one.","ps.comof":"How confirmation works","ps.comof1":"You pay now to secure your request.","ps.comof2":"We confirm availability within 24 h by WhatsApp and email.","ps.comof3":"No availability? You get a full automatic refund.","ps.comof4":"Free cancellation up to 24 h before the tour.","ps.roteiro":"Itinerary","ps.nao":"Not included","ps.q1":"Is the tour shared with other people?","ps.q1r":"No. The vehicle and driver are just for your group. The local guide joins the walking part in Olinda.","ps.q2r":"Per vehicle, for the full day. Each vehicle shows how many people fit.","ps.q3":"What if there's no availability on my date?","ps.q3r":"We let you know within 24 h and refund everything automatically to the same payment method.","ps.1veic":"1 vehicle, full day","ps.nveic":"vehicles, full day",
+en:{"pk.fechar":"Close","pk.ok":"Confirm","pk.hora":"Hour","pk.min":"Minutes","pk.escolha":"Choose a date","pk.escolhah":"Choose a time","tr.rot":"Tracking page preview","tr.carro":"White Chevrolet Spin · plate QWE-1A23","tr.eta":"12 min away","tr.nota":"Example. On the day, this link opens the live map with your driver. Before that, it shows your driver's details once assigned.","ps.tag":"Full day with a guide","ps.cat":"Private tour","ps.nome":"Recife and Olinda city tour","ps.conf":"Confirmed within 24 h","ps.f1":"tour","ps.f2":"hotel pickup","ps.f3b":"Guide","ps.f3":"local, in Olinda","ps.data":"Tour date","ps.data.d":"We pick you up at your hotel around 8 am and bring you back around 4:30 pm.","ps.veic.d":"Prices are per vehicle, for the full day. Big group? Add more than one.","ps.comof":"How confirmation works","ps.comof1":"You pay now to secure your request.","ps.comof2":"We confirm availability within 24 h by WhatsApp and email.","ps.comof3":"No availability? You get a full automatic refund.","ps.comof4":"Free cancellation up to 24 h before the tour.","ps.roteiro":"Itinerary","ps.nao":"Not included","ps.q1":"Is the tour shared with other people?","ps.q1r":"No. The vehicle and driver are just for your group. The local guide joins the walking part in Olinda.","ps.q2r":"Per vehicle, for the full day. Each vehicle shows how many people fit.","ps.q3":"What if there's no availability on my date?","ps.q3r":"We let you know within 24 h and refund everything automatically to the same payment method.","ps.1veic":"1 vehicle, full day","ps.nveic":"vehicles, full day",
 "ps.inc":["Private vehicle","Driver","Local guide"],"ps.naoinc":["Food","Drinks","Tickets"],
 "ps.rot":[["8 am","Hotel pickup","Heading to Old Recife."],["Morning","Old Recife","Marco Zero, the Sculpture Park and Rua da Aurora. Stops at Casa da Cultura, the Golden Chapel, Santa Isabel Theater and Rua do Bom Jesus."],["Lunch","Alto da Sé, Olinda","Lunch is on you."],["Afternoon","Olinda on foot, with a local guide","São Francisco Convent, Sé Cathedral, Olinda Giant Puppets, Misericórdia Church, Ribeira Market, São Bento Monastery and Carmo Church."],["4:30 pm","Back at your hotel",""]],
 "c.s2t":"2. Flight & hotel","c.s2p":"2. Hotel","c.h2t":"Flight & hotel","c.h2p":"Where do we pick you up?","c.hotelt":"Hotel or drop-off address","c.hotelp":"Hotel or pickup address","c.passeio":"Tour","c.dia":"Date","c.saida":"Pickup","c.saidav":"At your hotel, around 8 am","c.conf24":"Confirmed within 24 h. No availability means a full automatic refund.",
@@ -889,7 +910,7 @@ function aplicaTextos(){
   document.querySelectorAll("[data-lang]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lang===L)); });
   document.querySelector(".galeria .tag").textContent = t("p.tag");
 }
-function renderTudo(){ aplicaTextos(); renderWidget(); promessas(document.getElementById("promessas-home")); promessas(document.getElementById("promessas-prod")); renderLista(); renderProduto(); renderPasseio(); renderCheckout(); renderReserva(); renderNotas(); }
+function renderTudo(){ atualizaSeletores(); aplicaTextos(); renderWidget(); promessas(document.getElementById("promessas-home")); promessas(document.getElementById("promessas-prod")); renderLista(); renderProduto(); renderPasseio(); renderCheckout(); renderReserva(); renderNotas(); }
 
 /* QR ilustrativo (padrão determinístico, não é um Pix válido) */
 function desenhaQR(){
@@ -989,6 +1010,87 @@ document.getElementById("m-form").addEventListener("submit", function(e){
   document.getElementById("m-res").innerHTML = (n && m) ? '<div class="sucesso">'+t("m.ok")+'</div>' : '<p class="aviso">'+t("m.vazio")+'</p>';
 });
 
-renderTudo(); mostra();
+/* Seletores de data e hora próprios (calendário e relógio em folha), iguais em todo celular e computador */
+var HOJE = "2026-10-10";
+var ICAL = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>';
+var IHORA = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+function cap(x){ return x.charAt(0).toUpperCase()+x.slice(1); }
+function locale(){ return L==="pt"?"pt-BR":L==="es"?"es-AR":"en-GB"; }
+function isoDe(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function dataLonga(iso){ var d = new Date(iso+"T12:00:00"); return d.toLocaleDateString(locale(),{weekday:"short",day:"numeric",month:"short",year:"numeric"}); }
+function montaSeletores(){
+  document.querySelectorAll('input[type="date"],input[type="time"]').forEach(function(inp){
+    if(inp.dataset.pk) return;
+    inp.dataset.pk = inp.type; inp.hidden = true;
+    var b = document.createElement("button"); b.type = "button"; b.className = "pickbtn"; b.dataset.alvo = inp.id;
+    b.setAttribute("aria-haspopup","dialog");
+    if(inp.getAttribute("aria-label")) b.setAttribute("aria-label", inp.getAttribute("aria-label"));
+    inp.parentNode.insertBefore(b, inp.nextSibling);
+    var lab = document.querySelector('label[for="'+inp.id+'"]'); if(lab) lab.setAttribute("for", "");
+  });
+  atualizaSeletores();
+}
+function atualizaSeletores(){
+  document.querySelectorAll(".pickbtn").forEach(function(b){
+    var inp = document.getElementById(b.dataset.alvo);
+    b.innerHTML = (inp.dataset.pk==="date" ? ICAL+'<span>'+dataLonga(inp.value)+'</span>' : IHORA+'<span class="tab">'+inp.value+'</span>');
+  });
+}
+var pk = {alvo:null, mes:null, h:null, m:null};
+function abreFolha(inp){
+  pk.alvo = inp;
+  if(inp.dataset.pk==="date"){ var d = new Date((inp.value||HOJE)+"T12:00:00"); pk.mes = new Date(d.getFullYear(), d.getMonth(), 1); }
+  else { var p = (inp.value||"12:00").split(":"); pk.h = +p[0]; pk.m = +p[1]; }
+  desenhaFolha();
+}
+function fechaFolha(){ var f = document.getElementById("folha"); if(f) f.remove(); pk.alvo = null; }
+function minDe(inp){ if(inp.id==="p-data2") return document.getElementById("p-data").value; return inp.min || isoDe(new Date(new Date(HOJE+"T12:00:00").getTime()+864e5)); }
+function desenhaFolha(){
+  var inp = pk.alvo, html;
+  if(inp.dataset.pk==="date"){
+    var min = minDe(inp), y = pk.mes.getFullYear(), mo = pk.mes.getMonth();
+    var primeiro = new Date(y, mo, 1), ini = (primeiro.getDay()+6)%7, ndias = new Date(y, mo+1, 0).getDate();
+    var semana = []; for(var i=0;i<7;i++){ semana.push(new Date(2026,9,5+i).toLocaleDateString(locale(),{weekday:"narrow"})); }
+    var minMes = min.slice(0,7) >= (y+"-"+String(mo+1).padStart(2,"0"));
+    var dias = ""; for(var k=0;k<ini;k++) dias += "<span></span>";
+    for(var dd=1; dd<=ndias; dd++){
+      var iso = y+"-"+String(mo+1).padStart(2,"0")+"-"+String(dd).padStart(2,"0");
+      dias += '<button type="button" data-dia="'+iso+'"'+(iso<min?" disabled":"")+' class="'+(iso===inp.value?"sel":"")+(iso===HOJE?" hoje":"")+'">'+dd+'</button>';
+    }
+    html = '<div class="folha-cab"><button type="button" data-mes="-1" aria-label="&lt;"'+(minMes?" disabled":"")+'>‹</button><b>'+cap(pk.mes.toLocaleDateString(locale(),{month:"long",year:"numeric"}))+'</b><button type="button" data-mes="1" aria-label="&gt;">›</button></div>'+
+      '<div class="semana">'+semana.map(function(x){return "<span>"+x+"</span>";}).join("")+'</div><div class="dias">'+dias+'</div>';
+    html = '<span class="rotulo">'+t("pk.escolha")+'</span>' + html;
+  } else {
+    var hs = ""; for(var h=0; h<24; h++) hs += '<button type="button" data-h="'+h+'" class="'+(h===pk.h?"sel":"")+'">'+String(h).padStart(2,"0")+'</button>';
+    var ms = ""; for(var m=0; m<60; m+=5) ms += '<button type="button" data-m="'+m+'" class="'+(m===pk.m?"sel":"")+'">:'+String(m).padStart(2,"0")+'</button>';
+    html = '<div class="folha-cab"><b class="tab">'+String(pk.h).padStart(2,"0")+":"+String(pk.m).padStart(2,"0")+'</b></div>'+
+      '<span class="rotulo">'+t("pk.hora")+'</span><div class="horas">'+hs+'</div>'+
+      '<span class="rotulo">'+t("pk.min")+'</span><div class="horas">'+ms+'</div>'+
+      '<button type="button" class="btn btn-pri" data-pk-ok="1">'+t("pk.ok")+'</button>';
+    html = '<span class="rotulo">'+t("pk.escolhah")+'</span>' + html;
+  }
+  html += '<button type="button" class="btn btn-sec" data-pk-fechar="1">'+t("pk.fechar")+'</button>';
+  var f = document.getElementById("folha");
+  if(!f){ f = document.createElement("div"); f.id = "folha"; f.className = "folha-fundo"; f.innerHTML = '<div class="folha" role="dialog" aria-modal="true"></div>'; document.body.appendChild(f); }
+  f.firstChild.innerHTML = html;
+}
+function definir(inp, valor){
+  inp.value = valor; inp.dispatchEvent(new Event("change", {bubbles:true}));
+  if(inp.id==="p-data" && document.getElementById("p-data2").value < valor){ var v2 = document.getElementById("p-data2"); v2.value = valor; v2.dispatchEvent(new Event("change",{bubbles:true})); }
+  atualizaSeletores();
+}
+document.addEventListener("click", function(e){
+  var b = e.target.closest(".pickbtn"); if(b){ abreFolha(document.getElementById(b.dataset.alvo)); return; }
+  if(!pk.alvo) return;
+  if(e.target.id==="folha" || e.target.closest("[data-pk-fechar]")){ fechaFolha(); return; }
+  var mb = e.target.closest("[data-mes]"); if(mb && !mb.disabled){ pk.mes = new Date(pk.mes.getFullYear(), pk.mes.getMonth()+ (+mb.dataset.mes), 1); desenhaFolha(); return; }
+  var db = e.target.closest("[data-dia]"); if(db && !db.disabled){ definir(pk.alvo, db.dataset.dia); fechaFolha(); return; }
+  var hb = e.target.closest("[data-h]"); if(hb){ pk.h = +hb.dataset.h; desenhaFolha(); return; }
+  var mn = e.target.closest("[data-m]"); if(mn){ pk.m = +mn.dataset.m; desenhaFolha(); return; }
+  if(e.target.closest("[data-pk-ok]")){ definir(pk.alvo, String(pk.h).padStart(2,"0")+":"+String(pk.m).padStart(2,"0")); fechaFolha(); return; }
+});
+document.addEventListener("keydown", function(e){ if(e.key==="Escape" && pk.alvo) fechaFolha(); });
+
+montaSeletores(); renderTudo(); mostra();
 })();
 </script>
