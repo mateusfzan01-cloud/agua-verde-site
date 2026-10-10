@@ -2,7 +2,7 @@
 
 > Escrito em 09/10/2026, ao fim da sessão de planejamento (log em `LOG_SESSAO_2026-10-08_PLANO_LOJA_PROPRIA.md`).
 > Cada bloco abaixo é um prompt pronto para abrir uma sessão nova no repositório `agua-verde-site`.
-> Atualizado em 10/10/2026: Prompt A entregue no PR #3; testes da loja no domínio `aguaverde.com.br` (decisão 35).
+> Atualizado em 10/10/2026: Prompt A entregue no PR #3; testes da loja no domínio `aguaverdeviagens.com.br` (decisão 35).
 > Ordem recomendada: A agora; B depois que o dono aprovar as telas de A; C e D quando os bloqueios indicados forem resolvidos.
 
 ## O que está liberado e o que está bloqueado
@@ -47,7 +47,7 @@ middleware next-intl com /es e /en; rotas /transfers, /passeios, /transfers/[slu
 de docs/loja/conteudo/; widget de reserva com cálculo de preço (§4.3) e testes; páginas de checkout e confirmação
 com a camada de pagamento atrás da interface do §4.7 (criarCobranca, consultarPagamento, reembolsar, validarWebhook)
 em implementação simulada; redirects 301 dos slugs da Paytour; migrations SQL das tabelas da loja escritas em
-supabase/migrations/ mas NÃO aplicadas. Quando o host for aguaverde.com.br (domínio de testes, decisão 35),
+supabase/migrations/ mas NÃO aplicadas. Quando o host for aguaverdeviagens.com.br (domínio de testes, decisão 35),
 responder com X-Robots-Tag: noindex e robots.txt com Disallow: / (o domínio oficial continua aguaverde.tur.br).
 O preço é por veículo, como na Paytour (§4.3; docs/loja/conteudo/veiculos-paytour.json); site só no modo claro.
 npm run build tem de passar. PR em rascunho.
@@ -61,7 +61,7 @@ Pré-requisitos confirmados pelo dono: conta Mercado Pago ativa (credenciais nos
 de risco para o PWA exigida no CLAUDE.md do appnativo-aguaverde. Implementar §4.2, §4.5, §4.7 do plano:
 aplicar migrations, Edge Function do webhook com gateway_eventos, confirmar_pedido transacional, cron de
 expiração, avisos (push no app, e-mail, WhatsApp), telas "Pedidos do site" no PWA e no app nativo.
-Homologar no domínio de testes aguaverde.com.br (decisão 35) com compras de R$ 1 e estorno.
+Homologar no domínio de testes aguaverdeviagens.com.br (decisão 35) com compras de R$ 1 e estorno.
 ```
 
 ## Prompt D — auditoria do Google Ads (quando houver acesso)

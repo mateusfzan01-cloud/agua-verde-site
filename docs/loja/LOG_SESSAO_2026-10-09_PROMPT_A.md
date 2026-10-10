@@ -16,7 +16,7 @@
 | Templates WhatsApp utility (pt_BR/es/en) | `docs/loja/conteudo/WHATSAPP_TEMPLATES.md` |
 | Pedido de troca de nome no Tripadvisor (PT/EN) | `docs/loja/conteudo/PEDIDO_TRIPADVISOR.md` |
 | Prompt para coletar a Paytour pelo Chrome | `docs/loja/PROMPT_COLETA_PAYTOUR_CHROME.md` |
-| Domínio de testes | `docs/loja/DOMINIO_TESTES_AGUAVERDE_COM_BR.md` |
+| Domínio de testes | `docs/loja/DOMINIO_TESTES_AGUAVERDEVIAGENS_COM_BR.md` |
 | Correção no site: WhatsApp com o 9 em todas as páginas | `src/**` |
 
 ## Decisões do dono nesta sessão (registradas no §2 do plano)
@@ -26,7 +26,7 @@
 - 32: limite de 10 por compra em todos os produtos.
 - 33: arrependimento de 48 h após a compra; depois, cancelamento grátis até 24 h antes.
 - 34: WhatsApp oficial (81) 99947-3200, com o 9.
-- 35: testes da loja no domínio `aguaverde.com.br` (fora do Google); oficial continua `aguaverde.tur.br`.
+- 35: testes da loja no domínio `aguaverdeviagens.com.br` (fora do Google); oficial continua `aguaverde.tur.br`.
 
 ## Fatos aprendidos
 
@@ -40,4 +40,4 @@
 
 - Dono: aprovar as telas (libera o Prompt B).
 - Dono: dúvidas dos textos dos produtos (`notas_revisao`), para depois.
-- Irmão: apontar `aguaverde.com.br` para a Vercel (passo a passo no arquivo do domínio).
+- Irmão: apontar `aguaverdeviagens.com.br` para a Vercel (passo a passo no arquivo do domínio).

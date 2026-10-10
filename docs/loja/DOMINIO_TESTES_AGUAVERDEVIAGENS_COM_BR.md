@@ -1,7 +1,7 @@
-# Domínio de testes: aguaverde.com.br
+# Domínio de testes: aguaverdeviagens.com.br
 
 > Decisão 35 do plano (10/10/2026), a pedido do irmão do dono.
-> `aguaverde.com.br` já é da empresa (Registro.br), mas ainda não aponta para a Vercel.
+> `aguaverdeviagens.com.br` já é da empresa (Registro.br), mas ainda não aponta para a Vercel.
 > O domínio oficial do site continua sendo `aguaverde.tur.br`.
 
 ## Para que serve
@@ -13,19 +13,19 @@
 
 1. **Fora do Google.** Enquanto for teste, o domínio responde com `noindex` e o `robots.txt` bloqueia tudo. Assim ele não compete com `aguaverde.tur.br` nas buscas. Isso será feito no código da loja (Prompt B).
 2. **Sem clientes reais.** Só compras de teste de R$ 1, feitas pela equipe.
-3. **Depois do lançamento**, decidir: redirecionar `aguaverde.com.br` → `aguaverde.tur.br` (recomendado) ou manter como ambiente de testes.
+3. **Depois do lançamento**, decidir: redirecionar `aguaverdeviagens.com.br` → `aguaverde.tur.br` (recomendado) ou manter como ambiente de testes.
 
 ## Passo a passo para ligar o domínio (quem tem acesso à Vercel e ao Registro.br)
 
 Não foi feito por esta sessão: precisa de acesso às contas.
 
-1. **Vercel** → projeto `agua-verde-site` → *Settings* → *Domains* → *Add* → digite `aguaverde.com.br`.
-   Adicione também `www.aguaverde.com.br`, apontando para o primeiro.
+1. **Vercel** → projeto `agua-verde-site` → *Settings* → *Domains* → *Add* → digite `aguaverdeviagens.com.br`.
+   Adicione também `www.aguaverdeviagens.com.br`, apontando para o primeiro.
    Para testar a loja antes de ela ir para o site principal, ligue o domínio à branch de testes, e não à branch principal (`master`).
-2. A Vercel mostra os registros de DNS a criar: normalmente um registro **A** para `aguaverde.com.br` e um **CNAME** para `www`. Use exatamente os valores que a Vercel mostrar.
-3. **Registro.br** → domínio `aguaverde.com.br` → *DNS* → *Editar zona* → crie os registros do passo 2 e salve.
+2. A Vercel mostra os registros de DNS a criar: normalmente um registro **A** para `aguaverdeviagens.com.br` e um **CNAME** para `www`. Use exatamente os valores que a Vercel mostrar.
+3. **Registro.br** → domínio `aguaverdeviagens.com.br` → *DNS* → *Editar zona* → crie os registros do passo 2 e salve.
 4. Espere a propagação (de minutos a algumas horas). A Vercel mostra "Valid Configuration" e emite o certificado (cadeado) sozinha.
-5. Abra `https://aguaverde.com.br` e confira.
+5. Abra `https://aguaverdeviagens.com.br` e confira.
 
 ## Pendências
 

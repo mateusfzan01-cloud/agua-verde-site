@@ -253,7 +253,7 @@ A regra "e-commerce só após >20 orçamentos/mês por 2 meses" foi escrita para
 | E-mail | `contato@aguaverde.tur.br` |
 | TripAdvisor | `https://www.tripadvisor.com.br/Attraction_Review-g304560-d12087015-Reviews-Uluwatour_Viagens_Receptivos-Recife_State_of_Pernambuco.html`
 | PWA público | `https://app.aguaverde.tur.br/acompanhar/:token` |
-| Domínio de testes | `aguaverde.com.br` — homologação da loja (2026-10-10), fora do Google; oficial continua `aguaverde.tur.br` |
+| Domínio de testes | `aguaverdeviagens.com.br` — homologação da loja (2026-10-10), fora do Google; oficial continua `aguaverde.tur.br` |
 
 ---
 
