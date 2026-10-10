@@ -54,7 +54,7 @@ const jsonLd = {
         '@type': 'LocalBusiness',
         name: 'Água Verde Transfers',
         url: 'https://aguaverde.tur.br',
-        telephone: '+55-81-9947-3200',
+        telephone: '+55-81-99947-3200',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Rua Jonathas de Vasconcelos, 13 - Sala 7 e 8 - Boa Viagem',
@@ -313,7 +313,7 @@ export default function TransferPraiaDeCarneirosPage() {
                     <ArrowRight className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://wa.me/558199473200"
+                    href="https://wa.me/5581999473200"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2.5 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all"
@@ -770,7 +770,7 @@ export default function TransferPraiaDeCarneirosPage() {
                 </div>
 
                 <a
-                  href="https://wa.me/558199473200"
+                  href="https://wa.me/5581999473200"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-full hover:opacity-90 transition-opacity"

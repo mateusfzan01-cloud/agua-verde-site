@@ -114,7 +114,7 @@ export default function PoliticaPrivacidadePage() {
             </p>
             <ul>
               <li>E-mail: contato@aguaverde.tur.br</li>
-              <li>WhatsApp: +55 81 9947-3200</li>
+              <li>WhatsApp: +55 81 99947-3200</li>
             </ul>
 
             <h2>10. Alterações nesta política</h2>

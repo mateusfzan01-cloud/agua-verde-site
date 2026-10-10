@@ -96,6 +96,11 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 28 | Supabase está em **Micro** (o dono reduziu o porte; o `CLAUDE.md` do PWA ficou desatualizado). Subida para Small **autorizada** para o lançamento (2026-10-09) | dono |
 | 29 | Plano aprovado com as recomendações do documento (2026-10-09). CADASTUR e regra do adicional por passageiro ficam para depois; não travam a construção | dono |
 | 30 | Google Ads: o irmão investe **R$ 2.000/mês em 3 campanhas que funcionam e ficam**. A frente de Ads passa a ser: auditar e otimizar as 3 existentes, apontá-las para a loja nova no lançamento e, se fizer sentido, criar **uma** campanha nova (2026-10-09) | dono |
+| 31 | Site e loja (público) só no **modo claro**, igual ao site atual. As telas novas "Pedidos do site" no **PWA** e no **app nativo** seguem o padrão de tema de cada app (modo escuro e claro, como as telas que já existem) (2026-10-09) | dono |
+| 32 | Máximo de **10** veículos (ou pessoas, nos produtos por pessoa) por compra, igual para todos os produtos (2026-10-09) | dono |
+| 33 | Direito de arrependimento: **48 horas após a compra**, com reembolso integral, se a viagem não tiver começado; depois, cancelamento grátis até 24 h antes (2026-10-09) | dono |
+| 34 | WhatsApp oficial: **(81) 99947-3200**, com o 9 (`wa.me/5581999473200`); o link antigo sem o 9 foi corrigido no site (2026-10-09) | dono |
+| 35 | **Testes (homologação) no domínio `aguaverdeviagens.com.br`**, a pedido do irmão do dono. O domínio já é da empresa; falta apontar para a Vercel. Substitui o `staging.aguaverde.tur.br` previsto antes. `aguaverde.tur.br` continua sendo o domínio oficial do site e do Google (2026-10-10) | dono |
 
 Pendências de fato que **não travam** o plano: número CADASTUR e regra exata do adicional por passageiro (o dono envia depois; até lá, o site não exibe selo CADASTUR e usa a regra provisória "preço base até 3 passageiros" para revisão), plano atual da Vercel (Hobby ou Pro). Resolvidos em 2026-10-09: porte do Supabase (Micro, subida para Small autorizada), verba de Ads (R$ 2.000/mês já em uso), Drive de fotos e vídeos (recebido, ver §6).
 
@@ -235,6 +240,8 @@ RLS: `produtos` leitura pública; `pedidos`/`pedido_itens` sem acesso anon (chec
 
 ### 4.3 Regras de preço
 
+> **Atualização 2026-10-09 (decisão do dono): copiar a Paytour.** O preço é **por veículo**, não por passageiro. Cada produto tem a sua própria lista de veículos (Sedan Econômico, Sedan Executivo, Spin, Mini Van, Sprinter, Micro-ônibus, BMW X1; nem todos em todo produto), cada um com preço e capacidade, e o cliente escolhe quantos de cada (máximo 10 por compra). **Como na Paytour, o cliente não informa número de passageiros nem de malas nos transfers: só escolhe os veículos** (a capacidade aparece na descrição de cada um). Isso ajusta a decisão 23: o checkout não pede passageiros nem malas. `total = Σ quantidade × preço do veículo`. Os campos `pax_incluidos`/`adicional_por_pax`/`pax_max` saem; `produtos` ganha `veiculos` (lista de {tipo, preço}) e `max_por_compra`. Dados em `docs/loja/conteudo/veiculos-paytour.json`. A regra abaixo fica só como histórico.
+
 `total = preco_base + max(0, pax - pax_incluidos) × adicional_por_pax`, com `pax ≤ pax_max`. Produtos "ida e volta" têm 2 pernas e um preço só. Valores de `pax_incluidos`/`adicional_por_pax` a confirmar com a operação (pendência). Moeda sempre BRL; ES/EN mostram "≈ US$ X" com cotação diária e aviso "cobrado em reais".
 
 ### 4.4 Rotas do site (novas)
@@ -292,8 +299,8 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
 |:--|:--|:--|
 | Supabase | 4 tabelas novas, 1 RPC, 1 Edge Function de webhook, 1 cron | **Baixo**: nada existente é alterado; INSERT em `viagens` usa o mesmo contrato do PWA |
 | Site Next.js | rotas novas, i18n com prefixo, redirects, widget, checkout | Zero para PWA e app |
-| PWA | tela "Pedidos do site" (lista, confirmar, reembolsar) | Baixo: tela nova, sem mexer nas existentes |
-| App nativo | tela nova **"Pedidos do site"** no stack de admin (lista com filtro por status, detalhe do pedido, confirmar passeio, acionar reembolso via Edge Function, abrir a viagem gerada), além do push já existente | Baixo: tela nova, sem mexer nas existentes nem em `perfis.tipo` |
+| PWA | tela "Pedidos do site" (lista, confirmar, reembolsar), seguindo o tema escuro/claro do PWA (decisão 31) | Baixo: tela nova, sem mexer nas existentes |
+| App nativo | tela nova **"Pedidos do site"** (seguindo o tema escuro/claro do app, decisão 31) no stack de admin (lista com filtro por status, detalhe do pedido, confirmar passeio, acionar reembolso via Edge Function, abrir a viagem gerada), além do push já existente | Baixo: tela nova, sem mexer nas existentes nem em `perfis.tipo` |
 | WhatsApp IA | prompt ganha catálogo + função "gerar link de checkout"; modelo migra para Claude Sonnet 5.5 (§4.6) | Médio: troca de provedor; mitigado por adaptador por modelo, teste em 50 conversas reais e kill switch `ia_ativa` já existente |
 
 ---
@@ -305,7 +312,7 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
    - "Agua Verde Fotos para o Site" (criada em 2019): 26 fotos JPG, a maioria de 2015–2016 (nomes `IMG_2015...`). **[fato verificado pela página pública da pasta]**
    - "Vídeos de Marketing VDV Agua Verde Viagens" (2023): pelo menos 31 imagens JPG na primeira tela; os vídeos não apareceram na primeira carga da página e serão conferidos no download completo (semana 1). O conector do Drive não lista o conteúdo dessas pastas compartilhadas; o download será feito pelo link público.
    - [recomendação] As fotos de 2015–2016 estão com 10 anos. O plano SEO v5.1 já pedia foto atual de motorista uniformizado + veículo com placa de nome (padrão Welcome Pickups). Sugestão: uma sessão de fotos com celular na semana 1 (aeroporto, frota, embarque), com termo de cessão de imagem dos motoristas fotografados.
-3. Homologação em `staging.aguaverde.tur.br` (subdomínio na Vercel) com 3 compras reais de R$ 1 (Pix e cartão) e estorno.
+3. Homologação em **`aguaverdeviagens.com.br`** (decisão 35; antes previsto `staging.aguaverde.tur.br`) com 3 compras reais de R$ 1 (Pix e cartão) e estorno. Enquanto for ambiente de teste, esse domínio fica **fora do Google** (`noindex` e `robots.txt` bloqueando tudo) para não competir com `aguaverde.tur.br`. Passo a passo para ligar o domínio: `docs/loja/DOMINIO_TESTES_AGUAVERDEVIAGENS_COM_BR.md`.
 4. Dia D: DNS de `aguaverde.tur.br` → Vercel; Paytour deixa de vender; redirects 301 ativos; sitemap novo no Search Console.
 5. Paytour mantida 60 dias só para consulta de vouchers antigos; dono exporta reservas futuras → eu cadastro em `viagens`.
 6. Após 60 dias: cancelar Paytour (economia de R$ 250/mês).
@@ -436,7 +443,7 @@ Leitura [recomendação]: a loja em si pesa pouco (tabelas de pedidos na casa do
 | Semana | Período | Entrega | Critério de pronto |
 |:--|:--|:--|:--|
 | 1 | 13–17 out | Aprovação deste plano; Figma das 4 telas (home, produto, checkout, confirmação); tabelas no Supabase; importação dos 46 produtos e imagens; **manutenção do Supabase** (limpeza do pg_net, índice duplicado, índices em FKs) e subida para Small | sócio aprovou as 4 telas; `produtos` populada; painel do Supabase sem aviso de IO |
-| 2 | 20–24 out | Páginas de catálogo e produto em PT/ES/EN; widget de reserva com preço; redirects dos slugs Paytour | todas as páginas abrem nos 3 idiomas no staging |
+| 2 | 20–24 out | Páginas de catálogo e produto em PT/ES/EN; widget de reserva com preço; redirects dos slugs Paytour | todas as páginas abrem nos 3 idiomas em `aguaverdeviagens.com.br` (testes) |
 | 3 | 27–31 out | Checkout + gateway (Pix e cartão) + webhook + criação de viagem + e-mail e WhatsApp ao passageiro + push/e-mail à empresa | compra de teste de R$ 1 vira viagem e dispara os avisos |
 | 4 | 3–7 nov | "Minha reserva", voucher, cancelamento 24 h com reembolso; tela "Pedidos do site" no PWA **e no app nativo**; fluxo de confirmação de passeios + cron | reembolso de teste concluído; passeio confirmado pelo PWA e pelo app |
 | 5 | 10–14 nov | Landing pages de rota com widget (plano SEO v5.1), consent LGPD, GA4 + Clarity, eventos de conversão, termos e política de cancelamento publicados | Lighthouse mobile ≥ 90; eventos chegam no GA4 |
@@ -458,7 +465,7 @@ Esforço estimado: ~6 semanas de construção + 2 de folga. Se o Drive de fotos 
 | Preços da Paytour desatualizados | Médio | dono revisa a tabela no §3 antes da semana 2 |
 | Perda de posições no Google na troca de domínio | Médio | redirects 301 slug a slug; sitemap; monitorar Search Console por 30 dias |
 | Passeio vendido sem vaga | Médio | fluxo de confirmação 24 h + reembolso automático (§4.5) |
-| Tocar em `viagens` quebrar PWA/app | Alto | só INSERT com o contrato do PWA; nenhuma coluna ou trigger existente alterada; teste em staging |
+| Tocar em `viagens` quebrar PWA/app | Alto | só INSERT com o contrato do PWA; nenhuma coluna ou trigger existente alterada; teste em `aguaverdeviagens.com.br` (testes) |
 | Sobrecarga do atendimento com vendas automáticas | Baixo | push + e-mail por venda; IA responde dúvidas; painel no PWA |
 
 ---
