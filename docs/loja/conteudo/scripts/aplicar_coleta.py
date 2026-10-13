@@ -59,7 +59,7 @@ for p in produtos:
     c = por_slug[p["slug_paytour"].strip("-")]
     for campo in ("pax_incluidos", "adicional_por_pax", "pax_max"):
         p.pop(campo, None)
-    notas = [n for n in p.get("notas_revisao", []) if not n.startswith(("Preço por veículo", "Preço por pessoa", "Coleta Paytour"))]
+    notas = [n for n in p.get("notas_revisao", []) if not n.startswith(("Preço por veículo", "Preço por pessoa", "Coleta Paytour", "política aplicada: confirmação"))]
 
     if c["veiculos"]:
         veiculos = [{"tipo": TIPOS[v["nome"]], "preco": float(v["preco"])} for v in c["veiculos"]]
@@ -77,6 +77,7 @@ for p in produtos:
         p["preco_base"] = valor
         notas.append(f"Preço por pessoa (R$ {valor:.2f}) na coleta Paytour de {coleta['coletado_em']}; produto sem lista de veículos.")
 
+    p["confirmacao"] = "imediata"  # decisão 36 (13/10/2026): passeio tem vaga garantida no pagamento
     p["max_por_compra"] = 10  # decisão do dono (09/10/2026): limite 10 para todos os produtos
     p["imagens"] = c["fotos"]
     p["descricao_paytour"] = c["descricao_completa"]

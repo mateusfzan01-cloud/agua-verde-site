@@ -27,6 +27,7 @@
 - 33: arrependimento de 48 h após a compra; depois, cancelamento grátis até 24 h antes.
 - 34: WhatsApp oficial (81) 99947-3200, com o 9.
 - 35: testes da loja no domínio `aguaverdeviagens.com.br` (fora do Google); oficial continua `aguaverde.tur.br`.
+- 36 (13/10): **passeio com vaga garantida no pagamento** (sem confirmação em 24 h) e **cancelamento grátis até 48 h antes, 24 h na alta temporada**; transfer segue com 24 h. Substitui a decisão 20. O bloco "Como funciona a confirmação" saiu do protótipo.
 
 ## Fatos aprendidos
 
@@ -40,4 +41,5 @@
 
 - Dono: aprovar as telas (libera o Prompt B).
 - Dono: dúvidas dos textos dos produtos (`notas_revisao`), para depois.
+- Dono e irmão: lista de datas da alta temporada; como controlar o estoque de vagas dos passeios.
 - Irmão: apontar `aguaverdeviagens.com.br` para a Vercel (passo a passo no arquivo do domínio).

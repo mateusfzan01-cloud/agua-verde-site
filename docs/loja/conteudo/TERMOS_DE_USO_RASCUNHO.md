@@ -16,7 +16,7 @@ A página `/termos-de-uso` publicada hoje (maio/2026) **contradiz** a política 
 | Espera no aeroporto | não diz | 60 min a partir do pouso real |
 | Pagamento | inclui "dinheiro" | loja online: Pix e cartão via Mercado Pago |
 
-Também não dizem nada sobre passeios, confirmação em 24 h, cobrança em reais para estrangeiros, nem cancelamento pelo link.
+Também não dizem nada sobre passeios, vaga garantida no pagamento, cobrança em reais para estrangeiros, nem cancelamento pelo link.
 
 ---
 
@@ -28,9 +28,9 @@ Também não dizem nada sobre passeios, confirmação em 24 h, cobrança em reai
 
 ## Em 30 segundos
 
-- **Transfer:** confirmado assim que o pagamento é aprovado. **Passeio:** confirmamos em até 24 h; se não houver vaga, devolvemos todo o valor automaticamente.
+- **Transfer e passeio:** a vaga é garantida assim que o pagamento é aprovado.
 - **Preço por veículo, em reais**, com o que está incluso escrito na página. Pague com Pix ou cartão.
-- **Cancele grátis até 24 h antes** do horário marcado, pelo link da sua reserva. Reembolso integral.
+- **Cancele grátis pelo link da sua reserva:** transfer até 24 h antes; **passeio até 48 h antes** (24 h na alta temporada). Reembolso integral.
 - **Espera grátis:** 60 min no aeroporto, contados do pouso real do voo; 15 min em hotel ou endereço, contados do horário marcado.
 - **Dúvidas:** WhatsApp +55 81 99947-3200 ou reservas@aguaverde.tur.br.
 
@@ -55,9 +55,9 @@ Cada página de produto mostra: quantos passageiros e quantas malas cabem, o que
 2. Você preenche seus dados e paga.
 3. Você recebe a confirmação na tela, por e-mail e por WhatsApp. Ela traz o **link da sua reserva** (que funciona como voucher) e o **link para acompanhar a viagem**.
 
-**Transfer:** a reserva fica confirmada assim que o pagamento é aprovado.
+**Transfer e passeio:** a reserva e a vaga ficam garantidas assim que o pagamento é aprovado.
 
-**Passeio:** depende de vaga com nossos parceiros. Confirmamos em até **24 h** depois do pagamento. Se não houver vaga, ou se não confirmarmos nesse prazo, devolvemos **todo o valor automaticamente**. Enquanto o passeio não for confirmado, você pode cancelar a qualquer momento, com reembolso integral.
+**Passeio:** a vaga é garantida no pagamento; não há espera de confirmação. Se, por um problema nosso, não conseguirmos realizar o passeio, devolvemos **todo o valor automaticamente**. [CONFERIR: as vagas dos passeios com parceiros (catamarã, mergulho, jangada) são reservadas antes de vender? Se não houver estoque, o site deve bloquear a venda da data.]
 
 Não é preciso criar conta nem senha. Guarde o link da reserva: ele dá acesso aos seus dados e ao botão de cancelar. Não compartilhe esse link. Se perder, use a página "Minha reserva" com o número da reserva e seu e-mail. Nós reenviamos o link.
 
@@ -80,13 +80,14 @@ Antecedência mínima para reservar pelo site: [CONFERIR: ex. 12 h para transfer
 
 ## 6. Cancelamento por você
 
-**Até 24 horas antes do horário marcado: grátis.**
+**Transfer: até 24 horas antes do horário marcado: grátis.**
+**Passeio: até 48 horas antes do horário marcado: grátis. Na alta temporada, até 24 horas antes** [CONFERIR: quais datas contam como alta temporada; ver §D.5].
 - Abra o link da sua reserva e toque em "Cancelar reserva".
 - O reembolso é **integral** e automático, na mesma forma de pagamento.
 - Pix: o valor volta para a conta que pagou, em geral em até [CONFERIR: prazo do estorno Pix pelo Mercado Pago].
 - Cartão: pedimos o estorno no mesmo dia. Ele aparece na fatura em até [CONFERIR: prazo do estorno no cartão; costuma levar 1 ou 2 faturas, conforme o banco].
 
-**Com menos de 24 horas: sem reembolso.**
+**Fora desses prazos (menos de 24 horas no transfer; menos de 48 horas no passeio, ou menos de 24 horas na alta temporada): sem reembolso.**
 - O motorista e o carro já estão reservados para você.
 - Se houve um imprevisto sério, fale conosco pelo WhatsApp. Avaliamos caso a caso, sem garantia de devolução.
 
@@ -180,9 +181,9 @@ Estes termos seguem a lei brasileira. Fica eleito o foro de Recife/PE, sem preju
 
 ## En 30 segundos
 
-- **Traslado (transfer):** confirmado en cuanto se aprueba el pago. **Paseo:** lo confirmamos en hasta 24 h; si no hay cupo, te devolvemos todo el importe automáticamente.
+- **Traslado y paseo:** el lugar queda garantizado en cuanto se aprueba el pago.
 - **Precio por vehículo, en reales**, con lo que está incluido escrito en la página. Paga con Pix o tarjeta.
-- **Cancela gratis hasta 24 h antes** del horario reservado, desde el enlace de tu reserva. Reembolso total.
+- **Cancelá gratis desde el enlace de tu reserva:** traslado hasta 24 h antes; **paseo hasta 48 h antes** (24 h en temporada alta). Reembolso total.
 - **Espera gratis:** 60 min en el aeropuerto, contados desde el aterrizaje real del vuelo; 15 min en hotel o dirección, contados desde el horario reservado.
 - **Dudas:** WhatsApp +55 81 99947-3200 o reservas@aguaverde.tur.br.
 
@@ -209,7 +210,7 @@ Cada página muestra: cuántos pasajeros y cuántas maletas caben, qué está in
 
 **Traslado:** la reserva queda confirmada en cuanto se aprueba el pago.
 
-**Paseo:** depende de cupo con nuestros socios. Lo confirmamos en hasta **24 h** después del pago. Si no hay cupo, o si no lo confirmamos en ese plazo, te devolvemos **todo el importe automáticamente**. Mientras el paseo no esté confirmado, puedes cancelar en cualquier momento con reembolso total.
+**Paseo:** el lugar queda garantizado al pagar; no hay espera de confirmación. Si, por un problema nuestro, no podemos realizar el paseo, te devolvemos **todo el importe automáticamente**.
 
 No necesitas crear cuenta ni contraseña. Guarda el enlace de la reserva: da acceso a tus datos y al botón de cancelar. No lo compartas. Si lo pierdes, usa la página "Mi reserva" con el número de reserva y tu e-mail. Te lo reenviamos.
 
@@ -231,13 +232,14 @@ Antelación mínima para reservar en el sitio: [CONFERIR]. Para fechas más cerc
 
 ## 6. Cancelación por tu parte
 
-**Hasta 24 horas antes del horario reservado: gratis.**
+**Traslado: hasta 24 horas antes del horario reservado: gratis.**
+**Paseo: hasta 48 horas antes: gratis. En temporada alta, hasta 24 horas antes.**
 - Abre el enlace de tu reserva y toca "Cancelar reserva".
 - El reembolso es **total** y automático, por el mismo medio de pago.
 - Pix: el dinero vuelve a la cuenta que pagó, en general en hasta [CONFERIR].
 - Tarjeta: pedimos el reembolso el mismo día. Aparece en tu resumen en hasta [CONFERIR], según tu banco.
 
-**Con menos de 24 horas: sin reembolso.**
+**Fuera de esos plazos (menos de 24 horas en traslado; menos de 48 horas en paseo, o menos de 24 horas en temporada alta): sin reembolso.**
 - El conductor y el auto ya están reservados para ti.
 - Si tuviste un imprevisto serio, escríbenos por WhatsApp. Lo evaluamos caso por caso, sin garantía de devolución.
 
@@ -330,9 +332,9 @@ Last updated: [publication date]
 
 ## In 30 seconds
 
-- **Transfer:** confirmed as soon as your payment is approved. **Tour:** we confirm within 24 h; if there is no availability, we refund you in full automatically.
+- **Transfer and tour:** your spot is guaranteed as soon as payment is approved.
 - **Price per vehicle, in Brazilian reais**, with what is included shown on the page. Pay by Pix or card.
-- **Cancel for free up to 24 h before** your booked time, using your booking link. Full refund.
+- **Cancel for free using your booking link:** transfer up to 24 h before; **tour up to 48 h before** (24 h in high season). Full refund.
 - **Free waiting time:** 60 min at the airport, counted from the flight's actual landing; 15 min at a hotel or address, counted from your booked time.
 - **Questions:** WhatsApp +55 81 99947-3200 or reservas@aguaverde.tur.br.
 
@@ -359,7 +361,7 @@ Each product page shows: how many passengers and bags fit, what is included and 
 
 **Transfer:** your booking is confirmed as soon as the payment is approved.
 
-**Tour:** depends on availability with our partners. We confirm within **24 h** after payment. If there is no availability, or if we do not confirm within that time, we refund **the full amount automatically**. Until the tour is confirmed, you can cancel at any time with a full refund.
+**Tour:** your spot is guaranteed when you pay; there is no confirmation wait. If, because of a problem on our side, we cannot run the tour, we refund **the full amount automatically**.
 
 You do not need an account or password. Keep your booking link: it gives access to your details and to the cancel button. Do not share it. If you lose it, use the "My booking" page with your booking number and email. We will send the link again.
 
@@ -381,13 +383,14 @@ Minimum notice to book online: [CONFERIR]. For closer dates, contact us on Whats
 
 ## 6. Cancellation by you
 
-**Up to 24 hours before your booked time: free.**
+**Transfer: up to 24 hours before your booked time: free.**
+**Tour: up to 48 hours before: free. In high season, up to 24 hours before.**
 - Open your booking link and tap "Cancel booking".
 - You get a **full** refund, automatically, to the same payment method.
 - Pix: the money goes back to the paying account, usually within [CONFERIR].
 - Card: we request the refund the same day. It shows on your statement within [CONFERIR], depending on your bank.
 
-**Less than 24 hours before: no refund.**
+**Outside those deadlines (less than 24 hours for a transfer; less than 48 hours for a tour, or less than 24 hours in high season): no refund.**
 - The driver and the car are already reserved for you.
 - If something serious happened, message us on WhatsApp. We look at each case, with no guarantee of a refund.
 
@@ -488,7 +491,7 @@ O sistema hoje (§4.5 do plano) só faz reembolso automático com mais de 24 h. 
 
 ## D.2 Pontos operacionais que o texto assume
 
-- Reembolso automático de passeio sem resposta em 24 h: previsto no §4.5 (cron diário).
+- ~~Reembolso automático de passeio sem resposta em 24 h~~: não existe mais; o passeio tem vaga garantida no pagamento (decisão 36, 13/10/2026).
 - Pix com validade de 30 min (§4.5) e cron que expira pedidos com mais de 45 min (§4.7, item 6). Alinhar os dois números.
 - "Ida e volta" tem 2 pernas e um preço só (§4.3): falta a regra de cancelamento parcial.
 - Regra provisória de passageiros: "preço base até 3 passageiros" (decisão 29). O texto não cita número; remete à página do produto.
@@ -531,3 +534,7 @@ A política atual não cobre o que a loja passa a tratar: CPF (opcional), dados 
 25. Foro e lei aplicável (inclusive para estrangeiros); prevalência da versão em português.
 26. Rotas da Política de Privacidade em ES/EN.
 27. Número de WhatsApp: decidido, (81) 99947-3200 (com o 9), em 09/10/2026.
+
+## D.5 Alta temporada (decisão 36)
+
+O prazo de cancelamento grátis do passeio é **48 h**, e na **alta temporada 24 h** (pedido do irmão do dono, 13/10/2026). Falta definir quais datas são alta temporada (por exemplo: dezembro a fevereiro, Carnaval, São João, feriados prolongados). O site precisa de uma lista de datas para calcular o prazo certo no botão de cancelar. [CONFERIR: o dono e o irmão definem a lista.]

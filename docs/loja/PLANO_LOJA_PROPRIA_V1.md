@@ -85,7 +85,7 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 17 | Figma só para aprovar 4 telas (home, rota, checkout, confirmação); o resto vai direto a código | dono |
 | 18 | Um gateway só (Pix + cartão nacional + internacional, sem mensalidade); PayPal fora da v1 | dono |
 | 19 | Textos e fotos da Paytour reaproveitados (corrigidos e traduzidos); fotos originais virão de um Drive | dono |
-| 20 | Passeios: paga na hora, confirmação em até 24 h, reembolso automático se não houver vaga | dono |
+| 20 | ~~Passeios: paga na hora, confirmação em até 24 h, reembolso automático se não houver vaga~~ **substituída pela decisão 36 em 2026-10-13** | dono |
 | 21 | Transição: Paytour para de vender no dia da troca; conta mantida 60 dias para vouchers antigos; reservas futuras migradas à mão | dono |
 | 22 | Avisos: empresa recebe push no app nativo + e-mail; passageiro recebe página de confirmação + e-mail + WhatsApp (voucher e link de acompanhamento); PDF só sob demanda | dono |
 | 23 | Checkout pede: nome, WhatsApp, e-mail, voo, hotel/endereço, passageiros, malas, observações; CPF opcional | dono |
@@ -101,6 +101,7 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 33 | Direito de arrependimento: **48 horas após a compra**, com reembolso integral, se a viagem não tiver começado; depois, cancelamento grátis até 24 h antes (2026-10-09) | dono |
 | 34 | WhatsApp oficial: **(81) 99947-3200**, com o 9 (`wa.me/5581999473200`); o link antigo sem o 9 foi corrigido no site (2026-10-09) | dono |
 | 35 | **Testes (homologação) no domínio `aguaverdeviagens.com.br`**, a pedido do irmão do dono. O domínio já é da empresa; falta apontar para a Vercel. Substitui o `staging.aguaverde.tur.br` previsto antes. `aguaverde.tur.br` continua sendo o domínio oficial do site e do Google (2026-10-10) | dono |
+| 36 | **Passeio: vaga garantida no pagamento** (sem etapa de confirmação em 24 h) e **cancelamento grátis até 48 h antes; na alta temporada, 24 h**. Pedido do irmão do dono. Substitui a decisão 20. Transfer continua com 24 h. Falta definir as datas da alta temporada (2026-10-13) | dono |
 
 Pendências de fato que **não travam** o plano: número CADASTUR e regra exata do adicional por passageiro (o dono envia depois; até lá, o site não exibe selo CADASTUR e usa a regra provisória "preço base até 3 passageiros" para revisão), plano atual da Vercel (Hobby ou Pro). Resolvidos em 2026-10-09: porte do Supabase (Micro, subida para Small autorizada), verba de Ads (R$ 2.000/mês já em uso), Drive de fotos e vídeos (recebido, ver §6).
 
@@ -260,8 +261,8 @@ As 3 landing pages de rota já existentes ganham o **widget de reserva na primei
 
 ### 4.5 Fluxos especiais
 
-- **Passeios (confirmação em 24 h)**: pedido pago entra como `aguardando_confirmacao`; admin confirma no PWA (vira viagem) ou recusa (reembolso pelo gateway). Cron diário: pedidos sem resposta em 24 h → reembolso automático + alerta.
-- **Cancelamento pelo cliente**: botão em `/reserva/[token_acesso]` (só quem tem o link secreto); se faltar > 24 h, reembolso automático e viagem `cancelada`; senão, orienta a falar no WhatsApp.
+- **Passeios (vaga garantida no pagamento, decisão 36)**: igual ao transfer. Pagamento aprovado → `confirmar_pedido` cria a viagem na hora; não existe `aguardando_confirmacao` nem cron de 24 h para passeio. O cliente vê "vaga garantida" e recebe o voucher. O estoque dos passeios com parceiros (catamarã, mergulho, jangada) precisa ser controlado antes de vender a data (pendência).
+- **Cancelamento pelo cliente**: botão em `/reserva/[token_acesso]` (só quem tem o link secreto). Prazo grátis: **transfer 24 h**; **passeio 48 h, e 24 h na alta temporada** (decisão 36; a lista de datas de alta temporada fica em uma tabela/configuração a definir). Dentro do prazo: reembolso automático e viagem `cancelada`; fora dele: orienta a falar no WhatsApp. Há também o arrependimento de 48 h após a compra (decisão 33).
 - **Pedido não pago**: expira em 30 min (Pix) / imediato (cartão recusado); nada é criado em `viagens`.
 - **Fora da tabela** (origem/destino não cadastrados): formulário de orçamento já existente, com os campos pré-preenchidos.
 
@@ -464,7 +465,7 @@ Esforço estimado: ~6 semanas de construção + 2 de folga. Se o Drive de fotos 
 | Template de WhatsApp não aprovado a tempo pela Meta | Médio | submeter templates na semana 1; e-mail cobre enquanto isso |
 | Preços da Paytour desatualizados | Médio | dono revisa a tabela no §3 antes da semana 2 |
 | Perda de posições no Google na troca de domínio | Médio | redirects 301 slug a slug; sitemap; monitorar Search Console por 30 dias |
-| Passeio vendido sem vaga | Médio | fluxo de confirmação 24 h + reembolso automático (§4.5) |
+| Passeio vendido sem vaga | Médio | como a vaga é garantida no pagamento, o site só vende datas com estoque (controle de vagas por passeio e data); se mesmo assim faltar, reembolso integral pelo PWA (decisão 36) |
 | Tocar em `viagens` quebrar PWA/app | Alto | só INSERT com o contrato do PWA; nenhuma coluna ou trigger existente alterada; teste em `aguaverdeviagens.com.br` (testes) |
 | Sobrecarga do atendimento com vendas automáticas | Baixo | push + e-mail por venda; IA responde dúvidas; painel no PWA |
 

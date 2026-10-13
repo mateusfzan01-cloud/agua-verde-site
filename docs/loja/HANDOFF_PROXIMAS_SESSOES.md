@@ -50,6 +50,8 @@ em implementação simulada; redirects 301 dos slugs da Paytour; migrations SQL 
 supabase/migrations/ mas NÃO aplicadas. Quando o host for aguaverdeviagens.com.br (domínio de testes, decisão 35),
 responder com X-Robots-Tag: noindex e robots.txt com Disallow: / (o domínio oficial continua aguaverde.tur.br).
 O preço é por veículo, como na Paytour (§4.3; docs/loja/conteudo/veiculos-paytour.json); site só no modo claro.
+Passeio: vaga garantida no pagamento (sem confirmação em 24 h) e cancelamento grátis até 48 h antes, 24 h na alta
+temporada (decisão 36; transfer segue com 24 h); a lista de datas da alta temporada é uma configuração a definir.
 npm run build tem de passar. PR em rascunho.
 ```
 

@@ -423,7 +423,10 @@ At the airport, your driver waits up to 60 min after landing, holding a sign wit
 
 ---
 
-## 5. Sugestão extra (opcional) — passeio pago, aguardando confirmação
+## 5. ~~Sugestão extra (opcional) — passeio pago, aguardando confirmação~~ (não é mais necessária)
+
+> **13/10/2026 (decisão 36):** o passeio tem vaga garantida no pagamento, então não existe a fase "aguardando confirmação". O template `loja_passeio_pagamento_recebido` **não deve ser criado**; o passeio usa os mesmos templates do transfer (confirmação e voucher). O texto abaixo fica só como histórico.
+
 
 A decisão 20 diz que o passeio é pago na hora e confirmado em até 24 h. O template (a) só deve sair **depois** da confirmação. Entre o pagamento e a confirmação, o passageiro recebe a página e o e-mail; se o dono quiser também um WhatsApp nesse momento, segue um quarto template [CONFERIR: criar ou não].
 

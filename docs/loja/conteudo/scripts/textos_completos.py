@@ -29,9 +29,9 @@ def par(*blocos):
 # Trechos de política (decisões 13 e 20 do plano)
 # ---------------------------------------------------------------------------
 POL_PASSEIO = {
-    "pt": "Confirmação em até 24 horas após o pagamento. Se não houver vaga, o reembolso é integral e automático. Cancelamento grátis até 24 horas antes.",
-    "es": "Confirmación dentro de las 24 horas posteriores al pago. Si no hay lugar, el reembolso es total y automático. Cancelación gratuita hasta 24 horas antes.",
-    "en": "Confirmation within 24 hours of payment. If there is no availability, you get a full automatic refund. Free cancellation up to 24 hours before.",
+    "pt": "Vaga garantida assim que o pagamento é aprovado. Cancelamento grátis até 48 horas antes (24 horas na alta temporada).",
+    "es": "Lugar garantizado en cuanto se aprueba el pago. Cancelación gratuita hasta 48 horas antes (24 horas en temporada alta).",
+    "en": "Your spot is guaranteed as soon as payment is approved. Free cancellation up to 48 hours before (24 hours in high season).",
 }
 POL_ENDERECO = {
     "pt": "O motorista espera até 15 minutos sem custo no endereço de embarque. Cancelamento grátis até 24 horas antes do horário reservado.",
@@ -54,7 +54,7 @@ N_TRANSFER_ERROS = "corrigido 'monitando' → 'monitorando', 'aguarando' → 'ag
 N_POL_AEROPORTO = "política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento"
 N_SO_CHEGADA = "o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
 N_POL_ENDERECO = "política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes"
-N_POL_PASSEIO = "política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h antes"
+N_POL_PASSEIO = "política aplicada: vaga garantida no pagamento (sem confirmação em 24 h); cancelamento grátis até 48 h antes, 24 h na alta temporada (decisão 36; datas da alta temporada a definir)"
 N_SUPERA = "textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo"
 N_OLINDA_ERROS = "corrigido 'ímperdível' → 'imperdível', 'azuleijos' → 'azulejos', 'Alta da Sé' → 'Alto da Sé', 'Ladeira da Misericórida' → 'Misericórdia', 'À bordo' → 'A bordo', 'ultimo' → 'último', espaço antes de vírgula"
 

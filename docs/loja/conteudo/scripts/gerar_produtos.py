@@ -355,17 +355,17 @@ addr(35, "recife-caruaru-sao-joao-ida-e-volta", P("Recife", "Recife", "Recife", 
 
 # ---------------------------------------------------------------- passeios e serviços
 POL_PASSEIO = {
-    "pt": "Confirmação em até 24 horas após o pagamento; se não houver disponibilidade, o reembolso é integral e automático. Cancelamento grátis até 24 horas antes.",
-    "es": "Confirmación dentro de las 24 horas posteriores al pago; si no hay disponibilidad, el reembolso es total y automático. Cancelación gratuita hasta 24 horas antes.",
-    "en": "Confirmation within 24 hours of payment; if there is no availability, you get a full automatic refund. Free cancellation up to 24 hours before.",
+    "pt": "Vaga garantida assim que o pagamento é aprovado. Cancelamento grátis até 48 horas antes (24 horas na alta temporada).",
+    "es": "Lugar garantizado en cuanto se aprueba el pago. Cancelación gratuita hasta 48 horas antes (24 horas en temporada alta).",
+    "en": "Your spot is guaranteed as soon as payment is approved. Free cancellation up to 48 hours before (24 hours in high season).",
 }
 
 def pas(ordem, slug, nome, paras, inc, nao, origem_padrao, destino_padrao, seo_t, seo_d, notas, duracao=None, ativo=True, sentido="n/a", tipo="passeio"):
     descricao = {k: "\n\n".join(paras[k] + [POL_PASSEIO[k]]) for k in L}
-    n = [NOTA_INCOMPLETA] + notas + ["política aplicada: confirmação em até 24 h com reembolso automático se não houver vaga; cancelamento grátis até 24 h", NOTA_PAX, NOTA_IMG]
+    n = [NOTA_INCOMPLETA] + notas + ["política aplicada: vaga garantida no pagamento (sem confirmação em 24 h); cancelamento grátis até 48 h antes, 24 h na alta temporada (decisão 36; datas da alta temporada a definir)", NOTA_PAX, NOTA_IMG]
     produtos[ordem] = dict(slug=slug, tipo=tipo, nome=nome, descricao=descricao, inclusos=inc, nao_inclusos=nao,
                            origem_padrao=origem_padrao, destino_padrao=destino_padrao, sentido=sentido,
-                           duracao_min=duracao, confirmacao="24h", ativo=ativo,
+                           duracao_min=duracao, confirmacao="imediata", ativo=ativo,
                            seo={"titulo": seo_title(seo_t), "descricao": check_desc(seo_d)}, notas_revisao=n)
 
 VAZIO = {"pt": [], "es": [], "en": []}
