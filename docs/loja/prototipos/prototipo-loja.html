@@ -110,6 +110,16 @@ button,input,select,textarea{font:inherit;color:inherit}
 .abas button{flex:1;border:1.5px solid var(--linha);background:var(--surface);border-radius:99px;padding:8px;font-weight:600;cursor:pointer;color:var(--texto2)}
 .abas button[aria-pressed="true"]{border-color:var(--verde);color:var(--link);background:var(--verde-suave)}
 
+.prova2{display:grid;gap:10px}
+.prova2 .live{justify-self:start;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--link);background:var(--verde-suave);border-radius:99px;padding:4px 11px}
+.prova2 .dot{width:8px;height:8px;border-radius:99px;background:var(--verde-claro);box-shadow:0 0 0 0 rgba(39,174,96,.6)}
+@media (prefers-reduced-motion:no-preference){.prova2 .dot{animation:pulsa 1.8s infinite}}
+@keyframes pulsa{0%{box-shadow:0 0 0 0 rgba(39,174,96,.55)}70%{box-shadow:0 0 0 9px rgba(39,174,96,0)}100%{box-shadow:0 0 0 0 rgba(39,174,96,0)}}
+.prova2 .linha{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.prova2 .num{font-family:var(--f-titulo);font-size:40px;font-weight:700;color:var(--link);line-height:1}
+.prova2 .linha b{font-family:var(--f-titulo);font-size:20px}
+.prova2 .seguro{display:flex;gap:9px;align-items:center;font-size:15px;background:var(--dourado-suave);border-radius:12px;padding:10px 12px}
+.prova2 .seguro svg{flex:none;color:var(--link)}
 .prova{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
 .prova .num{font-family:var(--f-titulo);font-size:30px;font-weight:700;color:var(--link)}
 .rodape{background:var(--hero);color:#b9cbbf;padding:20px 16px 90px;font-size:12.5px;display:grid;gap:6px}
@@ -216,8 +226,21 @@ button,input,select,textarea{font:inherit;color:inherit}
 .acoes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .acoes button{border:1.5px solid var(--linha);background:var(--surface);border-radius:12px;padding:12px 8px;font-weight:600;font-size:13px;cursor:pointer;color:var(--texto);display:grid;gap:4px;justify-items:center;text-align:center}
 .acoes svg{color:var(--link)}
-.fone{width:100%;max-width:330px;margin:4px auto 0;border:7px solid #1a1a2e;border-radius:28px;overflow:hidden;background:var(--secao);box-shadow:var(--sombra)}
-.fone-url{background:#1a1a2e;color:#cfd8d2;font-size:11px;padding:0 10px 7px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fone-wrap{position:relative;display:grid;gap:8px;justify-items:center}
+.fone-cut{position:relative;width:100%;display:flex;justify-content:center}
+.fone-wrap:not(.aberto) .fone-cut{max-height:310px;overflow:hidden}
+.fone-wrap:not(.aberto) .fone-cut::after{content:"";position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(to bottom,transparent,var(--surface) 85%);pointer-events:none}
+.fone{width:100%;max-width:290px;padding:6px;border-radius:44px;background:linear-gradient(150deg,#3a3f45,#0c0d0f 60%);box-shadow:inset 0 0 0 1.5px #5b6168,0 14px 30px rgba(13,46,28,.28);position:relative;flex:none}
+.fone::before{content:"";position:absolute;left:-3px;top:92px;width:3px;height:34px;border-radius:3px 0 0 3px;background:#2a2d31;box-shadow:0 46px 0 #2a2d31}
+.fone::after{content:"";position:absolute;right:-3px;top:120px;width:3px;height:58px;border-radius:0 3px 3px 0;background:#2a2d31}
+.fone-tela{border-radius:38px;overflow:hidden;background:var(--secao);position:relative}
+.fone-top{display:grid;grid-template-columns:1fr 84px 1fr;align-items:center;padding:10px 20px 4px;font-size:12px;font-weight:700;color:#111}
+.fone-top .ilha{width:84px;height:24px;border-radius:99px;background:#000;display:block}
+.fone-top .sts{justify-self:end;display:flex;gap:4px;align-items:center}
+.fone-url{margin:4px 14px 2px;background:#e9eeea;color:#3d4640;font-size:10.5px;padding:5px 10px;border-radius:99px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fone-home{width:96px;height:4px;border-radius:99px;background:#1a1a2e;margin:6px auto 8px;opacity:.85}
+.fone-ver{border:1.5px solid var(--linha);background:var(--surface);color:var(--link);font-weight:600;border-radius:99px;padding:8px 16px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;z-index:2}
+.fone-wrap.aberto .fone-ver svg{transform:rotate(180deg)}
 .ac{padding:12px 12px 14px;display:grid;gap:10px;font-size:12.5px;color:var(--texto)}
 .ac-badge{justify-self:start;display:inline-flex;align-items:center;gap:6px;background:#2563eb;color:#fff;font-weight:600;font-size:12px;padding:5px 11px;border-radius:99px}
 .ac h4{margin:0;font-family:var(--f-titulo);font-size:18px}
@@ -337,9 +360,10 @@ button,input,select,textarea{font:inherit;color:inherit}
     </div>
 
     <div class="sec">
-      <div class="cartao prova">
-        <div class="num tab">8.211</div>
-        <p data-t="home.prova">viagens registradas no nosso sistema, com motoristas próprios e acompanhamento em tempo real pelo celular.</p>
+      <div class="cartao prova2">
+        <div class="live"><span class="dot" aria-hidden="true"></span><span data-t="home.live">Atualizado a cada hora</span></div>
+        <div class="linha"><div class="num tab">8.211</div><b data-t="home.prova">viagens realizadas</b></div>
+        <p class="seguro"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.7 8 9 4.8-1.3 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span><strong data-t="home.seguro1">Sistema seguro</strong><span data-t="home.seguro2">, com motoristas cadastrados.</span></span></p>
       </div>
       <div class="cartao acomp">
         <div style="display:grid;gap:4px"><b data-t="home.acomp.t">Acompanhe sua viagem pelo celular</b><p class="aprox" data-t="home.acomp.p">Um link com o motorista, o carro e a situação da viagem, do início ao fim.</p></div>
@@ -673,7 +697,7 @@ pt:{"pk.fechar":"Fechar","pk.ok":"Confirmar","pk.hora":"Hora","pk.min":"Minutos"
 "w.origem":"Saindo de","w.destino":"Indo para","w.data":"Data","w.pax":"Passageiros","w.ver":"Ver e reservar","w.porcarro":"a partir de, por veículo","w.idavolta":"ida e volta: ","w.orc":"Rota fora da tabela. Fazemos orçamento pelo WhatsApp.","w.orcbtn":"Pedir orçamento no WhatsApp",
 "pr.1t":"Preço fechado","pr.1d":"Pedágio incluso, sem surpresa","pr.2t":"Cancelamento grátis","pr.2d":"Até 24 h antes da viagem","pr.3t":"Monitoramos seu voo","pr.3d":"Atrasou? A gente espera","pr.4t":"60 min de espera","pr.4d":"Grátis no aeroporto",
 "ta.linha":"112 avaliações no Tripadvisor · Travellers' Choice","ta.nome":"Perfil “Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)”.",
-"home.mais":"Mais reservados","home.transfers":"Transfers","home.passeios":"Passeios","home.catalogo":"Não achou sua rota?","home.catalogo2":"Peça um orçamento no WhatsApp.","home.prova":"viagens realizadas, com motoristas próprios.","home.acomp.t":"Acompanhe sua viagem pelo celular","home.acomp.p":"Um link com o motorista, o carro e a situação da viagem, do início ao fim.","home.acomp.ex":"Exemplo do link de acompanhamento.","home.de":"a partir de","home.rank":"º mais vendido","home.porcarro":"por carro",
+"home.mais":"Mais reservados","home.transfers":"Transfers","home.passeios":"Passeios","home.catalogo":"Não achou sua rota?","home.catalogo2":"Peça um orçamento no WhatsApp.","home.prova":"viagens realizadas","home.live":"Atualizado a cada hora","home.seguro1":"Sistema seguro","home.seguro2":", com motoristas cadastrados.","home.acomp.t":"Acompanhe sua viagem pelo celular","home.acomp.p":"Um link com o motorista, o carro e a situação da viagem, do início ao fim.","home.acomp.ex":"Exemplo do link de acompanhamento.","home.de":"a partir de","home.rank":"º mais vendido","home.porcarro":"por carro",
 "rod.links":"Termos de uso · Política de privacidade · Minha reserva",
 "p.tag":"Ida e volta","p.f.veic":"tipos de veículo","p.f.ate":"pessoas no maior","p.ida1":"Ida: aeroporto → hotel","p.ida1d":"Data e hora do pouso","p.volta.d":"Data e hora da busca no hotel","p.veic.t":"Escolha o veículo","p.veic.d":"O preço é por veículo, ida e volta. Grupo grande? Some mais de um.","p.max":"Máximo de 10 veículos por compra.","p.aviso0":"Escolha pelo menos um veículo.","p.avisocap":"Os veículos escolhidos levam até {n} pessoas. Adicione outro veículo ou escolha um maior.","p.1veic":"1 veículo, ida e volta","p.nveic":"veículos, ida e volta","c.ida":"Ida","c.volta":"Volta","r.k.volta":"Volta","r.k.veic":"Veículo","p.cat":"Transfer privativo","p.conf":"Confirmação imediata","p.dist":"distância","p.cap":"pessoas no preço","p.espera":"de espera grátis","p.ida":"Só ida ou só volta","p.idavolta":"Ida e volta","p.trecho":"Trecho","p.chegada":"Aeroporto → hotel (chegada)","p.saida":"Hotel → aeroporto (saída)","p.hora":"Hora do pouso","p.hora2":"Hora da busca","p.volta":"Volta: hotel → aeroporto","p.malas":"Malas grandes",
 "p.inclui":"O que está incluso","p.como":"Como é a chegada","p.c1":"Acompanhamos seu voo","p.c1d":"Se atrasar, o motorista ajusta o horário sem custo.","p.c2":"Motorista com placa com seu nome","p.c2d":"Na saída do desembarque. Você recebe o nome e a foto dele no WhatsApp.","p.c3":"60 minutos de espera grátis","p.c3d":"Contados a partir do pouso. Tempo de sobra para bagagem.",
@@ -710,7 +734,7 @@ es:{"pk.fechar":"Cerrar","pk.ok":"Confirmar","pk.hora":"Hora","pk.min":"Minutos"
 "w.origem":"Desde","w.destino":"Hasta","w.data":"Fecha","w.pax":"Pasajeros","w.ver":"Ver y reservar","w.porcarro":"desde, por vehículo","w.idavolta":"ida y vuelta: ","w.orc":"Ruta fuera de la tabla. Te cotizamos por WhatsApp.","w.orcbtn":"Pedir cotización por WhatsApp",
 "pr.1t":"Precio cerrado","pr.1d":"Peajes incluidos, sin sorpresas","pr.2t":"Cancelación gratis","pr.2d":"Hasta 24 h antes del viaje","pr.3t":"Seguimos tu vuelo","pr.3d":"¿Se atrasó? Te esperamos","pr.4t":"60 min de espera","pr.4d":"Gratis en el aeropuerto",
 "ta.linha":"112 opiniones en Tripadvisor · Travellers' Choice","ta.nome":"Perfil “Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)”.",
-"home.mais":"Los más reservados","home.transfers":"Traslados","home.passeios":"Excursiones","home.catalogo":"¿No encontrás tu ruta?","home.catalogo2":"Pedí una cotización por WhatsApp.","home.prova":"viajes realizados, con choferes propios.","home.acomp.t":"Seguí tu viaje desde el celular","home.acomp.p":"Un link con el chofer, el auto y el estado del viaje, de principio a fin.","home.acomp.ex":"Ejemplo del link de seguimiento.","home.de":"desde","home.rank":"º más vendido","home.porcarro":"por auto",
+"home.mais":"Los más reservados","home.transfers":"Traslados","home.passeios":"Excursiones","home.catalogo":"¿No encontrás tu ruta?","home.catalogo2":"Pedí una cotización por WhatsApp.","home.prova":"viajes realizados","home.live":"Se actualiza cada hora","home.seguro1":"Sistema seguro","home.seguro2":", con choferes registrados.","home.acomp.t":"Seguí tu viaje desde el celular","home.acomp.p":"Un link con el chofer, el auto y el estado del viaje, de principio a fin.","home.acomp.ex":"Ejemplo del link de seguimiento.","home.de":"desde","home.rank":"º más vendido","home.porcarro":"por auto",
 "rod.links":"Términos de uso · Política de privacidad · Mi reserva",
 "p.tag":"Ida y vuelta","p.f.veic":"tipos de vehículo","p.f.ate":"personas en el mayor","p.ida1":"Ida: aeropuerto → hotel","p.ida1d":"Fecha y hora de aterrizaje","p.volta.d":"Fecha y hora de búsqueda en el hotel","p.veic.t":"Elegí el vehículo","p.veic.d":"El precio es por vehículo, ida y vuelta. ¿Grupo grande? Sumá más de uno.","p.max":"Máximo 10 vehículos por compra.","p.aviso0":"Elegí al menos un vehículo.","p.avisocap":"Los vehículos elegidos llevan hasta {n} personas. Agregá otro o elegí uno más grande.","p.1veic":"1 vehículo, ida y vuelta","p.nveic":"vehículos, ida y vuelta","c.ida":"Ida","c.volta":"Vuelta","r.k.volta":"Vuelta","r.k.veic":"Vehículo","p.cat":"Traslado privado","p.conf":"Confirmación inmediata","p.dist":"distancia","p.cap":"personas incluidas","p.espera":"de espera gratis","p.ida":"Solo ida o solo vuelta","p.idavolta":"Ida y vuelta","p.trecho":"Tramo","p.chegada":"Aeropuerto → hotel (llegada)","p.saida":"Hotel → aeropuerto (salida)","p.hora":"Hora de aterrizaje","p.hora2":"Hora de búsqueda","p.volta":"Vuelta: hotel → aeropuerto","p.malas":"Valijas grandes",
 "p.inclui":"Qué incluye","p.como":"Cómo es la llegada","p.c1":"Seguimos tu vuelo","p.c1d":"Si se atrasa, el chofer ajusta el horario sin costo.","p.c2":"Chofer con cartel con tu nombre","p.c2d":"En la salida de arribos. Te mandamos su nombre y foto por WhatsApp.","p.c3":"60 minutos de espera gratis","p.c3d":"Desde el aterrizaje. Tiempo de sobra para las valijas.",
@@ -742,7 +766,7 @@ en:{"pk.fechar":"Close","pk.ok":"Confirm","pk.hora":"Hour","pk.min":"Minutes","p
 "w.origem":"From","w.destino":"To","w.data":"Date","w.pax":"Passengers","w.ver":"See and book","w.porcarro":"from, per vehicle","w.idavolta":"round trip: ","w.orc":"This route isn't in our price list. We'll quote it on WhatsApp.","w.orcbtn":"Get a quote on WhatsApp",
 "pr.1t":"Fixed price","pr.1d":"Tolls included, no surprises","pr.2t":"Free cancellation","pr.2d":"Up to 24 h before the trip","pr.3t":"Flight tracking","pr.3d":"Delayed? We wait","pr.4t":"60 min waiting","pr.4d":"Free at the airport",
 "ta.linha":"112 reviews on Tripadvisor · Travellers' Choice","ta.nome":"Listed as “Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)”.",
-"home.mais":"Most booked","home.transfers":"Transfers","home.passeios":"Tours","home.catalogo":"Can't find your route?","home.catalogo2":"Ask for a quote on WhatsApp.","home.prova":"trips completed, with our own drivers.","home.acomp.t":"Follow your trip on your phone","home.acomp.p":"A link with your driver, the car and trip status, from start to finish.","home.acomp.ex":"Example of the tracking link.","home.de":"from","home.rank":" best seller","home.porcarro":"per car",
+"home.mais":"Most booked","home.transfers":"Transfers","home.passeios":"Tours","home.catalogo":"Can't find your route?","home.catalogo2":"Ask for a quote on WhatsApp.","home.prova":"trips completed","home.live":"Updated hourly","home.seguro1":"Secure system","home.seguro2":", with registered drivers.","home.acomp.t":"Follow your trip on your phone","home.acomp.p":"A link with your driver, the car and trip status, from start to finish.","home.acomp.ex":"Example of the tracking link.","home.de":"from","home.rank":" best seller","home.porcarro":"per car",
 "rod.links":"Terms of use · Privacy policy · My booking",
 "p.tag":"Round trip","p.f.veic":"vehicle types","p.f.ate":"people in the largest","p.ida1":"Outbound: airport → hotel","p.ida1d":"Landing date and time","p.volta.d":"Hotel pickup date and time","p.veic.t":"Choose your vehicle","p.veic.d":"Prices are per vehicle, round trip. Big group? Add more than one.","p.max":"Up to 10 vehicles per booking.","p.aviso0":"Choose at least one vehicle.","p.avisocap":"The vehicles you chose carry up to {n} people. Add another or pick a bigger one.","p.1veic":"1 vehicle, round trip","p.nveic":"vehicles, round trip","c.ida":"Outbound","c.volta":"Return","r.k.volta":"Return","r.k.veic":"Vehicle","p.cat":"Private transfer","p.conf":"Instant confirmation","p.dist":"distance","p.cap":"people included","p.espera":"free waiting","p.ida":"One way","p.idavolta":"Round trip","p.trecho":"Direction","p.chegada":"Airport → hotel (arrival)","p.saida":"Hotel → airport (departure)","p.hora":"Landing time","p.hora2":"Pickup time","p.volta":"Return: hotel → airport","p.malas":"Large bags",
 "p.inclui":"What's included","p.como":"How arrival works","p.c1":"We track your flight","p.c1d":"If it's late, the driver adjusts at no cost.","p.c2":"Driver with your name sign","p.c2d":"At the arrivals exit. You get his name and photo on WhatsApp.","p.c3":"60 minutes free waiting","p.c3d":"Counted from landing. Plenty of time for bags.",
@@ -1029,9 +1053,9 @@ document.getElementById("m-form").addEventListener("submit", function(e){
 
 /* Miniatura da página /acompanhar (mesma estrutura da página real do site) */
 var ACOMP = {
- pt:{url:"aguaverde.tur.br/acompanhar/7f3c…e91a",status:"Motorista a caminho",ola:"Olá, {n}! 👋",seu:"Seu transfer",seup:"Seu passeio",orig:"Origem",dest:"Destino",dh:"Data e hora",res:"Número da reserva",sit:"Situação da viagem",agora:"Agora",zap:"Dúvidas ou precisa de suporte? Nossa equipe está disponível.",zapb:"Falar com a Água Verde",eta:"chega em 12 min",car:"Chevrolet Spin branca · QWE-1A23",steps:["Transfer confirmado","Motorista a caminho","Em viagem","Viagem concluída"],stepsp:["Passeio confirmado","Motorista a caminho","Em passeio","Passeio concluído"]},
- es:{url:"aguaverde.tur.br/acompanhar/7f3c…e91a",status:"Chofer en camino",ola:"¡Hola, {n}! 👋",seu:"Tu traslado",seup:"Tu excursión",orig:"Origen",dest:"Destino",dh:"Fecha y hora",res:"Número de reserva",sit:"Estado del viaje",agora:"Ahora",zap:"¿Dudas o necesitás ayuda? Nuestro equipo está disponible.",zapb:"Hablar con Água Verde",eta:"llega en 12 min",car:"Chevrolet Spin blanca · QWE-1A23",steps:["Traslado confirmado","Chofer en camino","En viaje","Viaje completado"],stepsp:["Excursión confirmada","Chofer en camino","En excursión","Excursión completada"]},
- en:{url:"aguaverde.tur.br/acompanhar/7f3c…e91a",status:"Driver on the way",ola:"Hi, {n}! 👋",seu:"Your transfer",seup:"Your tour",orig:"From",dest:"To",dh:"Date and time",res:"Booking number",sit:"Trip status",agora:"Now",zap:"Questions or need help? Our team is available.",zapb:"Chat with Água Verde",eta:"12 min away",car:"White Chevrolet Spin · QWE-1A23",steps:["Transfer confirmed","Driver on the way","On the trip","Trip completed"],stepsp:["Tour confirmed","Driver on the way","On the tour","Tour completed"]}
+ pt:{ver:"Ver exemplo completo",fechar:"Recolher",url:"aguaverde.tur.br/acompanhar/7f3c…e91a",status:"Motorista a caminho",ola:"Olá, {n}! 👋",seu:"Seu transfer",seup:"Seu passeio",orig:"Origem",dest:"Destino",dh:"Data e hora",res:"Número da reserva",sit:"Situação da viagem",agora:"Agora",zap:"Dúvidas ou precisa de suporte? Nossa equipe está disponível.",zapb:"Falar com a Água Verde",eta:"chega em 12 min",car:"Chevrolet Spin branca · QWE-1A23",steps:["Transfer confirmado","Motorista a caminho","Em viagem","Viagem concluída"],stepsp:["Passeio confirmado","Motorista a caminho","Em passeio","Passeio concluído"]},
+ es:{ver:"Ver ejemplo completo",fechar:"Contraer",url:"aguaverde.tur.br/acompanhar/7f3c…e91a",status:"Chofer en camino",ola:"¡Hola, {n}! 👋",seu:"Tu traslado",seup:"Tu excursión",orig:"Origen",dest:"Destino",dh:"Fecha y hora",res:"Número de reserva",sit:"Estado del viaje",agora:"Ahora",zap:"¿Dudas o necesitás ayuda? Nuestro equipo está disponible.",zapb:"Hablar con Água Verde",eta:"llega en 12 min",car:"Chevrolet Spin blanca · QWE-1A23",steps:["Traslado confirmado","Chofer en camino","En viaje","Viaje completado"],stepsp:["Excursión confirmada","Chofer en camino","En excursión","Excursión completada"]},
+ en:{ver:"See full example",fechar:"Collapse",url:"aguaverde.tur.br/acompanhar/7f3c…e91a",status:"Driver on the way",ola:"Hi, {n}! 👋",seu:"Your transfer",seup:"Your tour",orig:"From",dest:"To",dh:"Date and time",res:"Booking number",sit:"Trip status",agora:"Now",zap:"Questions or need help? Our team is available.",zapb:"Chat with Água Verde",eta:"12 min away",car:"White Chevrolet Spin · QWE-1A23",steps:["Transfer confirmed","Driver on the way","On the trip","Trip completed"],stepsp:["Tour confirmed","Driver on the way","On the tour","Tour completed"]}
 };
 function acompHtml(){
   var A = ACOMP[L], P = ehPasseio(), nome = esc((document.getElementById("c-nome").value||"Lucía").split(" ")[0]);
@@ -1044,7 +1068,7 @@ function acompHtml(){
   }).join("");
   var ICO_CAL = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>';
   var ICO_PIN = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>';
-  return '<div class="fone"><div class="fone-url">'+A.url+'</div><div class="ac">'+
+  return '<div class="fone-wrap"><div class="fone-cut"><div class="fone"><div class="fone-tela">'+'<div class="fone-top"><span>9:41</span><i class="ilha"></i><span class="sts"><svg width="16" height="11" viewBox="0 0 16 11" aria-hidden="true"><rect x="0" y="7" width="3" height="4" rx="1" fill="#111"/><rect x="4.3" y="5" width="3" height="6" rx="1" fill="#111"/><rect x="8.6" y="2.5" width="3" height="8.5" rx="1" fill="#111"/><rect x="13" y="0" width="3" height="11" rx="1" fill="#111"/></svg><svg width="24" height="11" viewBox="0 0 24 11" aria-hidden="true"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="#111" opacity=".5"/><rect x="2" y="2" width="15" height="7" rx="1.8" fill="#111"/><rect x="21.5" y="3.5" width="2" height="4" rx="1" fill="#111" opacity=".5"/></svg></span></div>'+'<div class="fone-url">🔒 '+A.url+'</div><div class="ac">'+
     '<span class="ac-badge">🚗 '+A.status+'</span>'+
     '<h4>'+A.ola.replace("{n}",nome)+'</h4>'+
     '<div class="ac-mot"><span class="avatar" aria-hidden="true">C</span><div><b>Carlos</b><small>'+A.car+'</small></div><span class="chip">'+A.eta+'</span></div>'+
@@ -1055,9 +1079,16 @@ function acompHtml(){
     '</div>'+
     '<div class="ac-tl"><div class="tit">'+A.sit+'</div>'+passos+'</div>'+
     '<div class="ac-zap"><span>'+A.zap+'</span><span class="btn2">💬 '+A.zapb+'</span></div>'+
-  '</div></div>';
+  '</div><div class="fone-home"></div></div></div></div>'+
+  '<button class="fone-ver" type="button" data-expande="1"><span>'+A.ver+'</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div>';
 }
 function acompHome(){ var el = document.getElementById("acomp-home"); if(el) el.innerHTML = acompHtml(); }
+
+document.addEventListener("click", function(e){
+  var b = e.target.closest("[data-expande]"); if(!b) return;
+  var w = b.closest(".fone-wrap"); var aberto = w.classList.toggle("aberto");
+  b.firstChild.textContent = ACOMP[L][aberto ? "fechar" : "ver"];
+});
 
 /* Seletores de data e hora próprios (calendário e relógio em folha), iguais em todo celular e computador */
 var HOJE = "2026-10-10";
