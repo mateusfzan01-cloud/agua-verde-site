@@ -1,7 +1,7 @@
 # Código da loja (Prompt B): o que foi feito e como funciona
 
 > Entregue em 17/10/2026, depois da aprovação das telas do protótipo.
-> **Nada disto altera o banco de produção.** Tabelas ficam só escritas em `supabase/pendentes/` (não aplicadas).
+> **O código do site ainda não grava no banco.** As tabelas da loja foram criadas em 17/10/2026 (Prompt C, ver `supabase/pendentes/LEIA-ME.md`) e estão vazias.
 
 ## Em uma frase
 
@@ -90,7 +90,7 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 | `src/app/[locale]/` | páginas e ações do servidor da loja |
 | `src/components/loja/` | componentes (widget, seletor de idioma e moeda, resumo, painel de pagamento...) |
 | `src/middleware.ts` | roteamento de idioma só nas rotas da loja, flag de lançamento e noindex |
-| `supabase/pendentes/` | migrations SQL escritas e testadas num Postgres de verdade, **não aplicadas** |
+| `supabase/migrations/*_loja_*` e `supabase/pendentes/testar.mjs` | migrations da loja (aplicadas em 17/10/2026) e o teste num Postgres de verdade |
 
 ## Limites conhecidos (por serem simulação)
 
@@ -107,7 +107,7 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 
 ## Conferências pedidas ao Prompt C
 
-1. Colunas obrigatórias e gatilhos de `public.viagens` contra o banco real (avisos `[CONFERIR]` em `supabase/pendentes/`).
+1. (Feito em 17/10/2026) Colunas e gatilhos de `public.viagens` conferidos no banco real.
 2. Id do fornecedor "Agua Verde".
 3. Datas da alta temporada e controle de vagas dos passeios com parceiros (catamarã, mergulho, jangada).
 4. Texto "(ida ou volta)" dos transfers só de ida: veio do nome na Paytour; vale revisar com o dono.

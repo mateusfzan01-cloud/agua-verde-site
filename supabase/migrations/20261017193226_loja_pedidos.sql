@@ -1,5 +1,5 @@
 -- Loja própria, parte 2: pedidos (a transação comercial) e auditoria do gateway.
--- NÃO APLICADA. Ver LEIA-ME.md desta pasta.
+-- Aplicada no banco em 17/10/2026 (ver LEIA-ME.md desta pasta).
 -- A viagem (operação) continua sendo a tabela `viagens`; aqui fica só o lado comercial.
 
 CREATE SEQUENCE IF NOT EXISTS public.pedidos_numero_seq;

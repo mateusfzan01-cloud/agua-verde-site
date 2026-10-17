@@ -43,7 +43,7 @@ Site institucional completo com 12 páginas (10 estáticas + 1 dinâmica) e infr
 Rotas `/transfers`, `/passeios`, `/checkout`, `/reserva`, `/minha-reserva` (e `/es`, `/en`) em `src/app/[locale]/`; regras em
 `src/lib/loja/`. Pagamento **simulado** e pedidos **em memória**. Em produção (`aguaverde.tur.br`) a loja responde 404 até
 `LOJA_HABILITADA=true`. O domínio de testes sai do Google (`X-Robots-Tag` e `robots.txt`). Migrations escritas em
-`supabase/pendentes/` e **não aplicadas**. Detalhes e limites: `docs/loja/CODIGO_LOJA_B.md`. As páginas antigas do site
+`supabase/migrations/*_loja_*` e **aplicadas no banco em 17/10/2026** (tabelas vazias; nada do site grava nelas ainda). Detalhes e limites: `docs/loja/CODIGO_LOJA_B.md`. As páginas antigas do site
 ficam em `src/app/(site)/`.
 
 ---

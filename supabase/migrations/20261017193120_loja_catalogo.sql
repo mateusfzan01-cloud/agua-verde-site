@@ -1,5 +1,5 @@
 -- Loja própria, parte 1: catálogo, tipos de veículo, alta temporada e cotações.
--- NÃO APLICADA. Ver LEIA-ME.md desta pasta.
+-- Aplicada no banco em 17/10/2026 (ver LEIA-ME.md desta pasta).
 -- Não altera nenhuma tabela existente.
 
 -- ============================================================

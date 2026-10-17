@@ -1,7 +1,7 @@
 /**
  * Repositório de pedidos em MEMÓRIA (simulação).
  * Perde tudo quando o servidor reinicia ou escala para outra instância. Serve só
- * para ver o fluxo; na etapa C é trocado pelo banco (migrations em supabase/pendentes).
+ * para ver o fluxo; na etapa C é trocado pelo banco (tabelas já criadas por supabase/migrations/*_loja_*).
  */
 import { randomBytes, randomUUID } from 'node:crypto'
 import type { EventoDoGateway } from './pagamento/gateway'

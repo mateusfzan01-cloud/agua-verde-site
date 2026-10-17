@@ -2,7 +2,7 @@
 
 > Escrito em 09/10/2026, ao fim da sessão de planejamento (log em `LOG_SESSAO_2026-10-08_PLANO_LOJA_PROPRIA.md`).
 > Cada bloco abaixo é um prompt pronto para abrir uma sessão nova no repositório `agua-verde-site`.
-> Atualizado em 17/10/2026: telas aprovadas e Prompt B entregue. Em 10/10/2026: Prompt A entregue no PR #3; testes da loja no domínio `aguaverdeviagens.com.br` (decisão 35).
+> Atualizado em 17/10/2026: telas aprovadas, Prompt B entregue e Prompt C iniciado (migrations aplicadas no banco; falta gateway real e Edge Function). Em 10/10/2026: Prompt A entregue no PR #3; testes da loja no domínio `aguaverdeviagens.com.br` (decisão 35).
 > Ordem recomendada: A agora; B depois que o dono aprovar as telas de A; C e D quando os bloqueios indicados forem resolvidos.
 
 ## O que está liberado e o que está bloqueado

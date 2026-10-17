@@ -1,5 +1,5 @@
 -- Loja própria, parte 3: funções do banco.
--- NÃO APLICADA. Ver LEIA-ME.md desta pasta.
+-- Aplicada no banco em 17/10/2026 (ver LEIA-ME.md desta pasta).
 
 -- ============================================================
 -- 1. confirmar_pedido: a ÚNICA porta de confirmação (plano §4.7, item 4)
@@ -7,12 +7,13 @@
 --    gateway_ref e aquele pedido. Marca pago, cria uma viagem por perna e grava os ids.
 --    Repetir a chamada não cria viagem em dobro.
 --
---    [CONFERIR antes de aplicar]
---    a) colunas obrigatórias de public.viagens e gatilhos dela (o PWA insere os mesmos campos);
---    b) o fornecedor "Agua Verde" (abaixo, procurado por nome; ajustar para o id real);
---    c) se o gatilho de avisos (push no app, alertas) dispara em INSERT com status 'pendente';
---    d) se `viagens.token_cliente` nasce sozinho no INSERT (valor padrão do banco). A página da reserva usa esse
---       token para o botão "Acompanhar minha viagem" (reserva_por_token devolve `viagem_token` de cada perna).
+--    Conferido no banco real em 17/10/2026 (só leitura):
+--    a) colunas de public.viagens: só passageiro_nome, origem, destino e data_hora são obrigatórias; o resto tem padrão;
+--    b) fornecedores.id é UUID; o fornecedor "Agua Verde" existe (procurado por nome, sem diferenciar maiúsculas);
+--    c) gatilhos no INSERT de viagens: gerar_token_cliente (cria o token de acompanhamento sozinho), normalizar telefone,
+--       auditoria (viagens_alteracoes_auditoria), invalidação de conciliação por numero_reserva, push ao motorista
+--       (só se motorista_id vier preenchido; aqui vem vazio). Nenhum bloqueia esta inserção;
+--    d) reserva_por_token devolve `viagem_token` de cada perna (botão "Acompanhar minha viagem").
 -- ============================================================
 CREATE OR REPLACE FUNCTION public.confirmar_pedido(p_pedido_id UUID, p_gateway_ref TEXT)
 RETURNS JSONB
@@ -24,7 +25,7 @@ DECLARE
   v_pedido public.pedidos%ROWTYPE;
   v_item public.pedido_itens%ROWTYPE;
   v_viagem_id INT;
-  v_fornecedor_id INT;
+  v_fornecedor_id UUID;
   v_pernas INT;
   v_valor_perna NUMERIC(10, 2);
   v_resto NUMERIC(10, 2);
@@ -54,7 +55,7 @@ BEGIN
      SET status = 'pago', pago_em = now(), gateway_ref = p_gateway_ref, gateway_status = 'aprovado'
    WHERE id = p_pedido_id;
 
-  -- [CONFERIR] id do fornecedor "Agua Verde" em public.fornecedores
+  -- fornecedor "Agua Verde" (uuid), procurado por nome
   SELECT id INTO v_fornecedor_id FROM public.fornecedores WHERE nome ILIKE 'agua verde%' ORDER BY id LIMIT 1;
 
   SELECT count(*) INTO v_pernas FROM public.pedido_itens WHERE pedido_id = p_pedido_id;
