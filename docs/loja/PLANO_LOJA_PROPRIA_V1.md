@@ -89,7 +89,7 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 21 | Transição: Paytour para de vender no dia da troca; conta mantida 60 dias para vouchers antigos; reservas futuras migradas à mão | dono |
 | 22 | Avisos: empresa recebe push no app nativo + e-mail; passageiro recebe página de confirmação + e-mail + WhatsApp (voucher e link de acompanhamento); PDF só sob demanda | dono |
 | 23 | Checkout pede: nome, WhatsApp, e-mail, voo, hotel/endereço, passageiros, malas, observações; CPF opcional | dono |
-| 24 | Cobrança sempre em BRL; versões ES/EN mostram valor aproximado em USD/EUR com aviso | dono |
+| 24 | Cobrança sempre em BRL. **Seletor de idioma e moeda** num ícone no cabeçalho ("PT/BRL R$") que abre uma janela com duas abas (Idioma, Moeda), no estilo Booking: moedas mais usadas no topo (BRL, USD, EUR, GBP, ARS, CLP, CHF, CAD) e lista de todas abaixo (36 moedas). Em qualquer idioma, escolhendo outra moeda aparece "≈ valor" com aviso "cobrado em reais". Sem escolha: PT mostra só reais; ES/EN mostram dólar. Cotação buscada de fonte oficial 1 vez por dia e guardada (nada de consulta a cada visita); no protótipo as cotações são ilustrativas. Cobrança em moeda estrangeira de verdade fica fora da v1 (2026-10-17) | dono |
 | 25 | App nativo ganha tela "Pedidos do site", além do push (ajuste de 2026-10-09) | dono |
 | 26 | IA do WhatsApp migra de gpt-4o-mini (OpenAI) para Claude Sonnet 5.5 (ajuste de 2026-10-09) | dono |
 | 27 | Verificar o Supabase; alta chance de precisar subir o porte de computação (ajuste de 2026-10-09) | dono |

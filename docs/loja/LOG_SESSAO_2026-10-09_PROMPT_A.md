@@ -29,6 +29,13 @@
 - 35: testes da loja no domínio `aguaverdeviagens.com.br` (fora do Google); oficial continua `aguaverde.tur.br`.
 - 36 (13/10): **passeio com vaga garantida no pagamento** (sem confirmação em 24 h) e **cancelamento grátis até 48 h antes, 24 h na alta temporada**; transfer segue com 24 h. Substitui a decisão 20. O bloco "Como funciona a confirmação" saiu do protótipo.
 
+## 2026-10-17 — Seletor de idioma e moeda
+
+- Pedido do dono: opção de moeda com conversão automática, como os sites de reserva (referência: Booking). Escolhas dele: mais opções com as tradicionais no topo; ícone com idioma e moeda abrindo uma janela.
+- Protótipo: botão com globo "PT/BRL R$" no cabeçalho; janela com abas Idioma e Moeda; 36 moedas, 8 no topo; preços mostram "≈ valor" na moeda escolhida; escolha guardada no navegador.
+- Cotações do protótipo são ilustrativas. No site real: 1 consulta por dia a fonte oficial, guardada no banco (decisão 24 atualizada).
+- Cobrança continua só em reais. Cobrar em dólar de verdade exigiria conta multimoeda e risco de câmbio: fora da v1.
+
 ## Fatos aprendidos
 
 - Figma: assento "View" no plano Starter; não dá para criar arquivos.
