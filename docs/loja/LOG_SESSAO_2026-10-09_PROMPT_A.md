@@ -36,6 +36,12 @@
 - Cotações do protótipo são ilustrativas. No site real: 1 consulta por dia a fonte oficial, guardada no banco (decisão 24 atualizada).
 - Cobrança continua só em reais. Cobrar em dólar de verdade exigiria conta multimoeda e risco de câmbio: fora da v1.
 
+## 2026-10-17 — Destaques na home (carrossel de exemplo)
+
+- Pedido do dono: slides na página inicial para promoções, viagens em destaque e notícias.
+- Protótipo: faixa de aviso abaixo do cabeçalho (com ×) e carrossel de 4 slides abaixo das promessas, com pontos de navegação. Preços dos slides seguem o seletor de moeda.
+- Textos e o desconto de 10% são exemplos. Plano: decisão 38 (proposta, aguardando aprovação do formato).
+
 ## Fatos aprendidos
 
 - Figma: assento "View" no plano Starter; não dá para criar arquivos.

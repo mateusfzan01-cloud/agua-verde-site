@@ -58,6 +58,26 @@ button,input,select,textarea{font:inherit;color:inherit}
 .opc small{color:var(--texto2);font-weight:600;margin-left:4px}
 .opc[aria-pressed="true"]{color:var(--link);background:var(--verde-suave)}
 .idm hr{border:0;border-top:1px solid var(--linha);margin:2px 0}
+.faixa{display:flex;align-items:center;gap:8px;background:var(--dourado-suave);color:var(--texto);font-size:13px;padding:8px 8px 8px 16px;border-bottom:1px solid var(--linha)}
+.faixa[hidden]{display:none}
+.faixa p{flex:1;margin:0;line-height:1.35}
+.faixa button{flex:none;border:0;background:none;width:32px;height:32px;border-radius:8px;font-size:20px;line-height:1;cursor:pointer;color:var(--texto2)}
+.car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 6px;scroll-padding:0 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car::-webkit-scrollbar{display:none}
+@media (prefers-reduced-motion:no-preference){.car{scroll-behavior:smooth}}
+.slide{flex:0 0 82%;scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;min-height:230px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:14px;text-align:left;border:0;background:var(--hero);font:inherit;cursor:pointer}
+.slide.sem{cursor:default}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.slide::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(13,46,28,.94) 12%,rgba(13,46,28,.5) 55%,rgba(13,46,28,.08))}
+.slide>*{position:relative;z-index:2}
+.slide .tag{align-self:flex-start;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--dourado);color:#1a1a2e;margin-bottom:auto}
+.slide .tag.v{background:#fff}
+.slide h3{margin:0;font-family:var(--f-titulo);font-size:19px;line-height:1.2}
+.slide p{margin:0;font-size:13.5px;color:rgba(255,255,255,.92)}
+.slide .cta{font-weight:700;font-size:13.5px;color:var(--dourado);margin-top:2px}
+.pontos{display:flex;justify-content:center;gap:6px}
+.pontos button{width:8px;height:8px;border-radius:99px;border:0;padding:0;background:var(--linha);cursor:pointer}
+.pontos button[aria-current="true"]{background:var(--verde);width:20px}
 .wa-mini{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:99px;background:#25d366;color:#fff;text-decoration:none}
 .voltar{border:0;background:none;color:var(--link);font-weight:600;padding:12px 16px 0;cursor:pointer;display:flex;gap:6px;align-items:center}
 
@@ -322,6 +342,7 @@ button,input,select,textarea{font:inherit;color:inherit}
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.2 1.3Z"/></svg>
     </a>
   </header>
+  <div class="faixa" id="faixa"><p><b data-t="car.faixa1">Réveillon e Carnaval:</b> <span data-t="car.faixa2">reserve com antecedência para garantir o seu carro.</span></p><button type="button" id="faixa-x" aria-label="×">×</button></div>
 
   <!-- ============ TELA 1: HOME ============ -->
   <section data-tela="home">
@@ -345,6 +366,12 @@ button,input,select,textarea{font:inherit;color:inherit}
 
     <div class="sec">
       <div class="promessas" id="promessas-home"></div>
+    </div>
+
+    <div class="sec">
+      <h2 data-t="car.titulo">Em destaque</h2>
+      <div class="car" id="car" role="region" aria-roledescription="carousel" tabindex="0"></div>
+      <div class="pontos" id="car-pontos"></div>
     </div>
 
     <div class="sec">
@@ -715,7 +742,7 @@ pt:{"pk.fechar":"Fechar","pk.ok":"Confirmar","pk.hora":"Hora","pk.min":"Minutos"
 "c.s1":"1. Seus dados","c.s2":"2. Voo e hotel","c.s3":"3. Pagamento","c.h1":"Quem vai viajar?","c.nome":"Nome completo","c.wa":"WhatsApp com código do país","c.wa.d":"É por aqui que mandamos o voucher e o contato do motorista.","c.email":"E-mail","c.cpf":"CPF (opcional)","c.cpf.d":"Só se quiser nota fiscal com CPF.","c.cont":"Continuar","c.volt":"Voltar",
 "c.h2":"Voo e hotel","c.voo":"Número do voo","c.cia":"Companhia","c.hotel":"Hotel ou endereço de destino","c.obs":"Observações","c.obs.ph":"Cadeirinha para criança (idade), parada no caminho, mala extra…",
 "c.h3":"Pagamento","c.pix.d":"Aprovação na hora. Código válido por 30 minutos.","c.cartao":"Cartão de crédito","c.cartao.d":"Visa, Mastercard, Amex e Elo, do Brasil ou do exterior.","c.mp":"Pagamento processado pelo Mercado Pago. Não guardamos os dados do seu cartão.","c.aceite":"Li e aceito os Termos de uso, incluindo cancelamento grátis até 24 h antes, e a Política de privacidade.","c.erro":"Marque a caixa acima para continuar.","c.pagarpix":"Gerar Pix de ","c.pagarcard":"Pagar com cartão ","c.pix.t":"Pague com Pix para confirmar","c.copiar":"Copiar","c.copiado":"Copiado","c.pix.esp":"Assim que o pagamento cair, esta tela muda sozinha e você recebe o voucher no WhatsApp e no e-mail.","c.sim.t":"Protótipo: não há cobrança real.","c.sim":"Simular pagamento aprovado",
-"c.aprox":"O valor em outra moeda é aproximado.","idm.titulo":"Idioma e moeda","idm.idioma":"Idioma","idm.moeda":"Moeda","idm.mais":"Mais usadas","idm.todas":"Todas as moedas","idm.nota":"A cobrança é sempre em reais (R$). O valor em outra moeda é só uma referência e muda conforme a cotação do dia e as taxas do seu banco.","idm.fechar":"Fechar","c.res":"Resumo","c.rota":"Rota","c.quando":"Quando","c.pessoas":"Passageiros","c.carro":"Veículo","c.carrov":"Carro privativo","c.cobrado":"Cobrado em reais (BRL).","c.cancel":"Cancelamento grátis até ",
+"c.aprox":"O valor em outra moeda é aproximado.","car.titulo":"Em destaque","car.faixa1":"Réveillon e Carnaval:","car.faixa2":"reserve com antecedência para garantir o seu carro.","car.promo":"Promoção","car.dest":"Em destaque","car.blog":"Do blog","car.ver":"Ver detalhes","car.soon":"Em breve","idm.titulo":"Idioma e moeda","idm.idioma":"Idioma","idm.moeda":"Moeda","idm.mais":"Mais usadas","idm.todas":"Todas as moedas","idm.nota":"A cobrança é sempre em reais (R$). O valor em outra moeda é só uma referência e muda conforme a cotação do dia e as taxas do seu banco.","idm.fechar":"Fechar","c.res":"Resumo","c.rota":"Rota","c.quando":"Quando","c.pessoas":"Passageiros","c.carro":"Veículo","c.carrov":"Carro privativo","c.cobrado":"Cobrado em reais (BRL).","c.cancel":"Cancelamento grátis até ",
 "r.chip":"Pagamento aprovado","r.titulo":"Reserva confirmada, Lucía!","r.sub":"Mandamos este voucher para o seu WhatsApp e e-mail. Guarde este link: ele é a sua reserva.","r.status":"Confirmada","r.encontro":"Ponto de encontro","r.encontro.d":"Saída do desembarque do Aeroporto do Recife. O motorista estará com uma placa com o seu nome.","r.acomp":"Acompanhar minha viagem","r.acomp.d":"Toque para ver como é o link de acompanhamento.",
 "r.reenviar":"Reenviar voucher","r.alterar":"Alterar horário ou voo","r.perdido":"Não encontro o motorista","r.cancelar":"Cancelar reserva","r.prox":"Próximos passos","r.p1":"Pagamento aprovado","r.p1d":"Voucher enviado por WhatsApp e e-mail.","r.p2":"Véspera da viagem","r.p2d":"Lembrete no WhatsApp com nome, foto e carro do motorista.","r.p3":"No dia","r.p3d":"Acompanhamos o voo e o motorista te espera até 60 min após o pouso.",
 "r.k.trajeto":"Trajeto","r.k.data":"Chegada","r.k.voo":"Voo","r.k.pax":"Pessoas","r.k.hotel":"Destino","r.k.pago":"Pago",
@@ -723,7 +750,7 @@ pt:{"pk.fechar":"Fechar","pk.ok":"Confirmar","pk.hora":"Hora","pk.min":"Minutos"
 "r.cx.t":"Cancelar sem custo?","r.cx.d":"Faltam mais de 24 h para a viagem, então o reembolso é integral: R$ {v}, pelo mesmo meio de pagamento. Prazo de cancelamento grátis: até {d}.","r.cx.sim":"Sim, cancelar","r.cx.nao":"Manter reserva","r.cx.ok":"Reserva cancelada (simulação). O reembolso de R$ {v} foi pedido ao Mercado Pago. Você recebe a confirmação por e-mail.",
 "m.t":"Minha reserva","m.d":"Perdeu o link? Digite o número da reserva e o e-mail usado na compra. Se os dois baterem, reenviamos o link para o seu e-mail e WhatsApp.","m.num":"Número da reserva","m.btn":"Reenviar meu link","m.ok":"Se os dados estiverem certos, o link chega em alguns minutos no e-mail e no WhatsApp da reserva. Por segurança, não mostramos a reserva nesta tela.","m.vazio":"Preencha o número e o e-mail.",
 "n.t":"Notas do protótipo (para o dono)",
-"n.home":["Idioma e moeda: ícone no cabeçalho abre uma janela com duas abas. A cobrança é sempre em reais; o valor em outra moeda é só referência. Cotações ilustrativas (08/10/2026); no site real vêm de fonte oficial, 1 vez por dia. Sem escolha: português mostra só reais, espanhol mostra euro e inglês mostra dólar.","Widget de rota na primeira tela, com preço na hora: 26 rotas da tabela Paytour. Rota fora da tabela vira orçamento no WhatsApp.","As 4 promessas aparecem logo abaixo, e de novo na rota e no pagamento.","Selo Tripadvisor usa os números do plano (4,7 · 112 avaliações). Conferir antes de publicar.","“8.211 viagens” vem do banco (08/10/2026); no site real o número será calculado automaticamente.","Mais vendidos: ordem do selo da Paytour (Japaratinga, João Pessoa, Porto de Galinhas). Preços atuais da Paytour (coleta de 09/10/2026).","Qualquer rota escolhida abre a tela 2 de exemplo (Maragogi ida e volta)."],
+"n.home":["Destaques: faixa de aviso no topo (com ×) e carrossel de exemplo logo abaixo das promessas, com promoção, duas viagens em destaque e um artigo do blog. Os textos e o desconto de 10% são exemplos; o plano ainda não tem preço promocional. No site real cada slide teria data de início e fim e sairia sozinho do ar. Deslize com o dedo ou toque nos pontos.","Idioma e moeda: ícone no cabeçalho abre uma janela com duas abas. A cobrança é sempre em reais; o valor em outra moeda é só referência. Cotações ilustrativas (08/10/2026); no site real vêm de fonte oficial, 1 vez por dia. Sem escolha: português mostra só reais, espanhol mostra euro e inglês mostra dólar.","Widget de rota na primeira tela, com preço na hora: 26 rotas da tabela Paytour. Rota fora da tabela vira orçamento no WhatsApp.","As 4 promessas aparecem logo abaixo, e de novo na rota e no pagamento.","Selo Tripadvisor usa os números do plano (4,7 · 112 avaliações). Conferir antes de publicar.","“8.211 viagens” vem do banco (08/10/2026); no site real o número será calculado automaticamente.","Mais vendidos: ordem do selo da Paytour (Japaratinga, João Pessoa, Porto de Galinhas). Preços atuais da Paytour (coleta de 09/10/2026).","Qualquer rota escolhida abre a tela 2 de exemplo (Maragogi ida e volta)."],
 "n.produto":["Copia a Paytour: preço por veículo, com a lista de carros do próprio produto e botões − / + (máximo 10 por compra).","Exemplo com dados reais: Maragogi ida e volta, preços da Paytour em 09/10/2026 (R$ 740 a R$ 3.800).","Igual à Paytour: o cliente só escolhe os veículos. Não há campo de passageiros nem de malas; a capacidade aparece na descrição de cada carro.","Cada produto tem a própria lista: nem todos têm os 7 veículos (o BMW X1 aparece em 7 produtos, não em Maragogi ida e volta).","Os 46 produtos já têm preço e lista de veículos da coleta de 09/10/2026; 4 passeios (2 mergulhos, catamarã em Noronha e Trilha dos Escravos) são cobrados por pessoa."],
 "n.checkout":["3 passos, sem criar conta. Campos da decisão 23; CPF opcional.","Exemplo preenchido com uma cliente argentina, porque o espanhol é o idioma mais comum nos lembretes.","Pix ou cartão pelo Mercado Pago (Checkout Pro). O Pix aqui é ilustrativo.","Aceite dos termos obrigatório; desmarque para ver a mensagem de erro."],
 "n.reserva":["O endereço real da página será /reserva/[segredo], nunca o número da reserva.","Autoatendimento: reenviar voucher, alterar, não encontro o motorista, cancelar.","Cancelar mostra o prazo de 24 h e o valor do reembolso antes de confirmar.","“Minha reserva” não mostra dados: só reenvia o link (§4.4 do plano)."]
@@ -752,7 +779,7 @@ es:{"pk.fechar":"Cerrar","pk.ok":"Confirmar","pk.hora":"Hora","pk.min":"Minutos"
 "c.s1":"1. Tus datos","c.s2":"2. Vuelo y hotel","c.s3":"3. Pago","c.h1":"¿Quién viaja?","c.nome":"Nombre completo","c.wa":"WhatsApp con código de país","c.wa.d":"Por acá te mandamos el voucher y el contacto del chofer.","c.email":"E-mail","c.cpf":"CPF (opcional)","c.cpf.d":"Solo para residentes en Brasil que quieran factura con CPF.","c.cont":"Continuar","c.volt":"Volver",
 "c.h2":"Vuelo y hotel","c.voo":"Número de vuelo","c.cia":"Aerolínea","c.hotel":"Hotel o dirección de destino","c.obs":"Observaciones","c.obs.ph":"Silla para niños (edad), parada en el camino, valija extra…",
 "c.h3":"Pago","c.pix.d":"Pago instantáneo brasileño. Código válido por 30 minutos.","c.cartao":"Tarjeta de crédito","c.cartao.d":"Visa, Mastercard, Amex y Elo, de Brasil o del exterior.","c.mp":"Pago procesado por Mercado Pago. No guardamos los datos de tu tarjeta.","c.aceite":"Leí y acepto los Términos de uso, con cancelación gratis hasta 24 h antes, y la Política de privacidad.","c.erro":"Marcá la casilla de arriba para continuar.","c.pagarpix":"Generar Pix de ","c.pagarcard":"Pagar con tarjeta ","c.pix.t":"Pagá con Pix para confirmar","c.copiar":"Copiar","c.copiado":"Copiado","c.pix.esp":"Cuando se acredite el pago, esta pantalla cambia sola y recibís el voucher por WhatsApp y e-mail.","c.sim.t":"Prototipo: no hay cobro real.","c.sim":"Simular pago aprobado",
-"c.aprox":"El valor en otra moneda es aproximado.","idm.titulo":"Idioma y moneda","idm.idioma":"Idioma","idm.moeda":"Moneda","idm.mais":"Más usadas","idm.todas":"Todas las monedas","idm.nota":"El cobro es siempre en reales (R$). El valor en otra moneda es solo una referencia y cambia según el tipo de cambio del día y las comisiones de tu banco.","idm.fechar":"Cerrar","c.res":"Resumen","c.rota":"Ruta","c.quando":"Cuándo","c.pessoas":"Pasajeros","c.carro":"Vehículo","c.carrov":"Auto privado","c.cobrado":"Se cobra en reales (BRL).","c.cancel":"Cancelación gratis hasta el ",
+"c.aprox":"El valor en otra moneda es aproximado.","car.titulo":"Destacados","car.faixa1":"Año Nuevo y Carnaval:","car.faixa2":"reservá con anticipación para asegurar tu auto.","car.promo":"Oferta","car.dest":"Destacado","car.blog":"Del blog","car.ver":"Ver detalles","car.soon":"Próximamente","idm.titulo":"Idioma y moneda","idm.idioma":"Idioma","idm.moeda":"Moneda","idm.mais":"Más usadas","idm.todas":"Todas las monedas","idm.nota":"El cobro es siempre en reales (R$). El valor en otra moneda es solo una referencia y cambia según el tipo de cambio del día y las comisiones de tu banco.","idm.fechar":"Cerrar","c.res":"Resumen","c.rota":"Ruta","c.quando":"Cuándo","c.pessoas":"Pasajeros","c.carro":"Vehículo","c.carrov":"Auto privado","c.cobrado":"Se cobra en reales (BRL).","c.cancel":"Cancelación gratis hasta el ",
 "r.chip":"Pago aprobado","r.titulo":"¡Reserva confirmada, Lucía!","r.sub":"Te mandamos este voucher por WhatsApp y e-mail. Guardá este link: es tu reserva.","r.status":"Confirmada","r.encontro":"Punto de encuentro","r.encontro.d":"Salida de arribos del Aeropuerto de Recife. El chofer te espera con un cartel con tu nombre.","r.acomp":"Seguir mi viaje","r.acomp.d":"Tocá para ver cómo es el link de seguimiento.",
 "r.reenviar":"Reenviar voucher","r.alterar":"Cambiar horario o vuelo","r.perdido":"No encuentro al chofer","r.cancelar":"Cancelar reserva","r.prox":"Próximos pasos","r.p1":"Pago aprobado","r.p1d":"Voucher enviado por WhatsApp y e-mail.","r.p2":"Día anterior","r.p2d":"Recordatorio por WhatsApp con nombre, foto y auto del chofer.","r.p3":"El día del viaje","r.p3d":"Seguimos el vuelo y el chofer te espera hasta 60 min después del aterrizaje.",
 "r.k.trajeto":"Trayecto","r.k.data":"Llegada","r.k.voo":"Vuelo","r.k.pax":"Personas","r.k.hotel":"Destino","r.k.pago":"Pagado",
@@ -784,7 +811,7 @@ en:{"pk.fechar":"Close","pk.ok":"Confirm","pk.hora":"Hour","pk.min":"Minutes","p
 "c.s1":"1. Your details","c.s2":"2. Flight & hotel","c.s3":"3. Payment","c.h1":"Who's travelling?","c.nome":"Full name","c.wa":"WhatsApp with country code","c.wa.d":"We send your voucher and driver contact here.","c.email":"Email","c.cpf":"CPF (optional)","c.cpf.d":"Brazilian tax ID, only if you need an invoice.","c.cont":"Continue","c.volt":"Back",
 "c.h2":"Flight & hotel","c.voo":"Flight number","c.cia":"Airline","c.hotel":"Hotel or drop-off address","c.obs":"Notes","c.obs.ph":"Child seat (age), stop on the way, extra bag…",
 "c.h3":"Payment","c.pix.d":"Brazilian instant payment. Code valid for 30 minutes.","c.cartao":"Credit card","c.cartao.d":"Visa, Mastercard, Amex and Elo, Brazilian or foreign.","c.mp":"Payment processed by Mercado Pago. We don't store your card details.","c.aceite":"I have read and accept the Terms of use, including free cancellation up to 24 h before, and the Privacy policy.","c.erro":"Tick the box above to continue.","c.pagarpix":"Create Pix for ","c.pagarcard":"Pay by card ","c.pix.t":"Pay with Pix to confirm","c.copiar":"Copy","c.copiado":"Copied","c.pix.esp":"Once the payment clears, this screen updates and your voucher arrives on WhatsApp and email.","c.sim.t":"Prototype: no real charge.","c.sim":"Simulate approved payment",
-"c.aprox":"The amount in another currency is approximate.","idm.titulo":"Language and currency","idm.idioma":"Language","idm.moeda":"Currency","idm.mais":"Most used","idm.todas":"All currencies","idm.nota":"You are always charged in Brazilian reais (R$). The amount in another currency is for reference only and changes with the day’s exchange rate and your bank’s fees.","idm.fechar":"Close","c.res":"Summary","c.rota":"Route","c.quando":"When","c.pessoas":"Passengers","c.carro":"Vehicle","c.carrov":"Private car","c.cobrado":"Charged in Brazilian reais (BRL).","c.cancel":"Free cancellation until ",
+"c.aprox":"The amount in another currency is approximate.","car.titulo":"Featured","car.faixa1":"New Year’s Eve and Carnival:","car.faixa2":"book early to secure your car.","car.promo":"Offer","car.dest":"Featured","car.blog":"From the blog","car.ver":"See details","car.soon":"Coming soon","idm.titulo":"Language and currency","idm.idioma":"Language","idm.moeda":"Currency","idm.mais":"Most used","idm.todas":"All currencies","idm.nota":"You are always charged in Brazilian reais (R$). The amount in another currency is for reference only and changes with the day’s exchange rate and your bank’s fees.","idm.fechar":"Close","c.res":"Summary","c.rota":"Route","c.quando":"When","c.pessoas":"Passengers","c.carro":"Vehicle","c.carrov":"Private car","c.cobrado":"Charged in Brazilian reais (BRL).","c.cancel":"Free cancellation until ",
 "r.chip":"Payment approved","r.titulo":"You're booked, Lucía!","r.sub":"We sent this voucher to your WhatsApp and email. Keep this link: it is your booking.","r.status":"Confirmed","r.encontro":"Meeting point","r.encontro.d":"Arrivals exit at Recife Airport. Your driver will hold a sign with your name.","r.acomp":"Follow my trip","r.acomp.d":"Tap to see what the tracking link looks like.",
 "r.reenviar":"Resend voucher","r.alterar":"Change time or flight","r.perdido":"I can't find my driver","r.cancelar":"Cancel booking","r.prox":"What happens next","r.p1":"Payment approved","r.p1d":"Voucher sent by WhatsApp and email.","r.p2":"Day before","r.p2d":"WhatsApp reminder with the driver's name, photo and car.","r.p3":"On the day","r.p3d":"We track the flight and the driver waits up to 60 min after landing.",
 "r.k.trajeto":"Route","r.k.data":"Arrival","r.k.voo":"Flight","r.k.pax":"People","r.k.hotel":"Drop-off","r.k.pago":"Paid",
@@ -998,7 +1025,46 @@ document.addEventListener("click", function(e){
   var mb = e.target.closest("[data-moeda]"); if(mb){ CUR = mb.dataset.moeda; try{localStorage.setItem("av-cur",CUR);}catch(err){} renderTudo(); idm.aberto = false; renderIdm(); return; }
 });
 document.addEventListener("keydown", function(e){ if(e.key==="Escape" && idm.aberto){ idm.aberto = false; renderIdm(); } });
-function renderTudo(){ renderIdm(); acompHome(); atualizaSeletores(); aplicaTextos(); renderWidget(); promessas(document.getElementById("promessas-home")); promessas(document.getElementById("promessas-prod")); renderLista(); renderProduto(); renderPasseio(); renderCheckout(); renderReserva(); renderNotas(); }
+var SLIDES = [
+ {tipo:"promo", img:"olinda", ir:"passeio", fim:{pt:"até 30/11",es:"hasta el 30/11",en:"until Nov 30"},
+  t:{pt:"Passeio Recife e Olinda",es:"Paseo Recife y Olinda",en:"Recife & Olinda tour"},
+  d:{pt:"10% de desconto em reservas até 30/11.",es:"10% de descuento reservando hasta el 30/11.",en:"10% off when you book by Nov 30."}},
+ {tipo:"dest", img:"pdg", ir:"produto", p:220,
+  t:{pt:"Porto de Galinhas",es:"Porto de Galinhas",en:"Porto de Galinhas"},
+  d:{pt:"Transfer privativo a partir de",es:"Traslado privado desde",en:"Private transfer from"}},
+ {tipo:"dest", img:"praia", ir:"produto", p:740,
+  t:{pt:"Maragogi, ida e volta",es:"Maragogi, ida y vuelta",en:"Maragogi, round trip"},
+  d:{pt:"A partir de",es:"Desde",en:"From"}},
+ {tipo:"blog", img:"carro",
+  t:{pt:"Do Recife a Porto de Galinhas: tempo, preço e dicas",es:"De Recife a Porto de Galinhas: tiempo, precio y consejos",en:"Recife to Porto de Galinhas: time, price and tips"},
+  d:{pt:"Guia curto para quem vai chegar de avião.",es:"Guía corta para quien llega en avión.",en:"A short guide for travelers arriving by plane."}}
+];
+function renderCar(){
+  var c = document.getElementById("car"); if(!c) return;
+  var x = c.scrollLeft;
+  c.innerHTML = SLIDES.map(function(sl){
+    var tag = sl.tipo==="promo" ? t("car.promo")+" · "+sl.fim[L] : sl.tipo==="blog" ? t("car.blog") : t("car.dest");
+    var linha = sl.p ? sl.d[L]+" <b>"+brl(sl.p)+"</b>"+(aprox(sl.p)?" · "+aprox(sl.p):"") : sl.d[L];
+    var fim = sl.ir ? '<span class="cta">'+t("car.ver")+' →</span>' : '<span class="cta" style="color:#fff;opacity:.85">'+t("car.soon")+'</span>';
+    return '<'+(sl.ir?'button type="button" data-ir="'+sl.ir+'"':'div')+' class="slide'+(sl.ir?'':' sem')+'"><img src="'+IMG[sl.img]+'" alt=""><span class="tag'+(sl.tipo==="blog"?" v":"")+'">'+tag+'</span><h3>'+sl.t[L]+'</h3><p>'+linha+'</p>'+fim+'</'+(sl.ir?'button':'div')+'>';
+  }).join("");
+  c.setAttribute("aria-label", t("car.titulo"));
+  c.scrollLeft = x;
+  document.getElementById("car-pontos").innerHTML = SLIDES.map(function(_,i){ return '<button type="button" data-ponto="'+i+'" aria-label="'+(i+1)+'/'+SLIDES.length+'"'+(i===0?' aria-current="true"':'')+'></button>'; }).join("");
+  pontoCar();
+}
+function pontoCar(){
+  var c = document.getElementById("car"), sl = c.querySelector(".slide"); if(!sl) return;
+  var i = Math.round(c.scrollLeft / (sl.offsetWidth + 12)); i = Math.max(0, Math.min(SLIDES.length-1, i));
+  document.querySelectorAll("[data-ponto]").forEach(function(b,k){ if(k===i) b.setAttribute("aria-current","true"); else b.removeAttribute("aria-current"); });
+}
+document.getElementById("car").addEventListener("scroll", pontoCar, {passive:true});
+document.addEventListener("click", function(e){
+  var pb = e.target.closest("[data-ponto]");
+  if(pb){ var c = document.getElementById("car"), sl = c.querySelector(".slide"); c.scrollLeft = (+pb.dataset.ponto) * (sl.offsetWidth + 12); return; }
+  if(e.target.closest("#faixa-x")){ document.getElementById("faixa").hidden = true; }
+});
+function renderTudo(){ renderCar(); renderIdm(); acompHome(); atualizaSeletores(); aplicaTextos(); renderWidget(); promessas(document.getElementById("promessas-home")); promessas(document.getElementById("promessas-prod")); renderLista(); renderProduto(); renderPasseio(); renderCheckout(); renderReserva(); renderNotas(); }
 
 /* QR ilustrativo (padrão determinístico, não é um Pix válido) */
 function desenhaQR(){
