@@ -25,15 +25,22 @@ interface Props {
   precoPorPessoa: number | null
   maxPorCompra: number
   veiculos: VeiculoNoWidget[]
+  /** Transfer que sai do aeroporto: rótulos "pouso" e "busca no hotel". */
+  ehAeroporto?: boolean
 }
 
 const campo = 'w-full rounded-lg border-[1.5px] border-[#dde5df] bg-white px-3 py-2.5 text-[15px] focus:border-[#1a5c38] focus:outline-none'
 
-export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa, maxPorCompra, veiculos }: Props) {
+export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa, maxPorCompra, veiculos, ehAeroporto = false }: Props) {
   const t = useTranslations('Loja.produto')
   const router = useRouter()
   const ehTransfer = tipo === 'transfer'
   const ehIdaEVolta = ehTransfer && sentido === 'ida_volta'
+  const aero = ehTransfer && ehAeroporto
+  const rotData = ehIdaEVolta ? (aero ? t('idaAeroporto') : t('dataIda')) : t('data')
+  const rotHora = aero ? t('horaPouso') : ehIdaEVolta ? t('horaIda') : t('hora')
+  const rotDataVolta = aero ? t('voltaAeroporto') : t('dataVolta')
+  const rotHoraVolta = aero ? t('horaBusca') : t('horaVolta')
 
   const [quantidades, setQuantidades] = useState<Record<string, number>>({})
   const [pessoas, setPessoas] = useState(0)
@@ -90,23 +97,25 @@ export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa
     <form onSubmit={continuar} className="grid gap-4 rounded-2xl border border-[#dde5df] bg-white p-4 shadow-sm" noValidate>
       <div className="grid grid-cols-2 gap-3">
         <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
-          {ehIdaEVolta ? t('dataIda') : t('data')}
+          {rotData}
           <input type="date" className={campo} value={data} min={minima || undefined} onChange={(e) => setData(e.target.value)} />
+          {aero && <small className="font-normal">{t('dataPouso')}</small>}
         </label>
         {ehTransfer && (
           <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
-            {ehIdaEVolta ? t('horaIda') : t('hora')}
+            {rotHora}
             <input type="time" step={300} className={campo} value={hora} onChange={(e) => setHora(e.target.value)} />
           </label>
         )}
         {ehIdaEVolta && (
           <>
             <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
-              {t('dataVolta')}
+              {rotDataVolta}
               <input type="date" className={campo} value={dataVolta} min={data || minima || undefined} onChange={(e) => setDataVolta(e.target.value)} />
+              {aero && <small className="font-normal">{t('voltaD')}</small>}
             </label>
             <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
-              {t('horaVolta')}
+              {rotHoraVolta}
               <input type="time" step={300} className={campo} value={horaVolta} onChange={(e) => setHoraVolta(e.target.value)} />
             </label>
           </>
@@ -159,7 +168,9 @@ export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa
         </div>
       )}
 
-      <div className="flex items-end justify-between gap-3 border-t border-[#dde5df] pt-3">
+      {/* No celular, o total e o botão ficam presos no pé da tela enquanto a pessoa escolhe os veículos. */}
+      <div className="sticky bottom-0 z-20 -mx-4 -mb-4 grid gap-3 rounded-b-2xl border-t border-[#dde5df] bg-white px-4 pb-4 pt-3 shadow-[0_-6px_16px_rgba(13,46,28,.08)] lg:static lg:mx-0 lg:mb-0 lg:p-0 lg:pt-3 lg:shadow-none">
+      <div className="flex items-end justify-between gap-3">
         <span className="text-sm font-semibold text-[#5a6570]">{t('total')}</span>
         <div className="text-right">
           {preco.ok ? <Preco valor={preco.total} className="text-2xl font-bold" aproxClassName="ml-2 text-sm font-normal text-[#5a6570]" /> : <span className="text-2xl font-bold text-[#dde5df]">—</span>}
@@ -178,6 +189,7 @@ export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa
         {t('continuar')}
       </button>
       {!ehTransfer && <p className="text-center text-[12.5px] text-[#5a6570]">{t('vagaGarantida')}</p>}
+      </div>
     </form>
   )
 }

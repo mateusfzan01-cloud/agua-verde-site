@@ -44,6 +44,19 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 - A foto do topo (`public/images/loja/hero.jpg`) é a miniatura de 370 px do protótipo: no computador fica borrada.
   Falta uma foto grande do mesmo tema.
 
+## Telas (todas conferidas contra o protótipo aprovado)
+
+- **Produto:** categoria, selo "Ida e volta", chips (★ 4,7 Tripadvisor e "Confirmação imediata" ou "Vaga garantida ao pagar"),
+  números (tipos de veículo, pessoas no maior, 60 min de espera), rótulos "pouso" e "busca no hotel" nos transfers de aeroporto,
+  cartão do Tripadvisor, "Como é a chegada" e barra de total presa no pé da tela no celular.
+- **Checkout em 3 passos na mesma tela** (1. Seus dados, 2. Voo e hotel, 3. Pagamento), com **WhatsApp com bandeira e código do país**
+  (países mais prováveis primeiro, busca, padrão por idioma: Brasil, Argentina, Estados Unidos). O resumo fica abaixo, sem repetir o
+  trecho nem o valor, e diz "Total" (nunca "pago" antes de pagar).
+- **Pix:** QR Code de verdade do "copia e cola" (no gateway simulado o código é de mentira) e botão de simulação só em modo de teste.
+- **Reserva:** voucher, ponto de encontro, "Acompanhar minha viagem" (no modo simulado abre o exemplo; com o banco passa a usar o link real),
+  Reenviar voucher, Alterar (abre o WhatsApp com o número da reserva), Não encontro o motorista, Cancelar (mostra valor e prazo antes),
+  Próximos passos e Minha reserva.
+
 ## Quando a loja aparece (variáveis na Vercel)
 
 | Variável | Efeito |
@@ -54,7 +67,7 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 | `LOJA_PERMITE_SIMULACAO=false` | desliga o botão "simular pagamento" |
 | `LOJA_SEGREDO_WEBHOOK_SIMULADO` | segredo da assinatura do webhook simulado |
 
-## Regras que os testes garantem (`npm test`, 78 testes)
+## Regras que os testes garantem (`npm test`, 86 testes)
 
 - Preço por veículo (soma quantidade × preço do produto), por pessoa nos 4 produtos que são assim, máximo de 10 por compra,
   ida e volta com um preço só. Todos os 44 produtos à venda calculam preço.

@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { produtoPorSlug } from './catalogo'
 import { dataMinimaDeReserva } from './datas'
 import { criarPedido, MINUTOS_PARA_PAGAR, type EntradaDoPedido } from './pedidos'
-import { cancelarPedido, estadoDoPedido, iniciarPagamento, pedirLinkDaReserva, processarWebhook, type Dependencias } from './fluxo'
+import { cancelarPedido, estadoDoPedido, iniciarPagamento, pedirLinkDaReserva, processarWebhook, reenviarVoucher, type Dependencias } from './fluxo'
 import { GatewaySimulado, CABECALHO_ASSINATURA, assinar } from './pagamento/simulado'
 import { RepositorioEmMemoria } from './repositorio-memoria'
 import type { Pedido } from './pedidos-tipos'
@@ -233,6 +233,30 @@ describe('cancelamento', () => {
 
   it('token errado não acha pedido', async () => {
     expect(await cancelarPedido(deps, 'token-que-nao-existe', agora)).toEqual({ ok: false, motivo: 'nao_encontrado' })
+  })
+})
+
+describe('cobrança e voucher', () => {
+  it('guarda o Pix "copia e cola" no pedido para a tela de pagamento', async () => {
+    const p = await pedidoPendente()
+    const r = await iniciarPagamento(deps, p.id, 'pix', agora)
+    expect(r.ok && r.pix).toMatch(/^00020126SIMULADO/)
+    const lido = (await repo.buscarPorId(p.id))!
+    expect(lido.meio).toBe('pix')
+    expect(lido.pix).toBe(r.ok ? r.pix : '')
+  })
+  it('cartão não tem Pix guardado', async () => {
+    const p = await pedidoPendente()
+    await iniciarPagamento(deps, p.id, 'cartao', agora)
+    expect((await repo.buscarPorId(p.id))!.pix).toBeUndefined()
+  })
+  it('reenviar voucher só funciona para pedido pago', async () => {
+    const p = await pedidoPendente()
+    expect(await reenviarVoucher(deps, p.tokenAcesso)).toBe(false)
+    await pagarPeloWebhook(p)
+    expect(await reenviarVoucher(deps, p.tokenAcesso)).toBe(true)
+    expect(enviados).toHaveLength(1)
+    expect(await reenviarVoucher(deps, 'token-ruim')).toBe(false)
   })
 })
 

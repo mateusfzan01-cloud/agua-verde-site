@@ -48,6 +48,7 @@ export async function iniciarPagamento(
   pedido.gateway = gateway.nome
   pedido.gatewayRef = cobranca.gatewayRef
   pedido.meio = meio
+  pedido.pix = cobranca.pix?.copiaECola
   await repo.salvar(pedido)
   await repo.registrarAuditoria({ pedidoId: pedido.id, tipo: 'cobranca_criada', detalhes: { meio, gatewayRef: cobranca.gatewayRef }, em: agora })
   return { ok: true, pedido, pix: cobranca.pix?.copiaECola, urlDePagamento: cobranca.urlDePagamento }
@@ -146,6 +147,14 @@ export async function cancelarPedido(
   await repo.salvar(pedido)
   await repo.registrarAuditoria({ pedidoId: pedido.id, tipo: 'reembolsado', detalhes: { motivo: decisao.motivo }, em: agora })
   return { ok: true, motivo: decisao.motivo === 'arrependimento' ? 'arrependimento' : 'dentro_do_prazo' }
+}
+
+/** Reenvia o voucher e o link da reserva (botão "Reenviar voucher"). Só para pedido pago. */
+export async function reenviarVoucher(deps: Dependencias, tokenAcesso: string): Promise<boolean> {
+  const pedido = await deps.repo.buscarPorToken(tokenAcesso)
+  if (!pedido || pedido.status !== 'pago' || !deps.enviarLinkDaReserva) return false
+  await deps.enviarLinkDaReserva(pedido)
+  return true
 }
 
 /**

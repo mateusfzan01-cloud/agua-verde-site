@@ -10,7 +10,7 @@ import { redirect } from '@/i18n/config'
 import { routing, type Locale } from '@/i18n/routing'
 import { lerQuery } from '@/lib/loja/checkout-url'
 import { produtoPorSlug } from '@/lib/loja/catalogo'
-import { cancelarPedido, iniciarPagamento, pedirLinkDaReserva, processarWebhook, type ResultadoDoCancelamento } from '@/lib/loja/fluxo'
+import { cancelarPedido, iniciarPagamento, pedirLinkDaReserva, processarWebhook, reenviarVoucher, type ResultadoDoCancelamento } from '@/lib/loja/fluxo'
 import { criarPedido } from '@/lib/loja/pedidos'
 import type { MeioDePagamento } from '@/lib/loja/pagamento/gateway'
 import { CABECALHO_ASSINATURA } from '@/lib/loja/pagamento/simulado'
@@ -22,13 +22,19 @@ function idioma(valor: FormDataEntryValue | string | null): Locale {
 
 const texto = (f: FormData, nome: string) => (typeof f.get(nome) === 'string' ? (f.get(nome) as string) : '')
 
-export async function criarPedidoAction(formData: FormData): Promise<{ erros: string[] }> {
+/**
+ * Fim do checkout: cria o pedido (preço recalculado pelo catálogo) e abre a cobrança no meio escolhido
+ * (Pix ou cartão); depois leva para a tela de pagamento.
+ */
+export async function finalizarCompraAction(formData: FormData): Promise<{ erros: string[] }> {
   const locale = idioma(formData.get('locale'))
   const escolha = lerQuery(new URLSearchParams(texto(formData, 'query')))
   const produto = escolha ? produtoPorSlug(escolha.slug) : undefined
   if (!escolha || !produto) return { erros: ['pedido_invalido'] }
+  const meio: MeioDePagamento = texto(formData, 'meio') === 'cartao' ? 'cartao' : 'pix'
 
-  const resultado = await criarPedido(repositorio(), {
+  const deps = dependencias()
+  const resultado = await criarPedido(deps.repo, {
     produto,
     idioma: locale,
     selecao: escolha.selecao,
@@ -49,13 +55,11 @@ export async function criarPedidoAction(formData: FormData): Promise<{ erros: st
     },
   })
   if (!resultado.ok) return { erros: resultado.erros }
+
+  const cobranca = await iniciarPagamento(deps, resultado.pedido.id, meio)
+  if (!cobranca.ok) return { erros: ['pedido_invalido'] }
   redirect({ href: `/checkout/${resultado.pedido.id}`, locale })
   return { erros: [] }
-}
-
-export async function iniciarPagamentoAction(pedidoId: string, meio: MeioDePagamento): Promise<{ ok: boolean; pix?: string; motivo?: string }> {
-  const r = await iniciarPagamento(dependencias(), pedidoId, meio === 'cartao' ? 'cartao' : 'pix')
-  return r.ok ? { ok: true, pix: r.pix } : { ok: false, motivo: r.motivo }
 }
 
 /** Só existe na simulação: faz de conta que o gateway avisou "pago" (assinado, como o real). */
@@ -75,6 +79,10 @@ export async function simularPagamentoAction(pedidoId: string, localeEntrada: st
 
 export async function cancelarReservaAction(token: string): Promise<ResultadoDoCancelamento> {
   return cancelarPedido(dependencias(), token)
+}
+
+export async function reenviarVoucherAction(token: string): Promise<boolean> {
+  return reenviarVoucher(dependencias(), token)
 }
 
 export async function pedirLinkAction(formData: FormData): Promise<void> {

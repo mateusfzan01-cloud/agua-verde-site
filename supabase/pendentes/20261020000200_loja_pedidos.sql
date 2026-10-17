@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS public.pedidos (
   gateway TEXT,
   gateway_ref TEXT,
   gateway_status TEXT,
+  gateway_payload JSONB,                                       -- resposta da cobrança (ex.: Pix copia e cola em {"pix": "..."})
   meio TEXT CHECK (meio IS NULL OR meio IN ('pix', 'cartao')),
   consent_lgpd_em TIMESTAMPTZ NOT NULL,
   utm_source TEXT,

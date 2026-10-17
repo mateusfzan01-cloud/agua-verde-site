@@ -9,9 +9,10 @@ import { produtoPorSlug } from '@/lib/loja/catalogo'
 import { validarAgenda } from '@/lib/loja/datas'
 import { formatarMomento } from '@/lib/loja/formatos'
 import { montarItens } from '@/lib/loja/itens'
-import { HORA_REFERENCIA_PASSEIO, prazoCancelamentoGratis } from '@/lib/loja/politicas'
+import { HORA_REFERENCIA_PASSEIO, horasDeAntecedencia, prazoCancelamentoGratis } from '@/lib/loja/politicas'
 import { calcularPreco } from '@/lib/loja/precos'
-import { FormularioDeDados } from '@/components/loja/FormularioDeDados'
+import { CheckoutEmPassos } from '@/components/loja/CheckoutEmPassos'
+import { Promessas } from '@/components/loja/Promessas'
 import { ResumoDoPedido } from '@/components/loja/ResumoDoPedido'
 
 export const metadata: Metadata = { robots: { index: false, follow: false } }
@@ -47,15 +48,20 @@ export default async function Checkout({ params, searchParams }: Props) {
   }
 
   const itens = montarItens(produto, { data: escolha.data, hora: escolha.hora, dataVolta: escolha.dataVolta, horaVolta: escolha.horaVolta })
-  const gratisAte = prazoCancelamentoGratis(produto.tipo, itens[0].dataIso, itens[0].hora ?? HORA_REFERENCIA_PASSEIO)
+  const hora = itens[0].hora ?? HORA_REFERENCIA_PASSEIO
+  const gratisAte = prazoCancelamentoGratis(produto.tipo, itens[0].dataIso, hora)
   const ehAeroporto = produto.origemPadrao.toLowerCase().includes('aeroporto')
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_380px] lg:items-start">
-      <div className="order-2 lg:order-1">
-        <FormularioDeDados query={query.toString()} ehTransfer={produto.tipo === 'transfer'} ehAeroporto={ehAeroporto} />
-      </div>
-      <div className="order-1 lg:sticky lg:top-24 lg:order-2">
+    <div className="mx-auto grid max-w-xl gap-4 lg:max-w-4xl lg:grid-cols-[1fr_360px] lg:items-start lg:gap-6">
+      <CheckoutEmPassos
+        query={query.toString()}
+        ehTransfer={produto.tipo === 'transfer'}
+        ehAeroporto={ehAeroporto}
+        horasCancelamento={horasDeAntecedencia(produto.tipo, itens[0].dataIso)}
+        total={preco.total}
+      />
+      <div className="grid gap-3 lg:sticky lg:top-24">
         <ResumoDoPedido
           locale={locale}
           nomeProduto={produto.nome[locale]}
@@ -68,6 +74,7 @@ export default async function Checkout({ params, searchParams }: Props) {
             </p>
           }
         />
+        <Promessas locale={locale} compacta />
       </div>
     </div>
   )
