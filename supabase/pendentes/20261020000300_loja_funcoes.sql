@@ -10,7 +10,9 @@
 --    [CONFERIR antes de aplicar]
 --    a) colunas obrigatórias de public.viagens e gatilhos dela (o PWA insere os mesmos campos);
 --    b) o fornecedor "Agua Verde" (abaixo, procurado por nome; ajustar para o id real);
---    c) se o gatilho de avisos (push no app, alertas) dispara em INSERT com status 'pendente'.
+--    c) se o gatilho de avisos (push no app, alertas) dispara em INSERT com status 'pendente';
+--    d) se `viagens.token_cliente` nasce sozinho no INSERT (valor padrão do banco). A página da reserva usa esse
+--       token para o botão "Acompanhar minha viagem" (reserva_por_token devolve `viagem_token` de cada perna).
 -- ============================================================
 CREATE OR REPLACE FUNCTION public.confirmar_pedido(p_pedido_id UUID, p_gateway_ref TEXT)
 RETURNS JSONB
@@ -118,8 +120,11 @@ AS $$
     'pago_em', p.pago_em,
     'expira_em', p.expira_em,
     'itens', COALESCE((
-      SELECT jsonb_agg(jsonb_build_object('ordem', i.ordem, 'origem', i.origem, 'destino', i.destino, 'data', i.data, 'hora', i.hora) ORDER BY i.ordem)
-      FROM public.pedido_itens i WHERE i.pedido_id = p.id
+      SELECT jsonb_agg(jsonb_build_object('ordem', i.ordem, 'origem', i.origem, 'destino', i.destino, 'data', i.data, 'hora', i.hora,
+                                          'viagem_token', v.token_cliente) ORDER BY i.ordem)
+      FROM public.pedido_itens i
+      LEFT JOIN public.viagens v ON v.id = i.viagem_id
+      WHERE i.pedido_id = p.id
     ), '[]'::jsonb)
   )
   FROM public.pedidos p

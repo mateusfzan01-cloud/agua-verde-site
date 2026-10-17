@@ -5,13 +5,13 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { MapPin } from 'lucide-react'
 import { Link } from '@/i18n/config'
 import { routing } from '@/i18n/routing'
+import { linksDeAcompanhamento } from '@/lib/loja/acompanhar'
 import { produtoPorSlug, tipoDeVeiculo } from '@/lib/loja/catalogo'
 import { estadoDoPedido } from '@/lib/loja/fluxo'
 import { formatarDataEHora, formatarMomento } from '@/lib/loja/formatos'
 import { formatarReais } from '@/lib/loja/moeda'
 import { avaliarCancelamento, HORA_REFERENCIA_PASSEIO } from '@/lib/loja/politicas'
 import { dependencias } from '@/lib/loja/servicos'
-import { AcompanhamentoExemplo } from '@/components/loja/home/AcompanhamentoExemplo'
 import { AcoesDaReserva } from '@/components/loja/AcoesDaReserva'
 import { AtualizaSozinho } from '@/components/loja/AtualizaSozinho'
 import { MinhaReservaForm } from '@/components/loja/MinhaReservaForm'
@@ -54,6 +54,7 @@ export default async function Reserva({ params }: { params: Promise<{ locale: st
   const primeiro = pedido.itens[0]
   const ehAeroporto = produto.origemPadrao.toLowerCase().includes('aeroporto')
   const reais = (v: number) => formatarReais(v, locale, true)
+  const links = linksDeAcompanhamento(pedido.itens)
 
   const decisao =
     pago && pedido.pagoEm
@@ -126,13 +127,33 @@ export default async function Reserva({ params }: { params: Promise<{ locale: st
 
       {pago && decisao && (
         <>
-          <div className="grid gap-1.5">
-            <a href="#acompanhamento" className="flex items-center justify-center gap-2 rounded-xl bg-[#1a5c38] px-[18px] py-3.5 text-base font-semibold text-white hover:bg-[#27ae60]">
-              <MapPin className="h-[18px] w-[18px]" aria-hidden="true" />
-              {t('acomp')}
-            </a>
-            <p className="text-center text-[12.5px] text-[#5a6570]">{t('acompD')}</p>
-          </div>
+          {links.length > 0 ? (
+            <div className="grid gap-1.5">
+              {links.map((l) => (
+                <a
+                  key={l.ordem}
+                  href={l.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[#1a5c38] px-[18px] py-3.5 text-base font-semibold text-white hover:bg-[#27ae60]"
+                >
+                  <MapPin className="h-[18px] w-[18px]" aria-hidden="true" />
+                  {links.length > 1 ? t(l.ordem === 1 ? 'acompIda' : 'acompVolta') : t('acomp')}
+                </a>
+              ))}
+              <p className="text-center text-[12.5px] text-[#5a6570]">{t('acompD')}</p>
+            </div>
+          ) : (
+            deps.gateway.nome === 'simulado' && (
+              <div className="grid gap-1.5">
+                <span aria-disabled="true" className="flex cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-[#1a5c38]/40 px-[18px] py-3.5 text-base font-semibold text-white">
+                  <MapPin className="h-[18px] w-[18px]" aria-hidden="true" />
+                  {t('acomp')}
+                </span>
+                <p className="text-center text-[12.5px] text-[#5a6570]">{t('acompTeste')}</p>
+              </div>
+            )
+          )}
 
           <AcoesDaReserva
             token={pedido.tokenAcesso}
@@ -157,10 +178,6 @@ export default async function Reserva({ params }: { params: Promise<{ locale: st
                 </li>
               ))}
             </ol>
-          </section>
-
-          <section id="acompanhamento" className="grid scroll-mt-24 gap-2">
-            <AcompanhamentoExemplo />
           </section>
         </>
       )}

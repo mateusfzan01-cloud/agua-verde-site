@@ -112,7 +112,6 @@ export function CheckoutEmPassos({
           <label className={rotulo}>
             {t('cpf')}
             <input value={d.cpf} onChange={set('cpf')} inputMode="numeric" placeholder="000.000.000-00" autoComplete="off" className={`${campo} ${borda('cpf')}`} />
-            <small className="font-normal">{t('cpfAjuda')}</small>
             {erro('cpf') && <span role="alert" className="text-xs font-semibold text-[#b42318]">{erro('cpf')}</span>}
           </label>
           <button type="button" onClick={avancaDoPasso1} className={botaoPri}>{t('cont')}</button>

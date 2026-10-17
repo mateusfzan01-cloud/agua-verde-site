@@ -53,7 +53,7 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
   (países mais prováveis primeiro, busca, padrão por idioma: Brasil, Argentina, Estados Unidos). O resumo fica abaixo, sem repetir o
   trecho nem o valor, e diz "Total" (nunca "pago" antes de pagar).
 - **Pix:** QR Code de verdade do "copia e cola" (no gateway simulado o código é de mentira) e botão de simulação só em modo de teste.
-- **Reserva:** voucher, ponto de encontro, "Acompanhar minha viagem" (no modo simulado abre o exemplo; com o banco passa a usar o link real),
+- **Reserva:** voucher, ponto de encontro, "Acompanhar minha viagem" (link real, montado com `viagens.token_cliente` por `src/lib/loja/acompanhar.ts`; no modo simulado, sem viagem de verdade, o botão aparece apagado com um aviso de teste; ida e volta têm um botão cada),
   Reenviar voucher, Alterar (abre o WhatsApp com o número da reserva), Não encontro o motorista, Cancelar (mostra valor e prazo antes),
   Próximos passos e Minha reserva.
 
@@ -97,7 +97,8 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 - Pedidos ficam em memória: somem se o servidor reiniciar e podem não ser vistos por outra instância na Vercel.
   Serve para ver o fluxo; o banco resolve no Prompt C.
 - Nenhum e-mail ou WhatsApp é enviado (o reenvio do link só registra no log do servidor).
-- A página de reserva não mostra o link de acompanhamento (`/acompanhar/<token>`): ele nasce da viagem, que só existe no banco.
+- O link de acompanhamento (`app.aguaverde.tur.br/acompanhar/<token>`, configurável em `NEXT_PUBLIC_URL_ACOMPANHAR`) nasce da viagem, que só existe no banco. Na etapa C, `reserva_por_token` já devolve o `viagem_token` de cada perna; o repositório do Supabase só precisa copiá-lo para `ItemDoPedido.viagemToken`. Conferir se `viagens.token_cliente` nasce sozinho no INSERT.
+- O resumo da compra (checkout e pagamento) abre retraído, como o das companhias aéreas.
 - As fotos ainda vêm da CDN da Paytour (`cdn.paytour.com.br`). **Copiar para o Storage antes de cancelar a Paytour.**
 - Não há `favicon.ico` no site (404 no navegador, já era assim antes).
 - Espanhol/inglês: só a loja está traduzida; as páginas institucionais continuam em português.

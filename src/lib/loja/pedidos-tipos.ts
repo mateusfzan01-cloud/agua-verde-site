@@ -21,6 +21,8 @@ export interface ItemDoPedido {
   vooNumero?: string
   vooCompanhia?: string
   viagemId?: number
+  /** `viagens.token_cliente` da viagem criada para esta perna; é o que forma o link de acompanhamento. */
+  viagemToken?: string
 }
 
 export interface PassageiroDoPedido {

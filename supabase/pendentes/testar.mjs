@@ -20,7 +20,8 @@ await db.exec(`
   CREATE TABLE public.viagens (
     id SERIAL PRIMARY KEY, passageiro_nome TEXT NOT NULL, passageiro_telefone TEXT, passageiro_email TEXT,
     origem TEXT NOT NULL, destino TEXT NOT NULL, data_hora TIMESTAMPTZ NOT NULL, status TEXT NOT NULL,
-    valor NUMERIC, moeda TEXT, numero_reserva TEXT, observacoes TEXT, fornecedor_id INT);
+    valor NUMERIC, moeda TEXT, numero_reserva TEXT, observacoes TEXT, fornecedor_id INT,
+    token_cliente TEXT NOT NULL DEFAULT md5(random()::text || clock_timestamp()::text));
   CREATE FUNCTION public.is_admin_or_gerente() RETURNS BOOLEAN LANGUAGE sql STABLE AS
     $$ SELECT coalesce(current_setting('app.admin', true), '') = 'on' $$;
 `)
@@ -139,6 +140,9 @@ assert.equal(r.r.numero, p1.numero)
 assert.equal(r.r.itens.length, 2)
 assert.equal(r.r.status, 'pago')
 assert.equal('token_acesso' in r.r, false)
+// cada perna traz o token da própria viagem (é ele que forma o link "Acompanhar minha viagem")
+assert.deepEqual(r.r.itens.map((i) => i.viagem_token), viagens.map((v) => v.token_cliente))
+assert.ok(r.r.itens.every((i) => typeof i.viagem_token === 'string' && i.viagem_token.length > 0))
 assert.equal((await comoAnon(() => um('SELECT public.reserva_por_token($1) AS r', ['token-errado']))).r, null)
 ok('reserva_por_token devolve só o necessário, sem o token; token errado devolve nada')
 
