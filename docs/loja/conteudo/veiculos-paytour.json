@@ -1,0 +1,1064 @@
+{
+  "_sobre": "Gerado por scripts/aplicar_coleta.py a partir de paytour-coleta-2026-10.json (coleta de 2026-10-09, preços do dia 2026-11-24). Cada produto da Paytour tem a sua própria lista de veículos. Chave dos produtos = slug_paytour.",
+  "tipos": {
+    "sedan_economico": {
+      "pt": "Carro Sedan Econômico",
+      "es": "Auto sedán económico",
+      "en": "Economy sedan",
+      "pax_max": 3,
+      "capacidade": {
+        "pt": "Até 3 pessoas com 1 mala de 23 kg e 2 de mão",
+        "es": "Hasta 3 personas con 1 valija de 23 kg y 2 de mano",
+        "en": "Up to 3 people with 1 checked bag (23 kg) and 2 carry-ons"
+      }
+    },
+    "sedan_executivo": {
+      "pt": "Carro Sedan Executivo",
+      "es": "Auto sedán ejecutivo",
+      "en": "Executive sedan",
+      "pax_max": 2,
+      "capacidade": {
+        "pt": "Até 2 pessoas com 1 mala de 23 kg e 2 de mão",
+        "es": "Hasta 2 personas con 1 valija de 23 kg y 2 de mano",
+        "en": "Up to 2 people with 1 checked bag (23 kg) and 2 carry-ons"
+      }
+    },
+    "spin": {
+      "pt": "Carro Spin",
+      "es": "Auto Spin (monovolumen)",
+      "en": "Chevrolet Spin (MPV)",
+      "pax_max": 4,
+      "capacidade": {
+        "pt": "Até 4 pessoas com no máximo 4 malas de 23 kg",
+        "es": "Hasta 4 personas con máximo 4 valijas de 23 kg",
+        "en": "Up to 4 people with up to 4 checked bags (23 kg)"
+      }
+    },
+    "mini_van": {
+      "pt": "Mini Van",
+      "es": "Minivan",
+      "en": "Minivan",
+      "pax_max": 8,
+      "capacidade": {
+        "pt": "Até 8 pessoas com no máximo 6 malas de 23 kg",
+        "es": "Hasta 8 personas con máximo 6 valijas de 23 kg",
+        "en": "Up to 8 people with up to 6 checked bags (23 kg)"
+      }
+    },
+    "sprinter": {
+      "pt": "Van Sprinter Mercedes-Benz",
+      "es": "Van Sprinter Mercedes-Benz",
+      "en": "Mercedes-Benz Sprinter van",
+      "pax_max": 17,
+      "capacidade": {
+        "pt": "Até 17 pessoas com até 17 malas de mão",
+        "es": "Hasta 17 personas con hasta 17 valijas de mano",
+        "en": "Up to 17 people with up to 17 carry-ons"
+      }
+    },
+    "micro_onibus": {
+      "pt": "Micro-ônibus",
+      "es": "Minibús",
+      "en": "Minibus",
+      "pax_max": 26,
+      "capacidade": {
+        "pt": "Até 26 pessoas com no máximo 26 malas de 10 kg",
+        "es": "Hasta 26 personas con máximo 26 valijas de 10 kg",
+        "en": "Up to 26 people with up to 26 bags (10 kg)"
+      }
+    },
+    "bmw_x1": {
+      "pt": "BMW X1",
+      "es": "BMW X1",
+      "en": "BMW X1",
+      "pax_max": 3,
+      "capacidade": {
+        "pt": "Até 3 pessoas com 1 mala de 23 kg e 2 de mão",
+        "es": "Hasta 3 personas con 1 valija de 23 kg y 2 de mano",
+        "en": "Up to 3 people with 1 checked bag (23 kg) and 2 carry-ons"
+      }
+    }
+  },
+  "produtos": {
+    "passeio-privativo-de-recife-para-porto-de-galinhas": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 550.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1700.0
+      }
+    ],
+    "passeio-privativo-de-recife-para-praia-dos-carneiros": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 620.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 620.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 660.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1900.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-porto-de-galinhas-muro-alto-ida-e-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 440.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3000.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 800.0
+      }
+    ],
+    "city-tour-olinda-com-catamara-em-recife": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 540.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 540.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 650.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1250.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2500.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-porto-de-galinhas-muro-alto-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 220.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 250.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 280.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 700.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 450.0
+      }
+    ],
+    "oficina-francisco-brennand-e-instituto-ricardo-brennand-com-transfers-ida-e-volta": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 460.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 460.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 600.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1600.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-praia-dos-carneiros-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 320.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 350.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 400.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 750.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 850.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1700.0
+      }
+    ],
+    "city-tour-olinda-e-instituto-ricardo-brennand": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 620.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 640.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 760.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1350.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2650.0
+      }
+    ],
+    "aluguel-de-veiculo-para-noivas-casamentos-em-recife-e-olinda-": [
+      {
+        "tipo": "bmw_x1",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1200.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 600.0
+      }
+    ],
+    "passeio-de-catamara-em-recife-com-transfers-privativo": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 340.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 300.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 440.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1700.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2750.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-maragogi-ida-e-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 740.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 800.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 850.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3800.0
+      }
+    ],
+    "transfer-privativo-de-boa-viagem-ou-piedade-para-porto-de-galinhas-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 220.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 250.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 280.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 700.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1500.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-serrambi-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 250.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 300.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 300.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 600.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1100.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-recife-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 80.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 100.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 100.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 300.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 600.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-olinda-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 120.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 150.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 160.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 320.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 380.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 720.0
+      }
+    ],
+    "transfer-privativo-de-recife-para-suape-refinaria-estalereiro-ou-porto-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 170.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 190.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 190.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 550.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-maragogi-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 380.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 900.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1400.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2200.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 750.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-ou-boa-viagem-para-itamaraca-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 200.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 250.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 250.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 450.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 550.0
+      }
+    ],
+    "city-tour-recife-e-olinda": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 550.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 650.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 900.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      }
+    ],
+    "transfer-privativo-de-olinda-para-maragogi-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 500.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 600.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1300.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3000.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-praia-dos-carneiros-ida-e-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 640.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1400.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1600.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3200.0
+      }
+    ],
+    "passeio-privativo-de-recife-para-4-praias-de-cabo-de-santo-agostinho": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 450.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 600.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 600.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1400.0
+      }
+    ],
+    "passeio-privativo-para-as-piscinas-naturais-da-praia-do-paiva-snorkel-eou-surfe-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 800.0
+      }
+    ],
+    "transfer-privativo-de-porto-de-galinhas-para-maragogi-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 450.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 500.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2000.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-sao-miguel-dos-milagres-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 650.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 750.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1300.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 3500.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-natal-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 900.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 3500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 6000.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-joao-pessoa-e-cabedelo-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 380.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 440.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 4000.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-fernando-de-noronha-para-pousadas-na-ilha-ida-ou-volta-": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 200.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 350.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      }
+    ],
+    "trilha-dos-escravos-em-maracaipe-com-saida-de-recife": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 700.0
+      },
+      {
+        "tipo": "sedan_economico",
+        "preco": 900.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 1200.0
+      }
+    ],
+    "passeio-privativo-para-maragogi-caminho-de-moises-com-saida-de-recife": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 550.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 650.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1200.0
+      }
+    ],
+    "transfer-privativo-de-recife-para-caruaru-ida-e-volta-sao-joao-2023-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 550.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1500.0
+      }
+    ],
+    "city-tour-recife-com-catamara": [
+      {
+        "tipo": "sedan_executivo",
+        "preco": 520.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 700.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1300.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 2500.0
+      }
+    ],
+    "transfer-privativo-de-olinda-para-porto-de-galinhas-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 250.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 300.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 350.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 700.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 800.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1600.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-japaratinga-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 400.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 450.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 900.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1700.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 650.0
+      }
+    ],
+    "transfer-privativo-de-porto-de-galinhas-para-praia-dos-carneiros-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 350.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 400.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 850.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1800.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-hoteis-em-maceio-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 900.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 950.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1800.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-ou-boa-viagem-para-caruaru-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 380.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 450.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 450.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 800.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 950.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 2000.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-hoteis-no-cabo-de-santo-agostinho-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 180.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 200.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 220.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 440.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 500.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1000.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 300.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-praia-da-pipa-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 750.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 850.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 950.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 1700.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 3000.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 6000.0
+      },
+      {
+        "tipo": "bmw_x1",
+        "preco": 1200.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-jaboatao-dos-guararapes-ida-ou-volta-": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 80.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 100.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 100.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 200.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 250.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 500.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-sao-jose-dos-pinhais-para-curitiba": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 200.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 250.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 450.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 850.0
+      }
+    ],
+    "transfer-privativo-aeroporto-de-recife-para-serrambi": [
+      {
+        "tipo": "sedan_economico",
+        "preco": 300.0
+      },
+      {
+        "tipo": "sedan_executivo",
+        "preco": 350.0
+      },
+      {
+        "tipo": "spin",
+        "preco": 320.0
+      },
+      {
+        "tipo": "mini_van",
+        "preco": 600.0
+      },
+      {
+        "tipo": "sprinter",
+        "preco": 650.0
+      },
+      {
+        "tipo": "micro_onibus",
+        "preco": 1500.0
+      }
+    ]
+  }
+}

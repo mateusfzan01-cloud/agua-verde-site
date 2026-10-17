@@ -17,9 +17,9 @@ const canais = [
   {
     icon: MessageCircle,
     titulo: 'WhatsApp',
-    valor: '+55 81 9947-3200',
+    valor: '+55 81 99947-3200',
     desc: 'Resposta em até 30 minutos',
-    href: 'https://wa.me/558199473200',
+    href: 'https://wa.me/5581999473200',
     cor: '#25D366',
     cta: 'Iniciar conversa',
   },
@@ -166,7 +166,7 @@ export default function ContatoPage() {
                     o horário de atendimento.
                   </p>
                   <a
-                    href="https://wa.me/558199473200"
+                    href="https://wa.me/5581999473200"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-3 bg-[#25D366] text-white font-semibold rounded-full hover:opacity-90 transition-opacity text-sm"
