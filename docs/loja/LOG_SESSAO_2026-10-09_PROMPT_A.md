@@ -40,7 +40,7 @@
 
 - Pedido do dono: slides na página inicial para promoções, viagens em destaque e notícias.
 - Protótipo: faixa de aviso abaixo do cabeçalho (com ×) e carrossel de 4 slides abaixo das promessas, com pontos de navegação. Preços dos slides seguem o seletor de moeda.
-- Textos e o desconto de 10% são exemplos. Plano: decisão 38 (proposta, aguardando aprovação do formato).
+- Textos e o desconto de 10% são exemplos. Plano: decisão 38. O dono aprovou o formato: faixa e carrossel, com 4 slides.
 
 ## Fatos aprendidos
 
