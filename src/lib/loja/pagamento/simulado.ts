@@ -71,7 +71,7 @@ export class GatewaySimulado implements GatewayDePagamento {
     return { ok: true, reembolsoRef: `sim_reembolso_${gatewayRef}` }
   }
 
-  validarWebhook(corpoCru: string, cabecalhos: { get(nome: string): string | null }): EventoDoGateway | null {
+  async validarWebhook(corpoCru: string, cabecalhos: { get(nome: string): string | null }): Promise<EventoDoGateway | null> {
     if (!assinaturaConfere(corpoCru, cabecalhos.get(CABECALHO_ASSINATURA))) return null
     try {
       const e = JSON.parse(corpoCru) as Partial<EventoDoGateway>

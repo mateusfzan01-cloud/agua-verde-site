@@ -74,7 +74,8 @@ export class RepositorioEmMemoria implements RepositorioDePedidos {
       (e) => e.gatewayRef === gatewayRef && e.pedidoId === pedidoId && e.status === 'aprovado',
     )
     if (!aprovado) return { ok: false, motivo: 'sem_evento_aprovado' }
-    if (pedido.status !== 'pendente_pagamento') return { ok: false, motivo: 'pedido_nao_pendente' }
+    // Pago depois do prazo (pedido expirado) é honrado: nenhuma vaga é segurada antes do pagamento.
+    if (pedido.status !== 'pendente_pagamento' && pedido.status !== 'expirado') return { ok: false, motivo: 'pedido_nao_pendente' }
 
     pedido.status = 'pago'
     pedido.pagoEm = em

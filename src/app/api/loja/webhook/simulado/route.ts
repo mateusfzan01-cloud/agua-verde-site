@@ -1,5 +1,5 @@
 import { processarWebhook } from '@/lib/loja/fluxo'
-import { dependencias } from '@/lib/loja/servicos'
+import { dependencias, usaMercadoPago } from '@/lib/loja/servicos'
 
 /**
  * Webhook do gateway SIMULADO. Mostra o padrão do §4.7: lê o corpo CRU,
@@ -7,6 +7,7 @@ import { dependencias } from '@/lib/loja/servicos'
  * O webhook do Mercado Pago (etapa C) segue a mesma forma.
  */
 export async function POST(req: Request) {
+  if (usaMercadoPago()) return new Response('desligado', { status: 404 })
   const corpoCru = await req.text()
   const r = await processarWebhook(dependencias(), corpoCru, req.headers)
   return new Response(r.corpo, { status: r.status })

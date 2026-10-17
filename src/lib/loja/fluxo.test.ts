@@ -272,3 +272,68 @@ describe('minha reserva', () => {
     expect(enviados).toHaveLength(1)
   })
 })
+
+describe('webhook: valor, atraso, reembolso e avisos que não interessam', () => {
+  async function avisoAssinado(p: Pedido, over: Record<string, unknown>) {
+    let ref = (await repo.buscarPorId(p.id))!.gatewayRef
+    if (!ref) {
+      const ini = await iniciarPagamento(deps, p.id, 'pix', agora)
+      if (!ini.ok) throw new Error(ini.motivo)
+      ref = ini.pedido.gatewayRef!
+    }
+    const corpo = JSON.stringify({ eventoId: `evt_${ref}_x`, gatewayRef: ref, pedidoId: p.id, status: 'aprovado', valor: p.valorTotal, ...over })
+    return { corpo, cab: { get: (n: string) => (n.toLowerCase() === CABECALHO_ASSINATURA ? assinar(corpo) : null) } }
+  }
+
+  it('pagamento aprovado com valor diferente do pedido não confirma e deixa auditoria', async () => {
+    const p = await pedidoPendente()
+    const { corpo, cab } = await avisoAssinado(p, { valor: 1 })
+    expect((await processarWebhook(deps, corpo, cab, agora)).corpo).toBe('valor_divergente')
+    expect((await repo.buscarPorId(p.id))!.status).toBe('pendente_pagamento')
+    expect(repo.auditoriaDoPedido(p.id).map((e) => e.tipo)).toContain('valor_divergente')
+  })
+
+  it('pagamento que cai depois do prazo (pedido expirado) é honrado', async () => {
+    const p = await pedidoPendente()
+    const { corpo, cab } = await avisoAssinado(p, {})
+    const depoisDoPrazo = new Date(agora.getTime() + (MINUTOS_PARA_PAGAR + 20) * 60_000)
+    await estadoDoPedido(deps, p.tokenAcesso, depoisDoPrazo) // a leitura marca como expirado
+    expect((await repo.buscarPorId(p.id))!.status).toBe('expirado')
+    await processarWebhook(deps, corpo, cab, depoisDoPrazo)
+    const depois = (await repo.buscarPorId(p.id))!
+    expect(depois.status).toBe('pago')
+    expect(depois.itens.every((i) => i.viagemId !== undefined)).toBe(true)
+  })
+
+  it('reembolso feito direto no painel do gateway: o pedido acompanha, uma vez só', async () => {
+    const p = await pedidoPendente()
+    await pagarPeloWebhook(p)
+    const { corpo, cab } = await avisoAssinado(p, { eventoId: 'evt_reembolso', status: 'reembolsado' })
+    await processarWebhook(deps, corpo, cab, agora)
+    expect((await repo.buscarPorId(p.id))!.status).toBe('reembolsado')
+    expect(repo.auditoriaDoPedido(p.id).filter((e) => e.tipo === 'reembolsado')).toHaveLength(1)
+    expect((await processarWebhook(deps, corpo, cab, agora)).corpo).toBe('duplicado')
+  })
+
+  it('aviso de reembolso para pedido que não estava pago não muda nada', async () => {
+    const p = await pedidoPendente()
+    const { corpo, cab } = await avisoAssinado(p, { status: 'reembolsado' })
+    await processarWebhook(deps, corpo, cab, agora)
+    expect((await repo.buscarPorId(p.id))!.status).toBe('pendente_pagamento')
+  })
+
+  it('aviso que o gateway manda ignorar responde 200 sem gravar nada', async () => {
+    const ignora = { ...gateway, nome: 'x', validarWebhook: async () => 'ignorar' as const } as unknown as GatewaySimulado
+    const r = await processarWebhook({ ...deps, gateway: ignora }, '{}', { get: () => null }, agora)
+    expect(r).toEqual({ status: 200, corpo: 'ignorado' })
+  })
+
+  it('consulta direta ao gateway com valor diferente também não confirma', async () => {
+    const p = await pedidoPendente()
+    const ini = await iniciarPagamento(deps, p.id, 'pix', agora)
+    if (!ini.ok) throw new Error(ini.motivo)
+    const falso = { ...gateway, nome: 'falso', consultarPagamento: async () => ({ status: 'aprovado' as const, valor: 1, gatewayRef: 'real_1' }) }
+    await estadoDoPedido({ ...deps, gateway: falso as unknown as GatewaySimulado }, p.tokenAcesso, agora)
+    expect((await repo.buscarPorId(p.id))!.status).toBe('pendente_pagamento')
+  })
+})

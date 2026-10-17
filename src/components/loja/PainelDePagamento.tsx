@@ -11,11 +11,17 @@ export function PainelDePagamento({
   pedidoId,
   meio,
   pix,
+  urlDePagamento,
+  simulacao,
   expirado,
 }: {
   pedidoId: string
   meio: 'pix' | 'cartao' | null
   pix: string | null
+  /** Cartão: página do gateway. */
+  urlDePagamento: string | null
+  /** Só no gateway simulado: mostra o botão de "pagamento aprovado" de mentira. */
+  simulacao: boolean
   expirado: boolean
 }) {
   const t = useTranslations('Loja.pagamento')
@@ -61,24 +67,31 @@ export function PainelDePagamento({
         <div className="grid gap-1.5">
           <h2 className="font-heading text-xl font-semibold">{t('cartaoTitulo')}</h2>
           <p className="text-sm text-[#5a6570]">{t('cartaoAjuda')}</p>
+          {urlDePagamento && (
+            <a href={urlDePagamento} className="mt-1 rounded-xl bg-[#1a5c38] px-4 py-3 text-center font-semibold text-white hover:bg-[#27ae60]">
+              {t('irParaCartao')}
+            </a>
+          )}
           <p className="text-sm font-semibold text-[#1a5c38]">{t('aguardando')}</p>
         </div>
       )}
       <AtualizaSozinho ativo cadaMs={6000} />
       <p className="text-[12.5px] text-[#5a6570]">{t('expira')}</p>
 
-      <div className="grid gap-2 rounded-xl border-2 border-dashed border-[#d4a853] bg-[#f8efd9] p-3.5">
-        <b>{t('simTitulo')}</b>
-        <p className="text-sm">{t('simAviso')}</p>
-        <button
-          type="button"
-          disabled={pendente}
-          onClick={() => comecar(async () => void (await simularPagamentoAction(pedidoId, locale)))}
-          className="rounded-xl bg-[#1a1a2e] px-4 py-3 text-sm font-semibold text-white disabled:opacity-60"
-        >
-          {t('simular')}
-        </button>
-      </div>
+      {simulacao && (
+        <div className="grid gap-2 rounded-xl border-2 border-dashed border-[#d4a853] bg-[#f8efd9] p-3.5">
+          <b>{t('simTitulo')}</b>
+          <p className="text-sm">{t('simAviso')}</p>
+          <button
+            type="button"
+            disabled={pendente}
+            onClick={() => comecar(async () => void (await simularPagamentoAction(pedidoId, locale)))}
+            className="rounded-xl bg-[#1a1a2e] px-4 py-3 text-sm font-semibold text-white disabled:opacity-60"
+          >
+            {t('simular')}
+          </button>
+        </div>
+      )}
     </section>
   )
 }

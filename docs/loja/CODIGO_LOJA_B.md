@@ -67,7 +67,7 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 | `LOJA_PERMITE_SIMULACAO=false` | desliga o botão "simular pagamento" |
 | `LOJA_SEGREDO_WEBHOOK_SIMULADO` | segredo da assinatura do webhook simulado |
 
-## Regras que os testes garantem (`npm test`, 86 testes)
+## Regras que os testes garantem (`npm test`, 125 testes)
 
 - Preço por veículo (soma quantidade × preço do produto), por pessoa nos 4 produtos que são assim, máximo de 10 por compra,
   ida e volta com um preço só. Todos os 44 produtos à venda calculam preço.
@@ -92,6 +92,38 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 | `src/middleware.ts` | roteamento de idioma só nas rotas da loja, flag de lançamento e noindex |
 | `supabase/migrations/*_loja_*` e `supabase/pendentes/testar.mjs` | migrations da loja (aplicadas em 17/10/2026) e o teste num Postgres de verdade |
 
+## Ligar o banco e o Mercado Pago (Prompt C)
+
+Tudo vem **desligado**: sem nenhuma variável, a loja segue com pedidos em memória e pagamento simulado.
+
+| Variável (Vercel) | Para quê |
+|:--|:--|
+| `LOJA_REPOSITORIO=supabase` | grava os pedidos no Supabase (tabelas `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos`) |
+| `SUPABASE_SERVICE_ROLE_KEY` | chave de serviço, **só no servidor** (nunca `NEXT_PUBLIC_`). Preferir só no ambiente "Preview" até a loja abrir |
+| `LOJA_GATEWAY=mercadopago` | cobra pelo Mercado Pago (exige `LOJA_REPOSITORIO=supabase`, senão a loja nem sobe) |
+| `MERCADOPAGO_ACCESS_TOKEN` | credencial do Mercado Pago (de teste `TEST-...` ou de produção) |
+| `MERCADOPAGO_WEBHOOK_SECRET` | "chave secreta" do webhook, do painel do Mercado Pago |
+| `LOJA_URL_BASE` | endereço público do site, ex.: `https://aguaverdeviagens.com.br` (usado no aviso e no retorno do cartão) |
+| `LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true` | só se quiser banco real **com gateway simulado**: o "Simular pagamento" passa a criar viagens de verdade (aparecem para a equipe). Sem isso, volta para a memória |
+
+No painel do Mercado Pago: criar a aplicação, copiar as credenciais, e cadastrar o webhook
+`<LOJA_URL_BASE>/api/loja/webhook/mercadopago` com o evento **Pagamentos** (copiar a chave secreta).
+
+O que o código garante (testes em `src/lib/loja/pagamento/mercadopago.test.ts`, `repositorio-supabase.test.ts`, `fluxo.test.ts`
+e `supabase/pendentes/testar.mjs`):
+
+- o aviso do Mercado Pago só vale com a assinatura certa (`x-signature`), e o estado do pagamento vem de uma **consulta à API**, nunca do corpo do aviso;
+- pagamento de outra origem (sem referência de pedido nosso) é ignorado;
+- pagamento aprovado com **valor diferente** do pedido não confirma e deixa auditoria;
+- evento repetido é ignorado; erro de rede/banco devolve 500 para o Mercado Pago tentar de novo;
+- pagamento que cai **depois do prazo** (pedido expirado) é honrado (nenhuma vaga é segurada antes do pagamento);
+- reembolso (pelo botão ou direto no painel do Mercado Pago) **cancela as viagens que ainda não começaram** (`reembolsar_pedido`);
+- objeto desatualizado nunca desfaz um pagamento: `pago` só nasce em `confirmar_pedido` e `reembolsado` só em `reembolsar_pedido`.
+
+**Homologação (domínio de testes, com o "pode" do dono):** compra de R$ 1 no Pix e no cartão, conferir o pedido no banco e a viagem no PWA,
+estorno pelo botão "Cancelar", conferir que a viagem foi cancelada. Antes de abrir a loja: agendar o cron de expiração
+(`cron.schedule('loja-expirar-pedidos', '*/15 * * * *', ...)`, comentado em `loja_funcoes`) e implementar o envio de e-mail/WhatsApp.
+
 ## Limites conhecidos (por serem simulação)
 
 - Pedidos ficam em memória: somem se o servidor reiniciar e podem não ser vistos por outra instância na Vercel.
@@ -108,6 +140,6 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 ## Conferências pedidas ao Prompt C
 
 1. (Feito em 17/10/2026) Colunas e gatilhos de `public.viagens` conferidos no banco real.
-2. Id do fornecedor "Agua Verde".
+2. (Feito em 17/10/2026) Fornecedor "Agua Verde" existe no banco (uuid), procurado por nome.
 3. Datas da alta temporada e controle de vagas dos passeios com parceiros (catamarã, mergulho, jangada).
 4. Texto "(ida ou volta)" dos transfers só de ida: veio do nome na Paytour; vale revisar com o dono.

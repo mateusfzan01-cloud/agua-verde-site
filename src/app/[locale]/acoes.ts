@@ -5,6 +5,7 @@
  * Hoje usam o repositório em memória e o gateway simulado (lib/loja/servicos.ts).
  * O preço NUNCA vem do navegador: é recalculado aqui pelo catálogo.
  */
+import { redirect as irPara } from 'next/navigation'
 import { hasLocale } from 'next-intl'
 import { redirect } from '@/i18n/config'
 import { routing, type Locale } from '@/i18n/routing'
@@ -58,6 +59,8 @@ export async function finalizarCompraAction(formData: FormData): Promise<{ erros
 
   const cobranca = await iniciarPagamento(deps, resultado.pedido.id, meio)
   if (!cobranca.ok) return { erros: ['pedido_invalido'] }
+  // Cartão: o cliente paga na página segura do gateway (volta para /checkout/<pedido>, que mostra o resultado).
+  if (meio === 'cartao' && cobranca.pedido.urlDePagamento) irPara(cobranca.pedido.urlDePagamento)
   redirect({ href: `/checkout/${resultado.pedido.id}`, locale })
   return { erros: [] }
 }

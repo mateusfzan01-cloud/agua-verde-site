@@ -44,7 +44,14 @@ export default async function Pagamento({ params }: { params: Promise<{ locale: 
     <div className="mx-auto grid max-w-xl gap-4 lg:max-w-4xl lg:grid-cols-[1fr_360px] lg:items-start lg:gap-6">
       <div className="grid gap-3">
         <p className="text-sm text-[#5a6570]">{t('pedido')} {pedido.numero}</p>
-        <PainelDePagamento pedidoId={pedido.id} meio={pedido.meio ?? null} pix={pedido.pix ?? null} expirado={pedido.status === 'expirado'} />
+        <PainelDePagamento
+          pedidoId={pedido.id}
+          meio={pedido.meio ?? null}
+          pix={pedido.pix ?? null}
+          urlDePagamento={pedido.urlDePagamento ?? null}
+          simulacao={deps.gateway.nome === 'simulado' && process.env.LOJA_PERMITE_SIMULACAO !== 'false'}
+          expirado={pedido.status === 'expirado'}
+        />
       </div>
       <div className="grid gap-3 lg:sticky lg:top-24">
         <ResumoDoPedido

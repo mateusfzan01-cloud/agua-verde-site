@@ -11,6 +11,7 @@ Nenhuma tabela existente foi alterada; as novas estão **vazias** e o site ainda
 | 20261017193302 | `loja_funcoes` | `confirmar_pedido` (única porta de confirmação), `reserva_por_token`, `expirar_pedidos_pendentes` |
 | 20261017194244 | `loja_endurecer_permissoes` | tira permissões de escrita de anon/authenticated (defesa em dobro com o RLS) |
 | 20261017194355 | `loja_reserva_por_token_so_servidor` | a leitura da reserva só roda pelo servidor (chave de serviço) |
+| 20261017200000 | `loja_numero_reembolso_pagamento_tardio` | `proximo_numero_pedido`; `reembolsar_pedido` (cancela as viagens não iniciadas); `confirmar_pedido` aceita pedido expirado pago depois do prazo |
 
 ## O que foi conferido no banco real (só leitura) antes de aplicar
 
@@ -26,11 +27,12 @@ Um bloco único criou um pedido de 2 pernas, recusou a confirmação sem evento,
 (fornecedor Agua Verde, token de 24 caracteres) e leu a reserva; terminou com erro proposital para desfazer tudo.
 Depois: 0 pedidos, 0 viagens de teste, 8.392 viagens (igual a antes).
 Alertas de segurança (advisors): iguais aos de antes; o único novo (`reserva_por_token` aberta) foi fechado.
+A parte 4 foi testada do mesmo jeito (confirmar pedido expirado, reembolsar e cancelar 2 viagens, repetir sem efeito) e desfeita; os números AV-2026-000001 e 000002 foram gastos nos testes.
 
 ## Teste local
 
 As migrations também rodam num Postgres de verdade (PGlite) com tabelas de apoio no lugar de `viagens`, `fornecedores` e
-`is_admin_or_gerente()`; `testar.mjs` faz 17 verificações.
+`is_admin_or_gerente()`; `testar.mjs` faz 21 verificações.
 
 ```bash
 npm install --no-save @electric-sql/pglite

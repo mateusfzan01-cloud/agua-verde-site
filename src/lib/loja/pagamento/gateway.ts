@@ -18,6 +18,8 @@ export interface EntradaDeCobranca {
   meio: MeioDePagamento
   descricao: string
   pagador: { nome: string; email: string; telefone: string; cpf?: string }
+  /** Até quando o Pix vale (o gateway pode exigir um mínimo; o pedido pago depois do prazo é honrado). */
+  expiraEm?: Date
 }
 
 export interface Cobranca {
@@ -42,11 +44,19 @@ export interface EventoDoGateway {
 export interface GatewayDePagamento {
   readonly nome: string
   criarCobranca(entrada: EntradaDeCobranca): Promise<Cobranca>
-  consultarPagamento(gatewayRef: string): Promise<{ status: StatusNoGateway; valor?: number }>
+  /** Pode devolver `gatewayRef` novo (ex.: cartão: da referência do pedido para o id do pagamento). */
+  consultarPagamento(gatewayRef: string): Promise<{ status: StatusNoGateway; valor?: number; gatewayRef?: string }>
   reembolsar(gatewayRef: string, valor?: number): Promise<{ ok: boolean; reembolsoRef?: string }>
   /**
    * Confere a assinatura usando o corpo CRU (texto, sem ter passado por JSON.parse)
-   * e devolve o evento. Devolve null se a assinatura não bater ou o corpo for inválido.
+   * e devolve o evento. Devolve null se a assinatura não bater ou o corpo for inválido,
+   * e 'ignorar' se a assinatura é boa mas o aviso não interessa (ex.: outro tipo de notificação).
+   * `url` é o endereço chamado (alguns gateways assinam parâmetros da URL).
+   * É assíncrono porque alguns gateways só mandam o id e o estado vem de uma consulta.
    */
-  validarWebhook(corpoCru: string, cabecalhos: { get(nome: string): string | null }): EventoDoGateway | null
+  validarWebhook(
+    corpoCru: string,
+    cabecalhos: { get(nome: string): string | null },
+    url?: URL,
+  ): Promise<EventoDoGateway | 'ignorar' | null>
 }

@@ -30,7 +30,7 @@ await db.exec(`
     $$ SELECT coalesce(current_setting('app.admin', true), '') = 'on' $$;
 `)
 
-for (const arq of ['20261017193120_loja_catalogo.sql', '20261017193226_loja_pedidos.sql', '20261017193302_loja_funcoes.sql', '20261017194244_loja_endurecer_permissoes.sql', '20261017194355_loja_reserva_por_token_so_servidor.sql']) {
+for (const arq of ['20261017193120_loja_catalogo.sql', '20261017193226_loja_pedidos.sql', '20261017193302_loja_funcoes.sql', '20261017194244_loja_endurecer_permissoes.sql', '20261017194355_loja_reserva_por_token_so_servidor.sql', '20261017200000_loja_numero_reembolso_pagamento_tardio.sql']) {
   await db.exec(readFileSync(new URL(arq, new URL('../migrations/', import.meta.url)), 'utf8'))
   console.log('ok  ', arq)
 }
@@ -169,5 +169,44 @@ assert.equal((await um(`SELECT status FROM public.pedidos WHERE id='${p3.id}'`))
 assert.equal((await um(`SELECT status FROM public.pedidos WHERE id='${p4.id}'`)).status, 'pendente_pagamento')
 assert.equal((await um(`SELECT status FROM public.pedidos WHERE id='${p1.id}'`)).status, 'pago')
 ok('expirar: só pedidos pendentes e vencidos há mais de 15 min; pagos e recentes ficam')
+
+
+// --- parte 4: número pela função, pagamento tardio e reembolso ---
+const num = (await comoServico(() => um('SELECT public.proximo_numero_pedido() AS n'))).n
+assert.match(num, /^AV-\d{4}-\d{6}$/)
+await comoAnon(() => falha('SELECT public.proximo_numero_pedido()', /permission denied/))
+ok('proximo_numero_pedido: formato AV-AAAA-NNNNNN, só o servidor chama')
+
+// pedido expirado e pago depois do prazo: honra (o cliente pagou; nenhuma vaga era segurada)
+const p5 = await novoPedido(500)
+await db.exec(`UPDATE public.pedidos SET status='expirado' WHERE id='${p5.id}'`)
+await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e5','${p5.id}','tardio_1','aprovado')`)
+const viagensAntes = (await um('SELECT count(*)::int AS n FROM public.viagens')).n
+assert.deepEqual((await um(`SELECT public.confirmar_pedido('${p5.id}','tardio_1') AS r`)).r, { ok: true, ja_confirmado: false })
+assert.equal((await um('SELECT count(*)::int AS n FROM public.viagens')).n, viagensAntes + 2)
+assert.equal((await um(`SELECT status FROM public.pedidos WHERE id='${p5.id}'`)).status, 'pago')
+ok('pagamento aprovado depois do prazo (pedido expirado) confirma e cria as viagens')
+
+// cancelado/reembolsado não volta a ser confirmado
+const p6 = await novoPedido(300)
+await db.exec(`UPDATE public.pedidos SET status='cancelado' WHERE id='${p6.id}'`)
+await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e6','${p6.id}','tardio_2','aprovado')`)
+assert.deepEqual((await um(`SELECT public.confirmar_pedido('${p6.id}','tardio_2') AS r`)).r, { ok: false, motivo: 'pedido_nao_pendente' })
+ok('pedido cancelado não é confirmado por evento aprovado')
+
+// reembolso cancela as viagens que não começaram e não mexe nas que já estão em andamento
+const viagensP5 = (await db.query(`SELECT v.id FROM public.viagens v JOIN public.pedido_itens i ON i.viagem_id=v.id WHERE i.pedido_id='${p5.id}' ORDER BY v.id`)).rows
+await db.exec(`UPDATE public.viagens SET status='em_andamento' WHERE id=${viagensP5[1].id}`)
+const re = (await um(`SELECT public.reembolsar_pedido('${p5.id}','teste') AS r`)).r
+assert.deepEqual(re, { ok: true, ja_reembolsado: false, viagens_canceladas: 1 })
+assert.equal((await um(`SELECT status FROM public.viagens WHERE id=${viagensP5[0].id}`)).status, 'cancelada')
+assert.equal((await um(`SELECT status FROM public.viagens WHERE id=${viagensP5[1].id}`)).status, 'em_andamento')
+const ped5 = await um(`SELECT status, cancelado_em FROM public.pedidos WHERE id='${p5.id}'`)
+assert.equal(ped5.status, 'reembolsado')
+assert.ok(ped5.cancelado_em)
+assert.deepEqual((await um(`SELECT public.reembolsar_pedido('${p5.id}') AS r`)).r, { ok: true, ja_reembolsado: true })
+assert.deepEqual((await um(`SELECT public.reembolsar_pedido('${p4.id}') AS r`)).r, { ok: false, motivo: 'nao_esta_pago' })
+await comoAnon(() => falha(`SELECT public.reembolsar_pedido('${p5.id}')`, /permission denied/))
+ok('reembolsar: cancela as viagens não iniciadas, preserva as em andamento, repetir não faz nada, só o servidor chama')
 
 console.log(`\n${n} verificações passaram.`)

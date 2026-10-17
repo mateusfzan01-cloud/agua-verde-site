@@ -196,6 +196,7 @@
       "simular": "Simulate approved payment",
       "naoEncontrado": "Order not found.",
       "ver": "See my booking",
+      "irParaCartao": "Pay by card on Mercado Pago",
       "cartaoTitulo": "Card payment",
       "cartaoAjuda": "You pay on a secure Mercado Pago page. We don’t store your card details."
     },

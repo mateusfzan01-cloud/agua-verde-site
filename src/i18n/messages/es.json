@@ -196,6 +196,7 @@
       "simular": "Simular pago aprobado",
       "naoEncontrado": "Pedido no encontrado.",
       "ver": "Ver mi reserva",
+      "irParaCartao": "Pagar con tarjeta en Mercado Pago",
       "cartaoTitulo": "Pago con tarjeta",
       "cartaoAjuda": "Pagás en una página segura de Mercado Pago. No guardamos los datos de tu tarjeta."
     },

@@ -43,12 +43,14 @@ export async function iniciarPagamento(
     valor: pedido.valorTotal,
     meio,
     descricao: `Água Verde ${pedido.numero}`,
+    expiraEm: pedido.expiraEm,
     pagador: { nome: pedido.passageiro.nome, email: pedido.passageiro.email, telefone: pedido.passageiro.telefone, cpf: pedido.passageiro.cpf },
   })
   pedido.gateway = gateway.nome
   pedido.gatewayRef = cobranca.gatewayRef
   pedido.meio = meio
   pedido.pix = cobranca.pix?.copiaECola
+  pedido.urlDePagamento = cobranca.urlDePagamento?.startsWith('https://') ? cobranca.urlDePagamento : undefined
   await repo.salvar(pedido)
   await repo.registrarAuditoria({ pedidoId: pedido.id, tipo: 'cobranca_criada', detalhes: { meio, gatewayRef: cobranca.gatewayRef }, em: agora })
   return { ok: true, pedido, pix: cobranca.pix?.copiaECola, urlDePagamento: cobranca.urlDePagamento }
@@ -58,20 +60,46 @@ export async function iniciarPagamento(
  * Recebe o aviso do gateway. `corpoCru` é o texto exato da requisição
  * (await req.text()): a assinatura é conferida nele, antes de qualquer JSON.parse.
  * Só responde 2xx depois de gravar.
+ *
+ * Pagamento aprovado com valor diferente do pedido NÃO confirma: fica registrado
+ * (evento + auditoria) para a equipe conferir.
  */
 export async function processarWebhook(
   { repo, gateway }: Dependencias,
   corpoCru: string,
   cabecalhos: { get(nome: string): string | null },
   agora = new Date(),
-): Promise<{ status: 200 | 401; corpo: 'ok' | 'duplicado' | 'assinatura_invalida' }> {
-  const evento = gateway.validarWebhook(corpoCru, cabecalhos)
+  url?: URL,
+): Promise<{ status: 200 | 401; corpo: 'ok' | 'duplicado' | 'ignorado' | 'valor_divergente' | 'assinatura_invalida' }> {
+  const evento = await gateway.validarWebhook(corpoCru, cabecalhos, url)
   if (!evento) return { status: 401, corpo: 'assinatura_invalida' }
+  if (evento === 'ignorar') return { status: 200, corpo: 'ignorado' }
 
   const novo = await repo.registrarEventoDoGateway(evento)
   if (!novo) return { status: 200, corpo: 'duplicado' }
 
-  if (evento.status === 'aprovado') await repo.confirmarPedido(evento.pedidoId, evento.gatewayRef, agora)
+  if (evento.status === 'aprovado') {
+    const pedido = await repo.buscarPorId(evento.pedidoId)
+    if (pedido && evento.valor !== undefined && Math.abs(evento.valor - pedido.valorTotal) > 0.005) {
+      await repo.registrarAuditoria({
+        pedidoId: pedido.id,
+        tipo: 'valor_divergente',
+        detalhes: { pago: evento.valor, esperado: pedido.valorTotal, gatewayRef: evento.gatewayRef },
+        em: agora,
+      })
+      return { status: 200, corpo: 'valor_divergente' }
+    }
+    await repo.confirmarPedido(evento.pedidoId, evento.gatewayRef, agora)
+  } else if (evento.status === 'reembolsado') {
+    // Reembolso feito direto no painel do gateway: o pedido acompanha (e as viagens são canceladas).
+    const pedido = await repo.buscarPorId(evento.pedidoId)
+    if (pedido && pedido.status === 'pago') {
+      pedido.status = 'reembolsado'
+      pedido.canceladoEm = agora
+      await repo.salvar(pedido)
+      await repo.registrarAuditoria({ pedidoId: pedido.id, tipo: 'reembolsado', detalhes: { origem: 'gateway' }, em: agora })
+    }
+  }
   return { status: 200, corpo: 'ok' }
 }
 
@@ -88,17 +116,23 @@ export async function estadoDoPedido(
   let pedido = await repo.buscarPorToken(tokenAcesso)
   if (!pedido) return null
 
-  if (pedido.status === 'pendente_pagamento' && pedido.gatewayRef) {
+  // Expirado também conta: pagamento que cai depois do prazo é honrado.
+  if ((pedido.status === 'pendente_pagamento' || pedido.status === 'expirado') && pedido.gatewayRef) {
     const consulta = await gateway.consultarPagamento(pedido.gatewayRef)
     if (consulta.status === 'aprovado') {
+      const ref = consulta.gatewayRef ?? pedido.gatewayRef
       await repo.registrarEventoDoGateway({
-        eventoId: `consulta_${pedido.gatewayRef}_aprovado`,
-        gatewayRef: pedido.gatewayRef,
+        eventoId: `consulta_${ref}_aprovado`,
+        gatewayRef: ref,
         pedidoId: pedido.id,
         status: 'aprovado',
         valor: consulta.valor,
       })
-      await repo.confirmarPedido(pedido.id, pedido.gatewayRef, agora)
+      if (consulta.valor === undefined || Math.abs(consulta.valor - pedido.valorTotal) <= 0.005) {
+        await repo.confirmarPedido(pedido.id, ref, agora)
+      } else {
+        await repo.registrarAuditoria({ pedidoId: pedido.id, tipo: 'valor_divergente', detalhes: { pago: consulta.valor, esperado: pedido.valorTotal, gatewayRef: ref }, em: agora })
+      }
       pedido = (await repo.buscarPorId(pedido.id)) ?? pedido
     }
   }

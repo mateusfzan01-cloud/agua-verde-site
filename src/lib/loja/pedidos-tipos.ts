@@ -54,6 +54,8 @@ export interface Pedido {
   meio?: MeioDePagamento
   /** Pix "copia e cola" da cobrança, para a tela de pagamento (no banco: gateway_payload). */
   pix?: string
+  /** Cartão: página do gateway onde o cliente paga (no banco: gateway_payload.url). */
+  urlDePagamento?: string
   consentimentoEm: Date
   criadoEm: Date
   expiraEm: Date
