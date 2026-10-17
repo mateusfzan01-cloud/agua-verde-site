@@ -42,6 +42,12 @@
 - Protótipo: faixa de aviso abaixo do cabeçalho (com ×) e carrossel de 4 slides abaixo das promessas, com pontos de navegação. Preços dos slides seguem o seletor de moeda.
 - Textos e o desconto de 10% são exemplos. Plano: decisão 38. O dono aprovou o formato: faixa e carrossel, com 4 slides.
 
+## 2026-10-17 — Telas aprovadas e Prompt B
+
+- O dono aprovou as telas do protótipo ("Aprovado, pode seguir para o Prompt B").
+- Prompt B entregue em branch própria (`claude/loja-codigo-b`), PR em rascunho. Resumo e limites em `CODIGO_LOJA_B.md`.
+- Migrations SQL ficaram em `supabase/pendentes/` (não em `supabase/migrations/`) para que nenhuma integração com o GitHub as aplique sem o "pode" do dono.
+
 ## Fatos aprendidos
 
 - Figma: assento "View" no plano Starter; não dá para criar arquivos.

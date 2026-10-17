@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter, Outfit } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
+import '../globals.css'
+import { inter, outfit } from '../fontes'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aguaverde.tur.br'),

@@ -1,0 +1,80 @@
+# Código da loja (Prompt B): o que foi feito e como funciona
+
+> Entregue em 17/10/2026, depois da aprovação das telas do protótipo.
+> **Nada disto altera o banco de produção.** Tabelas ficam só escritas em `supabase/pendentes/` (não aplicadas).
+
+## Em uma frase
+
+A loja inteira funciona de ponta a ponta no navegador (escolher veículo, dados, pagar, reserva, cancelar),
+em português, espanhol e inglês, com **pagamento simulado** e pedidos **em memória**. O Prompt C troca a
+simulação pelo Mercado Pago e pelo banco, sem mexer nas telas.
+
+## Rotas novas
+
+| Endereço | O que é |
+|:--|:--|
+| `/transfers`, `/passeios` | catálogo (44 produtos à venda: 28 transfers e 16 passeios) |
+| `/transfers/[slug]`, `/passeios/[slug]` | produto: fotos, descrição, widget (data, hora, veículos ou pessoas), FAQ |
+| `/checkout?...` | dados do passageiro (a escolha viaja na URL; o preço é recalculado no servidor) |
+| `/checkout/[pedido]` | pagamento (Pix ou cartão) |
+| `/reserva/[token]` | reserva, voucher e cancelamento |
+| `/minha-reserva` | reenvio do link (número + e-mail; resposta sempre igual) |
+| `/es/...`, `/en/...` | as mesmas rotas em espanhol e inglês (`/es`, `/en` também têm uma entrada da loja) |
+| `/passeio/<slug-da-paytour>` | **301** para a página nova (46 endereços da Paytour, testados) |
+| `/api/loja/webhook/simulado` | aviso do gateway simulado (corpo cru + assinatura, como o real) |
+
+As páginas antigas (`/`, `/quem-somos`, landings de transfer etc.) continuam como estavam, só mudaram de pasta
+(`src/app/(site)/`) para que a loja tenha o próprio layout com `lang` correto em es/en. O português da home
+atual continua em `/`; trocar a home pelo desenho do protótipo é um passo à parte.
+
+## Quando a loja aparece (variáveis na Vercel)
+
+| Variável | Efeito |
+|:--|:--|
+| `LOJA_HABILITADA=true` | abre a loja em qualquer domínio e coloca os produtos no sitemap (**lançamento**) |
+| (nada) | prévias da Vercel e testes locais mostram a loja; **produção em `aguaverde.tur.br` responde 404** |
+| `HOSTS_NOINDEX` | domínios fora do Google (padrão: `aguaverdeviagens.com.br` e `www.`): mandam `X-Robots-Tag: noindex, nofollow` e `robots.txt` com `Disallow: /`. Esse domínio sempre mostra a loja (decisão 35) |
+| `LOJA_PERMITE_SIMULACAO=false` | desliga o botão "simular pagamento" |
+| `LOJA_SEGREDO_WEBHOOK_SIMULADO` | segredo da assinatura do webhook simulado |
+
+## Regras que os testes garantem (`npm test`, 74 testes)
+
+- Preço por veículo (soma quantidade × preço do produto), por pessoa nos 4 produtos que são assim, máximo de 10 por compra,
+  ida e volta com um preço só. Todos os 44 produtos à venda calculam preço.
+- Data mínima: amanhã, no horário de Recife. Volta não pode ser antes da ida.
+- Cancelamento: transfer 24 h; passeio 48 h; passeio em alta temporada 24 h; arrependimento de 48 h depois da compra
+  (se o serviço não começou). **A lista de datas da alta temporada está vazia: falta o dono definir** (`ALTA_TEMPORADA` em
+  `src/lib/loja/politicas.ts`).
+- Pagamento (plano §4.7): só o webhook assinado ou a consulta direta ao gateway confirmam; evento repetido é ignorado;
+  recarregar a página de sucesso não gera viagem; confirmar duas vezes não duplica; pedido sem pagar expira em 30 minutos.
+- Moeda: cobrança sempre em reais; "≈ valor" na moeda escolhida (padrão: pt reais, es euro, en dólar). Cotações **ilustrativas**.
+- Os 3 idiomas têm exatamente as mesmas mensagens (teste de chaves).
+
+## Onde está cada coisa
+
+| Pasta | Conteúdo |
+|:--|:--|
+| `src/lib/loja/` | regras puras: catálogo (lê `docs/loja/conteudo/*.json`), preços, moeda, datas, políticas, pedidos, fluxo |
+| `src/lib/loja/pagamento/` | interface do gateway (`criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook`) e a implementação simulada |
+| `src/lib/loja/servicos.ts` | **único** lugar que liga repositório + gateway; no Prompt C é o que muda |
+| `src/app/[locale]/` | páginas e ações do servidor da loja |
+| `src/components/loja/` | componentes (widget, seletor de idioma e moeda, resumo, painel de pagamento...) |
+| `src/middleware.ts` | roteamento de idioma só nas rotas da loja, flag de lançamento e noindex |
+| `supabase/pendentes/` | migrations SQL escritas e testadas num Postgres de verdade, **não aplicadas** |
+
+## Limites conhecidos (por serem simulação)
+
+- Pedidos ficam em memória: somem se o servidor reiniciar e podem não ser vistos por outra instância na Vercel.
+  Serve para ver o fluxo; o banco resolve no Prompt C.
+- Nenhum e-mail ou WhatsApp é enviado (o reenvio do link só registra no log do servidor).
+- A página de reserva não mostra o link de acompanhamento (`/acompanhar/<token>`): ele nasce da viagem, que só existe no banco.
+- As fotos ainda vêm da CDN da Paytour (`cdn.paytour.com.br`). **Copiar para o Storage antes de cancelar a Paytour.**
+- Não há `favicon.ico` no site (404 no navegador, já era assim antes).
+- Espanhol/inglês: só a loja está traduzida; as páginas institucionais continuam em português.
+
+## Conferências pedidas ao Prompt C
+
+1. Colunas obrigatórias e gatilhos de `public.viagens` contra o banco real (avisos `[CONFERIR]` em `supabase/pendentes/`).
+2. Id do fornecedor "Agua Verde".
+3. Datas da alta temporada e controle de vagas dos passeios com parceiros (catamarã, mergulho, jangada).
+4. Texto "(ida ou volta)" dos transfers só de ida: veio do nome na Paytour; vale revisar com o dono.

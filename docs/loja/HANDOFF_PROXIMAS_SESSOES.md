@@ -2,7 +2,7 @@
 
 > Escrito em 09/10/2026, ao fim da sessão de planejamento (log em `LOG_SESSAO_2026-10-08_PLANO_LOJA_PROPRIA.md`).
 > Cada bloco abaixo é um prompt pronto para abrir uma sessão nova no repositório `agua-verde-site`.
-> Atualizado em 10/10/2026: Prompt A entregue no PR #3; testes da loja no domínio `aguaverdeviagens.com.br` (decisão 35).
+> Atualizado em 17/10/2026: telas aprovadas e Prompt B entregue. Em 10/10/2026: Prompt A entregue no PR #3; testes da loja no domínio `aguaverdeviagens.com.br` (decisão 35).
 > Ordem recomendada: A agora; B depois que o dono aprovar as telas de A; C e D quando os bloqueios indicados forem resolvidos.
 
 ## O que está liberado e o que está bloqueado
@@ -10,7 +10,7 @@
 | Frente | Depende de | Estado |
 |:--|:--|:--|
 | A. Protótipos das 4 telas + conteúdo (traduções, termos, templates WhatsApp, pedido TripAdvisor) | nada | **liberada** |
-| B. Código do site sem efeito em produção (rotas, i18n, catálogo, widget, camada de pagamento simulada, migrations escritas e não aplicadas) | aprovação das telas de A | aguardando A |
+| B. Código do site sem efeito em produção (rotas, i18n, catálogo, widget, camada de pagamento simulada, migrations escritas e não aplicadas) | aprovação das telas de A | **entregue em 17/10/2026** (PR em rascunho; ver `CODIGO_LOJA_B.md`) |
 | C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | conta Mercado Pago; "pode" do dono para o banco; Supabase em Small | bloqueada |
 | D. Auditoria do Google Ads | acesso de leitura à conta | bloqueada |
 | E. Manutenção do Supabase (pg_net, índices) | "pode" explícito do dono | bloqueada |

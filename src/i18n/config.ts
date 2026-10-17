@@ -1,9 +1,7 @@
 import { createNavigation } from 'next-intl/navigation'
+import { routing } from './routing'
 
-export const locales = ['pt', 'en', 'es'] as const
-export const defaultLocale = 'pt' as const
+export const locales = routing.locales
+export const defaultLocale = routing.defaultLocale
 
-export const { Link, redirect, usePathname, useRouter } = createNavigation({
-  locales,
-  defaultLocale,
-})
+export const { Link, redirect, usePathname, useRouter } = createNavigation(routing)
