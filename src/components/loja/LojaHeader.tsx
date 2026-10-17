@@ -10,7 +10,7 @@ export async function LojaHeader() {
     <header className="sticky top-0 z-40 border-b border-[#dde5df] bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2.5">
         <Link href="/transfers" aria-label="Água Verde" className="flex shrink-0 rounded-lg bg-white p-1">
-          <Image src="/images/logo-agua-verde.png" alt="Água Verde Viagens & Receptivos" width={120} height={48} className="h-9 w-auto" priority />
+          <Image src="/images/loja/logo-recortado.png" alt="Água Verde Viagens & Receptivos" width={720} height={394} className="h-12 w-auto sm:h-14" priority />
         </Link>
         <nav className="ml-2 hidden items-center gap-5 text-sm font-medium sm:flex">
           <Link href="/transfers" className="hover:text-[#1a5c38]">{t('transfers')}</Link>

@@ -99,6 +99,8 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
 - Nenhum e-mail ou WhatsApp é enviado (o reenvio do link só registra no log do servidor).
 - O link de acompanhamento (`app.aguaverde.tur.br/acompanhar/<token>`, configurável em `NEXT_PUBLIC_URL_ACOMPANHAR`) nasce da viagem, que só existe no banco. Na etapa C, `reserva_por_token` já devolve o `viagem_token` de cada perna; o repositório do Supabase só precisa copiá-lo para `ItemDoPedido.viagemToken`. Conferir se `viagens.token_cliente` nasce sozinho no INSERT.
 - O resumo da compra (checkout e pagamento) abre retraído, como o das companhias aéreas.
+- A primeira foto de cada produto em `docs/loja/conteudo/produtos.json` (a "capa": cartões, destaques e mais reservados) é só paisagem ou carro, sem pessoas (escolhida a olho em 17/10/2026). A galeria da página do produto ainda tem as outras fotos, inclusive com clientes e motoristas.
+- O topo da loja usa `public/images/loja/logo-recortado.png` (o logo oficial sem as margens brancas, para aparecer maior); o arquivo original não foi alterado.
 - As fotos ainda vêm da CDN da Paytour (`cdn.paytour.com.br`). **Copiar para o Storage antes de cancelar a Paytour.**
 - Não há `favicon.ico` no site (404 no navegador, já era assim antes).
 - Espanhol/inglês: só a loja está traduzida; as páginas institucionais continuam em português.
