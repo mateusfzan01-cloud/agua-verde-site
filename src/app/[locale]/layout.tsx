@@ -8,6 +8,7 @@ import { htmlLang, routing } from '@/i18n/routing'
 import { MoedaProvider } from '@/components/loja/MoedaProvider'
 import { LojaHeader } from '@/components/loja/LojaHeader'
 import { LojaFooter } from '@/components/loja/LojaFooter'
+import { FaixaDeAviso } from '@/components/loja/home/FaixaDeAviso'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aguaverde.tur.br'),
@@ -33,10 +34,11 @@ export default async function LojaLayout({
 
   return (
     <html lang={htmlLang[locale]} className={`${inter.variable} ${outfit.variable}`}>
-      <body className="bg-[#fafbfa] font-sans text-[#1a1a2e] antialiased">
+      <body className="overflow-x-clip bg-[#fafbfa] font-sans text-[#1a1a2e] antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <MoedaProvider>
             <LojaHeader />
+            <FaixaDeAviso />
             <main className="mx-auto min-h-[60vh] max-w-6xl px-4 py-6">{children}</main>
             <LojaFooter />
           </MoedaProvider>

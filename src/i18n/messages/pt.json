@@ -219,6 +219,80 @@
     "erro": {
       "titulo": "Algo deu errado",
       "voltar": "Voltar ao início"
+    },
+    "busca": {
+      "saindoDe": "Saindo de",
+      "indoPara": "Indo para",
+      "data": "Data (opcional)",
+      "aPartirDe": "a partir de, por veículo",
+      "idaVolta": "ida e volta:",
+      "ver": "Ver e reservar",
+      "semRota": "Rota fora da tabela. Fazemos orçamento pelo WhatsApp.",
+      "orcamento": "Pedir orçamento no WhatsApp"
+    },
+    "destaques": {
+      "titulo": "Em destaque",
+      "faixa1": "Réveillon e Carnaval:",
+      "faixa2": "reserve com antecedência para garantir o seu carro.",
+      "tag": "Em destaque",
+      "ver": "Ver detalhes",
+      "fechar": "Fechar aviso",
+      "aPartirDe": "A partir de",
+      "transferDe": "Transfer privativo a partir de",
+      "passeioDe": "Passeio privativo a partir de"
+    },
+    "maisReservados": {
+      "titulo": "Mais reservados",
+      "transfers": "Transfers",
+      "passeios": "Passeios",
+      "aPartirDe": "a partir de",
+      "porVeiculo": "por veículo",
+      "porPessoa": "por pessoa",
+      "rank": "{n}º mais vendido",
+      "verTodosTransfers": "Ver todos os transfers",
+      "verTodosPasseios": "Ver todos os passeios"
+    },
+    "tripadvisor": {
+      "linha": "112 avaliações no Tripadvisor · Travellers' Choice",
+      "nome": "Perfil “Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)”."
+    },
+    "contador": {
+      "prova": "viagens realizadas",
+      "seguro1": "Sistema seguro",
+      "seguro2": ", com motoristas cadastrados.",
+      "live": "Atualizado a cada hora"
+    },
+    "acompanhamento": {
+      "titulo": "Acompanhe sua viagem pelo celular",
+      "texto": "Um link com o motorista, o carro e a situação da viagem, do início ao fim.",
+      "exemplo": "Exemplo do link de acompanhamento.",
+      "ver": "Ver exemplo completo",
+      "fechar": "Recolher",
+      "url": "aguaverde.tur.br/acompanhar/7f3c…e91a",
+      "status": "Motorista a caminho",
+      "ola": "Olá, Lúcia! 👋",
+      "origem": "Origem",
+      "destino": "Destino",
+      "dataHora": "Data e hora",
+      "numero": "Número da reserva",
+      "situacao": "Situação da viagem",
+      "agora": "Agora",
+      "zap": "Dúvidas ou precisa de suporte? Nossa equipe está disponível.",
+      "zapBotao": "Falar com a Água Verde",
+      "eta": "chega em 12 min",
+      "carro": "Chevrolet Spin branca · QWE-1A23",
+      "passo1": "Transfer confirmado",
+      "passo2": "Motorista a caminho",
+      "passo3": "Em viagem",
+      "passo4": "Viagem concluída",
+      "exOrigem": "Aeroporto do Recife (REC)",
+      "exDestino": "Pousada em Maragogi",
+      "exQuando": "ter., 15 de dez., 14:30"
+    },
+    "rodape2": {
+      "empresa": "Água Verde Viagens e Receptivos",
+      "endereco": "CNPJ 17.427.292/0001-46 · Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE",
+      "contato": "contato@aguaverde.tur.br · WhatsApp (81) 99947-3200"
     }
   }
 }

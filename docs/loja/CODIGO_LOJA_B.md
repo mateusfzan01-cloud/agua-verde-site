@@ -23,9 +23,26 @@ simulação pelo Mercado Pago e pelo banco, sem mexer nas telas.
 | `/passeio/<slug-da-paytour>` | **301** para a página nova (46 endereços da Paytour, testados) |
 | `/api/loja/webhook/simulado` | aviso do gateway simulado (corpo cru + assinatura, como o real) |
 
-As páginas antigas (`/`, `/quem-somos`, landings de transfer etc.) continuam como estavam, só mudaram de pasta
-(`src/app/(site)/`) para que a loja tenha o próprio layout com `lang` correto em es/en. O português da home
-atual continua em `/`; trocar a home pelo desenho do protótipo é um passo à parte.
+As páginas antigas (`/quem-somos`, landings de transfer etc.) continuam como estavam, só mudaram de pasta
+(`src/app/(site)/`) para que a loja tenha o próprio layout com `lang` correto em es/en.
+
+## Home (igual ao protótipo aprovado)
+
+`/` (português), `/es` e `/en` mostram a home do protótipo: faixa de aviso, topo com foto e busca de rota (origem, destino,
+data → preço na hora → página do produto), 4 promessas, carrossel "Em destaque", Tripadvisor, "Mais reservados"
+(abas Transfers e Passeios), contador "8.211 viagens" e o celular de exemplo do link de acompanhamento (abre recolhido).
+
+- **Em português, `/` só vira a home da loja onde a loja está habilitada** (mesma regra das outras rotas). Em produção,
+  até `LOJA_HABILITADA=true`, `/` continua sendo a home atual do site.
+- Diferenças deliberadas em relação ao protótipo (o protótipo tinha textos de exemplo):
+  - o carrossel não tem o "10% de desconto" nem o slide "do blog (em breve)": são 4 produtos reais (City tour, Porto de Galinhas,
+    Maragogi ida e volta, catamarã em Recife). Promoção entra quando existir preço promocional;
+  - o contador mostra **8.211** fixo (decisão 37) e **não** mostra "Atualizado a cada hora" enquanto o número não vier do banco
+    (`CONTADOR_ATUALIZA_SOZINHO` em `src/lib/loja/home.ts`);
+  - os nomes dos lugares na busca vêm do catálogo (só em português);
+  - o e-mail do rodapé é `contato@aguaverde.tur.br` (o do protótipo era `reservas@`; conferir qual existe).
+- A foto do topo (`public/images/loja/hero.jpg`) é a miniatura de 370 px do protótipo: no computador fica borrada.
+  Falta uma foto grande do mesmo tema.
 
 ## Quando a loja aparece (variáveis na Vercel)
 
@@ -37,7 +54,7 @@ atual continua em `/`; trocar a home pelo desenho do protótipo é um passo à p
 | `LOJA_PERMITE_SIMULACAO=false` | desliga o botão "simular pagamento" |
 | `LOJA_SEGREDO_WEBHOOK_SIMULADO` | segredo da assinatura do webhook simulado |
 
-## Regras que os testes garantem (`npm test`, 74 testes)
+## Regras que os testes garantem (`npm test`, 78 testes)
 
 - Preço por veículo (soma quantidade × preço do produto), por pessoa nos 4 produtos que são assim, máximo de 10 por compra,
   ida e volta com um preço só. Todos os 44 produtos à venda calculam preço.

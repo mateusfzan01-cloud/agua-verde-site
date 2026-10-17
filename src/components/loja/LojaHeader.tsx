@@ -29,11 +29,6 @@ export async function LojaHeader() {
           <MessageCircle className="h-[18px] w-[18px]" aria-hidden="true" />
         </a>
       </div>
-      <nav className="flex justify-center gap-6 border-t border-[#dde5df] py-2 text-sm font-medium sm:hidden">
-        <Link href="/transfers">{t('transfers')}</Link>
-        <Link href="/passeios">{t('passeios')}</Link>
-        <Link href="/minha-reserva">{t('minhaReserva')}</Link>
-      </nav>
     </header>
   )
 }

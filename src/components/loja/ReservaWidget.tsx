@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Minus, Plus } from 'lucide-react'
 import { useRouter } from '@/i18n/config'
 import { calcularPreco } from '@/lib/loja/precos'
-import { dataMinimaDeReserva, validarAgenda } from '@/lib/loja/datas'
+import { dataExiste, dataMinimaDeReserva, validarAgenda } from '@/lib/loja/datas'
 import { montarQuery } from '@/lib/loja/checkout-url'
 import type { ModeloPreco, Sentido, TipoProduto } from '@/lib/loja/tipos'
 import { Preco } from './Preco'
@@ -44,7 +44,13 @@ export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa
   const [tentou, setTentou] = useState(false)
   const [minima, setMinima] = useState('')
 
-  useEffect(() => setMinima(dataMinimaDeReserva(new Date())), [])
+  useEffect(() => {
+    const min = dataMinimaDeReserva(new Date())
+    setMinima(min)
+    // Data escolhida na busca da home (?d=AAAA-MM-DD).
+    const d = new URLSearchParams(window.location.search).get('d')
+    if (d && dataExiste(d) && d >= min) setData(d)
+  }, [])
 
   const selecao = useMemo(
     () => (modeloPreco === 'por_pessoa' ? { pessoas } : { veiculos: quantidades }),

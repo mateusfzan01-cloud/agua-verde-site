@@ -219,6 +219,80 @@
     "erro": {
       "titulo": "Something went wrong",
       "voltar": "Back to home"
+    },
+    "busca": {
+      "saindoDe": "From",
+      "indoPara": "To",
+      "data": "Date (optional)",
+      "aPartirDe": "from, per vehicle",
+      "idaVolta": "round trip:",
+      "ver": "See and book",
+      "semRota": "This route isn't in our price list. We'll quote it on WhatsApp.",
+      "orcamento": "Get a quote on WhatsApp"
+    },
+    "destaques": {
+      "titulo": "Featured",
+      "faixa1": "New Year’s Eve and Carnival:",
+      "faixa2": "book early to secure your car.",
+      "tag": "Featured",
+      "ver": "See details",
+      "fechar": "Close notice",
+      "aPartirDe": "From",
+      "transferDe": "Private transfer from",
+      "passeioDe": "Private tour from"
+    },
+    "maisReservados": {
+      "titulo": "Most booked",
+      "transfers": "Transfers",
+      "passeios": "Tours",
+      "aPartirDe": "from",
+      "porVeiculo": "per vehicle",
+      "porPessoa": "per person",
+      "rank": "#{n} best seller",
+      "verTodosTransfers": "See all transfers",
+      "verTodosPasseios": "See all tours"
+    },
+    "tripadvisor": {
+      "linha": "112 reviews on Tripadvisor · Travellers' Choice",
+      "nome": "Listed as “Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)”."
+    },
+    "contador": {
+      "prova": "trips completed",
+      "seguro1": "Secure system",
+      "seguro2": ", with registered drivers.",
+      "live": "Updated hourly"
+    },
+    "acompanhamento": {
+      "titulo": "Follow your trip on your phone",
+      "texto": "A link with your driver, the car and trip status, from start to finish.",
+      "exemplo": "Example of the tracking link.",
+      "ver": "See full example",
+      "fechar": "Collapse",
+      "url": "aguaverde.tur.br/acompanhar/7f3c…e91a",
+      "status": "Driver on the way",
+      "ola": "Hi, Lucía! 👋",
+      "origem": "From",
+      "destino": "To",
+      "dataHora": "Date and time",
+      "numero": "Booking number",
+      "situacao": "Trip status",
+      "agora": "Now",
+      "zap": "Questions or need help? Our team is available.",
+      "zapBotao": "Chat with Água Verde",
+      "eta": "12 min away",
+      "carro": "White Chevrolet Spin · QWE-1A23",
+      "passo1": "Transfer confirmed",
+      "passo2": "Driver on the way",
+      "passo3": "On the trip",
+      "passo4": "Trip completed",
+      "exOrigem": "Recife Airport (REC)",
+      "exDestino": "Guesthouse in Maragogi",
+      "exQuando": "Tue, 15 Dec, 14:30"
+    },
+    "rodape2": {
+      "empresa": "Água Verde Viagens e Receptivos",
+      "endereco": "CNPJ 17.427.292/0001-46 · Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE",
+      "contato": "contato@aguaverde.tur.br · WhatsApp (81) 99947-3200"
     }
   }
 }

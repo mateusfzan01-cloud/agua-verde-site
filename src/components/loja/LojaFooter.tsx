@@ -1,17 +1,27 @@
 import { getTranslations } from 'next-intl/server'
+import { Link } from '@/i18n/config'
 
 export async function LojaFooter() {
   const t = await getTranslations('Loja.rodape')
+  const r = await getTranslations('Loja.rodape2')
+  const n = await getTranslations('Loja.nav')
   return (
-    <footer className="mt-16 border-t border-[#dde5df] bg-[#0d2e1c] py-8 text-sm text-white/80">
-      <div className="mx-auto grid max-w-6xl gap-3 px-4">
-        <div className="flex flex-wrap gap-x-6 gap-y-2">
+    <footer className="mt-16 bg-[#0d2e1c] py-6 text-[12.5px] text-[#b9cbbf]">
+      <div className="mx-auto grid max-w-3xl gap-1.5 px-4">
+        <b className="text-white">{r('empresa')}</b>
+        <span>{r('endereco')}</span>
+        <span>{r('contato')}</span>
+        <a href="https://www.instagram.com/aguaverdeviagens/" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-1.5 py-1 font-semibold text-white hover:underline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg>
+          Instagram @aguaverdeviagens
+        </a>
+        <span className="flex flex-wrap gap-x-3">
           <a href="/termos-de-uso" className="hover:text-white">{t('termos')}</a>
+          <span aria-hidden="true">·</span>
           <a href="/politica-de-privacidade" className="hover:text-white">{t('privacidade')}</a>
-          <a href="https://wa.me/5581999473200" target="_blank" rel="noopener noreferrer" className="hover:text-white">{t('contato')}: (81) 99947-3200</a>
-          <a href="https://www.instagram.com/aguaverdeviagens/" target="_blank" rel="noopener noreferrer" className="hover:text-white">Instagram</a>
-        </div>
-        <p className="text-xs text-white/60">© {new Date().getFullYear()} {t('direitos')}</p>
+          <span aria-hidden="true">·</span>
+          <Link href="/minha-reserva" className="hover:text-white">{n('minhaReserva')}</Link>
+        </span>
       </div>
     </footer>
   )

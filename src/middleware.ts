@@ -14,7 +14,10 @@ export default function middleware(req: NextRequest) {
   const host = req.headers.get('host')
 
   let res: NextResponse
-  if (CAMINHOS_DA_LOJA.test(pathname)) {
+  // A home em português ("/") só vira a home da loja onde a loja está habilitada; senão continua a home atual.
+  if (pathname === '/' && lojaHabilitadaParaHost(host)) {
+    res = intl(req)
+  } else if (CAMINHOS_DA_LOJA.test(pathname)) {
     if (!lojaHabilitadaParaHost(host)) {
       // Loja ainda não lançada neste domínio: responde como página inexistente.
       res = NextResponse.rewrite(new URL('/__loja-desabilitada', req.url))
