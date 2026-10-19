@@ -5,17 +5,17 @@
 **Como usar:** copie o bloco de cada empresa e envie pelo chat ou e-mail do suporte, ou pelo gerente de conta, se houver. Guarde as respostas por escrito (print ou e-mail) e anote a data ao lado de cada uma. Preço e regra mudam, e o que vale é o que eles responderem.
 
 **Quem somos (use no começo de todas as mensagens):**
-Água Verde Transfers, CNPJ 17.427.292/0001-46, Recife/PE. Fazemos **transfer privado ponto a ponto** (aeroporto, hotel, praia), com motorista. Não vendemos excursão nem pacote de agência. Venda pelo nosso site, com ticket médio de R$ 180 a R$ 700, entre 40 e 150 vendas por mês. Muitos clientes são turistas estrangeiros (principalmente hispanofalantes).
+Água Verde Transfers, CNPJ 17.427.292/0001-46, Recife/PE. Fazemos **transfer privado ponto a ponto** (aeroporto, hotel, praia), com motorista, e também vendemos **passeios** (18 dos 46 produtos do catálogo). Não somos agência de pacotes. Descreva sempre a atividade completa, sem omitir os passeios: informação inexata sobre a natureza do negócio pode levar à recusa ou ao bloqueio da conta. Venda pelo nosso site, com ticket médio de R$ 180 a R$ 700, entre 40 e 150 vendas por mês. Muitos clientes são turistas estrangeiros (principalmente hispanofalantes).
 
 ---
 
 ## 1. Stripe Brasil (cartão) — a mais importante
 
-A Stripe lista "agências de viagem e serviços de transporte" entre as atividades que precisam de aprovação prévia. Por isso, a primeira pergunta decide tudo.
+Na lista oficial de negócios restritos da Stripe, a seção do Brasil não tem restrição de viagem (a linha "hotéis, agências de viagem e serviços de transporte" é da Tailândia). Valem as regras globais: "serviços e clubes de reservas de viagem" é restrita e "serviços de uso compartilhado" é proibida. Por isso, a primeira pergunta é sobre o enquadramento e decide tudo.
 
-> Olá. Somos a Água Verde Transfers (CNPJ 17.427.292/0001-46), em Recife. Fazemos **transfer privado ponto a ponto**, com motorista, entre aeroporto, hotel e praia. Não somos agência de viagens nem vendemos excursões ou pacotes. Queremos vender pelo nosso site, com ticket médio de R$ 180 a R$ 700, e cobrar o cliente na hora.
+> Olá. Somos a Água Verde Transfers (CNPJ 17.427.292/0001-46), em Recife. Fazemos **transfer privado ponto a ponto**, com motorista, entre aeroporto, hotel e praia, e também vendemos **passeios** (18 dos 46 produtos do catálogo). Não somos agência de pacotes. Queremos vender pelo nosso site, com ticket médio de R$ 180 a R$ 700, e cobrar o cliente na hora.
 >
-> 1. Esse tipo de atividade é aprovado numa conta Stripe Brasil? Que informações ou documentos vocês pedem para a análise (CADASTUR, contrato, site no ar)? Qual o prazo da resposta?
+> 1. Como a Stripe enquadra esse tipo de negócio no Brasil? O site, que vende transfers privados agendados e passeios, cai em "serviços e clubes de reservas de viagem" (atividade restrita)? Um transfer privado agendado conta como "serviços de uso compartilhado"? Que informações ou documentos vocês pedem para a análise (CADASTUR, contrato, site no ar)? Qual o prazo da resposta?
 > 2. Se a atividade for aprovada, há algum limite de valor por transação ou por mês, ou alguma reserva (retenção) sobre os repasses nos primeiros meses?
 > 3. Quais bandeiras aceitam cartão **emitido no exterior** (Visa, Mastercard, Amex, Elo)? Confirmam que Amex e Elo não funcionam? A cobrança de +2% para cartão internacional vale para todos os casos?
 > 4. Quando o cliente paga com cartão estrangeiro, o valor é sempre cobrado em reais, e o banco dele faz a conversão? Existe alguma taxa de câmbio nossa?

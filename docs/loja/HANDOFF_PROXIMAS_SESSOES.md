@@ -10,7 +10,7 @@
 |:--|:--|:--|
 | A. Protótipos das 4 telas + conteúdo (traduções, termos, templates WhatsApp, pedido TripAdvisor) | nada | **liberada** |
 | B. Código do site sem efeito em produção (rotas, i18n, catálogo, widget, camada de pagamento simulada, migrations escritas e não aplicadas) | aprovação das telas de A | aguardando A |
-| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | conta Mercado Pago (plano B e ponto de partida); contas Stripe e Woovi (decisão 31, 2026-10-19); "pode" do dono para o banco; Supabase em Small | bloqueada |
+| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | conta Mercado Pago (já ativa; basta para começar); "pode" do dono para o banco; Supabase em Small. Contas Stripe e Woovi (decisão 31, 2026-10-19) só são pré-requisito para **trocar** de provedor depois, não para iniciar | bloqueada |
 | D. Auditoria do Google Ads | acesso de leitura à conta | bloqueada |
 | E. Manutenção do Supabase (pg_net, índices) | "pode" explícito do dono | bloqueada |
 
