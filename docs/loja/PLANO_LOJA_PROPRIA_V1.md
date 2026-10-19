@@ -1,6 +1,6 @@
 # Plano v1 — Loja própria aguaverde.tur.br (substituição da Paytour)
 
-> Data: 2026-10-08, ajustes 2026-10-09 (decisões 25–30) · Autor: Claude Code com Mateus Zanlorenzi · Status: **aprovado pelo dono em 2026-10-09, com as recomendações do documento** (gateway Mercado Pago principal e Stripe reserva; Vercel Pro se a conta for Hobby; Supabase Small no lançamento)
+> Data: 2026-10-08, ajustes 2026-10-09 (decisões 25–30) e 2026-10-19 (decisão 31) · Autor: Claude Code com Mateus Zanlorenzi · Status: **aprovado pelo dono em 2026-10-09, com as recomendações do documento** (Vercel Pro se a conta for Hobby; Supabase Small no lançamento). **Pagamento revisado em 2026-10-19 (decisão 31, §7.3-B): cartão pela Stripe e Pix pela Woovi, condicionado à aprovação da Stripe; Mercado Pago (conta já ativa) é o plano B e o ponto de partida do desenvolvimento.** A recomendação original de Mercado Pago como gateway único segue registrada no §7.3 como histórico.
 >
 > Este documento é o resultado de uma entrevista estruturada (2 rodadas, 30 perguntas) + levantamento de fatos no banco Supabase, na cópia arquivada do site Paytour (Wayback Machine, jul/2025), no site Next.js publicado e em três pesquisas de mercado (sites de referência, comunidade 2026, custos). Nada aqui foi presumido: cada decisão tem origem marcada como **[decisão do dono]**, **[fato verificado]** ou **[recomendação]**.
 
@@ -96,6 +96,7 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 28 | Supabase está em **Micro** (o dono reduziu o porte; o `CLAUDE.md` do PWA ficou desatualizado). Subida para Small **autorizada** para o lançamento (2026-10-09) | dono |
 | 29 | Plano aprovado com as recomendações do documento (2026-10-09). CADASTUR e regra do adicional por passageiro ficam para depois; não travam a construção | dono |
 | 30 | Google Ads: o irmão investe **R$ 2.000/mês em 3 campanhas que funcionam e ficam**. A frente de Ads passa a ser: auditar e otimizar as 3 existentes, apontá-las para a loja nova no lançamento e, se fizer sentido, criar **uma** campanha nova (2026-10-09) | dono |
+| 31 | **Pagamento revisado (2026-10-19)**: cartão pela **Stripe** e Pix pela **Woovi**, **condicionado à aprovação da Stripe** para a atividade "serviços de transporte". Se a Stripe negar, o cartão fica no **Mercado Pago** (conta já ativa) e o Pix na Woovi ou no próprio Mercado Pago. Substitui a parte "um gateway só" da decisão 18; o resto da 18 (Pix + cartão nacional e internacional, sem mensalidade, PayPal fora da v1) continua. Detalhes e números no §7.3-B | dono (condicionada à Stripe) |
 
 Pendências de fato que **não travam** o plano: número CADASTUR e regra exata do adicional por passageiro (o dono envia depois; até lá, o site não exibe selo CADASTUR e usa a regra provisória "preço base até 3 passageiros" para revisão), plano atual da Vercel (Hobby ou Pro). Resolvidos em 2026-10-09: porte do Supabase (Micro, subida para Small autorizada), verba de Ads (R$ 2.000/mês já em uso), Drive de fotos e vídeos (recebido, ver §6).
 
@@ -278,11 +279,11 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
 
 1. O pedido é criado como `pendente_pagamento` **antes** de abrir o pagamento; o id do pedido é a chave de idempotência enviada ao gateway.
 2. A página "pagamento aprovado" só mostra estado; quem confirma é o **webhook**, verificado pela assinatura no corpo cru da requisição.
-3. Tabela `gateway_eventos (evento_id primary key, pedido_id, payload, recebido_em)`: duplicatas falham no banco (`on conflict do nothing`), nunca são reprocessadas.
+3. Tabela `gateway_eventos (gateway, evento_id, pedido_id, payload, recebido_em, primary key (gateway, evento_id))` (a chave inclui o provedor porque, com a decisão 31, Woovi e Stripe/Mercado Pago têm ids de evento independentes que podem colidir): duplicatas falham no banco (`on conflict do nothing`), nunca são reprocessadas.
 4. **Uma única função** `confirmar_pedido(pedido_id, gateway_ref, evento_id)` (RPC `SECURITY DEFINER`, transacional): só executa se existir em `gateway_eventos` um evento **aprovado** para aquele `gateway_ref` (gravado após verificação de assinatura); marca `pago`, cria as viagens (uma por perna), grava `viagem_id` em `pedido_itens`, dispara avisos. É chamada pelo webhook. A **página de sucesso é somente leitura**: mostra o estado atual do pedido; se ainda estiver `pendente_pagamento`, o servidor consulta o gateway (`consultarPagamento`), e só se o gateway responder "aprovado" é que grava o evento em `gateway_eventos` e chama a mesma função. Um visitante que abrir ou recarregar a página de sucesso sem pagamento aprovado nunca gera viagem.
 5. Responder 2xx ao gateway só depois de persistir; esperar eventos fora de ordem e repetidos.
 6. Cron a cada 15 min expira pedidos pendentes com mais de 45 min e libera nada (nenhuma vaga é segurada antes do pagamento).
-7. A integração com o gateway fica atrás de uma interface própria (`criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook`), para trocar Mercado Pago por Stripe ou Asaas sem mexer no checkout.
+7. A integração com o gateway fica atrás de uma interface própria (`criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook`), para trocar Mercado Pago por Stripe ou Asaas sem mexer no checkout. **Com a decisão 31 (dois provedores), a interface é escolhida por forma de pagamento**: Pix → Woovi; cartão → Stripe (ou Mercado Pago se a Stripe não aprovar). Cada provedor tem seu `validarWebhook` e sua assinatura; todos gravam em `gateway_eventos` com o campo `gateway` preenchido e chamam a mesma `confirmar_pedido`. O reembolso usa o provedor que recebeu o pagamento (`pedidos.gateway`), nunca o outro.
 
 ---
 
@@ -385,6 +386,41 @@ Custo por venda (ticket R$ 400, metade Pix, metade cartão): Asaas R$ 7,22 · Me
 
 **Escolha [recomendação]: Mercado Pago**, Checkout Pro no lançamento (pagamento em página do Mercado Pago, mais rápido de integrar) e migração para Checkout Bricks (pagamento dentro do site) depois. Motivo: único com cartão estrangeiro, inclusive Amex, no checkout pronto sem adicional e sem cadastro prévio; custo fixo zero; antifraude e 3DS inclusos; SDK Node e contas de teste. Plano B para clientes brasileiros: Asaas.
 
+#### 7.3-B Revisão de 2026-10-19: cartão na Stripe + Pix na Woovi (decisão 31)
+
+Taxas reconferidas nas páginas oficiais de Mercado Pago, Stripe, Asaas e Pagar.me em 2026-10-19: **nenhum número mudou** em relação à tabela acima. PagBank não foi reconferido (página não abriu). Duas correções à justificativa original do Mercado Pago:
+
+- "Único com cartão estrangeiro" estava exagerado. A **Stripe Brasil aceita cartão emitido no exterior só da bandeira Visa e Mastercard**, como exceção à regra que recusa pagamentos internacionais e câmbio de contas brasileiras (página oficial de suporte da Stripe), com +2 % sobre a taxa base e cobrança só em BRL. O que o Mercado Pago tem a mais é Amex, nenhum adicional publicado e nenhuma aprovação prévia de atividade. Asaas e Pagar.me também aceitam estrangeiro, mas com restrições (tabela acima).
+- A vantagem do Mercado Pago sobre a Stripe para o público estrangeiro é, portanto, **pequena**; pesa de verdade só se a Stripe negar a atividade.
+
+**Novos candidatos avaliados**
+
+| Provedor | O que é | Números publicados | Pendências |
+|:--|:--|:--|:--|
+| **Woovi** | instituição de pagamento regulada pelo Banco Central, só Pix (e boleto); API, webhooks, sandbox e SDK Node (`@woovi/node-sdk`) | sem mensalidade nem adesão; Pix recebido **0,80 % (mín. R$ 0,50, máx. R$ 5,00) ou R$ 0,85 fixo** (o fixo compensa acima de ~R$ 106); reembolso de Pix grátis; saque grátis a partir de R$ 500 (abaixo, R$ 1,00); API e split grátis | prazo de recebimento, restrição de atividade e regras de disputa **não publicados** |
+| **AbacatePay** | gateway brasileiro para desenvolvedores; só CNPJ/MEI | Pix R$ 0,80 fixo; boleto R$ 2,50; cartão (**tabela informada pelo dono, não localizada por mim na documentação**): 1x 3,5 % + R$ 0,60, 2–6x 4 % + R$ 0,60, 7–12x 4,5 % + R$ 0,60, liberação em D+30 após análise; sem mensalidade | cartão estrangeiro, Amex, reembolso, análise por venda ou só no cadastro, restrição de atividade e histórico da empresa: **sem informação** |
+
+**Custo por venda de R$ 400 (metade Pix, metade cartão à vista)**
+
+| Combinação | Cartão nacional | Cartão estrangeiro |
+|:--|--:|--:|
+| Stripe (cartão) + Woovi (Pix R$ 0,85) | R$ 8,60 | R$ 12,60 (+2 % no cartão) |
+| Mercado Pago (cartão D30) + Woovi (Pix) | R$ 8,39 | R$ 8,39 |
+| Mercado Pago sozinho (D30) | R$ 9,94 | R$ 9,94 |
+| AbacatePay sozinha (não confirmada) | R$ 7,70 | desconhecido |
+
+**Estratégia [decisão 31]**
+
+1. **Alvo:** cartão na Stripe, Pix na Woovi. Motivos: Pix a R$ 0,85 em vez de R$ 3,96 (Mercado Pago); Stripe é conhecida pelo turista; sem mensalidade nos dois.
+2. **Condição:** a Stripe lista "agências de viagem e serviços de transporte" como atividade restrita (aprovação prévia). O cadastro descreve a atividade como **transfer privado ponto a ponto** (não excursão nem agência) e a resposta da Stripe decide o cartão. Pix na Woovi não depende disso.
+3. **Plano B / ponto de partida:** a conta do Mercado Pago já está ativa. O desenvolvimento começa com Mercado Pago atrás da interface do §4.7; Stripe e Woovi entram como novos provedores quando as contas forem aprovadas, sem mexer no checkout.
+4. **Limites aceitos:** a Stripe não aceita Amex nem Elo no exterior (confirmar com o suporte); a Stripe não devolve a tarifa no reembolso (hoje o Mercado Pago também não publica); dois provedores significam duas integrações, dois webhooks e duas conciliações (tratados no §4.7, itens 3 e 7).
+5. **AbacatePay:** fica fora da v1; reavaliar só se responder bem às perguntas de cartão estrangeiro e análise por venda.
+
+Perguntas prontas para o suporte de cada provedor: `docs/loja/pesquisa/perguntas-suporte-gateways.md`.
+
+Fontes (consultadas em 2026-10-19): mercadopago.com.br/ferramentas-para-vender/check-out · stripe.com/br/pricing · support.stripe.com/questions/transaction-declined-stripe-brazil-accounts · support.stripe.com/questions/accepted-payment-methods-in-brazil · asaas.com/precos-e-taxas · pagar.me/ofertas · woovi.com e woovi.com/pricing · abacatepay.com e docs.abacatepay.com.
+
 **WhatsApp Cloud API (Meta), tabela oficial em BRL vigente desde 1º/10/2026**
 
 | Categoria | Preço por mensagem | Uso na loja |
@@ -415,6 +451,8 @@ Premissas: ticket médio R$ 400; metade Pix, metade cartão à vista; 3 mensagen
 | **Total** | ≈ R$ 693 | ≈ R$ 1.196 | ≈ R$ 1.698 |
 
 Leitura: o custo **fixo** cai de R$ 250 (Paytour) para **R$ 175** (Vercel Pro + Supabase Small), abaixo do teto de R$ 250–300, já com o chatbot em Claude Sonnet 5.5 e as reservas automatizadas. O custo variável é taxa de pagamento, que a Paytour também cobrava por fora via PagSeguro/PayPal. Se a conta Vercel já for Pro, o fixo adicional cai para R$ 75.
+
+Nota de 2026-10-19 (decisão 31): a linha "Mercado Pago D30" acima vale para o gateway único. Com Stripe (cartão) + Woovi (Pix), o custo variável de pagamento por venda de R$ 400 cai de R$ 9,94 para R$ 8,60 (cartão nacional) ou sobe para R$ 12,60 (se todo o cartão for estrangeiro, por causa dos +2 %); com Mercado Pago no cartão + Woovi no Pix, R$ 8,39. Fixo continua R$ 0.
 
 **Supabase, estado verificado em 2026-10-09 [fatos]**
 
@@ -453,6 +491,9 @@ Esforço estimado: ~6 semanas de construção + 2 de folga. Se o Drive de fotos 
 | Risco | Impacto | Tratamento |
 |:--|:--|:--|
 | Gateway recusar cartão estrangeiro ou exigir cadastro longo | Alto (público ES/EN) | escolher gateway com cartão internacional confirmado (§7.3); abrir cadastro na semana 1 |
+| Stripe negar a atividade "serviços de transporte" (decisão 31) | Alto (derruba o cartão na Stripe) | cadastro descrevendo transfer privado ponto a ponto; Mercado Pago (conta já ativa) como cartão alternativo; Pix na Woovi independe disso |
+| Dois provedores de pagamento (Woovi + Stripe/MP): webhooks duplicados ou fora de ordem, reembolso no provedor errado | Médio | `gateway_eventos` com chave (gateway, evento_id); `pedidos.gateway` define o provedor do reembolso; teste de R$ 1 e estorno em cada um (§9, semana 3) |
+| Woovi sem informação publicada sobre prazo de recebimento, atividade restrita e disputa de Pix | Médio | perguntas ao suporte antes de integrar (`pesquisa/perguntas-suporte-gateways.md`) |
 | Plano Vercel Hobby (uso comercial proibido pelos termos) | Médio | confirmar plano; se Hobby, migrar para Pro (US$ 20/mês ≈ R$ 100, já contado no §8) |
 | Template de WhatsApp não aprovado a tempo pela Meta | Médio | submeter templates na semana 1; e-mail cobre enquanto isso |
 | Preços da Paytour desatualizados | Médio | dono revisa a tabela no §3 antes da semana 2 |
@@ -499,7 +540,7 @@ Quando começa: a auditoria (item 1) pode começar **antes** do site novo, porqu
 **Você (dono) faz**
 1. Compartilha a página do plano com o sócio (menu Share da página).
 2. Confere o plano da Vercel (Hobby ou Pro) e, se Hobby, faz a troca para Pro no painel (US$ 20/mês).
-3. Abre o cadastro no Mercado Pago com o CNPJ 17.427.292/0001-46 e conta bancária da empresa; eu guio passo a passo. Em paralelo, cadastro na Stripe (reserva), que pede aprovação prévia para "serviços de transporte".
+3. **(Atualizado em 2026-10-19, decisão 31)** Abre o cadastro na **Stripe** (cartão) e na **Woovi** (Pix) com o CNPJ 17.427.292/0001-46 e conta bancária da empresa; a Stripe pede aprovação prévia para "serviços de transporte", então o texto da atividade deve dizer transfer privado ponto a ponto. Envia as perguntas de `docs/loja/pesquisa/perguntas-suporte-gateways.md` aos dois suportes. A conta do **Mercado Pago**, já ativa, fica como plano B do cartão e como ponto de partida do desenvolvimento. Eu guio passo a passo.
 4. Sobe o porte do Supabase para Small no painel (Settings → Compute), de preferência fora do horário comercial; leva alguns minutos de indisponibilidade.
 5. Pede ao irmão acesso de leitura à conta do Google Ads (ou exportação das 3 campanhas) para a auditoria.
 6. Envia quando tiver: número CADASTUR, regra do adicional por passageiro.

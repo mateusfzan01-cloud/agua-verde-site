@@ -10,7 +10,7 @@
 |:--|:--|:--|
 | A. Protótipos das 4 telas + conteúdo (traduções, termos, templates WhatsApp, pedido TripAdvisor) | nada | **liberada** |
 | B. Código do site sem efeito em produção (rotas, i18n, catálogo, widget, camada de pagamento simulada, migrations escritas e não aplicadas) | aprovação das telas de A | aguardando A |
-| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | conta Mercado Pago; "pode" do dono para o banco; Supabase em Small | bloqueada |
+| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | conta Mercado Pago (plano B e ponto de partida); contas Stripe e Woovi (decisão 31, 2026-10-19); "pode" do dono para o banco; Supabase em Small | bloqueada |
 | D. Auditoria do Google Ads | acesso de leitura à conta | bloqueada |
 | E. Manutenção do Supabase (pg_net, índices) | "pode" explícito do dono | bloqueada |
 
@@ -53,7 +53,10 @@ supabase/migrations/ mas NÃO aplicadas. npm run build tem de passar. PR em rasc
 
 ```
 Pré-requisitos confirmados pelo dono: conta Mercado Pago ativa (credenciais nos segredos), Supabase em Small,
-"pode" explícito para aplicar as migrations da loja. Antes de qualquer alteração compartilhada, fazer a análise
+"pode" explícito para aplicar as migrations da loja. Pagamento (decisão 31, plano §7.3-B): alvo é cartão na Stripe
+e Pix na Woovi, condicionado à aprovação da Stripe; começar pelo Mercado Pago atrás da interface do §4.7 (roteada
+por forma de pagamento; `gateway_eventos` com chave (gateway, evento_id)) e só trocar quando o dono confirmar as
+contas aprovadas. Antes de qualquer alteração compartilhada, fazer a análise
 de risco para o PWA exigida no CLAUDE.md do appnativo-aguaverde. Implementar §4.2, §4.5, §4.7 do plano:
 aplicar migrations, Edge Function do webhook com gateway_eventos, confirmar_pedido transacional, cron de
 expiração, avisos (push no app, e-mail, WhatsApp), telas "Pedidos do site" no PWA e no app nativo.
