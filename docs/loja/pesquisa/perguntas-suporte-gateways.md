@@ -1,7 +1,8 @@
 # Perguntas para o suporte dos provedores de pagamento
 
 **Data:** 19 de outubro de 2026
-**Para quê:** fechar a decisão 31 do plano da loja (`docs/loja/PLANO_LOJA_PROPRIA_V1.md`, §7.3-B): cartão na Stripe, Pix na Woovi, Mercado Pago como plano B.
+**Para quê:** fechar as decisões 31 a 34 do plano da loja (`docs/loja/PLANO_LOJA_PROPRIA_V1.md`, §7.3-B): cartão na Stripe, Pix na Woovi. Mercado Pago só entra como contingência do cartão em 15/11 (nunca houve conta).
+**Atualizado em 2026-10-21:** a Stripe já tem conta em sandbox; a Woovi ainda não. O reembolso de Pix será manual pelo admin, então a pergunta 4 da Woovi passa a ser sobre o aviso (webhook) de reembolso feito pelo painel.
 **Como usar:** copie o bloco de cada empresa e envie pelo chat ou e-mail do suporte, ou pelo gerente de conta, se houver. Guarde as respostas por escrito (print ou e-mail) e anote a data ao lado de cada uma. Preço e regra mudam, e o que vale é o que eles responderem.
 
 **Quem somos (use no começo de todas as mensagens):**
@@ -37,7 +38,7 @@ A página pública da Woovi não diz o prazo de recebimento nem se há restriç�
 > 1. A atividade de transporte e turismo é aceita? Há restrição ou documentação extra (CADASTUR)?
 > 2. O Pix cai na conta Woovi na hora? Em quanto tempo posso sacar para o meu banco, e a partir de que valor o saque é grátis?
 > 3. Entre os planos "percentual" (0,80%, mínimo R$ 0,50, máximo R$ 5,00) e "fixo" (R$ 0,85), posso escolher e trocar depois? O plano vale para cobranças via API?
-> 4. Como funciona o reembolso de Pix via API: é total e parcial, por quanto tempo depois do pagamento, e precisa de saldo na conta?
+> 4. Vamos fazer o reembolso de Pix **pelo painel** da Woovi. Quando o reembolso é feito no painel, a Woovi manda um **webhook** avisando (qual evento)? E pela API (`POST /api/v1/charge/{id}/refund`): por quanto tempo depois do pagamento é possível, e precisa de saldo na conta?
 > 5. Como funciona a "disputa de compra" ou o MED (Mecanismo Especial de Devolução)? Em quais casos o valor pode ser retirado da nossa conta depois de recebido?
 > 6. Os webhooks têm assinatura para validar a origem? Eles podem chegar duplicados ou fora de ordem? Há tentativas de reenvio, e por quanto tempo?
 > 7. Qual o tempo de validade padrão de um QR Code Pix dinâmico, e posso definir o meu (ex.: 30 minutos)?
@@ -46,9 +47,9 @@ A página pública da Woovi não diz o prazo de recebimento nem se há restriç�
 
 ---
 
-## 3. Mercado Pago (plano B do cartão e ponto de partida)
+## 3. Mercado Pago (só se a contingência de 15/11 for acionada)
 
-A conta já está ativa. As dúvidas abaixo são as que a página não responde.
+Não existe conta. Estas perguntas só serão enviadas se a Stripe não aprovar a produção até 15/11 e for preciso abrir o Mercado Pago para o cartão (decisão 32).
 
 > Olá. Somos a Água Verde Transfers (CNPJ 17.427.292/0001-46) e vendemos **transfer privado** pelo nosso site, via Checkout Pro / API.
 >
@@ -80,6 +81,6 @@ Fora da v1. Perguntas para guardar caso a taxa do cartão (3,5% + R$ 0,60 no à 
 | Resposta | O que fazer |
 |:--|:--|
 | Stripe **aprova** a atividade | Seguir a estratégia da decisão 31 (cartão Stripe, Pix Woovi). |
-| Stripe **nega** ou pede muita coisa | Cartão no Mercado Pago (conta ativa) e Pix na Woovi ou no próprio Mercado Pago. |
+| Stripe **nega** ou não responde até 15/11 | Abrir conta no Mercado Pago para o cartão (código pronto); Pix segue na Woovi. |
 | Woovi diz que transporte é restrito ou o Pix só cai em muitos dias | Pix no Mercado Pago (0,99%) até esclarecer. |
 | Stripe diz que não aceita Amex | Anotar na tela de pagamento do site e deixar Amex para o Mercado Pago, se a decisão passar a ser híbrida. |
