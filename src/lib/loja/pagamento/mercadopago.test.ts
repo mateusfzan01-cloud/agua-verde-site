@@ -134,7 +134,7 @@ describe('validarWebhook', () => {
   it('assinatura boa: consulta o pagamento e devolve o evento com o estado da API (não o do aviso)', async () => {
     const { f, chamadas } = mockFetch(pagamento())
     const e = await gw(f).validarWebhook(corpo, cab(assinaturaDeTeste(SEGREDO, '987', 'req-1')), url)
-    expect(e).toEqual({ eventoId: 'mp_987_approved', gatewayRef: '987', pedidoId: PEDIDO, status: 'aprovado', valor: 740 })
+    expect(e).toEqual({ gateway: 'mercadopago', eventoId: 'mp_987_approved', gatewayRef: '987', pedidoId: PEDIDO, status: 'aprovado', valor: 740 })
     expect(chamadas[0].url).toContain('/v1/payments/987')
   })
 

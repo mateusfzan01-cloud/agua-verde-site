@@ -1,7 +1,7 @@
 /**
  * Gateway SIMULADO: não cobra ninguém e não fala com nenhum banco.
  * Serve para ver o fluxo inteiro (checkout, pagamento, confirmação, reembolso)
- * sem conta no Mercado Pago. As cobranças ficam em memória.
+ * sem conta em provedor nenhum. As cobranças ficam em memória. Serve para Pix e para cartão.
  */
 import { createHmac, timingSafeEqual } from 'node:crypto'
 import type {
@@ -76,7 +76,7 @@ export class GatewaySimulado implements GatewayDePagamento {
     try {
       const e = JSON.parse(corpoCru) as Partial<EventoDoGateway>
       if (!e.eventoId || !e.gatewayRef || !e.pedidoId || !e.status) return null
-      return { eventoId: e.eventoId, gatewayRef: e.gatewayRef, pedidoId: e.pedidoId, status: e.status, valor: e.valor }
+      return { gateway: this.nome, eventoId: e.eventoId, gatewayRef: e.gatewayRef, pedidoId: e.pedidoId, status: e.status, valor: e.valor }
     } catch {
       return null
     }
@@ -91,6 +91,7 @@ export class GatewaySimulado implements GatewayDePagamento {
     if (!c) return null
     c.status = 'aprovado'
     const corpo = JSON.stringify({
+      gateway: this.nome,
       eventoId: `evt_${gatewayRef}_aprovado`,
       gatewayRef,
       pedidoId: c.pedidoId,
