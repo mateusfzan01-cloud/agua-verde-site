@@ -11,7 +11,7 @@ import { redirect } from '@/i18n/config'
 import { routing, type Locale } from '@/i18n/routing'
 import { lerQuery } from '@/lib/loja/checkout-url'
 import { produtoPorSlug } from '@/lib/loja/catalogo'
-import { cancelarPedido, iniciarPagamento, pedirLinkDaReserva, processarWebhook, reenviarVoucher, type ResultadoDoCancelamento } from '@/lib/loja/fluxo'
+import { cancelarPedido, gatewayDoPedido, iniciarPagamento, pedirLinkDaReserva, processarWebhook, reenviarVoucher, type ResultadoDoCancelamento } from '@/lib/loja/fluxo'
 import { criarPedido } from '@/lib/loja/pedidos'
 import type { MeioDePagamento } from '@/lib/loja/pagamento/gateway'
 import { CABECALHO_ASSINATURA } from '@/lib/loja/pagamento/simulado'
@@ -69,13 +69,16 @@ export async function finalizarCompraAction(formData: FormData): Promise<{ erros
 export async function simularPagamentoAction(pedidoId: string, localeEntrada: string): Promise<{ ok: boolean }> {
   const locale = idioma(localeEntrada)
   const deps = dependencias()
-  if (deps.gateway.nome !== 'simulado' || process.env.LOJA_PERMITE_SIMULACAO === 'false') return { ok: false }
+  if (process.env.LOJA_PERMITE_SIMULACAO === 'false') return { ok: false }
   const pedido = await deps.repo.buscarPorId(pedidoId)
   if (!pedido?.gatewayRef) return { ok: false }
+  // Só para pedido cobrado pelo simulado: um pedido do provedor real nunca é "pago" por este botão.
+  const gateway = gatewayDoPedido(deps, pedido)
+  if (gateway?.nome !== 'simulado') return { ok: false }
   const aviso = gatewaySimulado().simularPagamentoAprovado(pedido.gatewayRef)
   if (!aviso) return { ok: false }
   const cabecalhos = new Headers({ [CABECALHO_ASSINATURA]: aviso.assinatura })
-  await processarWebhook(deps, aviso.corpo, cabecalhos)
+  await processarWebhook(deps, gateway, aviso.corpo, cabecalhos)
   redirect({ href: `/reserva/${pedido.tokenAcesso}`, locale })
   return { ok: true }
 }

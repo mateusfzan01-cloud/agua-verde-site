@@ -12,6 +12,7 @@ Nenhuma tabela existente foi alterada; as novas estão **vazias** e o site ainda
 | 20261017194244 | `loja_endurecer_permissoes` | tira permissões de escrita de anon/authenticated (defesa em dobro com o RLS) |
 | 20261017194355 | `loja_reserva_por_token_so_servidor` | a leitura da reserva só roda pelo servidor (chave de serviço) |
 | 20261017200000 | `loja_numero_reembolso_pagamento_tardio` | `proximo_numero_pedido`; `reembolsar_pedido` (cancela as viagens não iniciadas); `confirmar_pedido` aceita pedido expirado pago depois do prazo |
+| **pendente** | `loja_dois_provedores` (2026-10-22, etapa B1) | `gateway_eventos` ganha a coluna `gateway` e a chave vira `(gateway, evento_id)`; `pedidos` ganha a restrição "pago ou reembolsado exige `gateway`". **Ainda não aplicada no banco**: aplicar com o "pode" do dono (tabelas vazias, `ALTER` simples) |
 
 ## O que foi conferido no banco real (só leitura) antes de aplicar
 

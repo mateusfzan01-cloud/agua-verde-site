@@ -12,16 +12,32 @@ import { avaliarCancelamento, HORA_REFERENCIA_PASSEIO, type PeriodoAltaTemporada
 import type { GatewayDePagamento, MeioDePagamento } from './pagamento/gateway'
 import type { Pedido, RepositorioDePedidos } from './pedidos-tipos'
 
+/** Um provedor por forma de pagamento (decisão 31): o Pix e o cartão podem ser empresas diferentes. */
+export interface Gateways {
+  pix: GatewayDePagamento
+  cartao: GatewayDePagamento
+}
+
 export interface Dependencias {
   repo: RepositorioDePedidos
-  gateway: GatewayDePagamento
+  gateways: Gateways
   /** Aviso ao passageiro (e-mail/WhatsApp). Na simulação só registra. */
   enviarLinkDaReserva?: (pedido: Pedido) => Promise<void>
   periodosDeAltaTemporada?: PeriodoAltaTemporada[]
 }
 
+/**
+ * O provedor que cobrou (ou vai cobrar) este pedido. Depois de `iniciarPagamento` o pedido lembra o nome
+ * (`pedido.gateway`), e consulta e reembolso voltam sempre a ele, mesmo que a configuração mude depois.
+ * Devolve undefined se o pedido foi cobrado por um provedor que não está mais ligado.
+ */
+export function gatewayDoPedido({ gateways }: Dependencias, pedido: Pick<Pedido, 'gateway' | 'meio'>): GatewayDePagamento | undefined {
+  if (pedido.gateway) return [gateways.pix, gateways.cartao].find((g) => g.nome === pedido.gateway)
+  return pedido.meio ? gateways[pedido.meio] : undefined
+}
+
 export async function iniciarPagamento(
-  { repo, gateway }: Dependencias,
+  { repo, gateways }: Dependencias,
   pedidoId: string,
   meio: MeioDePagamento,
   agora = new Date(),
@@ -38,6 +54,7 @@ export async function iniciarPagamento(
     return { ok: false, motivo: 'expirado' }
   }
 
+  const gateway = gateways[meio]
   const cobranca = await gateway.criarCobranca({
     pedidoId: pedido.id,
     valor: pedido.valorTotal,
@@ -57,23 +74,26 @@ export async function iniciarPagamento(
 }
 
 /**
- * Recebe o aviso do gateway. `corpoCru` é o texto exato da requisição
- * (await req.text()): a assinatura é conferida nele, antes de qualquer JSON.parse.
- * Só responde 2xx depois de gravar.
+ * Recebe o aviso de UM provedor (cada um tem a sua rota de webhook, que diz qual é). `corpoCru` é o
+ * texto exato da requisição (await req.text()): a assinatura é conferida nele, antes de qualquer
+ * JSON.parse. Só responde 2xx depois de gravar.
  *
  * Pagamento aprovado com valor diferente do pedido NÃO confirma: fica registrado
  * (evento + auditoria) para a equipe conferir.
  */
 export async function processarWebhook(
-  { repo, gateway }: Dependencias,
+  { repo }: Dependencias,
+  gateway: GatewayDePagamento,
   corpoCru: string,
   cabecalhos: { get(nome: string): string | null },
   agora = new Date(),
   url?: URL,
 ): Promise<{ status: 200 | 401; corpo: 'ok' | 'duplicado' | 'ignorado' | 'valor_divergente' | 'assinatura_invalida' }> {
-  const evento = await gateway.validarWebhook(corpoCru, cabecalhos, url)
-  if (!evento) return { status: 401, corpo: 'assinatura_invalida' }
-  if (evento === 'ignorar') return { status: 200, corpo: 'ignorado' }
+  const validado = await gateway.validarWebhook(corpoCru, cabecalhos, url)
+  if (!validado) return { status: 401, corpo: 'assinatura_invalida' }
+  if (validado === 'ignorar') return { status: 200, corpo: 'ignorado' }
+  // O nome vem da rota que recebeu o aviso, nunca do corpo: é ele que separa os ids de cada provedor.
+  const evento = { ...validado, gateway: gateway.nome }
 
   const novo = await repo.registrarEventoDoGateway(evento)
   if (!novo) return { status: 200, corpo: 'duplicado' }
@@ -109,19 +129,23 @@ export async function processarWebhook(
  * "aprovado" é que grava o evento e confirma (mesma função do webhook).
  */
 export async function estadoDoPedido(
-  { repo, gateway }: Dependencias,
+  deps: Dependencias,
   tokenAcesso: string,
   agora = new Date(),
 ): Promise<Pedido | null> {
+  const { repo } = deps
   let pedido = await repo.buscarPorToken(tokenAcesso)
   if (!pedido) return null
 
   // Expirado também conta: pagamento que cai depois do prazo é honrado.
-  if ((pedido.status === 'pendente_pagamento' || pedido.status === 'expirado') && pedido.gatewayRef) {
+  // Pergunta ao provedor que abriu a cobrança; se ele não está mais ligado, a página fica só na leitura.
+  const gateway = gatewayDoPedido(deps, pedido)
+  if (gateway && (pedido.status === 'pendente_pagamento' || pedido.status === 'expirado') && pedido.gatewayRef) {
     const consulta = await gateway.consultarPagamento(pedido.gatewayRef)
     if (consulta.status === 'aprovado') {
       const ref = consulta.gatewayRef ?? pedido.gatewayRef
       await repo.registrarEventoDoGateway({
+        gateway: gateway.nome,
         eventoId: `consulta_${ref}_aprovado`,
         gatewayRef: ref,
         pedidoId: pedido.id,
@@ -154,10 +178,13 @@ export async function cancelarPedido(
   tokenAcesso: string,
   agora = new Date(),
 ): Promise<ResultadoDoCancelamento> {
-  const { repo, gateway } = deps
+  const { repo } = deps
   const pedido = await repo.buscarPorToken(tokenAcesso)
   if (!pedido) return { ok: false, motivo: 'nao_encontrado' }
   if (pedido.status !== 'pago' || !pedido.pagoEm || !pedido.gatewayRef) return { ok: false, motivo: 'nao_esta_pago' }
+  // O reembolso volta pelo provedor que cobrou; se ele não está mais ligado, a equipe resolve pelo painel.
+  const gateway = gatewayDoPedido(deps, pedido)
+  if (!gateway) return { ok: false, motivo: 'falha_no_reembolso' }
 
   // O prazo conta a partir do primeiro trecho (a ida).
   const primeiro = pedido.itens[0]

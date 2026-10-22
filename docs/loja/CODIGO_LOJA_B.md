@@ -100,8 +100,9 @@ Tudo vem **desligado**: sem nenhuma variável, a loja segue com pedidos em memó
 |:--|:--|
 | `LOJA_REPOSITORIO=supabase` | grava os pedidos no Supabase (tabelas `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos`) |
 | `SUPABASE_SERVICE_ROLE_KEY` | chave de serviço, **só no servidor** (nunca `NEXT_PUBLIC_`). Preferir só no ambiente "Preview" até a loja abrir |
-| `LOJA_GATEWAY=mercadopago` | cobra pelo Mercado Pago (exige `LOJA_REPOSITORIO=supabase`, senão a loja nem sobe) |
-| `MERCADOPAGO_ACCESS_TOKEN` | credencial do Mercado Pago (de teste `TEST-...` ou de produção) |
+| `LOJA_GATEWAY_PIX=<provedor>` | quem cobra o **Pix** (decisão 31: `woovi`, etapa B2; hoje aceita `simulado` ou `mercadopago`). Provedor real exige `LOJA_REPOSITORIO=supabase`, senão a loja nem sobe |
+| `LOJA_GATEWAY_CARTAO=<provedor>` | quem cobra o **cartão** (decisão 31: `stripe`, etapa B3; hoje aceita `simulado` ou `mercadopago`). Cada pedido lembra quem o cobrou (`pedidos.gateway`); reembolso e consulta voltam a esse provedor. `LOJA_GATEWAY=<provedor>` (forma antiga) vale para os dois quando as novas não existem |
+| `MERCADOPAGO_ACCESS_TOKEN` | credencial do Mercado Pago (de teste `TEST-...` ou de produção). **Nunca houve conta** (decisão 32): o adaptador fica dormente, só para a contingência de 15/11 |
 | `MERCADOPAGO_WEBHOOK_SECRET` | "chave secreta" do webhook, do painel do Mercado Pago |
 | `LOJA_URL_BASE` | endereço público do site, ex.: `https://aguaverdeviagens.com.br` (usado no aviso e no retorno do cartão) |
 | `LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true` | só se quiser banco real **com gateway simulado**: o "Simular pagamento" passa a criar viagens de verdade (aparecem para a equipe). Sem isso, volta para a memória |

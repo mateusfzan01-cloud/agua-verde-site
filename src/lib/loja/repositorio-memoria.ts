@@ -60,8 +60,10 @@ export class RepositorioEmMemoria implements RepositorioDePedidos {
   }
 
   async registrarEventoDoGateway(evento: EventoDoGateway): Promise<boolean> {
-    if (this.eventos.has(evento.eventoId)) return false
-    this.eventos.set(evento.eventoId, evento)
+    // Como no banco: a chave é (gateway, evento_id); o mesmo id em provedores diferentes não é duplicata.
+    const chave = `${evento.gateway}:${evento.eventoId}`
+    if (this.eventos.has(chave)) return false
+    this.eventos.set(chave, evento)
     return true
   }
 

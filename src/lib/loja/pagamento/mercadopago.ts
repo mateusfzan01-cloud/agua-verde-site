@@ -203,6 +203,7 @@ export class GatewayMercadoPago implements GatewayDePagamento {
 
     const status = mapearStatus(p.status)
     return {
+      gateway: this.nome,
       eventoId: `mp_${p.id}_${p.status}`,
       gatewayRef: String(p.id),
       pedidoId: p.external_reference.toLowerCase(),
