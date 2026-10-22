@@ -88,7 +88,7 @@ export async function processarWebhook(
   cabecalhos: { get(nome: string): string | null },
   agora = new Date(),
   url?: URL,
-): Promise<{ status: 200 | 401; corpo: 'ok' | 'duplicado' | 'ignorado' | 'valor_divergente' | 'assinatura_invalida' }> {
+): Promise<{ status: 200 | 401; corpo: 'ok' | 'duplicado' | 'ignorado' | 'valor_divergente' | 'provedor_divergente' | 'assinatura_invalida' }> {
   const validado = await gateway.validarWebhook(corpoCru, cabecalhos, url)
   if (!validado) return { status: 401, corpo: 'assinatura_invalida' }
   if (validado === 'ignorar') return { status: 200, corpo: 'ignorado' }
@@ -98,8 +98,20 @@ export async function processarWebhook(
   const novo = await repo.registrarEventoDoGateway(evento)
   if (!novo) return { status: 200, corpo: 'duplicado' }
 
+  // Um aviso só vale para pedido cobrado pelo MESMO provedor: o aviso de um (por exemplo, o simulado)
+  // nunca paga nem reembolsa um pedido do outro. Fica registrado para a equipe ver.
+  const pedido = await repo.buscarPorId(evento.pedidoId)
+  if (pedido && pedido.gateway && pedido.gateway !== gateway.nome) {
+    await repo.registrarAuditoria({
+      pedidoId: pedido.id,
+      tipo: 'provedor_divergente',
+      detalhes: { avisoDe: gateway.nome, pedidoCobradoPor: pedido.gateway, eventoId: evento.eventoId, gatewayRef: evento.gatewayRef },
+      em: agora,
+    })
+    return { status: 200, corpo: 'provedor_divergente' }
+  }
+
   if (evento.status === 'aprovado') {
-    const pedido = await repo.buscarPorId(evento.pedidoId)
     if (pedido && evento.valor !== undefined && Math.abs(evento.valor - pedido.valorTotal) > 0.005) {
       await repo.registrarAuditoria({
         pedidoId: pedido.id,
@@ -112,7 +124,6 @@ export async function processarWebhook(
     await repo.confirmarPedido(evento.pedidoId, evento.gatewayRef, agora)
   } else if (evento.status === 'reembolsado') {
     // Reembolso feito direto no painel do gateway: o pedido acompanha (e as viagens são canceladas).
-    const pedido = await repo.buscarPorId(evento.pedidoId)
     if (pedido && pedido.status === 'pago') {
       pedido.status = 'reembolsado'
       pedido.canceladoEm = agora

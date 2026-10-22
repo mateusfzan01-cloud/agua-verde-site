@@ -38,7 +38,8 @@ describe('escolha do provedor por forma de pagamento', () => {
   })
 
   it('Pix e cartão podem ter provedores diferentes; só o ligado responde pelo nome', async () => {
-    const s = await carregar({ ...credenciais, LOJA_GATEWAY_PIX: 'simulado', LOJA_GATEWAY_CARTAO: 'mercadopago' })
+    // Misto (Pix simulado, cartão real) com banco: só sobe com a opção de teste ligada (ver o teste abaixo).
+    const s = await carregar({ ...credenciais, LOJA_GATEWAY_PIX: 'simulado', LOJA_GATEWAY_CARTAO: 'mercadopago', LOJA_PERMITE_VIAGEM_REAL_EM_TESTE: 'true' })
     const d = s.dependencias()
     expect(d.gateways.pix.nome).toBe('simulado')
     expect(d.gateways.cartao.nome).toBe('mercadopago')
@@ -64,6 +65,14 @@ describe('escolha do provedor por forma de pagamento', () => {
     expect(() => s.dependencias()).toThrow(/LOJA_GATEWAY_PIX=woovi: provedor desconhecido/)
     const s2 = await carregar({ LOJA_GATEWAY_CARTAO: 'Stripe' })
     expect(() => s2.dependencias()).toThrow(/LOJA_GATEWAY_CARTAO=stripe: provedor desconhecido/)
+  })
+
+  it('um meio real e o outro simulado, com banco real, não sobe sem a opção de teste', async () => {
+    const s = await carregar({ ...credenciais, LOJA_GATEWAY_CARTAO: 'mercadopago' }) // Pix fica no simulado
+    expect(() => s.dependencias()).toThrow(/LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true/)
+    const s2 = await carregar({ ...credenciais, LOJA_GATEWAY_CARTAO: 'mercadopago', LOJA_PERMITE_VIAGEM_REAL_EM_TESTE: 'true' })
+    expect(s2.repositorio().constructor.name).toBe('RepositorioSupabase')
+    expect([s2.dependencias().gateways.pix.nome, s2.dependencias().gateways.cartao.nome]).toEqual(['simulado', 'mercadopago'])
   })
 
   it('tudo simulado com banco real só grava com LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true', async () => {

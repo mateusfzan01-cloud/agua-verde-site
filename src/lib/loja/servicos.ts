@@ -13,8 +13,10 @@
  *
  * Travas de segurança:
  *  - provedor real com repositório em memória não sobe (o pedido pago sumiria);
- *  - tudo simulado com banco real só com LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true, porque "Simular pagamento"
- *    cria viagens de verdade na operação (aparecem para a equipe); sem isso, volta para a memória;
+ *  - simulado com banco real só com LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true, porque "Simular pagamento"
+ *    cria viagens de verdade na operação (aparecem para a equipe). Tudo simulado sem a opção: volta para a
+ *    memória com aviso. Um meio real e o outro simulado sem a opção: a loja não sobe, porque o lado real
+ *    precisa do banco e o lado simulado criaria viagens de verdade sem ninguém pedir;
  *  - nome de provedor desconhecido derruba a loja na subida, dizendo qual variável está errada.
  */
 import { createClient } from '@supabase/supabase-js'
@@ -63,6 +65,11 @@ export function usaProvedorReal(): boolean {
   return nomeDoProvedor('pix') !== 'simulado' || nomeDoProvedor('cartao') !== 'simulado'
 }
 
+/** Algum dos dois meios é o simulado. */
+export function usaSimulado(): boolean {
+  return nomeDoProvedor('pix') === 'simulado' || nomeDoProvedor('cartao') === 'simulado'
+}
+
 /** O provedor está ligado para pelo menos um meio (as rotas de webhook usam isto para responder 404 ao resto). */
 export function usaProvedor(nome: string): boolean {
   return nomeDoProvedor('pix') === nome || nomeDoProvedor('cartao') === nome
@@ -97,7 +104,14 @@ function gatewayMercadoPago(): GatewayMercadoPago {
 
 export function repositorio(): RepositorioDePedidos {
   if (usaBanco()) {
-    if (usaProvedorReal() || process.env.LOJA_PERMITE_VIAGEM_REAL_EM_TESTE === 'true') return repositorioSupabase()
+    const permiteSimuladoNoBanco = process.env.LOJA_PERMITE_VIAGEM_REAL_EM_TESTE === 'true'
+    if (!usaSimulado() || permiteSimuladoNoBanco) return repositorioSupabase()
+    if (usaProvedorReal()) {
+      throw new Error(
+        'Um meio com provedor real e o outro simulado, com LOJA_REPOSITORIO=supabase, exige LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true: ' +
+          'o "Simular pagamento" criaria viagens de verdade. Ponha os dois meios em provedor real ou ligue a opção de teste.',
+      )
+    }
     console.warn('[loja] LOJA_REPOSITORIO=supabase com gateway simulado exige LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true; usando memória.')
   } else if (usaProvedorReal()) {
     throw new Error('Provedor de pagamento real exige LOJA_REPOSITORIO=supabase (pedidos em memória se perderiam).')

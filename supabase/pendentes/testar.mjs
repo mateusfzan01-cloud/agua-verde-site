@@ -138,6 +138,10 @@ await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,g
 assert.equal((await um(`SELECT public.confirmar_pedido('${p2.id}','sim_2') AS r`)).r.motivo, 'sem_evento_aprovado')
 ok('evento aprovado de OUTRO pedido não confirma este')
 
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('outro-provedor','e-outro','${p2.id}','sim_3','aprovado')`)
+assert.equal((await um(`SELECT public.confirmar_pedido('${p2.id}','sim_3') AS r`)).r.motivo, 'sem_evento_aprovado')
+ok('evento aprovado de OUTRO provedor não confirma o pedido (só o provedor que o cobrou)')
+
 await db.exec(`UPDATE public.pedido_itens SET hora = NULL WHERE pedido_id='${p2.id}'`)
 await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e3','${p2.id}','sim_3','aprovado')`)
 await um(`SELECT public.confirmar_pedido('${p2.id}','sim_3')`)

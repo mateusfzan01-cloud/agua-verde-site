@@ -424,6 +424,25 @@ describe('dois provedores (decisão 31): Pix e cartão em empresas diferentes', 
     expect(pixGw.reembolsos).toEqual([])
   })
 
+  it('aviso de um provedor nunca paga nem reembolsa pedido cobrado pelo outro (fica na auditoria)', async () => {
+    const a = await pedidoPendente()
+    await iniciarPagamento(d, a.id, 'cartao', agora) // cobrado pela stripe-falso
+    // O provedor de Pix manda um aviso "aprovado" apontando para o pedido do cartão.
+    const corpo = JSON.stringify({ eventoId: 'evt_intruso', gatewayRef: `stripe-falso_${a.id}`, pedidoId: a.id, status: 'aprovado' })
+    const r = await processarWebhook(d, pixGw, corpo, semCabecalho, agora)
+    expect(r).toEqual({ status: 200, corpo: 'provedor_divergente' })
+    expect((await repo.buscarPorId(a.id))!.status).toBe('pendente_pagamento')
+    expect(repo.auditoriaDoPedido(a.id).map((e) => e.tipo)).toContain('provedor_divergente')
+    // Nem pela porta de confirmação: evento aprovado gravado por outro provedor não serve.
+    await repo.registrarEventoDoGateway({ gateway: 'woovi-falso', eventoId: 'evt_2', gatewayRef: `stripe-falso_${a.id}`, pedidoId: a.id, status: 'aprovado' })
+    expect(await repo.confirmarPedido(a.id, `stripe-falso_${a.id}`)).toEqual({ ok: false, motivo: 'sem_evento_aprovado' })
+    // Depois de pago pelo provedor certo, um "reembolsado" do outro também não muda nada.
+    await processarWebhook(d, cartaoGw, cartaoGw.aviso(`stripe-falso_${a.id}`), semCabecalho, agora)
+    const reembolsoIntruso = JSON.stringify({ eventoId: 'evt_reembolso_intruso', gatewayRef: `stripe-falso_${a.id}`, pedidoId: a.id, status: 'reembolsado' })
+    expect((await processarWebhook(d, pixGw, reembolsoIntruso, semCabecalho, agora)).corpo).toBe('provedor_divergente')
+    expect((await repo.buscarPorId(a.id))!.status).toBe('pago')
+  })
+
   it('a consulta da página só pergunta ao provedor do pedido, e o nome gravado vem da rota, não do corpo', async () => {
     const b = await pedidoPendente()
     await iniciarPagamento(d, b.id, 'pix', agora)
