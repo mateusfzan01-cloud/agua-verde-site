@@ -143,7 +143,7 @@ describe('RepositorioSupabase.salvar', () => {
 })
 
 describe('RepositorioSupabase: eventos e confirmação', () => {
-  const evento = { eventoId: 'mp_987_approved', gatewayRef: '987', pedidoId: PEDIDO_ID, status: 'aprovado' as const, valor: 740 }
+  const evento = { gateway: 'mercadopago', eventoId: 'mp_987_approved', gatewayRef: '987', pedidoId: PEDIDO_ID, status: 'aprovado' as const, valor: 740 }
 
   it('evento novo: true; repetido (23505): false; pedido inexistente (23503): false; outro erro sobe', async () => {
     const com = (error: { message: string; code?: string } | null) => new RepositorioSupabase(falso(() => ({ error })).db)

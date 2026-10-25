@@ -7,7 +7,7 @@ import { Link } from '@/i18n/config'
 import { routing } from '@/i18n/routing'
 import { linksDeAcompanhamento } from '@/lib/loja/acompanhar'
 import { produtoPorSlug, tipoDeVeiculo } from '@/lib/loja/catalogo'
-import { estadoDoPedido } from '@/lib/loja/fluxo'
+import { estadoDoPedido, gatewayDoPedido } from '@/lib/loja/fluxo'
 import { formatarDataEHora, formatarMomento } from '@/lib/loja/formatos'
 import { formatarReais } from '@/lib/loja/moeda'
 import { avaliarCancelamento, HORA_REFERENCIA_PASSEIO } from '@/lib/loja/politicas'
@@ -144,7 +144,7 @@ export default async function Reserva({ params }: { params: Promise<{ locale: st
               <p className="text-center text-[12.5px] text-[#5a6570]">{t('acompD')}</p>
             </div>
           ) : (
-            deps.gateway.nome === 'simulado' && (
+            gatewayDoPedido(deps, pedido)?.nome === 'simulado' && (
               <div className="grid gap-1.5">
                 <span aria-disabled="true" className="flex cursor-not-allowed items-center justify-center gap-2 rounded-xl bg-[#1a5c38]/40 px-[18px] py-3.5 text-base font-semibold text-white">
                   <MapPin className="h-[18px] w-[18px]" aria-hidden="true" />
@@ -188,7 +188,7 @@ export default async function Reserva({ params }: { params: Promise<{ locale: st
         <MinhaReservaForm />
       </section>
 
-      {deps.gateway.nome === 'simulado' && <p className="rounded-lg bg-[#f8efd9] p-3 text-sm">{t('modoTeste')}</p>}
+      {gatewayDoPedido(deps, pedido)?.nome === 'simulado' && <p className="rounded-lg bg-[#f8efd9] p-3 text-sm">{t('modoTeste')}</p>}
     </div>
   )
 }

@@ -30,7 +30,7 @@ await db.exec(`
     $$ SELECT coalesce(current_setting('app.admin', true), '') = 'on' $$;
 `)
 
-for (const arq of ['20261017193120_loja_catalogo.sql', '20261017193226_loja_pedidos.sql', '20261017193302_loja_funcoes.sql', '20261017194244_loja_endurecer_permissoes.sql', '20261017194355_loja_reserva_por_token_so_servidor.sql', '20261017200000_loja_numero_reembolso_pagamento_tardio.sql']) {
+for (const arq of ['20261017193120_loja_catalogo.sql', '20261017193226_loja_pedidos.sql', '20261017193302_loja_funcoes.sql', '20261017194244_loja_endurecer_permissoes.sql', '20261017194355_loja_reserva_por_token_so_servidor.sql', '20261017200000_loja_numero_reembolso_pagamento_tardio.sql', '20261022000000_loja_dois_provedores.sql']) {
   await db.exec(readFileSync(new URL(arq, new URL('../migrations/', import.meta.url)), 'utf8'))
   console.log('ok  ', arq)
 }
@@ -71,8 +71,8 @@ ok('visitante anônimo não escreve no catálogo')
 
 // --- pedidos ---
 const novoPedido = async (valor) => {
-  const p = await um(`INSERT INTO public.pedidos (produto_slug,tipo,idioma,selecao,linhas,valor_total,passageiro_nome,passageiro_telefone,passageiro_email,consent_lgpd_em,expira_em)
-    VALUES ('maragogi-ida-volta','transfer','es','{"veiculos":{"sedan_economico":1}}','[]',$1,'Lucía F','+5491112345678','l@x.com',now(), now() + interval '30 minutes') RETURNING *`, [valor])
+  const p = await um(`INSERT INTO public.pedidos (produto_slug,tipo,idioma,selecao,linhas,valor_total,passageiro_nome,passageiro_telefone,passageiro_email,consent_lgpd_em,expira_em,gateway)
+    VALUES ('maragogi-ida-volta','transfer','es','{"veiculos":{"sedan_economico":1}}','[]',$1,'Lucía F','+5491112345678','l@x.com',now(), now() + interval '30 minutes','simulado') RETURNING *`, [valor])
   await db.exec(`INSERT INTO public.pedido_itens (pedido_id,ordem,origem,destino,data,hora) VALUES
     ('${p.id}',1,'Aeroporto','Maragogi','2026-12-15','14:30'), ('${p.id}',2,'Maragogi','Aeroporto','2026-12-22','10:00')`)
   return p
@@ -98,13 +98,17 @@ ok('admin/gerente lê pedidos; usuário autenticado comum não vê nenhum')
 
 // --- confirmar_pedido ---
 assert.deepEqual((await um(`SELECT public.confirmar_pedido('${p1.id}','sim_1') AS r`)).r, { ok: false, motivo: 'sem_evento_aprovado' })
-await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e0','${p1.id}','sim_1','recusado')`)
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e0','${p1.id}','sim_1','recusado')`)
 assert.equal((await um(`SELECT public.confirmar_pedido('${p1.id}','sim_1') AS r`)).r.ok, false)
 assert.equal((await um(`SELECT count(*)::int AS n FROM public.viagens`)).n, 0)
 ok('sem evento aprovado (ou só recusado) não confirma e não cria viagem')
 
-await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e1','${p1.id}','sim_1','aprovado')`)
-await falha(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e1','${p1.id}','sim_1','aprovado')`, /gateway_eventos_pkey|duplicate key/)
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e1','${p1.id}','sim_1','aprovado')`)
+await falha(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e1','${p1.id}','sim_1','aprovado')`, /gateway_eventos_pkey|duplicate key/)
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('outro-provedor','e1','${p1.id}','sim_1','recusado')`)
+ok('mesmo id de evento vindo de outro provedor não é duplicata: a chave é (gateway, evento_id)')
+await falha(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e-sem-provedor','${p1.id}','sim_1','aprovado')`, /gateway/)
+ok('evento sem o nome do provedor é recusado')
 ok('evento repetido do gateway falha no banco (idempotência)')
 
 assert.deepEqual((await um(`SELECT public.confirmar_pedido('${p1.id}','sim_1') AS r`)).r, { ok: true, ja_confirmado: false })
@@ -128,12 +132,18 @@ assert.equal((await um(`SELECT count(*)::int AS n FROM public.viagens`)).n, 2)
 ok('confirmar de novo não duplica viagem')
 
 const p2 = await novoPedido(500)
-await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e2','${p1.id}','sim_2','aprovado')`)
+await falha(`UPDATE public.pedidos SET status='pago', gateway=NULL WHERE id='${p2.id}'`, /pedidos_pago_exige_gateway/)
+ok('pedido não pode virar pago sem saber quem o cobrou (pedidos.gateway)')
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e2','${p1.id}','sim_2','aprovado')`)
 assert.equal((await um(`SELECT public.confirmar_pedido('${p2.id}','sim_2') AS r`)).r.motivo, 'sem_evento_aprovado')
 ok('evento aprovado de OUTRO pedido não confirma este')
 
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('outro-provedor','e-outro','${p2.id}','sim_3','aprovado')`)
+assert.equal((await um(`SELECT public.confirmar_pedido('${p2.id}','sim_3') AS r`)).r.motivo, 'sem_evento_aprovado')
+ok('evento aprovado de OUTRO provedor não confirma o pedido (só o provedor que o cobrou)')
+
 await db.exec(`UPDATE public.pedido_itens SET hora = NULL WHERE pedido_id='${p2.id}'`)
-await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e3','${p2.id}','sim_3','aprovado')`)
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e3','${p2.id}','sim_3','aprovado')`)
 await um(`SELECT public.confirmar_pedido('${p2.id}','sim_3')`)
 const v3 = (await db.query(`SELECT data_hora, observacoes FROM public.viagens ORDER BY id DESC LIMIT 1`)).rows[0]
 assert.match(v3.observacoes, /Horário a combinar/)
@@ -180,7 +190,7 @@ ok('proximo_numero_pedido: formato AV-AAAA-NNNNNN, só o servidor chama')
 // pedido expirado e pago depois do prazo: honra (o cliente pagou; nenhuma vaga era segurada)
 const p5 = await novoPedido(500)
 await db.exec(`UPDATE public.pedidos SET status='expirado' WHERE id='${p5.id}'`)
-await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e5','${p5.id}','tardio_1','aprovado')`)
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e5','${p5.id}','tardio_1','aprovado')`)
 const viagensAntes = (await um('SELECT count(*)::int AS n FROM public.viagens')).n
 assert.deepEqual((await um(`SELECT public.confirmar_pedido('${p5.id}','tardio_1') AS r`)).r, { ok: true, ja_confirmado: false })
 assert.equal((await um('SELECT count(*)::int AS n FROM public.viagens')).n, viagensAntes + 2)
@@ -190,7 +200,7 @@ ok('pagamento aprovado depois do prazo (pedido expirado) confirma e cria as viag
 // cancelado/reembolsado não volta a ser confirmado
 const p6 = await novoPedido(300)
 await db.exec(`UPDATE public.pedidos SET status='cancelado' WHERE id='${p6.id}'`)
-await db.exec(`INSERT INTO public.gateway_eventos (evento_id,pedido_id,gateway_ref,status) VALUES ('e6','${p6.id}','tardio_2','aprovado')`)
+await db.exec(`INSERT INTO public.gateway_eventos (gateway,evento_id,pedido_id,gateway_ref,status) VALUES ('simulado','e6','${p6.id}','tardio_2','aprovado')`)
 assert.deepEqual((await um(`SELECT public.confirmar_pedido('${p6.id}','tardio_2') AS r`)).r, { ok: false, motivo: 'pedido_nao_pendente' })
 ok('pedido cancelado não é confirmado por evento aprovado')
 

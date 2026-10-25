@@ -33,7 +33,13 @@ export interface Cobranca {
 
 /** Aviso do gateway, já verificado (assinatura conferida no corpo cru da requisição). */
 export interface EventoDoGateway {
-  /** Identificador único do evento; duplicatas são ignoradas (§4.7, item 3). */
+  /**
+   * Nome do provedor que mandou o aviso (`GatewayDePagamento.nome`). Com dois provedores
+   * (decisão 31: cartão na Stripe, Pix na Woovi) os ids de evento são independentes e podem
+   * coincidir, então a duplicata é reconhecida pelo par (gateway, eventoId).
+   */
+  gateway: string
+  /** Identificador único do evento dentro do provedor; duplicatas são ignoradas (§4.7, item 3). */
   eventoId: string
   gatewayRef: string
   pedidoId: string

@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Link, redirect } from '@/i18n/config'
 import { routing } from '@/i18n/routing'
 import { produtoPorSlug } from '@/lib/loja/catalogo'
-import { estadoDoPedido } from '@/lib/loja/fluxo'
+import { estadoDoPedido, gatewayDoPedido } from '@/lib/loja/fluxo'
 import { formatarMomento } from '@/lib/loja/formatos'
 import { HORA_REFERENCIA_PASSEIO, prazoCancelamentoGratis } from '@/lib/loja/politicas'
 import { dependencias } from '@/lib/loja/servicos'
@@ -49,7 +49,7 @@ export default async function Pagamento({ params }: { params: Promise<{ locale: 
           meio={pedido.meio ?? null}
           pix={pedido.pix ?? null}
           urlDePagamento={pedido.urlDePagamento ?? null}
-          simulacao={deps.gateway.nome === 'simulado' && process.env.LOJA_PERMITE_SIMULACAO !== 'false'}
+          simulacao={gatewayDoPedido(deps, pedido)?.nome === 'simulado' && process.env.LOJA_PERMITE_SIMULACAO !== 'false'}
           expirado={pedido.status === 'expirado'}
         />
       </div>

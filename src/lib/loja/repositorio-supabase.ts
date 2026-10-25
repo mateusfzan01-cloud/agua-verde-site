@@ -270,6 +270,7 @@ export class RepositorioSupabase implements RepositorioDePedidos {
 
   async registrarEventoDoGateway(evento: EventoDoGateway): Promise<boolean> {
     const { error } = await this.db.from('gateway_eventos').insert({
+      gateway: evento.gateway,
       evento_id: evento.eventoId,
       pedido_id: evento.pedidoId,
       gateway_ref: evento.gatewayRef,
@@ -277,7 +278,7 @@ export class RepositorioSupabase implements RepositorioDePedidos {
       payload: evento,
     })
     if (!error) return true
-    if (error.code === '23505') return false // evento_id repetido: duplicata
+    if (error.code === '23505') return false // (gateway, evento_id) repetido: duplicata
     if (error.code === '23503') return false // pedido que não existe: aviso de outra origem, nada a fazer
     throw new ErroDoBanco('registrar evento do gateway', error.message)
   }
