@@ -4,7 +4,7 @@
  * de ambiente (docs/loja/CODIGO_LOJA_B.md):
  *
  *   LOJA_REPOSITORIO=supabase        grava os pedidos no Supabase (precisa de SUPABASE_SERVICE_ROLE_KEY)
- *   LOJA_GATEWAY_PIX=<provedor>      quem cobra o Pix    (decisão 31: woovi, etapa B2; hoje: simulado | mercadopago)
+ *   LOJA_GATEWAY_PIX=<provedor>      quem cobra o Pix    (decisão 31: woovi; também simulado | mercadopago)
  *   LOJA_GATEWAY_CARTAO=<provedor>   quem cobra o cartão (decisão 31: stripe, etapa B3; hoje: simulado | mercadopago)
  *
  * Um provedor por forma de pagamento: cada pedido lembra quem o cobrou (`pedidos.gateway`), e o reembolso
@@ -22,6 +22,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { GatewayMercadoPago } from './pagamento/mercadopago'
 import { GatewaySimulado } from './pagamento/simulado'
+import { GatewayWoovi, HOST_SANDBOX } from './pagamento/woovi'
 import type { GatewayDePagamento, MeioDePagamento } from './pagamento/gateway'
 import { RepositorioEmMemoria } from './repositorio-memoria'
 import { RepositorioSupabase } from './repositorio-supabase'
@@ -33,25 +34,41 @@ const global = globalThis as unknown as {
   __lojaGateway?: GatewaySimulado
   __lojaSupabase?: RepositorioSupabase
   __lojaMercadoPago?: GatewayMercadoPago
+  __lojaWoovi?: GatewayWoovi
 }
 
-export type NomeDoProvedor = 'simulado' | 'mercadopago'
+export type NomeDoProvedor = 'simulado' | 'mercadopago' | 'woovi'
 
 const PROVEDORES: Record<NomeDoProvedor, () => GatewayDePagamento> = {
   simulado: () => gatewaySimulado(),
   mercadopago: () => gatewayMercadoPago(),
+  woovi: () => gatewayWoovi(),
+}
+
+/** Formas de pagamento que cada provedor cobra (a Woovi é só Pix). */
+const MEIOS_DO_PROVEDOR: Record<NomeDoProvedor, readonly MeioDePagamento[]> = {
+  simulado: ['pix', 'cartao'],
+  mercadopago: ['pix', 'cartao'],
+  woovi: ['pix'],
 }
 
 function ehProvedor(nome: string): nome is NomeDoProvedor {
   return Object.prototype.hasOwnProperty.call(PROVEDORES, nome)
 }
 
-/** Nome do provedor configurado para o meio; erro claro se a variável tiver um nome que a loja não conhece. */
+/**
+ * Nome do provedor configurado para o meio. Erro claro, dizendo a variável, se o nome for desconhecido
+ * ou se o provedor não cobrar esse meio (por exemplo, a Woovi no cartão).
+ */
 export function nomeDoProvedor(meio: MeioDePagamento): NomeDoProvedor {
-  const variavel = meio === 'pix' ? 'LOJA_GATEWAY_PIX' : 'LOJA_GATEWAY_CARTAO'
-  const nome = (process.env[variavel] ?? process.env.LOJA_GATEWAY ?? 'simulado').trim().toLowerCase()
+  const especifica = meio === 'pix' ? 'LOJA_GATEWAY_PIX' : 'LOJA_GATEWAY_CARTAO'
+  const variavel = process.env[especifica] !== undefined ? especifica : process.env.LOJA_GATEWAY !== undefined ? 'LOJA_GATEWAY' : especifica
+  const nome = (process.env[variavel] ?? 'simulado').trim().toLowerCase()
   if (!ehProvedor(nome)) {
     throw new Error(`${variavel}=${nome}: provedor desconhecido (aceitos: ${Object.keys(PROVEDORES).join(', ')})`)
+  }
+  if (!MEIOS_DO_PROVEDOR[nome].includes(meio)) {
+    throw new Error(`${variavel}=${nome}: este provedor não cobra ${meio === 'pix' ? 'Pix' : 'cartão'}`)
   }
   return nome
 }
@@ -92,6 +109,14 @@ function repositorioSupabase(): RepositorioSupabase {
 
 export function gatewaySimulado(): GatewaySimulado {
   return (global.__lojaGateway ??= new GatewaySimulado())
+}
+
+function gatewayWoovi(): GatewayWoovi {
+  // Sem WOOVI_API_URL, vai para o sandbox: produção precisa ser pedida de forma explícita (https://api.woovi.com).
+  return (global.__lojaWoovi ??= new GatewayWoovi({
+    appId: exigir('WOOVI_APP_ID'),
+    urlApi: process.env.WOOVI_API_URL?.trim() || HOST_SANDBOX,
+  }))
 }
 
 function gatewayMercadoPago(): GatewayMercadoPago {
