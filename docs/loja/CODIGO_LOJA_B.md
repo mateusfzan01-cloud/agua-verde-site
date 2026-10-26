@@ -100,12 +100,26 @@ Tudo vem **desligado**: sem nenhuma variável, a loja segue com pedidos em memó
 |:--|:--|
 | `LOJA_REPOSITORIO=supabase` | grava os pedidos no Supabase (tabelas `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos`) |
 | `SUPABASE_SERVICE_ROLE_KEY` | chave de serviço, **só no servidor** (nunca `NEXT_PUBLIC_`). Preferir só no ambiente "Preview" até a loja abrir |
-| `LOJA_GATEWAY_PIX=<provedor>` | quem cobra o **Pix** (decisão 31: `woovi`, etapa B2; hoje aceita `simulado` ou `mercadopago`). Provedor real exige `LOJA_REPOSITORIO=supabase`, senão a loja nem sobe |
+| `LOJA_GATEWAY_PIX=<provedor>` | quem cobra o **Pix**: `woovi` (decisão 31), `simulado` ou `mercadopago`. Provedor real exige `LOJA_REPOSITORIO=supabase`, senão a loja nem sobe |
+| `WOOVI_APP_ID` | AppID da aplicação no painel da Woovi (de sandbox ou de produção). Obrigatório com `LOJA_GATEWAY_PIX=woovi` |
+| `WOOVI_API_URL` | endereço da API da Woovi. **Sem ela, vai para o sandbox** (`https://api.woovi-sandbox.com`); em produção, `https://api.woovi.com`. O AppID tem de ser do mesmo ambiente |
 | `LOJA_GATEWAY_CARTAO=<provedor>` | quem cobra o **cartão** (decisão 31: `stripe`, etapa B3; hoje aceita `simulado` ou `mercadopago`). Cada pedido lembra quem o cobrou (`pedidos.gateway`); reembolso e consulta voltam a esse provedor. `LOJA_GATEWAY=<provedor>` (forma antiga) vale para os dois quando as novas não existem |
 | `MERCADOPAGO_ACCESS_TOKEN` | credencial do Mercado Pago (de teste `TEST-...` ou de produção). **Nunca houve conta** (decisão 32): o adaptador fica dormente, só para a contingência de 15/11 |
 | `MERCADOPAGO_WEBHOOK_SECRET` | "chave secreta" do webhook, do painel do Mercado Pago |
 | `LOJA_URL_BASE` | endereço público do site, ex.: `https://aguaverdeviagens.com.br` (usado no aviso e no retorno do cartão) |
 | `LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true` | só se quiser banco real **com gateway simulado**: o "Simular pagamento" passa a criar viagens de verdade (aparecem para a equipe). Sem isso, volta para a memória |
+
+No painel da **Woovi** (sandbox em `app.woovi-sandbox.com`, produção em `app.woovi.com`): criar a aplicação de API, copiar o
+AppID para `WOOVI_APP_ID` e cadastrar o webhook `<LOJA_URL_BASE>/api/loja/webhook/woovi` com os eventos
+**OPENPIX:CHARGE_COMPLETED** e **OPENPIX:CHARGE_EXPIRED**. A assinatura (`x-webhook-signature`) é conferida com a chave pública
+da Woovi, buscada pela própria API: não há segredo de webhook a copiar. O que o adaptador garante (testes em
+`src/lib/loja/pagamento/woovi.test.ts`): idempotência pelo id do pedido (`correlationID` + `return_existing`), valor em centavos,
+validade de no mínimo 5 minutos, aviso só vale com assinatura RSA-SHA256 do corpo cru (qualquer chave publicada; guardadas por
+1 hora; troca de chave busca a lista de novo no máximo a cada 5 minutos) **e depois de conferir a cobrança na API com o AppID da
+loja** (a assinatura é a mesma para todas as contas da Woovi: sem essa consulta, outra conta poderia pagar a si mesma uma cobrança
+com o id de um pedido nosso; o estado e o valor vêm da consulta, não do aviso), cobrança de fora da loja é ignorada, e **o reembolso de Pix
+não é chamado pela API** (decisão 33: o Caio devolve pelo painel). Até a etapa A4 (status `reembolso_pendente`), o cancelamento
+pelo cliente de um pedido Pix responde "falha no reembolso" e a equipe resolve pelo painel.
 
 No painel do Mercado Pago: criar a aplicação, copiar as credenciais, e cadastrar o webhook
 `<LOJA_URL_BASE>/api/loja/webhook/mercadopago` com o evento **Pagamentos** (copiar a chave secreta).

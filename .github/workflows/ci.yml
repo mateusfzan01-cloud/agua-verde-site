@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main, claude/loja-codigo-b]
+  pull_request:
+    # claude/loja-codigo-b: branch de integração da loja própria (as PRs da loja apontam para ele)
+    branches: [master, main, claude/loja-codigo-b]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  quality:
+    name: Typecheck & Build (Dell Runner)
+    # Proteção para repositório público: nunca executa código de fork externo no runner self-hosted
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, dell]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --prefer-offline
+
+      - name: TypeScript check
+        run: npx tsc --noEmit
+
+      - name: Testes (vitest)
+        run: npx vitest run
+
+      - name: Migrations da loja num Postgres em memória (PGlite)
+        run: |
+          npm install --no-save --no-audit --no-fund @electric-sql/pglite
+          node supabase/pendentes/testar.mjs
+
+      - name: Build Next.js
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://yblywknncmrbtxyhwbzr.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-placeholder-anon-key
+        run: npm run build
