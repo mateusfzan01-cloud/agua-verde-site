@@ -27,6 +27,18 @@ function mockFetch(respostas: Record<string, Resposta>) {
   return { f, chamadas }
 }
 
+interface CorpoDaCobranca {
+  correlationID: string
+  value: number
+  expiresIn: number
+  comment: string
+  customer: { name: string; email: string; taxID?: string }
+}
+
+/** Como a cobrança aparece na conta da loja (consulta que o webhook faz antes de aceitar o aviso). */
+const naConta = (status: string, value = 74001) => ({ [`/api/v1/charge/${PEDIDO}`]: { corpo: { charge: { correlationID: PEDIDO, value, status } } } })
+const buscasDeChave = (chamadas: Chamada[]) => chamadas.filter((c) => c.url.includes('/webhook/public-keys')).length
+
 const chavesPublicas = (...pems: string[]) => ({ corpo: { public_keys: pems.map((key, i) => ({ key, key_identifier: `k${i}`, is_current: i === 0 })) } })
 
 function gw(f: typeof fetch, relogio = { t: AGORA }) {
@@ -71,7 +83,7 @@ describe('criarCobranca', () => {
     expect(req.url).toBe(`${HOST_SANDBOX}/api/v1/charge?return_existing=true`)
     expect(req.metodo).toBe('POST')
     expect(req.cab.Authorization).toBe('APP-ID-DE-TESTE') // AppID direto, sem "Bearer"
-    const b = req.corpo as Record<string, any>
+    const b = req.corpo as CorpoDaCobranca
     expect(b.correlationID).toBe(PEDIDO)
     expect(b.value).toBe(74001)
     expect(b.expiresIn).toBe(30 * 60)
@@ -82,7 +94,7 @@ describe('criarCobranca', () => {
   it('validade nunca abaixo de 5 minutos; sem CPF válido não manda taxID; comentário cortado em 140', async () => {
     const { f, chamadas } = mockFetch(resposta)
     await gw(f).criarCobranca({ ...entrada, expiraEm: new Date(AGORA - 60_000), pagador: { ...entrada.pagador, cpf: '123' }, descricao: 'x'.repeat(300) })
-    const b = chamadas[0].corpo as Record<string, any>
+    const b = chamadas[0].corpo as CorpoDaCobranca
     expect(b.expiresIn).toBe(300)
     expect(b.customer.taxID).toBeUndefined()
     expect(b.comment).toHaveLength(140)
@@ -128,20 +140,39 @@ describe('reembolsar', () => {
 describe('validarWebhook', () => {
   const pago = JSON.stringify({ event: 'OPENPIX:CHARGE_COMPLETED', charge: { correlationID: PEDIDO, value: 74001, status: 'COMPLETED', transactionID: 'd983a0' }, pix: { endToEndId: 'E123', value: 74001 } })
 
-  it('assinatura boa: evento aprovado com o valor em reais, vindo do corpo assinado', async () => {
-    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey) })
+  it('assinatura boa: confere a cobrança na conta da loja e devolve aprovado com o valor em reais', async () => {
+    const { f, chamadas } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), ...naConta('COMPLETED') })
     expect(await gw(f).validarWebhook(pago, cabecalho(assinar(pago)))).toEqual({
       gateway: 'woovi',
-      eventoId: `woovi_${PEDIDO}_OPENPIX:CHARGE_COMPLETED`,
+      eventoId: `woovi_${PEDIDO}_aprovado`,
       gatewayRef: PEDIDO,
       pedidoId: PEDIDO,
       status: 'aprovado',
       valor: 740.01,
     })
+    const consulta = chamadas.find((c) => c.url === `${HOST_SANDBOX}/api/v1/charge/${PEDIDO}`)
+    expect(consulta?.metodo).toBe('GET')
+    expect(consulta?.cab.Authorization).toBe('APP-ID-DE-TESTE')
+  })
+
+  it('aviso bem assinado de cobrança paga em OUTRA conta da Woovi não confirma o pedido', async () => {
+    // A outra conta usou o id do nosso pedido como correlationID e pagou a si mesma.
+    const aberta = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), ...naConta('ACTIVE') })
+    expect(await gw(aberta.f).validarWebhook(pago, cabecalho(assinar(pago)))).toBe('ignorar')
+    const inexistente = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), [`/api/v1/charge/${PEDIDO}`]: { status: 404, corpo: {} } })
+    expect(await gw(inexistente.f).validarWebhook(pago, cabecalho(assinar(pago)))).toBe('ignorar')
+  })
+
+  it('o valor vem da conta da loja, não do aviso; API fora do ar faz a Woovi tentar de novo', async () => {
+    const umCentavo = JSON.stringify({ event: 'OPENPIX:CHARGE_COMPLETED', charge: { correlationID: PEDIDO, value: 1, status: 'COMPLETED' } })
+    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), ...naConta('COMPLETED', 74001) })
+    expect(await gw(f).validarWebhook(umCentavo, cabecalho(assinar(umCentavo)))).toMatchObject({ status: 'aprovado', valor: 740.01 })
+    const fora = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), [`/api/v1/charge/${PEDIDO}`]: { status: 503, corpo: {} } })
+    await expect(gw(fora.f).validarWebhook(pago, cabecalho(assinar(pago)))).rejects.toBeInstanceOf(ErroWoovi)
   })
 
   it('assinatura de outra chave, ausente, ou corpo alterado depois de assinado: null', async () => {
-    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey) })
+    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), ...naConta('COMPLETED') })
     const g = gw(f)
     expect(await g.validarWebhook(pago, cabecalho(assinar(pago, outra.privateKey)))).toBeNull()
     expect(await g.validarWebhook(pago, cabecalho(null))).toBeNull()
@@ -149,11 +180,12 @@ describe('validarWebhook', () => {
     expect(await g.validarWebhook(pago, cabecalho('não é base64 de assinatura'))).toBeNull()
   })
 
-  it('cobrança expirada vira cancelado; outros eventos e cobrança de fora da loja: ignorar', async () => {
-    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey) })
-    const g = gw(f)
+  it('cobrança expirada vira cancelado; outros eventos e cobrança de fora da loja: ignorar sem consultar a API', async () => {
     const expirada = JSON.stringify({ event: 'OPENPIX:CHARGE_EXPIRED', charge: { correlationID: PEDIDO, value: 74001, status: 'EXPIRED' } })
-    expect(await g.validarWebhook(expirada, cabecalho(assinar(expirada)))).toMatchObject({ status: 'cancelado', eventoId: `woovi_${PEDIDO}_OPENPIX:CHARGE_EXPIRED` })
+    const exp = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), ...naConta('EXPIRED') })
+    expect(await gw(exp.f).validarWebhook(expirada, cabecalho(assinar(expirada)))).toMatchObject({ status: 'cancelado', eventoId: `woovi_${PEDIDO}_cancelado` })
+    const { f, chamadas } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey) })
+    const g = gw(f)
     for (const corpo of [
       JSON.stringify({ event: 'OPENPIX:CHARGE_CREATED', charge: { correlationID: PEDIDO } }),
       JSON.stringify({ event: 'PIX_TRANSACTION_REFUND_SENT_CONFIRMED', charge: { correlationID: PEDIDO } }),
@@ -162,55 +194,56 @@ describe('validarWebhook', () => {
     ]) {
       expect(await g.validarWebhook(corpo, cabecalho(assinar(corpo)))).toBe('ignorar')
     }
+    expect(chamadas.filter((c) => c.url.includes('/api/v1/charge/'))).toHaveLength(0)
   })
 
-  it('pago por outra pessoa também confirma (o dinheiro entrou)', async () => {
-    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey) })
+  it('pago por outra pessoa também confirma (o dinheiro entrou), com o mesmo id de evento do pago normal', async () => {
+    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(atual.publicKey), ...naConta('COMPLETED') })
     const corpo = JSON.stringify({ event: 'OPENPIX:CHARGE_COMPLETED_NOT_SAME_CUSTOMER_PAYER', charge: { correlationID: PEDIDO, value: 74001 } })
-    expect(await gw(f).validarWebhook(corpo, cabecalho(assinar(corpo)))).toMatchObject({ status: 'aprovado', valor: 740.01 })
+    expect(await gw(f).validarWebhook(corpo, cabecalho(assinar(corpo)))).toMatchObject({ status: 'aprovado', valor: 740.01, eventoId: `woovi_${PEDIDO}_aprovado` })
   })
 
   it('guarda as chaves por 1 hora (não busca a cada aviso) e aceita qualquer chave da lista', async () => {
-    const { f, chamadas } = mockFetch({ '/webhook/public-keys': chavesPublicas(outra.publicKey, atual.publicKey) })
+    const { f, chamadas } = mockFetch({ '/webhook/public-keys': chavesPublicas(outra.publicKey, atual.publicKey), ...naConta('COMPLETED') })
     const relogio = { t: AGORA }
     const g = gw(f, relogio)
-    for (let i = 0; i < 3; i++) expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).not.toBeNull()
-    expect(chamadas).toHaveLength(1)
+    for (let i = 0; i < 3; i++) expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).toMatchObject({ status: 'aprovado' })
+    expect(buscasDeChave(chamadas)).toBe(1)
     relogio.t += 61 * 60_000
     await g.validarWebhook(pago, cabecalho(assinar(pago)))
-    expect(chamadas).toHaveLength(2)
+    expect(buscasDeChave(chamadas)).toBe(2)
   })
 
   it('troca de chave na Woovi: assinatura nova busca a lista de novo, no máximo a cada 5 minutos', async () => {
     let lista = chavesPublicas(outra.publicKey) // só a chave velha publicada
-    const { f, chamadas } = mockFetch({ '/webhook/public-keys': () => lista })
+    const { f, chamadas } = mockFetch({ '/webhook/public-keys': () => lista, ...naConta('COMPLETED') })
     const relogio = { t: AGORA }
     const g = gw(f, relogio)
     expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).toBeNull()
     lista = chavesPublicas(atual.publicKey, outra.publicKey) // a Woovi publicou a nova
     relogio.t += 60_000 // 1 minuto depois: ainda não busca de novo
     expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).toBeNull()
-    expect(chamadas).toHaveLength(1)
+    expect(buscasDeChave(chamadas)).toBe(1)
     relogio.t += 5 * 60_000
-    expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).not.toBeNull()
-    expect(chamadas).toHaveLength(2)
+    expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).toMatchObject({ status: 'aprovado' })
+    expect(buscasDeChave(chamadas)).toBe(2)
   })
 
   it('chave em base64 do PEM (formato do exemplo da documentação) também vale', async () => {
-    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(Buffer.from(atual.publicKey).toString('base64')) })
-    expect(await gw(f).validarWebhook(pago, cabecalho(assinar(pago)))).not.toBeNull()
+    const { f } = mockFetch({ '/webhook/public-keys': chavesPublicas(Buffer.from(atual.publicKey).toString('base64')), ...naConta('COMPLETED') })
+    expect(await gw(f).validarWebhook(pago, cabecalho(assinar(pago)))).toMatchObject({ status: 'aprovado' })
   })
 
   it('falha ao buscar as chaves: sem nenhuma guardada, o erro sobe (a Woovi tenta de novo); com chaves guardadas, segue com elas', async () => {
     await expect(gw(mockFetch({ '/webhook/public-keys': { status: 503, corpo: {} } }).f).validarWebhook(pago, cabecalho(assinar(pago)))).rejects.toBeInstanceOf(ErroWoovi)
     let fora = false
-    const { f } = mockFetch({ '/webhook/public-keys': () => (fora ? { status: 503, corpo: {} } : chavesPublicas(atual.publicKey)) })
+    const { f } = mockFetch({ '/webhook/public-keys': () => (fora ? { status: 503, corpo: {} } : chavesPublicas(atual.publicKey)), ...naConta('COMPLETED') })
     const relogio = { t: AGORA }
     const g = gw(f, relogio)
-    expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).not.toBeNull()
+    expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).toMatchObject({ status: 'aprovado' })
     fora = true
-    relogio.t += 2 * 60 * 60_000 // chaves vencidas e a Woovi fora do ar
-    expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).not.toBeNull()
+    relogio.t += 2 * 60 * 60_000 // chaves vencidas e a lista de chaves fora do ar
+    expect(await g.validarWebhook(pago, cabecalho(assinar(pago)))).toMatchObject({ status: 'aprovado' })
   })
 })
 

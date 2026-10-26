@@ -115,7 +115,9 @@ AppID para `WOOVI_APP_ID` e cadastrar o webhook `<LOJA_URL_BASE>/api/loja/webhoo
 da Woovi, buscada pela própria API: não há segredo de webhook a copiar. O que o adaptador garante (testes em
 `src/lib/loja/pagamento/woovi.test.ts`): idempotência pelo id do pedido (`correlationID` + `return_existing`), valor em centavos,
 validade de no mínimo 5 minutos, aviso só vale com assinatura RSA-SHA256 do corpo cru (qualquer chave publicada; guardadas por
-1 hora; troca de chave busca a lista de novo no máximo a cada 5 minutos), cobrança de fora da loja é ignorada, e **o reembolso de Pix
+1 hora; troca de chave busca a lista de novo no máximo a cada 5 minutos) **e depois de conferir a cobrança na API com o AppID da
+loja** (a assinatura é a mesma para todas as contas da Woovi: sem essa consulta, outra conta poderia pagar a si mesma uma cobrança
+com o id de um pedido nosso; o estado e o valor vêm da consulta, não do aviso), cobrança de fora da loja é ignorada, e **o reembolso de Pix
 não é chamado pela API** (decisão 33: o Caio devolve pelo painel). Até a etapa A4 (status `reembolso_pendente`), o cancelamento
 pelo cliente de um pedido Pix responde "falha no reembolso" e a equipe resolve pelo painel.
 

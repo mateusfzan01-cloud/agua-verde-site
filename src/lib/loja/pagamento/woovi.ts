@@ -6,8 +6,9 @@
  * - Consulta: GET /api/v1/charge/{correlationID}; estados ACTIVE, COMPLETED e EXPIRED.
  * - Aviso (webhook): cabeçalho `x-webhook-signature` = RSA-SHA256, em base64, do corpo CRU, com a chave
  *   pública da Woovi (GET /api/v1/webhook/public-keys). Vale qualquer chave da lista (na troca de chave a
- *   Woovi publica a velha e a nova), guardadas por 1 hora. Como a assinatura cobre o corpo inteiro, o
- *   estado do pagamento vem do próprio aviso.
+ *   Woovi publica a velha e a nova), guardadas por 1 hora. A assinatura é a mesma para todas as contas da
+ *   Woovi, então ela só prova que o aviso veio da Woovi, não que a cobrança é desta loja: o estado e o valor
+ *   vêm de uma consulta à API com o AppID da loja (GET /api/v1/charge/{correlationID}).
  * - Só cobra Pix. Reembolso de Pix é manual pelo painel da Woovi (decisão 33): `reembolsar` não chama a API.
  * - Só vale cobrança cujo correlationID é um id de pedido nosso (a conta pode ter outros usos).
  *
@@ -216,13 +217,27 @@ export class GatewayWoovi implements GatewayDePagamento {
     const correlationID = corpo.charge?.correlationID
     if (!correlationID || !UUID.test(correlationID)) return 'ignorar' // cobrança que não é de pedido da loja
 
+    // Outra conta da Woovi pode pagar a si mesma uma cobrança com o id de um pedido nosso e mandar o aviso,
+    // bem assinado, para cá. Por isso o aviso só diz QUAL cobrança mudou; quem diz se pagou é a nossa conta.
+    let cobranca: CobrancaWoovi | undefined
+    try {
+      cobranca = (await this.api<{ charge?: CobrancaWoovi }>(`/api/v1/charge/${encodeURIComponent(correlationID)}`)).charge
+    } catch (erro) {
+      if (erro instanceof ErroWoovi && erro.status === 404) return 'ignorar' // não existe na conta da loja
+      throw erro // 5xx/rede: a rota responde 500 e a Woovi tenta de novo
+    }
+    if (!cobranca) return 'ignorar'
+    if (cobranca.correlationID && cobranca.correlationID.toLowerCase() !== correlationID.toLowerCase()) return 'ignorar'
+    const status = mapearStatus(cobranca.status)
+    if (status === 'pendente') return 'ignorar' // o aviso diz pago/expirado, mas a cobrança da loja segue aberta
+
     return {
       gateway: this.nome,
-      eventoId: `woovi_${correlationID}_${evento}`,
+      eventoId: `woovi_${correlationID.toLowerCase()}_${status}`,
       gatewayRef: correlationID,
       pedidoId: correlationID.toLowerCase(),
-      status: pago ? 'aprovado' : 'cancelado',
-      valor: typeof corpo.charge?.value === 'number' ? corpo.charge.value / 100 : undefined,
+      status,
+      valor: typeof cobranca.value === 'number' ? cobranca.value / 100 : undefined,
     }
   }
 }
