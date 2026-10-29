@@ -61,7 +61,7 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
   return (
     <div className="grid gap-0">
       <HeroBusca locale={l} />
-      <div className="mx-auto grid w-full max-w-3xl gap-8 pt-6">
+      <div className="mx-auto grid w-full max-w-3xl gap-8 pt-6 lg:max-w-6xl">
         <Reveal>
           <Promessas locale={l} />
         </Reveal>
