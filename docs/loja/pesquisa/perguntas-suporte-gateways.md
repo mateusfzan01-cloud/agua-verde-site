@@ -1,7 +1,7 @@
 # Perguntas para o suporte dos provedores de pagamento
 
 **Data:** 19 de outubro de 2026
-**Para quê:** fechar as decisões 31 a 34 do plano da loja (`docs/loja/PLANO_LOJA_PROPRIA_V1.md`, §7.3-B): cartão na Stripe, Pix na Woovi. Mercado Pago só entra como contingência do cartão em 15/11 (nunca houve conta).
+**Para quê:** fechar as decisões 39 a 42 do plano da loja (`docs/loja/PLANO_LOJA_PROPRIA_V1.md`, §7.3-B): cartão na Stripe, Pix na Woovi. Mercado Pago só entra como contingência do cartão em 15/11 (nunca houve conta).
 **Atualizado em 2026-10-21:** a Stripe já tem conta em sandbox; a Woovi ainda não. O reembolso de Pix será manual pelo admin, então a pergunta 4 da Woovi passa a ser sobre o aviso (webhook) de reembolso feito pelo painel.
 **Como usar:** copie o bloco de cada empresa e envie pelo chat ou e-mail do suporte, ou pelo gerente de conta, se houver. Guarde as respostas por escrito (print ou e-mail) e anote a data ao lado de cada uma. Preço e regra mudam, e o que vale é o que eles responderem.
 
@@ -49,7 +49,7 @@ A página pública da Woovi não diz o prazo de recebimento nem se há restriç�
 
 ## 3. Mercado Pago (só se a contingência de 15/11 for acionada)
 
-Não existe conta. Estas perguntas só serão enviadas se a Stripe não aprovar a produção até 15/11 e for preciso abrir o Mercado Pago para o cartão (decisão 32).
+Não existe conta. Estas perguntas só serão enviadas se a Stripe não aprovar a produção até 15/11 e for preciso abrir o Mercado Pago para o cartão (decisão 40).
 
 > Olá. Somos a Água Verde Transfers (CNPJ 17.427.292/0001-46) e vendemos **transfer privado** pelo nosso site, via Checkout Pro / API.
 >
@@ -80,7 +80,7 @@ Fora da v1. Perguntas para guardar caso a taxa do cartão (3,5% + R$ 0,60 no à 
 
 | Resposta | O que fazer |
 |:--|:--|
-| Stripe **aprova** a atividade | Seguir a estratégia da decisão 31 (cartão Stripe, Pix Woovi). |
+| Stripe **aprova** a atividade | Seguir a estratégia da decisão 39 (cartão Stripe, Pix Woovi). |
 | Stripe **nega** ou não responde até 15/11 | Abrir conta no Mercado Pago para o cartão (código pronto); Pix segue na Woovi. |
 | Woovi diz que transporte é restrito ou o Pix só cai em muitos dias | Pix no Mercado Pago (0,99%) até esclarecer. |
 | Stripe diz que não aceita Amex | Anotar na tela de pagamento do site e deixar Amex para o Mercado Pago, se a decisão passar a ser híbrida. |

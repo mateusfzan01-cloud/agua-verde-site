@@ -1,6 +1,6 @@
 # Plano v1 — Loja própria aguaverde.tur.br (substituição da Paytour)
 
-> Data: 2026-10-08, ajustes 2026-10-09 (decisões 25–30) e 2026-10-19 (decisão 31) · Autor: Claude Code com Mateus Zanlorenzi · Status: **aprovado pelo dono em 2026-10-09, com as recomendações do documento** (Vercel Pro se a conta for Hobby; Supabase Small no lançamento). **Pagamento revisado em 2026-10-19 e confirmado em 2026-10-21 (decisões 31 a 34, §7.3-B): cartão pela Stripe e Pix pela Woovi. Nunca houve conta do Mercado Pago; o código dele fica dormente como contingência do cartão (corte em 15/11).** A recomendação original de Mercado Pago como gateway único segue registrada no §7.3 como histórico. Plano detalhado do pós-pagamento (avisos, PWA, app, reembolso): `docs/loja/PLANO_PAGAMENTO_RESERVA_PWA_APP.md`.
+> Data: 2026-10-08, ajustes 2026-10-09 (decisões 25–30), 2026-10-09 a 2026-10-13 (decisões 31–38, loja e protótipos) e 2026-10-19 (decisão 39) · Autor: Claude Code com Mateus Zanlorenzi · Status: **aprovado pelo dono em 2026-10-09, com as recomendações do documento** (Vercel Pro se a conta for Hobby; Supabase Small no lançamento). **Pagamento revisado em 2026-10-19 e confirmado em 2026-10-21 (decisões 39 a 42, §7.3-B): cartão pela Stripe e Pix pela Woovi. Nunca houve conta do Mercado Pago; o código dele fica dormente como contingência do cartão (corte em 15/11).** A recomendação original de Mercado Pago como gateway único segue registrada no §7.3 como histórico. Plano detalhado do pós-pagamento (avisos, PWA, app, reembolso): `docs/loja/PLANO_PAGAMENTO_RESERVA_PWA_APP.md`.
 >
 > Este documento é o resultado de uma entrevista estruturada (2 rodadas, 30 perguntas) + levantamento de fatos no banco Supabase, na cópia arquivada do site Paytour (Wayback Machine, jul/2025), no site Next.js publicado e em três pesquisas de mercado (sites de referência, comunidade 2026, custos). Nada aqui foi presumido: cada decisão tem origem marcada como **[decisão do dono]**, **[fato verificado]** ou **[recomendação]**.
 
@@ -85,21 +85,29 @@ A Água Verde vende hoje pelo site da plataforma **Paytour** (R$ 250/mês), que 
 | 17 | Figma só para aprovar 4 telas (home, rota, checkout, confirmação); o resto vai direto a código | dono |
 | 18 | Um gateway só (Pix + cartão nacional + internacional, sem mensalidade); PayPal fora da v1 | dono |
 | 19 | Textos e fotos da Paytour reaproveitados (corrigidos e traduzidos); fotos originais virão de um Drive | dono |
-| 20 | Passeios: paga na hora, confirmação em até 24 h, reembolso automático se não houver vaga | dono |
+| 20 | ~~Passeios: paga na hora, confirmação em até 24 h, reembolso automático se não houver vaga~~ **substituída pela decisão 36 em 2026-10-13** | dono |
 | 21 | Transição: Paytour para de vender no dia da troca; conta mantida 60 dias para vouchers antigos; reservas futuras migradas à mão | dono |
 | 22 | Avisos: empresa recebe push no app nativo + e-mail; passageiro recebe página de confirmação + e-mail + WhatsApp (voucher e link de acompanhamento); PDF só sob demanda | dono |
 | 23 | Checkout pede: nome, WhatsApp, e-mail, voo, hotel/endereço, passageiros, malas, observações; CPF opcional | dono |
-| 24 | Cobrança sempre em BRL; versões ES/EN mostram valor aproximado em USD/EUR com aviso | dono |
+| 24 | Cobrança sempre em BRL. **Seletor de idioma e moeda** num ícone no cabeçalho ("PT/BRL R$") que abre uma janela com duas abas (Idioma, Moeda), no estilo Booking: moedas mais usadas no topo (BRL, USD, EUR, GBP, ARS, CLP, CHF, CAD) e lista de todas abaixo (36 moedas). Em qualquer idioma, escolhendo outra moeda aparece "≈ valor" com aviso "cobrado em reais". Sem escolha: PT mostra só reais, ES mostra euro e EN mostra dólar (decisão do dono, 2026-10-17). Cotação buscada de fonte oficial 1 vez por dia e guardada (nada de consulta a cada visita); no protótipo as cotações são ilustrativas. Cobrança em moeda estrangeira de verdade fica fora da v1 (2026-10-17) | dono |
 | 25 | App nativo ganha tela "Pedidos do site", além do push (ajuste de 2026-10-09) | dono |
 | 26 | IA do WhatsApp migra de gpt-4o-mini (OpenAI) para Claude Sonnet 5.5 (ajuste de 2026-10-09) | dono |
 | 27 | Verificar o Supabase; alta chance de precisar subir o porte de computação (ajuste de 2026-10-09) | dono |
 | 28 | Supabase está em **Micro** (o dono reduziu o porte; o `CLAUDE.md` do PWA ficou desatualizado). Subida para Small **autorizada** para o lançamento (2026-10-09) | dono |
 | 29 | Plano aprovado com as recomendações do documento (2026-10-09). CADASTUR e regra do adicional por passageiro ficam para depois; não travam a construção | dono |
 | 30 | Google Ads: o irmão investe **R$ 2.000/mês em 3 campanhas que funcionam e ficam**. A frente de Ads passa a ser: auditar e otimizar as 3 existentes, apontá-las para a loja nova no lançamento e, se fizer sentido, criar **uma** campanha nova (2026-10-09) | dono |
-| 31 | **Pagamento revisado (2026-10-19)**: cartão pela **Stripe** e Pix pela **Woovi**, **condicionado à Stripe aceitar a atividade** (transfers e passeios vendidos online; ver §7.3-B, item 2). Substitui a parte "um gateway só" da decisão 18; o resto da 18 (Pix + cartão nacional e internacional, sem mensalidade, PayPal fora da v1) continua. Detalhes e números no §7.3-B | dono |
-| 32 | **Mercado Pago nunca teve conta** (2026-10-21). O adaptador já escrito fica dormente, sem variável que o ligue. **Contingência do cartão**: se a Stripe não aprovar a produção até **15/11**, abre-se a conta do Mercado Pago e o cartão vai ao ar por ele até a Stripe aprovar | dono |
-| 33 | **Reembolso**: cartão automático pela Stripe; **Pix manual** pelo admin Caio no painel da Woovi (status `reembolso_pendente`, alerta + push, e-mail ao cliente "em até 2 dias úteis", botão "Marcar como reembolsado"); parcial fora da v1; a equipe nunca reembolsa sem um clique separado (2026-10-21) | dono |
-| 34 | **Avisos**: push de pedido pago só para o admin Caio; e-mail para `reservas@uluwatour.tur.br`; uma Edge Function (`loja-pedido-pago`) manda tudo (equipe e passageiro); checkout pergunta passageiros e malas; um alerta por pedido; tela "Pedidos do site" por `viagens.ver` (2026-10-21). Detalhes em `PLANO_PAGAMENTO_RESERVA_PWA_APP.md` §5 | dono |
+| 31 | Site e loja (público) só no **modo claro**, igual ao site atual. As telas novas "Pedidos do site" no **PWA** e no **app nativo** seguem o padrão de tema de cada app (modo escuro e claro, como as telas que já existem) (2026-10-09) | dono |
+| 32 | Máximo de **10** veículos (ou pessoas, nos produtos por pessoa) por compra, igual para todos os produtos (2026-10-09) | dono |
+| 33 | Direito de arrependimento: **48 horas após a compra**, com reembolso integral, se a viagem não tiver começado; depois, cancelamento grátis até 24 h antes (2026-10-09) | dono |
+| 34 | WhatsApp oficial: **(81) 99947-3200**, com o 9 (`wa.me/5581999473200`); o link antigo sem o 9 foi corrigido no site (2026-10-09) | dono |
+| 35 | **Testes (homologação) no domínio `aguaverdeviagens.com.br`**, a pedido do irmão do dono. O domínio já é da empresa; falta apontar para a Vercel. Substitui o `staging.aguaverde.tur.br` previsto antes. `aguaverde.tur.br` continua sendo o domínio oficial do site e do Google (2026-10-10) | dono |
+| 36 | **Passeio: vaga garantida no pagamento** (sem etapa de confirmação em 24 h) e **cancelamento grátis até 48 h antes; na alta temporada, 24 h**. Pedido do irmão do dono. Substitui a decisão 20. Transfer continua com 24 h. Falta definir as datas da alta temporada (2026-10-13) | dono |
+| 37 | **Contador de viagens da home ("8.211 viagens")**: atualizado **a cada 1 hora** (cache do site, sem tempo real). O site recebe só o **número**, por uma função de leitura no banco que não expõe dados de viagens. O que contar (só viagens concluídas, recomendado, ou todas) ainda será confirmado. A função exige migration e o "pode" do dono: fica para a etapa C; até lá o site usa um número fixo atualizado à mão (2026-10-14) | dono |
+| 38 | **Destaques na home**: faixa de aviso fina abaixo do cabeçalho (com ×) e carrossel "Em destaque" logo abaixo das 4 promessas, com 4 slides de exemplo (promoção, duas viagens em destaque, artigo do blog), em PT/ES/EN. Cada slide terá data de início e fim e sai do ar sozinho. **Formato aprovado pelo dono: os dois (faixa + carrossel), com 4 slides.** Editar os slides sem programador exige tabela no banco e tela no PWA (migration, etapa C, com o "pode" do dono); até lá, slides fixos no código. Promoção com desconto exige preço promocional, que o plano ainda não tem; o 10% do protótipo é só exemplo. O artigo do blog depende da Fase 2 (2026-10-17) | dono |
+| 39 | **Pagamento revisado (2026-10-19)**: cartão pela **Stripe** e Pix pela **Woovi**, **condicionado à Stripe aceitar a atividade** (transfers e passeios vendidos online; ver §7.3-B, item 2). Substitui a parte "um gateway só" da decisão 18; o resto da 18 (Pix + cartão nacional e internacional, sem mensalidade, PayPal fora da v1) continua. Detalhes e números no §7.3-B | dono |
+| 40 | **Mercado Pago nunca teve conta** (2026-10-21). O adaptador já escrito fica dormente, sem variável que o ligue. **Contingência do cartão**: se a Stripe não aprovar a produção até **15/11**, abre-se a conta do Mercado Pago e o cartão vai ao ar por ele até a Stripe aprovar | dono |
+| 41 | **Reembolso**: cartão automático pela Stripe; **Pix manual** pelo admin Caio no painel da Woovi (status `reembolso_pendente`, alerta + push, e-mail ao cliente "em até 2 dias úteis", botão "Marcar como reembolsado"); parcial fora da v1; a equipe nunca reembolsa sem um clique separado (2026-10-21) | dono |
+| 42 | **Avisos**: push de pedido pago só para o admin Caio; e-mail para `reservas@uluwatour.tur.br`; uma Edge Function (`loja-pedido-pago`) manda tudo (equipe e passageiro); checkout pergunta passageiros e malas; um alerta por pedido; tela "Pedidos do site" por `viagens.ver` (2026-10-21). Detalhes em `PLANO_PAGAMENTO_RESERVA_PWA_APP.md` §5 | dono |
 
 Pendências de fato que **não travam** o plano: número CADASTUR e regra exata do adicional por passageiro (o dono envia depois; até lá, o site não exibe selo CADASTUR e usa a regra provisória "preço base até 3 passageiros" para revisão), plano atual da Vercel (Hobby ou Pro). Resolvidos em 2026-10-09: porte do Supabase (Micro, subida para Small autorizada), verba de Ads (R$ 2.000/mês já em uso), Drive de fotos e vídeos (recebido, ver §6).
 
@@ -239,6 +247,8 @@ RLS: `produtos` leitura pública; `pedidos`/`pedido_itens` sem acesso anon (chec
 
 ### 4.3 Regras de preço
 
+> **Atualização 2026-10-09 (decisão do dono): copiar a Paytour.** O preço é **por veículo**, não por passageiro. Cada produto tem a sua própria lista de veículos (Sedan Econômico, Sedan Executivo, Spin, Mini Van, Sprinter, Micro-ônibus, BMW X1; nem todos em todo produto), cada um com preço e capacidade, e o cliente escolhe quantos de cada (máximo 10 por compra). **Como na Paytour, o cliente não informa número de passageiros nem de malas nos transfers: só escolhe os veículos** (a capacidade aparece na descrição de cada um). Isso ajusta a decisão 23: o checkout não pede passageiros nem malas. `total = Σ quantidade × preço do veículo`. Os campos `pax_incluidos`/`adicional_por_pax`/`pax_max` saem; `produtos` ganha `veiculos` (lista de {tipo, preço}) e `max_por_compra`. Dados em `docs/loja/conteudo/veiculos-paytour.json`. A regra abaixo fica só como histórico.
+
 `total = preco_base + max(0, pax - pax_incluidos) × adicional_por_pax`, com `pax ≤ pax_max`. Produtos "ida e volta" têm 2 pernas e um preço só. Valores de `pax_incluidos`/`adicional_por_pax` a confirmar com a operação (pendência). Moeda sempre BRL; ES/EN mostram "≈ US$ X" com cotação diária e aviso "cobrado em reais".
 
 ### 4.4 Rotas do site (novas)
@@ -257,8 +267,8 @@ As 3 landing pages de rota já existentes ganham o **widget de reserva na primei
 
 ### 4.5 Fluxos especiais
 
-- **Passeios (confirmação em 24 h)**: pedido pago entra como `aguardando_confirmacao`; admin confirma no PWA (vira viagem) ou recusa (reembolso pelo gateway). Cron diário: pedidos sem resposta em 24 h → reembolso automático + alerta.
-- **Cancelamento pelo cliente**: botão em `/reserva/[token_acesso]` (só quem tem o link secreto); se faltar > 24 h, reembolso automático e viagem `cancelada`; senão, orienta a falar no WhatsApp.
+- **Passeios (vaga garantida no pagamento, decisão 36)**: igual ao transfer. Pagamento aprovado → `confirmar_pedido` cria a viagem na hora; não existe `aguardando_confirmacao` nem cron de 24 h para passeio. O cliente vê "vaga garantida" e recebe o voucher. O estoque dos passeios com parceiros (catamarã, mergulho, jangada) precisa ser controlado antes de vender a data (pendência).
+- **Cancelamento pelo cliente**: botão em `/reserva/[token_acesso]` (só quem tem o link secreto). Prazo grátis: **transfer 24 h**; **passeio 48 h, e 24 h na alta temporada** (decisão 36; a lista de datas de alta temporada fica em uma tabela/configuração a definir). Dentro do prazo: reembolso automático e viagem `cancelada`; fora dele: orienta a falar no WhatsApp. Há também o arrependimento de 48 h após a compra (decisão 33).
 - **Pedido não pago**: expira em 30 min (Pix) / imediato (cartão recusado); nada é criado em `viagens`.
 - **Fora da tabela** (origem/destino não cadastrados): formulário de orçamento já existente, com os campos pré-preenchidos.
 
@@ -282,11 +292,11 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
 
 1. O pedido é criado como `pendente_pagamento` **antes** de abrir o pagamento; o id do pedido é a chave de idempotência enviada ao gateway.
 2. A página "pagamento aprovado" só mostra estado; quem confirma é o **webhook**, verificado pela assinatura no corpo cru da requisição.
-3. Tabela `gateway_eventos (gateway, evento_id, pedido_id, payload, recebido_em, primary key (gateway, evento_id))` (a chave inclui o provedor porque, com a decisão 31, Woovi e Stripe/Mercado Pago têm ids de evento independentes que podem colidir): duplicatas falham no banco (`on conflict do nothing`), nunca são reprocessadas.
+3. Tabela `gateway_eventos (gateway, evento_id, pedido_id, payload, recebido_em, primary key (gateway, evento_id))` (a chave inclui o provedor porque, com a decisão 39, Woovi e Stripe/Mercado Pago têm ids de evento independentes que podem colidir): duplicatas falham no banco (`on conflict do nothing`), nunca são reprocessadas.
 4. **Uma única função** `confirmar_pedido(pedido_id, gateway_ref, evento_id)` (RPC `SECURITY DEFINER`, transacional): só executa se existir em `gateway_eventos` um evento **aprovado** para aquele `gateway_ref` (gravado após verificação de assinatura); marca `pago`, cria as viagens (uma por perna), grava `viagem_id` em `pedido_itens`, dispara avisos. É chamada pelo webhook. A **página de sucesso é somente leitura**: mostra o estado atual do pedido; se ainda estiver `pendente_pagamento`, o servidor consulta o gateway (`consultarPagamento`), e só se o gateway responder "aprovado" é que grava o evento em `gateway_eventos` e chama a mesma função. Um visitante que abrir ou recarregar a página de sucesso sem pagamento aprovado nunca gera viagem.
 5. Responder 2xx ao gateway só depois de persistir; esperar eventos fora de ordem e repetidos.
 6. Cron a cada 15 min expira pedidos pendentes com mais de 45 min e libera nada (nenhuma vaga é segurada antes do pagamento).
-7. A integração com o gateway fica atrás de uma interface própria (`criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook`), para trocar Mercado Pago por Stripe ou Asaas sem mexer no checkout. **Com a decisão 31 (dois provedores), a interface é escolhida por forma de pagamento**: Pix → Woovi; cartão → Stripe (ou Mercado Pago se a Stripe não aprovar). Cada provedor tem seu `validarWebhook` e sua assinatura; todos gravam em `gateway_eventos` com o campo `gateway` preenchido e chamam a mesma `confirmar_pedido`. O reembolso usa o provedor que recebeu o pagamento (`pedidos.gateway`), nunca o outro.
+7. A integração com o gateway fica atrás de uma interface própria (`criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook`), para trocar Mercado Pago por Stripe ou Asaas sem mexer no checkout. **Com a decisão 39 (dois provedores), a interface é escolhida por forma de pagamento**: Pix → Woovi; cartão → Stripe (ou Mercado Pago se a Stripe não aprovar). Cada provedor tem seu `validarWebhook` e sua assinatura; todos gravam em `gateway_eventos` com o campo `gateway` preenchido e chamam a mesma `confirmar_pedido`. O reembolso usa o provedor que recebeu o pagamento (`pedidos.gateway`), nunca o outro.
 
 ---
 
@@ -296,8 +306,8 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
 |:--|:--|:--|
 | Supabase | 4 tabelas novas, 1 RPC, 1 Edge Function de webhook, 1 cron | **Baixo**: nada existente é alterado; INSERT em `viagens` usa o mesmo contrato do PWA |
 | Site Next.js | rotas novas, i18n com prefixo, redirects, widget, checkout | Zero para PWA e app |
-| PWA | tela "Pedidos do site" (lista, confirmar, reembolsar) | Baixo: tela nova, sem mexer nas existentes |
-| App nativo | tela nova **"Pedidos do site"** no stack de admin (lista com filtro por status, detalhe do pedido, confirmar passeio, acionar reembolso via Edge Function, abrir a viagem gerada), além do push já existente | Baixo: tela nova, sem mexer nas existentes nem em `perfis.tipo` |
+| PWA | tela "Pedidos do site" (lista, confirmar, reembolsar), seguindo o tema escuro/claro do PWA (decisão 31) | Baixo: tela nova, sem mexer nas existentes |
+| App nativo | tela nova **"Pedidos do site"** (seguindo o tema escuro/claro do app, decisão 31) no stack de admin (lista com filtro por status, detalhe do pedido, confirmar passeio, acionar reembolso via Edge Function, abrir a viagem gerada), além do push já existente | Baixo: tela nova, sem mexer nas existentes nem em `perfis.tipo` |
 | WhatsApp IA | prompt ganha catálogo + função "gerar link de checkout"; modelo migra para Claude Sonnet 5.5 (§4.6) | Médio: troca de provedor; mitigado por adaptador por modelo, teste em 50 conversas reais e kill switch `ia_ativa` já existente |
 
 ---
@@ -309,7 +319,7 @@ Fatos que orientam a implementação: a função de e-mails (`processar-reserva-
    - "Agua Verde Fotos para o Site" (criada em 2019): 26 fotos JPG, a maioria de 2015–2016 (nomes `IMG_2015...`). **[fato verificado pela página pública da pasta]**
    - "Vídeos de Marketing VDV Agua Verde Viagens" (2023): pelo menos 31 imagens JPG na primeira tela; os vídeos não apareceram na primeira carga da página e serão conferidos no download completo (semana 1). O conector do Drive não lista o conteúdo dessas pastas compartilhadas; o download será feito pelo link público.
    - [recomendação] As fotos de 2015–2016 estão com 10 anos. O plano SEO v5.1 já pedia foto atual de motorista uniformizado + veículo com placa de nome (padrão Welcome Pickups). Sugestão: uma sessão de fotos com celular na semana 1 (aeroporto, frota, embarque), com termo de cessão de imagem dos motoristas fotografados.
-3. Homologação em `staging.aguaverde.tur.br` (subdomínio na Vercel) com 3 compras reais de R$ 1 (Pix e cartão) e estorno.
+3. Homologação em **`aguaverdeviagens.com.br`** (decisão 35; antes previsto `staging.aguaverde.tur.br`) com 3 compras reais de R$ 1 (Pix e cartão) e estorno. Enquanto for ambiente de teste, esse domínio fica **fora do Google** (`noindex` e `robots.txt` bloqueando tudo) para não competir com `aguaverde.tur.br`. Passo a passo para ligar o domínio: `docs/loja/DOMINIO_TESTES_AGUAVERDEVIAGENS_COM_BR.md`.
 4. Dia D: DNS de `aguaverde.tur.br` → Vercel; Paytour deixa de vender; redirects 301 ativos; sitemap novo no Search Console.
 5. Paytour mantida 60 dias só para consulta de vouchers antigos; dono exporta reservas futuras → eu cadastro em `viagens`.
 6. Após 60 dias: cancelar Paytour (economia de R$ 250/mês).
@@ -389,7 +399,7 @@ Custo por venda (ticket R$ 400, metade Pix, metade cartão): Asaas R$ 7,22 · Me
 
 **Escolha [recomendação]: Mercado Pago**, Checkout Pro no lançamento (pagamento em página do Mercado Pago, mais rápido de integrar) e migração para Checkout Bricks (pagamento dentro do site) depois. Motivo: único com cartão estrangeiro, inclusive Amex, no checkout pronto sem adicional e sem cadastro prévio; custo fixo zero; antifraude e 3DS inclusos; SDK Node e contas de teste. Plano B para clientes brasileiros: Asaas.
 
-#### 7.3-B Revisão de 2026-10-19: cartão na Stripe + Pix na Woovi (decisão 31)
+#### 7.3-B Revisão de 2026-10-19: cartão na Stripe + Pix na Woovi (decisão 39)
 
 Taxas reconferidas nas páginas oficiais de Mercado Pago, Stripe, Asaas e Pagar.me em 2026-10-19: **nenhum número mudou** em relação à tabela acima. PagBank não foi reconferido (página não abriu). Duas correções à justificativa original do Mercado Pago:
 
@@ -412,12 +422,12 @@ Taxas reconferidas nas páginas oficiais de Mercado Pago, Stripe, Asaas e Pagar.
 | Mercado Pago sozinho (D30) | R$ 9,94 | R$ 9,94 |
 | AbacatePay sozinha (não confirmada) | R$ 7,70 | desconhecido |
 
-**Estratégia [decisão 31]**
+**Estratégia [decisão 39]**
 
 1. **Alvo:** cartão na Stripe, Pix na Woovi. Motivos: Pix a R$ 0,85 em vez de R$ 3,96 (Mercado Pago); Stripe é conhecida pelo turista; sem mensalidade nos dois.
 2. **Condição:** a Stripe aceitar a atividade. **Correção de 2026-10-19** (apontada na revisão da PR e conferida na página oficial `stripe.com/br/legal/restricted-businesses`): a linha "hotéis, agências de viagem e serviços de transporte (R)" pertence à seção da **Tailândia**, e a pesquisa de 8/out a atribuiu ao Brasil por engano. A seção do Brasil não traz restrição de viagem. Valem as regras globais: "serviços e clubes de reservas de viagem" é atividade restrita (due diligence adicional, aprovação não garantida) e "serviços de uso compartilhado" é proibida. Um site que vende transfers e passeios pode ser lido como "reservas de viagem"; transfer privado agendado não é uso compartilhado, mas vale perguntar. O cadastro deve descrever a atividade com exatidão: **transfers privados ponto a ponto (28 dos 46 produtos) e também passeios (18)**, vendidos pelo site; não omitir os passeios, porque a Stripe proíbe informação inexata sobre a natureza do negócio. A resposta da Stripe decide o cartão. Pix na Woovi não depende disso.
-3. **Ponto de partida (corrigido em 2026-10-21):** nunca houve conta do Mercado Pago; o adaptador existe e fica dormente. O desenvolvimento do pós-pagamento usa o gateway **simulado**; Woovi (sandbox `app.woovi-sandbox.com`) e Stripe (sandbox da conta do dono, já criada) entram em paralelo atrás da interface do §4.7, com `LOJA_GATEWAY_PIX` e `LOJA_GATEWAY_CARTAO`. Contingência do cartão em 15/11 (decisão 32).
-4. **Limites aceitos:** a Stripe não aceita Amex nem Elo no exterior (confirmar com o suporte); a Stripe não devolve a tarifa no reembolso; dois provedores significam duas integrações, dois webhooks e duas conciliações (tratados no §4.7, itens 3 e 7). **Reembolso de Pix é manual** (decisão 33), embora a Woovi tenha API de reembolso; fica como opção futura.
+3. **Ponto de partida (corrigido em 2026-10-21):** nunca houve conta do Mercado Pago; o adaptador existe e fica dormente. O desenvolvimento do pós-pagamento usa o gateway **simulado**; Woovi (sandbox `app.woovi-sandbox.com`) e Stripe (sandbox da conta do dono, já criada) entram em paralelo atrás da interface do §4.7, com `LOJA_GATEWAY_PIX` e `LOJA_GATEWAY_CARTAO`. Contingência do cartão em 15/11 (decisão 40).
+4. **Limites aceitos:** a Stripe não aceita Amex nem Elo no exterior (confirmar com o suporte); a Stripe não devolve a tarifa no reembolso; dois provedores significam duas integrações, dois webhooks e duas conciliações (tratados no §4.7, itens 3 e 7). **Reembolso de Pix é manual** (decisão 41), embora a Woovi tenha API de reembolso; fica como opção futura.
 5. **AbacatePay:** fica fora da v1; reavaliar só se responder bem às perguntas de cartão estrangeiro e análise por venda.
 
 Perguntas prontas para o suporte de cada provedor: `docs/loja/pesquisa/perguntas-suporte-gateways.md`.
@@ -455,7 +465,7 @@ Premissas: ticket médio R$ 400; metade Pix, metade cartão à vista; 3 mensagen
 
 Leitura: o custo **fixo** cai de R$ 250 (Paytour) para **R$ 175** (Vercel Pro + Supabase Small), abaixo do teto de R$ 250–300, já com o chatbot em Claude Sonnet 5.5 e as reservas automatizadas. O custo variável é taxa de pagamento, que a Paytour também cobrava por fora via PagSeguro/PayPal. Se a conta Vercel já for Pro, o fixo adicional cai para R$ 75.
 
-Nota de 2026-10-19 (decisão 31): a linha "Mercado Pago D30" acima vale para o gateway único. Com Stripe (cartão) + Woovi (Pix), o custo variável de pagamento por venda de R$ 400 cai de R$ 9,94 para R$ 8,60 (cartão nacional) ou sobe para R$ 12,60 (se todo o cartão for estrangeiro, por causa dos +2 %); com Mercado Pago no cartão + Woovi no Pix, R$ 8,39. Fixo continua R$ 0.
+Nota de 2026-10-19 (decisão 39): a linha "Mercado Pago D30" acima vale para o gateway único. Com Stripe (cartão) + Woovi (Pix), o custo variável de pagamento por venda de R$ 400 cai de R$ 9,94 para R$ 8,60 (cartão nacional) ou sobe para R$ 12,60 (se todo o cartão for estrangeiro, por causa dos +2 %); com Mercado Pago no cartão + Woovi no Pix, R$ 8,39. Fixo continua R$ 0.
 
 **Supabase, estado verificado em 2026-10-09 [fatos]**
 
@@ -477,7 +487,7 @@ Leitura [recomendação]: a loja em si pesa pouco (tabelas de pedidos na casa do
 | Semana | Período | Entrega | Critério de pronto |
 |:--|:--|:--|:--|
 | 1 | 13–17 out | Aprovação deste plano; Figma das 4 telas (home, produto, checkout, confirmação); tabelas no Supabase; importação dos 46 produtos e imagens; **manutenção do Supabase** (limpeza do pg_net, índice duplicado, índices em FKs) e subida para Small | sócio aprovou as 4 telas; `produtos` populada; painel do Supabase sem aviso de IO |
-| 2 | 20–24 out | Páginas de catálogo e produto em PT/ES/EN; widget de reserva com preço; redirects dos slugs Paytour | todas as páginas abrem nos 3 idiomas no staging |
+| 2 | 20–24 out | Páginas de catálogo e produto em PT/ES/EN; widget de reserva com preço; redirects dos slugs Paytour | todas as páginas abrem nos 3 idiomas em `aguaverdeviagens.com.br` (testes) |
 | 3 | 27–31 out | Checkout + gateway (Pix e cartão) + webhook + criação de viagem + e-mail e WhatsApp ao passageiro + push/e-mail à empresa | compra de teste de R$ 1 vira viagem e dispara os avisos |
 | 4 | 3–7 nov | "Minha reserva", voucher, cancelamento 24 h com reembolso; tela "Pedidos do site" no PWA **e no app nativo**; fluxo de confirmação de passeios + cron | reembolso de teste concluído; passeio confirmado pelo PWA e pelo app |
 | 5 | 10–14 nov | Landing pages de rota com widget (plano SEO v5.1), consent LGPD, GA4 + Clarity, eventos de conversão, termos e política de cancelamento publicados | Lighthouse mobile ≥ 90; eventos chegam no GA4 |
@@ -494,15 +504,15 @@ Esforço estimado: ~6 semanas de construção + 2 de folga. Se o Drive de fotos 
 | Risco | Impacto | Tratamento |
 |:--|:--|:--|
 | Gateway recusar cartão estrangeiro ou exigir cadastro longo | Alto (público ES/EN) | escolher gateway com cartão internacional confirmado (§7.3); abrir cadastro na semana 1 |
-| Stripe enquadrar a atividade como "reservas de viagem" (restrita) e negar (decisão 31) | Alto (derruba o cartão na Stripe) | cadastro com a descrição exata (transfers e passeios, sem omitir nada); perguntar o enquadramento antes de integrar; contingência em 15/11: abrir Mercado Pago para o cartão (código pronto, decisão 32); Pix na Woovi independe disso |
+| Stripe enquadrar a atividade como "reservas de viagem" (restrita) e negar (decisão 39) | Alto (derruba o cartão na Stripe) | cadastro com a descrição exata (transfers e passeios, sem omitir nada); perguntar o enquadramento antes de integrar; contingência em 15/11: abrir Mercado Pago para o cartão (código pronto, decisão 40); Pix na Woovi independe disso |
 | Dois provedores de pagamento (Woovi + Stripe/MP): webhooks duplicados ou fora de ordem, reembolso no provedor errado | Médio | `gateway_eventos` com chave (gateway, evento_id); `pedidos.gateway` define o provedor do reembolso; teste de R$ 1 e estorno em cada um (§9, semana 3) |
 | Woovi sem informação publicada sobre prazo de recebimento, atividade restrita e disputa de Pix | Médio | perguntas ao suporte antes de integrar (`pesquisa/perguntas-suporte-gateways.md`) |
 | Plano Vercel Hobby (uso comercial proibido pelos termos) | Médio | confirmar plano; se Hobby, migrar para Pro (US$ 20/mês ≈ R$ 100, já contado no §8) |
 | Template de WhatsApp não aprovado a tempo pela Meta | Médio | submeter templates na semana 1; e-mail cobre enquanto isso |
 | Preços da Paytour desatualizados | Médio | dono revisa a tabela no §3 antes da semana 2 |
 | Perda de posições no Google na troca de domínio | Médio | redirects 301 slug a slug; sitemap; monitorar Search Console por 30 dias |
-| Passeio vendido sem vaga | Médio | fluxo de confirmação 24 h + reembolso automático (§4.5) |
-| Tocar em `viagens` quebrar PWA/app | Alto | só INSERT com o contrato do PWA; nenhuma coluna ou trigger existente alterada; teste em staging |
+| Passeio vendido sem vaga | Médio | como a vaga é garantida no pagamento, o site só vende datas com estoque (controle de vagas por passeio e data); se mesmo assim faltar, reembolso integral pelo PWA (decisão 36) |
+| Tocar em `viagens` quebrar PWA/app | Alto | só INSERT com o contrato do PWA; nenhuma coluna ou trigger existente alterada; teste em `aguaverdeviagens.com.br` (testes) |
 | Sobrecarga do atendimento com vendas automáticas | Baixo | push + e-mail por venda; IA responde dúvidas; painel no PWA |
 
 ---
@@ -543,7 +553,7 @@ Quando começa: a auditoria (item 1) pode começar **antes** do site novo, porqu
 **Você (dono) faz**
 1. Compartilha a página do plano com o sócio (menu Share da página).
 2. Confere o plano da Vercel (Hobby ou Pro) e, se Hobby, faz a troca para Pro no painel (US$ 20/mês).
-3. **(Atualizado em 2026-10-21, decisões 31–34)** Stripe: conta em sandbox já criada; trocar a descrição do negócio no painel para "Private airport, hotel and beach transfers with driver, and day tours, in Recife, Brazil. Customers book and pay on our own website." e pedir a ativação de produção esta semana (CNPJ 17.427.292/0001-46), só o produto Payments; cadastrar `STRIPE_SECRET_KEY` e `STRIPE_WEBHOOK_SECRET` na Vercel (Preview), nunca pelo chat. Woovi: criar o sandbox em `app.woovi-sandbox.com` hoje e a conta de produção esta semana; `WOOVI_APP_ID` na Vercel (Preview). Enviar as perguntas de `docs/loja/pesquisa/perguntas-suporte-gateways.md` aos dois suportes. Mercado Pago: nada a fazer, salvo a contingência de 15/11. Eu guio passo a passo.
+3. **(Atualizado em 2026-10-21, decisões 39–42)** Stripe: conta em sandbox já criada; trocar a descrição do negócio no painel para "Private airport, hotel and beach transfers with driver, and day tours, in Recife, Brazil. Customers book and pay on our own website." e pedir a ativação de produção esta semana (CNPJ 17.427.292/0001-46), só o produto Payments; cadastrar `STRIPE_SECRET_KEY` e `STRIPE_WEBHOOK_SECRET` na Vercel (Preview), nunca pelo chat. Woovi: criar o sandbox em `app.woovi-sandbox.com` hoje e a conta de produção esta semana; `WOOVI_APP_ID` na Vercel (Preview). Enviar as perguntas de `docs/loja/pesquisa/perguntas-suporte-gateways.md` aos dois suportes. Mercado Pago: nada a fazer, salvo a contingência de 15/11. Eu guio passo a passo.
 4. Sobe o porte do Supabase para Small no painel (Settings → Compute), de preferência fora do horário comercial; leva alguns minutos de indisponibilidade.
 5. Pede ao irmão acesso de leitura à conta do Google Ads (ou exportação das 3 campanhas) para a auditoria.
 6. Envia quando tiver: número CADASTUR, regra do adicional por passageiro.
