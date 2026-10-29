@@ -20,6 +20,8 @@ export interface EntradaDeCobranca {
   pagador: { nome: string; email: string; telefone: string; cpf?: string }
   /** Até quando o Pix vale (o gateway pode exigir um mínimo; o pedido pago depois do prazo é honrado). */
   expiraEm?: Date
+  /** Idioma do pedido: a página de pagamento hospedada (cartão) abre nele e o cliente volta para ele. */
+  idioma?: 'pt' | 'es' | 'en'
 }
 
 export interface Cobranca {
