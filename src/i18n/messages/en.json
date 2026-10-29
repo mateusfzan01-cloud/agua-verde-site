@@ -356,7 +356,13 @@
       "prova": "trips completed",
       "seguro1": "Secure system",
       "seguro2": ", with registered drivers.",
-      "live": "Updated hourly"
+      "live": "Updated hourly",
+      "emNumeros": "Água Verde in numbers",
+      "tripadvisor": "Tripadvisor rating",
+      "avaliacoes": "{n} reviews",
+      "motoristas": "registered drivers",
+      "idiomas": "service languages",
+      "idiomasLista": "Portuguese, English and Spanish"
     },
     "acompanhamento": {
       "titulo": "Follow your trip on your phone",

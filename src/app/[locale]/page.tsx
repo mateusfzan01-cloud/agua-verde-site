@@ -8,7 +8,7 @@ import { maisReservados, rotasPrincipais, slidesDeDestaque, TRIPADVISOR } from '
 import type { Produto } from '@/lib/loja/tipos'
 import { AcompanhamentoExemplo } from '@/components/loja/home/AcompanhamentoExemplo'
 import { CarrosselDeDestaques, type SlideDeDestaque } from '@/components/loja/home/CarrosselDeDestaques'
-import { ContadorDeViagens } from '@/components/loja/home/ContadorDeViagens'
+import { AguaVerdeEmNumeros, type VarianteDosNumeros } from '@/components/loja/home/AguaVerdeEmNumeros'
 import { HeroBusca } from '@/components/loja/home/HeroBusca'
 import { MaisReservados, type ItemDaLista } from '@/components/loja/home/MaisReservados'
 import { Tripadvisor } from '@/components/loja/home/Tripadvisor'
@@ -28,6 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: { canonical: locale === 'pt' ? '/' : `/${locale}`, languages: { pt: '/', es: '/es', en: '/en' } },
   }
 }
+
+const VARIANTE_NUMEROS: VarianteDosNumeros = 'fotoNumeros'
 
 const paraLista = (p: Produto, rank?: number): ItemDaLista => ({
   href: `/${p.tipo === 'transfer' ? 'transfers' : 'passeios'}/${p.slug}`,
@@ -65,11 +67,11 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
   // Contador de viagens e exemplo do link de acompanhamento. Em português entram no fim de
   // "Por que Água Verde?"; nos outros idiomas (sem essa seção) ficam depois de "Mais reservados".
   const provaEAcompanhamento = (
-    <div className="grid gap-4 md:grid-cols-2 md:items-start">
-      <Reveal>
-        <ContadorDeViagens locale={l} />
+    <div className="grid gap-4 md:grid-cols-2">
+      <Reveal className="h-full">
+        <AguaVerdeEmNumeros locale={l} variante={VARIANTE_NUMEROS} />
       </Reveal>
-      <Reveal delay={150}>
+      <Reveal delay={150} className="h-full">
         <AcompanhamentoExemplo />
       </Reveal>
     </div>

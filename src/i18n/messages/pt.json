@@ -356,7 +356,13 @@
       "prova": "viagens realizadas",
       "seguro1": "Sistema seguro",
       "seguro2": ", com motoristas cadastrados.",
-      "live": "Atualizado a cada hora"
+      "live": "Atualizado a cada hora",
+      "emNumeros": "Água Verde em números",
+      "tripadvisor": "nota no Tripadvisor",
+      "avaliacoes": "{n} avaliações",
+      "motoristas": "motoristas cadastrados",
+      "idiomas": "idiomas no atendimento",
+      "idiomasLista": "português, inglês e espanhol"
     },
     "acompanhamento": {
       "titulo": "Acompanhe sua viagem pelo celular",
