@@ -41,7 +41,7 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
     (`CONTADOR_ATUALIZA_SOZINHO` em `src/lib/loja/home.ts`);
   - os nomes dos lugares na busca vêm do catálogo (só em português);
   - o e-mail do rodapé é `contato@aguaverde.tur.br` (o do protótipo era `reservas@`; conferir qual existe).
-- A foto do topo (`public/images/loja/hero.jpg`) é a miniatura de 370 px do protótipo: no computador fica borrada.
+- O topo da home tem vídeo de fundo (`public/videos/hero-praia*.mp4`, banco Mixkit, provisório). A foto por baixo (`public/images/loja/hero-praia.jpg`, 1600 px) é o primeiro quadro do vídeo, para a troca foto → vídeo não aparecer; a antiga `hero.jpg` (miniatura de 370 px com os carros) não é mais usada.
   Falta uma foto grande do mesmo tema.
 
 ## Telas (todas conferidas contra o protótipo aprovado)
