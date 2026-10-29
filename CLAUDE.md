@@ -37,6 +37,15 @@ Site institucional completo com 12 páginas (10 estáticas + 1 dinâmica) e infr
 - **Header**: Início → Destinos (dropdown) → Quem Somos → Contato + botão WhatsApp
 - **Footer**: colunas Destinos (links reais), Empresa (links reais), Contato
 
+
+## Loja própria (código do Prompt B, sem efeito em produção)
+
+Rotas `/transfers`, `/passeios`, `/checkout`, `/reserva`, `/minha-reserva` (e `/es`, `/en`) em `src/app/[locale]/`; regras em
+`src/lib/loja/`. Pagamento **simulado** e pedidos **em memória** por padrão; o banco (`LOJA_REPOSITORIO=supabase`) e um provedor por forma de pagamento (`LOJA_GATEWAY_PIX`, `LOJA_GATEWAY_CARTAO`; decisão 31: Woovi no Pix e Stripe no cartão, adaptadores prontos nas etapas B2 e B3 de `docs/loja/PLANO_PAGAMENTO_RESERVA_PWA_APP.md`; o do Mercado Pago existe mas fica dormente) já estão escritos e testados, desligados até haver credenciais (ver `docs/loja/CODIGO_LOJA_B.md`). Em produção (`aguaverde.tur.br`) a loja responde 404 até
+`LOJA_HABILITADA=true`. O domínio de testes sai do Google (`X-Robots-Tag` e `robots.txt`). Migrations escritas em
+`supabase/migrations/*_loja_*` e **aplicadas no banco em 17/10/2026** (tabelas vazias; nada do site grava nelas ainda). Detalhes e limites: `docs/loja/CODIGO_LOJA_B.md`. As páginas antigas do site
+ficam em `src/app/(site)/`.
+
 ---
 
 ## Stack
