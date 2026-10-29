@@ -15,12 +15,8 @@ export const CONTADOR_ATUALIZA_SOZINHO = false
 /** Nota e quantidade de avaliações do Tripadvisor (plano §7). Conferir antes de publicar. */
 export const TRIPADVISOR = { nota: '4,7', avaliacoes: 112 }
 
-/** Motoristas cadastrados: número da home antiga do site. Conferir com a operação antes de publicar. */
+/** Motoristas cadastrados (confirmado pelo dono em 29/10/2026). Atualizar à mão quando mudar. */
 export const MOTORISTAS = 89
-
-/** Foto da frota (SUV e vans enfileirados) usada no card de números da home. */
-export const FOTO_FROTA =
-  'https://cdn.paytour.com.br/assets/images/passeios-2500470/11a6f3e8a33395df3326cc9ed67621b0/7DAA1670-6E8D-4704-8E34-CD2ECB8D5C41.jpeg'
 
 export interface RotaDaBusca {
   origem: string
