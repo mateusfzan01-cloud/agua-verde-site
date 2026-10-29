@@ -136,7 +136,7 @@ Levantado em 29/10/2026 lendo o histórico da sessão filha, a lista de PRs e os
 
 | PR | Conteúdo | Situação em 29/10 |
 |:--|:--|:--|
-| #3 | Protótipos das 4 telas e conteúdo (traduções, termos, mensagens de WhatsApp, pedido ao TripAdvisor); decisões 35 a 38 | Aberto, rascunho (branch `claude/vigilant-bell-34q719`) |
+| #3 | Protótipos das 4 telas e conteúdo (traduções, termos, mensagens de WhatsApp, pedido ao TripAdvisor); correção do WhatsApp com o 9; decisões 31 a 38 da numeração das branches | Aberto, rascunho, **com conflito com a `master`** (branch `claude/vigilant-bell-34q719`) |
 | #4 | Código da loja ("Prompt B"), sem efeito em produção | Aberto, rascunho (branch `claude/loja-codigo-b`) |
 | #5 | Documento do pagamento Stripe + Woovi e do pós-pagamento até o PWA e o app (`PLANO_PAGAMENTO_RESERVA_PWA_APP.md`) | Mesclado em `master` em 25/10 |
 | #6 | Um provedor por forma de pagamento; chave `(gateway, evento_id)` | Mesclado no código da loja em 25/10 |
@@ -146,7 +146,24 @@ Levantado em 29/10/2026 lendo o histórico da sessão filha, a lista de PRs e os
 
 Também entrou em `master` um commit de CI (`1fe514d`) que configura um executor próprio (`dell-agua-verde-site`).
 
-### 10.3 Decisões novas (31 a 38, detalhes no plano)
+### 10.3 Decisões novas depois de 09/10 (atenção: numeração duplicada)
+
+Duas sessões acrescentaram decisões ao §2 do plano com os **mesmos números**. Até alguém reconciliar, os números 31 a 34 querem dizer coisas diferentes conforme a branch.
+
+**Na branch dos protótipos (`claude/vigilant-bell-34q719`, PR #3) e na do código (`claude/loja-codigo-b`, PR #4):**
+
+| # | Decisão |
+|:--|:--|
+| 31 | Site e loja só no **modo claro** |
+| 32 | Máximo de **10** veículos (ou pessoas) por compra |
+| 33 | Direito de arrependimento: **48 h após a compra**, com reembolso integral se a viagem não tiver acontecido |
+| 34 | WhatsApp oficial com o 9: (81) 99947-3200, `wa.me/5581999473200` |
+| 35 | Testes no domínio **`aguaverdeviagens.com.br`** (pedido do irmão do dono), no lugar de `staging.aguaverde.tur.br`; `aguaverde.tur.br` segue oficial |
+| 36 | Passeio: vaga garantida no pagamento; cancelamento grátis até 48 h antes (24 h na alta temporada). Substitui a decisão 20 |
+| 37 | Contador "8.211 viagens" na home, atualizado a cada hora por uma função do banco que só devolve o número |
+| 38 | Destaques na home: faixa de aviso e carrossel com 4 slides, em PT/ES/EN |
+
+**Na `master` (PR #5, `PLANO_PAGAMENTO_RESERVA_PWA_APP.md`):**
 
 | # | Decisão |
 |:--|:--|
@@ -154,10 +171,8 @@ Também entrou em `master` um commit de CI (`1fe514d`) que configura um executor
 | 32 | Mercado Pago nunca teve conta; o código fica desligado. **Contingência**: se a Stripe não aprovar a produção até **15/11**, abre-se conta no Mercado Pago para o cartão |
 | 33 | Reembolso: cartão automático pela Stripe; Pix manual pelo admin Caio no painel da Woovi |
 | 34 | Avisos: push só para o admin Caio; e-mail para `reservas@uluwatour.tur.br`; uma Edge Function `loja-pedido-pago`; checkout pergunta passageiros e malas |
-| 35 | Testes no domínio **`aguaverdeviagens.com.br`** (pedido do irmão do dono), no lugar de `staging.aguaverde.tur.br`; `aguaverde.tur.br` segue como domínio oficial |
-| 36 | Passeio: vaga garantida no pagamento (sem confirmação em 24 h); cancelamento grátis até 48 h antes (24 h na alta temporada). Substitui a decisão 20 |
-| 37 | Contador "8.211 viagens" na home, atualizado a cada hora por uma função do banco que só devolve o número (fica para a etapa C) |
-| 38 | Destaques na home: faixa de aviso e carrossel com 4 slides, em PT/ES/EN |
+
+**Recomendação**: ao resolver o conflito do PR #3 (ou do #4) com a `master`, manter 31 a 38 como estão nas branches e renumerar as quatro de pagamento para **39 a 42**. Corrigir as referências "decisões 31 a 34" no `PLANO_PAGAMENTO_RESERVA_PWA_APP.md` e no `HANDOFF_PROXIMAS_SESSOES.md`.
 
 ### 10.4 Estado técnico
 
@@ -198,4 +213,5 @@ Também entrou em `master` um commit de CI (`1fe514d`) que configura um executor
 
 - `HANDOFF_PROXIMAS_SESSOES.md`: a tabela de frentes ainda mostra A como "liberada" e B como "aguardando A". As duas já foram feitas, e C está em andamento.
 - §5 e §8 deste log: refletem 09/10.
+- **PR #3 em conflito com a `master`** (estado "dirty" em 29/10): a `master` recebeu o PR #5 e um commit de CI depois que a branch dos protótipos saiu dela. O conflito mais visível é a numeração das decisões (§10.3). Esta atualização do log foi gravada nessa branch, então só chega à `master` quando o PR #3 for resolvido e mesclado.
 
