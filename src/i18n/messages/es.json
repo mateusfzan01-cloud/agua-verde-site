@@ -124,10 +124,8 @@
       "c2d": "En la salida de arribos. Te mandamos su nombre y foto por WhatsApp.",
       "c3": "60 minutos de espera gratis",
       "c3d": "Desde el aterrizaje. Tiempo de sobra para las valijas.",
-      "dataPouso": "Fecha y hora de aterrizaje",
       "idaAeroporto": "Ida: aeropuerto → hotel",
       "voltaAeroporto": "Vuelta: hotel → aeropuerto",
-      "voltaD": "Fecha y hora de búsqueda en el hotel",
       "horaPouso": "Hora de aterrizaje",
       "horaBusca": "Hora de búsqueda"
     },
@@ -157,7 +155,7 @@
       "pixAjuda": "Pago instantáneo brasileño. Código válido por 30 minutos.",
       "cartao": "Tarjeta de crédito",
       "cartaoAjuda": "Visa, Mastercard, Amex y Elo, de Brasil o del exterior.",
-      "mp": "Pago procesado por Mercado Pago. No guardamos los datos de tu tarjeta.",
+      "mp": "Pago seguro. No guardamos los datos de tu tarjeta.",
       "aceiteA": "Leí y acepto los",
       "termos": "Términos de uso",
       "aceiteB": ", incluida la cancelación gratis hasta {horas} h antes, y la",
@@ -202,9 +200,9 @@
       "simular": "Simular pago aprobado",
       "naoEncontrado": "Pedido no encontrado.",
       "ver": "Ver mi reserva",
-      "irParaCartao": "Pagar con tarjeta en Mercado Pago",
+      "irParaCartao": "Pagar con tarjeta",
       "cartaoTitulo": "Pago con tarjeta",
-      "cartaoAjuda": "Pagás en una página segura de Mercado Pago. No guardamos los datos de tu tarjeta."
+      "cartaoAjuda": "Pagás en una página segura de pago. No guardamos los datos de tu tarjeta."
     },
     "reserva": {
       "chip": "Pago aprobado",

@@ -67,7 +67,7 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
   // Contador de viagens e exemplo do link de acompanhamento. Em português entram no fim de
   // "Por que Água Verde?"; nos outros idiomas (sem essa seção) ficam depois de "Mais reservados".
   const provaEAcompanhamento = (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid gap-4 lg:grid-cols-2">
       <Reveal className="h-full">
         <AguaVerdeEmNumeros locale={l} variante={VARIANTE_NUMEROS} />
       </Reveal>

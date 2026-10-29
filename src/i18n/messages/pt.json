@@ -124,10 +124,8 @@
       "c2d": "Na saída do desembarque. Você recebe o nome e a foto dele no WhatsApp.",
       "c3": "60 minutos de espera grátis",
       "c3d": "Contados a partir do pouso. Tempo de sobra para bagagem.",
-      "dataPouso": "Data e hora do pouso",
       "idaAeroporto": "Ida: aeroporto → hotel",
       "voltaAeroporto": "Volta: hotel → aeroporto",
-      "voltaD": "Data e hora da busca no hotel",
       "horaPouso": "Hora do pouso",
       "horaBusca": "Hora da busca"
     },
@@ -157,7 +155,7 @@
       "pixAjuda": "Aprovação na hora. Código válido por 30 minutos.",
       "cartao": "Cartão de crédito",
       "cartaoAjuda": "Visa, Mastercard, Amex e Elo, do Brasil ou do exterior.",
-      "mp": "Pagamento processado pelo Mercado Pago. Não guardamos os dados do seu cartão.",
+      "mp": "Pagamento seguro. Não guardamos os dados do seu cartão.",
       "aceiteA": "Li e aceito os",
       "termos": "Termos de uso",
       "aceiteB": ", incluindo cancelamento grátis até {horas} h antes, e a",
@@ -202,9 +200,9 @@
       "simular": "Simular pagamento aprovado",
       "naoEncontrado": "Pedido não encontrado.",
       "ver": "Ver minha reserva",
-      "irParaCartao": "Pagar com cartão no Mercado Pago",
+      "irParaCartao": "Pagar com cartão",
       "cartaoTitulo": "Pagamento com cartão",
-      "cartaoAjuda": "Você paga numa página segura do Mercado Pago. Não guardamos os dados do seu cartão."
+      "cartaoAjuda": "Você paga numa página segura de pagamento. Não guardamos os dados do seu cartão."
     },
     "reserva": {
       "chip": "Pagamento aprovado",
