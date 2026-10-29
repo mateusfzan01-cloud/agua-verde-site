@@ -35,8 +35,8 @@ export function HeroVideo({ className }: { className?: string }) {
         onPlaying={() => setPlaying(true)}
         className={cn('h-full w-full object-cover', className)}
       >
-        <source src="/videos/hero-praia-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
-        <source src="/videos/hero-praia.mp4" type="video/mp4" />
+        <source src="/videos/hero-porto-de-galinhas-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+        <source src="/videos/hero-porto-de-galinhas.mp4" type="video/mp4" />
       </video>
     </div>
   )

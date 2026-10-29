@@ -41,7 +41,7 @@ data → preço na hora → página do produto), 4 promessas, carrossel "Em dest
     (`CONTADOR_ATUALIZA_SOZINHO` em `src/lib/loja/home.ts`);
   - os nomes dos lugares na busca vêm do catálogo (só em português);
   - o e-mail do rodapé é `contato@aguaverde.tur.br` (o do protótipo era `reservas@`; conferir qual existe).
-- O topo da home tem vídeo de fundo (`public/videos/hero-praia*.mp4`, banco Mixkit, provisório). A foto por baixo (`public/images/loja/hero-praia.jpg`, 1600 px) é o primeiro quadro do vídeo, para a troca foto → vídeo não aparecer; a antiga `hero.jpg` (miniatura de 370 px com os carros) não é mais usada.
+- O topo da home tem vídeo de fundo: drone sobre Porto de Galinhas (`public/videos/hero-porto-de-galinhas*.mp4`; Pexels, vídeo 11952778, licença gratuita para uso comercial, sem crédito obrigatório). Trocar por vídeo próprio quando houver. A foto por baixo (`public/images/loja/hero-porto-de-galinhas.jpg`, 1600 px) é o primeiro quadro do vídeo, para a troca foto → vídeo não aparecer; a antiga `hero.jpg` (miniatura de 370 px com os carros) não é mais usada.
   Falta uma foto grande do mesmo tema.
 
 ## Telas (todas conferidas contra o protótipo aprovado)
