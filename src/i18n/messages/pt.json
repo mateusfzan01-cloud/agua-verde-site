@@ -9,7 +9,13 @@
       "passeios": "Passeios",
       "minhaReserva": "Minha reserva",
       "whatsapp": "WhatsApp",
-      "inicio": "Início"
+      "inicio": "Início",
+      "destinos": "Destinos",
+      "quemSomos": "Quem Somos",
+      "contato": "Contato",
+      "destinoPdg": "Transfer Porto de Galinhas",
+      "destinoCarneiros": "Transfer Praia dos Carneiros",
+      "destinoMaragogi": "Transfer Maragogi"
     },
     "rodape": {
       "termos": "Termos de uso",
@@ -118,10 +124,8 @@
       "c2d": "Na saída do desembarque. Você recebe o nome e a foto dele no WhatsApp.",
       "c3": "60 minutos de espera grátis",
       "c3d": "Contados a partir do pouso. Tempo de sobra para bagagem.",
-      "dataPouso": "Data e hora do pouso",
       "idaAeroporto": "Ida: aeroporto → hotel",
       "voltaAeroporto": "Volta: hotel → aeroporto",
-      "voltaD": "Data e hora da busca no hotel",
       "horaPouso": "Hora do pouso",
       "horaBusca": "Hora da busca"
     },
@@ -151,7 +155,7 @@
       "pixAjuda": "Aprovação na hora. Código válido por 30 minutos.",
       "cartao": "Cartão de crédito",
       "cartaoAjuda": "Visa, Mastercard, Amex e Elo, do Brasil ou do exterior.",
-      "mp": "Pagamento processado pelo Mercado Pago. Não guardamos os dados do seu cartão.",
+      "mp": "Pagamento seguro. Não guardamos os dados do seu cartão.",
       "aceiteA": "Li e aceito os",
       "termos": "Termos de uso",
       "aceiteB": ", incluindo cancelamento grátis até {horas} h antes, e a",
@@ -196,9 +200,9 @@
       "simular": "Simular pagamento aprovado",
       "naoEncontrado": "Pedido não encontrado.",
       "ver": "Ver minha reserva",
-      "irParaCartao": "Pagar com cartão no Mercado Pago",
+      "irParaCartao": "Pagar com cartão",
       "cartaoTitulo": "Pagamento com cartão",
-      "cartaoAjuda": "Você paga numa página segura do Mercado Pago. Não guardamos os dados do seu cartão."
+      "cartaoAjuda": "Você paga numa página segura de pagamento. Não guardamos os dados do seu cartão."
     },
     "reserva": {
       "chip": "Pagamento aprovado",
@@ -317,7 +321,19 @@
       "fechar": "Fechar aviso",
       "aPartirDe": "A partir de",
       "transferDe": "Transfer privativo a partir de",
-      "passeioDe": "Passeio privativo a partir de"
+      "passeioDe": "Passeio privativo a partir de",
+      "anterior": "Anterior",
+      "proximo": "Próximo"
+    },
+    "rotas": {
+      "rotulo": "Rotas populares",
+      "titulo": "Para onde você vai?",
+      "subtitulo": "As rotas mais pedidas pelos nossos passageiros, com preço fechado por veículo.",
+      "aPartirDe": "A partir de",
+      "porVeiculo": "por veículo",
+      "verDetalhes": "Ver detalhes",
+      "reservar": "Reservar",
+      "maisPopular": "Mais popular"
     },
     "maisReservados": {
       "titulo": "Mais reservados",
@@ -338,7 +354,13 @@
       "prova": "viagens realizadas",
       "seguro1": "Sistema seguro",
       "seguro2": ", com motoristas cadastrados.",
-      "live": "Atualizado a cada hora"
+      "live": "Atualizado a cada hora",
+      "emNumeros": "Água Verde em números",
+      "tripadvisor": "nota no Tripadvisor",
+      "avaliacoes": "{n} avaliações",
+      "motoristas": "motoristas cadastrados",
+      "idiomas": "idiomas no atendimento",
+      "idiomasLista": "português, inglês e espanhol"
     },
     "acompanhamento": {
       "titulo": "Acompanhe sua viagem pelo celular",

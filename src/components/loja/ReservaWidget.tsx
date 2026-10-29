@@ -99,7 +99,6 @@ export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa
         <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
           {rotData}
           <input type="date" className={campo} value={data} min={minima || undefined} onChange={(e) => setData(e.target.value)} />
-          {aero && <small className="font-normal">{t('dataPouso')}</small>}
         </label>
         {ehTransfer && (
           <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
@@ -112,7 +111,6 @@ export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa
             <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
               {rotDataVolta}
               <input type="date" className={campo} value={dataVolta} min={data || minima || undefined} onChange={(e) => setDataVolta(e.target.value)} />
-              {aero && <small className="font-normal">{t('voltaD')}</small>}
             </label>
             <label className="col-span-2 grid gap-1 text-[12.5px] font-semibold text-[#5a6570] sm:col-span-1">
               {rotHoraVolta}
@@ -129,20 +127,23 @@ export function ReservaWidget({ slug, tipo, sentido, modeloPreco, precoPorPessoa
           {veiculos.map((v) => {
             const q = quantidades[v.tipo] ?? 0
             return (
-              <div key={v.tipo} className={`flex items-center gap-3 rounded-xl border-[1.5px] p-3 ${q > 0 ? 'border-[#1a5c38] bg-[#e6f2ea]' : 'border-[#dde5df]'}`}>
-                <div className="min-w-0 flex-1">
-                  <b className="block text-[15px]">{v.nome}</b>
-                  <span className="block text-[12.5px] text-[#5a6570]">{v.capacidade}</span>
-                  <Preco valor={v.preco} className="mt-0.5 block text-[15px] font-bold text-[#1a5c38]" />
-                </div>
-                <div className="flex items-center gap-2">
-                  <button type="button" className={botaoPasso} onClick={() => mudar(v.tipo, -1)} disabled={q === 0} aria-label={`${t('diminuir')}: ${v.nome}`}>
-                    <Minus className="h-4 w-4" aria-hidden="true" />
-                  </button>
-                  <b className="w-5 text-center tabular-nums" aria-live="polite">{q}</b>
-                  <button type="button" className={botaoPasso} onClick={() => mudar(v.tipo, 1)} disabled={quantidadeTotal >= maxPorCompra} aria-label={`${t('aumentar')}: ${v.nome}`}>
-                    <Plus className="h-4 w-4" aria-hidden="true" />
-                  </button>
+              <div key={v.tipo} className={`grid gap-1 rounded-xl border-[1.5px] p-3 ${q > 0 ? 'border-[#1a5c38] bg-[#e6f2ea]' : 'border-[#dde5df]'}`}>
+                {/* Nome na largura toda: ao lado dos botões, "Van Sprinter Mercedes-Benz" quebrava no hífen */}
+                <b className="block text-[15px] text-balance">{v.nome}</b>
+                <div className="flex items-center gap-3">
+                  <div className="min-w-0 flex-1">
+                    <span className="block text-[12.5px] text-[#5a6570]">{v.capacidade}</span>
+                    <Preco valor={v.preco} className="mt-0.5 block text-[15px] font-bold text-[#1a5c38]" />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button type="button" className={botaoPasso} onClick={() => mudar(v.tipo, -1)} disabled={q === 0} aria-label={`${t('diminuir')}: ${v.nome}`}>
+                      <Minus className="h-4 w-4" aria-hidden="true" />
+                    </button>
+                    <b className="w-5 text-center tabular-nums" aria-live="polite">{q}</b>
+                    <button type="button" className={botaoPasso} onClick={() => mudar(v.tipo, 1)} disabled={quantidadeTotal >= maxPorCompra} aria-label={`${t('aumentar')}: ${v.nome}`}>
+                      <Plus className="h-4 w-4" aria-hidden="true" />
+                    </button>
+                  </div>
                 </div>
               </div>
             )

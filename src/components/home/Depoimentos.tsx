@@ -45,10 +45,11 @@ const depoimentos = [
   },
 ]
 
-export function Depoimentos() {
+/** `containerClassName` troca a largura do conteúdo (a home da loja usa a mesma largura das outras seções). */
+export function Depoimentos({ subtitulo, containerClassName }: { subtitulo?: string; containerClassName?: string } = {}) {
   return (
     <section id="depoimentos" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={containerClassName ?? 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}>
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-[#d4a853]/10 text-[#b08d3f] text-sm font-semibold rounded-full mb-4">
@@ -58,7 +59,7 @@ export function Depoimentos() {
             O que dizem nossos passageiros
           </h2>
           <p className="text-lg text-[#5a6570] max-w-2xl mx-auto">
-            Avaliações verificadas de passageiros reais. Média de 4.9 estrelas em mais de 47 viagens avaliadas.
+            {subtitulo ?? 'Avaliações verificadas de passageiros reais. Média de 4.9 estrelas em mais de 47 viagens avaliadas.'}
           </p>
         </div>
 

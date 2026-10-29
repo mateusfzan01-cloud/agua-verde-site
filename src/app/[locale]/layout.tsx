@@ -35,11 +35,15 @@ export default async function LojaLayout({
   return (
     <html lang={htmlLang[locale]} className={`${inter.variable} ${outfit.variable}`}>
       <body className="overflow-x-clip bg-[#fafbfa] font-sans text-[#1a1a2e] antialiased">
+        {/* Sem JS, o <Reveal> nunca marca is-visible: mostra tudo direto */}
+        <noscript>
+          <style>{'.reveal{opacity:1;transform:none}'}</style>
+        </noscript>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <MoedaProvider>
             <LojaHeader />
             <FaixaDeAviso />
-            <main className="mx-auto min-h-[60vh] max-w-6xl px-4 py-6">{children}</main>
+            <main className="mx-auto min-h-[60vh] max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-4 py-6">{children}</main>
             <LojaFooter />
           </MoedaProvider>
         </NextIntlClientProvider>

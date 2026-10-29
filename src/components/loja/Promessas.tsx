@@ -2,8 +2,11 @@ import { getTranslations } from 'next-intl/server'
 import { BadgeCheck, CalendarX2, PlaneTakeoff, Timer } from 'lucide-react'
 import type { Locale } from '@/i18n/routing'
 
-/** As 4 promessas. `compacta` tira as caixas (usada embaixo do resumo do checkout). */
-export async function Promessas({ locale, compacta = false }: { locale: Locale; compacta?: boolean }) {
+/**
+ * As 4 promessas. `compacta` tira as caixas e fica em uma coluna (embaixo do resumo do checkout).
+ * `estreita`: para em 2 por linha (coluna da página de produto, onde 4 lado a lado espremem o texto).
+ */
+export async function Promessas({ locale, compacta = false, estreita = false }: { locale: Locale; compacta?: boolean; estreita?: boolean }) {
   const t = await getTranslations({ locale, namespace: 'Loja.promessas' })
   const itens = [
     { icone: BadgeCheck, t: t('p1t'), d: t('p1d') },
@@ -12,7 +15,7 @@ export async function Promessas({ locale, compacta = false }: { locale: Locale; 
     { icone: Timer, t: t('p4t'), d: t('p4d') },
   ]
   return (
-    <ul className="grid grid-cols-2 gap-2 lg:grid-cols-4">
+    <ul className={compacta ? 'grid gap-2' : `grid gap-2 sm:grid-cols-2 ${estreita ? '' : 'lg:grid-cols-4'}`}>
       {itens.map(({ icone: Icone, t: titulo, d }) => (
         <li
           key={titulo}

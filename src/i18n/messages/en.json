@@ -9,7 +9,13 @@
       "passeios": "Tours",
       "minhaReserva": "My booking",
       "whatsapp": "WhatsApp",
-      "inicio": "Home"
+      "inicio": "Home",
+      "destinos": "Destinations",
+      "quemSomos": "About us",
+      "contato": "Contact",
+      "destinoPdg": "Porto de Galinhas transfer",
+      "destinoCarneiros": "Praia dos Carneiros transfer",
+      "destinoMaragogi": "Maragogi transfer"
     },
     "rodape": {
       "termos": "Terms of use",
@@ -118,10 +124,8 @@
       "c2d": "At the arrivals exit. You get his name and photo on WhatsApp.",
       "c3": "60 minutes free waiting",
       "c3d": "Counted from landing. Plenty of time for bags.",
-      "dataPouso": "Landing date and time",
       "idaAeroporto": "Outbound: airport → hotel",
       "voltaAeroporto": "Return: hotel → airport",
-      "voltaD": "Hotel pickup date and time",
       "horaPouso": "Landing time",
       "horaBusca": "Pickup time"
     },
@@ -151,7 +155,7 @@
       "pixAjuda": "Brazilian instant payment. Code valid for 30 minutes.",
       "cartao": "Credit card",
       "cartaoAjuda": "Visa, Mastercard, Amex and Elo, Brazilian or foreign.",
-      "mp": "Payment processed by Mercado Pago. We don't store your card details.",
+      "mp": "Secure payment. We don’t store your card details.",
       "aceiteA": "I have read and accept the",
       "termos": "Terms of use",
       "aceiteB": ", including free cancellation up to {horas} h before, and the",
@@ -196,9 +200,9 @@
       "simular": "Simulate approved payment",
       "naoEncontrado": "Order not found.",
       "ver": "See my booking",
-      "irParaCartao": "Pay by card on Mercado Pago",
+      "irParaCartao": "Pay by card",
       "cartaoTitulo": "Card payment",
-      "cartaoAjuda": "You pay on a secure Mercado Pago page. We don’t store your card details."
+      "cartaoAjuda": "You pay on a secure payment page. We don’t store your card details."
     },
     "reserva": {
       "chip": "Payment approved",
@@ -317,7 +321,19 @@
       "fechar": "Close notice",
       "aPartirDe": "From",
       "transferDe": "Private transfer from",
-      "passeioDe": "Private tour from"
+      "passeioDe": "Private tour from",
+      "anterior": "Previous",
+      "proximo": "Next"
+    },
+    "rotas": {
+      "rotulo": "Popular routes",
+      "titulo": "Where are you going?",
+      "subtitulo": "Our passengers’ most requested routes, with a fixed price per vehicle.",
+      "aPartirDe": "From",
+      "porVeiculo": "per vehicle",
+      "verDetalhes": "See details",
+      "reservar": "Book",
+      "maisPopular": "Most popular"
     },
     "maisReservados": {
       "titulo": "Most booked",
@@ -338,7 +354,13 @@
       "prova": "trips completed",
       "seguro1": "Secure system",
       "seguro2": ", with registered drivers.",
-      "live": "Updated hourly"
+      "live": "Updated hourly",
+      "emNumeros": "Água Verde in numbers",
+      "tripadvisor": "Tripadvisor rating",
+      "avaliacoes": "{n} reviews",
+      "motoristas": "registered drivers",
+      "idiomas": "service languages",
+      "idiomasLista": "Portuguese, English and Spanish"
     },
     "acompanhamento": {
       "titulo": "Follow your trip on your phone",
