@@ -323,7 +323,9 @@
       "fechar": "Fechar aviso",
       "aPartirDe": "A partir de",
       "transferDe": "Transfer privativo a partir de",
-      "passeioDe": "Passeio privativo a partir de"
+      "passeioDe": "Passeio privativo a partir de",
+      "anterior": "Anterior",
+      "proximo": "Próximo"
     },
     "rotas": {
       "rotulo": "Rotas populares",

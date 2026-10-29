@@ -323,7 +323,9 @@
       "fechar": "Cerrar aviso",
       "aPartirDe": "Desde",
       "transferDe": "Traslado privado desde",
-      "passeioDe": "Excursión privada desde"
+      "passeioDe": "Excursión privada desde",
+      "anterior": "Anterior",
+      "proximo": "Siguiente"
     },
     "rotas": {
       "rotulo": "Rutas populares",

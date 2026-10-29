@@ -323,7 +323,9 @@
       "fechar": "Close notice",
       "aPartirDe": "From",
       "transferDe": "Private transfer from",
-      "passeioDe": "Private tour from"
+      "passeioDe": "Private tour from",
+      "anterior": "Previous",
+      "proximo": "Next"
     },
     "rotas": {
       "rotulo": "Popular routes",
