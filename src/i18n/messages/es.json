@@ -9,7 +9,13 @@
       "passeios": "Excursiones",
       "minhaReserva": "Mi reserva",
       "whatsapp": "WhatsApp",
-      "inicio": "Inicio"
+      "inicio": "Inicio",
+      "destinos": "Destinos",
+      "quemSomos": "Quiénes somos",
+      "contato": "Contacto",
+      "destinoPdg": "Traslado Porto de Galinhas",
+      "destinoCarneiros": "Traslado Praia dos Carneiros",
+      "destinoMaragogi": "Traslado Maragogi"
     },
     "rodape": {
       "termos": "Términos de uso",
@@ -318,6 +324,16 @@
       "aPartirDe": "Desde",
       "transferDe": "Traslado privado desde",
       "passeioDe": "Excursión privada desde"
+    },
+    "rotas": {
+      "rotulo": "Rutas populares",
+      "titulo": "¿A dónde vas?",
+      "subtitulo": "Las rutas más pedidas por nuestros pasajeros, con precio cerrado por vehículo.",
+      "aPartirDe": "Desde",
+      "porVeiculo": "por vehículo",
+      "verDetalhes": "Ver detalles",
+      "reservar": "Reservar",
+      "maisPopular": "Más popular"
     },
     "maisReservados": {
       "titulo": "Los más reservados",

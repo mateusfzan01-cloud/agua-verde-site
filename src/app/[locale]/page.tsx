@@ -4,7 +4,7 @@ import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { routing, type Locale } from '@/i18n/routing'
 import { precoAPartirDe } from '@/lib/loja/precos'
-import { maisReservados, slidesDeDestaque } from '@/lib/loja/home'
+import { maisReservados, rotasPrincipais, slidesDeDestaque, TRIPADVISOR } from '@/lib/loja/home'
 import type { Produto } from '@/lib/loja/tipos'
 import { AcompanhamentoExemplo } from '@/components/loja/home/AcompanhamentoExemplo'
 import { CarrosselDeDestaques, type SlideDeDestaque } from '@/components/loja/home/CarrosselDeDestaques'
@@ -13,6 +13,10 @@ import { HeroBusca } from '@/components/loja/home/HeroBusca'
 import { MaisReservados, type ItemDaLista } from '@/components/loja/home/MaisReservados'
 import { Tripadvisor } from '@/components/loja/home/Tripadvisor'
 import { Promessas } from '@/components/loja/Promessas'
+import { OrcamentoDaHome } from '@/components/loja/home/OrcamentoDaHome'
+import { PorQueAguaVerde } from '@/components/loja/home/PorQueAguaVerde'
+import { RotasPrincipais } from '@/components/loja/home/RotasPrincipais'
+import { Depoimentos } from '@/components/home/Depoimentos'
 import { Reveal } from '@/components/shared/Reveal'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -68,6 +72,7 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
         <Reveal>
           <CarrosselDeDestaques slides={slides} />
         </Reveal>
+        <RotasPrincipais locale={l} rotas={rotasPrincipais()} />
         <Reveal>
           <Tripadvisor locale={l} />
         </Reveal>
@@ -85,6 +90,17 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
             <AcompanhamentoExemplo />
           </Reveal>
         </div>
+        {/* Seções da home antiga: textos só em português por enquanto */}
+        {l === 'pt' && (
+          <>
+            <PorQueAguaVerde />
+            {/* Largura total da tela, como o topo */}
+            <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
+              <Depoimentos subtitulo={`Avaliações de passageiros reais. Nota ${TRIPADVISOR.nota} no Tripadvisor, com ${TRIPADVISOR.avaliacoes} avaliações.`} />
+            </div>
+            <OrcamentoDaHome />
+          </>
+        )}
       </div>
     </div>
   )

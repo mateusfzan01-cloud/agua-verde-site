@@ -9,7 +9,13 @@
       "passeios": "Passeios",
       "minhaReserva": "Minha reserva",
       "whatsapp": "WhatsApp",
-      "inicio": "Início"
+      "inicio": "Início",
+      "destinos": "Destinos",
+      "quemSomos": "Quem Somos",
+      "contato": "Contato",
+      "destinoPdg": "Transfer Porto de Galinhas",
+      "destinoCarneiros": "Transfer Praia dos Carneiros",
+      "destinoMaragogi": "Transfer Maragogi"
     },
     "rodape": {
       "termos": "Termos de uso",
@@ -318,6 +324,16 @@
       "aPartirDe": "A partir de",
       "transferDe": "Transfer privativo a partir de",
       "passeioDe": "Passeio privativo a partir de"
+    },
+    "rotas": {
+      "rotulo": "Rotas populares",
+      "titulo": "Para onde você vai?",
+      "subtitulo": "As rotas mais pedidas pelos nossos passageiros, com preço fechado por veículo.",
+      "aPartirDe": "A partir de",
+      "porVeiculo": "por veículo",
+      "verDetalhes": "Ver detalhes",
+      "reservar": "Reservar",
+      "maisPopular": "Mais popular"
     },
     "maisReservados": {
       "titulo": "Mais reservados",

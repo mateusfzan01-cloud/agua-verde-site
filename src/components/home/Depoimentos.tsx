@@ -45,7 +45,7 @@ const depoimentos = [
   },
 ]
 
-export function Depoimentos() {
+export function Depoimentos({ subtitulo }: { subtitulo?: string } = {}) {
   return (
     <section id="depoimentos" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +58,7 @@ export function Depoimentos() {
             O que dizem nossos passageiros
           </h2>
           <p className="text-lg text-[#5a6570] max-w-2xl mx-auto">
-            Avaliações verificadas de passageiros reais. Média de 4.9 estrelas em mais de 47 viagens avaliadas.
+            {subtitulo ?? 'Avaliações verificadas de passageiros reais. Média de 4.9 estrelas em mais de 47 viagens avaliadas.'}
           </p>
         </div>
 

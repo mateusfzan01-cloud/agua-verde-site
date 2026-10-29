@@ -84,3 +84,44 @@ export function slidesDeDestaque(): { tipo: TipoProduto; produto: Produto }[] {
     return produto ? [{ tipo, produto }] : []
   })
 }
+
+export interface RotaPrincipal {
+  produto: Produto
+  /** Foto do destino, tirada dos passeios do catálogo (os transfers só têm fotos dos carros). */
+  imagem: string
+  /** Tempo aproximado de viagem, como na home antiga. */
+  duracao: string | null
+  /** Página de destino em português (SEO), quando existe. */
+  landingPage: string | null
+  popular?: boolean
+}
+
+/** Cards grandes "Para onde você vai?": os destinos das páginas de SEO (os mesmos do menu Destinos), com o preço da loja. */
+const ROTAS_PRINCIPAIS: (Omit<RotaPrincipal, 'produto'> & { slug: string })[] = [
+  {
+    slug: 'aeroporto-recife-porto-de-galinhas-ida',
+    imagem: 'https://cdn.paytour.com.br/assets/images/passeios-2500470/b95bd2490c75e5c6a73dfcf6d255bd37/F09EF7A9-0874-467E-BE32-6EF8F986891E.jpeg',
+    duracao: '1h 15min',
+    landingPage: '/transfer-porto-de-galinhas',
+    popular: true,
+  },
+  {
+    slug: 'aeroporto-recife-praia-dos-carneiros-ida',
+    imagem: 'https://cdn.paytour.com.br/assets/images/passeios-2500470/ad6bbc8dbcf00cfb7bde098674e63be3/BB4EB1DE-1A9D-4541-A174-C25265F33C70.jpeg',
+    duracao: '1h 45min',
+    landingPage: '/transfer-praia-de-carneiros',
+  },
+  {
+    slug: 'aeroporto-recife-maragogi-ida',
+    imagem: 'https://cdn.paytour.com.br/assets/images/passeios-2500470/dc4332ef417f97f0a150d447ae525c31/DJI_0020_post-1024x576.jpg',
+    duracao: '2h 30min',
+    landingPage: '/transfer-maragogi',
+  },
+]
+
+export function rotasPrincipais(): RotaPrincipal[] {
+  return ROTAS_PRINCIPAIS.flatMap(({ slug, ...resto }) => {
+    const produto = produtoPorSlug(slug, 'transfer')
+    return produto ? [{ ...resto, produto }] : []
+  })
+}

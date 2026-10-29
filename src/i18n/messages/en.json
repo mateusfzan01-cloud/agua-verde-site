@@ -9,7 +9,13 @@
       "passeios": "Tours",
       "minhaReserva": "My booking",
       "whatsapp": "WhatsApp",
-      "inicio": "Home"
+      "inicio": "Home",
+      "destinos": "Destinations",
+      "quemSomos": "About us",
+      "contato": "Contact",
+      "destinoPdg": "Porto de Galinhas transfer",
+      "destinoCarneiros": "Praia dos Carneiros transfer",
+      "destinoMaragogi": "Maragogi transfer"
     },
     "rodape": {
       "termos": "Terms of use",
@@ -318,6 +324,16 @@
       "aPartirDe": "From",
       "transferDe": "Private transfer from",
       "passeioDe": "Private tour from"
+    },
+    "rotas": {
+      "rotulo": "Popular routes",
+      "titulo": "Where are you going?",
+      "subtitulo": "Our passengers’ most requested routes, with a fixed price per vehicle.",
+      "aPartirDe": "From",
+      "porVeiculo": "per vehicle",
+      "verDetalhes": "See details",
+      "reservar": "Book",
+      "maisPopular": "Most popular"
     },
     "maisReservados": {
       "titulo": "Most booked",
