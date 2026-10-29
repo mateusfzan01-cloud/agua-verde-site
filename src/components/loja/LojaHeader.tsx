@@ -8,7 +8,7 @@ export async function LojaHeader() {
   const t = await getTranslations('Loja.nav')
   return (
     <header className="sticky top-0 z-40 border-b border-[#dde5df] bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2.5">
+      <div className="mx-auto flex max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] items-center gap-3 px-4 py-2.5">
         <Link href="/transfers" aria-label="Água Verde" className="flex shrink-0 rounded-lg bg-white p-1">
           <Image src="/images/loja/logo-recortado.png" alt="Água Verde Viagens & Receptivos" width={720} height={394} className="h-12 w-auto sm:h-14" priority />
         </Link>

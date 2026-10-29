@@ -78,7 +78,7 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
   return (
     <div className="grid gap-0">
       <HeroBusca locale={l} />
-      <div className="mx-auto grid w-full max-w-3xl gap-8 pt-6 lg:max-w-6xl">
+      <div className="mx-auto grid w-full max-w-3xl gap-8 pt-6 lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px]">
         <Reveal>
           <Promessas locale={l} />
         </Reveal>
@@ -102,7 +102,10 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
             <PorQueAguaVerde>{provaEAcompanhamento}</PorQueAguaVerde>
             {/* Largura total da tela, como o topo */}
             <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
-              <Depoimentos subtitulo={`Avaliações de passageiros reais. Nota ${TRIPADVISOR.nota} no Tripadvisor, com ${TRIPADVISOR.avaliacoes} avaliações.`} />
+              <Depoimentos
+                containerClassName="mx-auto max-w-3xl px-4 lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px]"
+                subtitulo={`Avaliações de passageiros reais. Nota ${TRIPADVISOR.nota} no Tripadvisor, com ${TRIPADVISOR.avaliacoes} avaliações.`}
+              />
             </div>
             <OrcamentoDaHome />
           </>

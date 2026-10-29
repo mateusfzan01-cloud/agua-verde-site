@@ -43,7 +43,7 @@ export default async function LojaLayout({
           <MoedaProvider>
             <LojaHeader />
             <FaixaDeAviso />
-            <main className="mx-auto min-h-[60vh] max-w-6xl px-4 py-6">{children}</main>
+            <main className="mx-auto min-h-[60vh] max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] px-4 py-6">{children}</main>
             <LojaFooter />
           </MoedaProvider>
         </NextIntlClientProvider>

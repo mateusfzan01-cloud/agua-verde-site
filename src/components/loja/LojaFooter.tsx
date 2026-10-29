@@ -7,7 +7,7 @@ export async function LojaFooter() {
   const n = await getTranslations('Loja.nav')
   return (
     <footer className="mt-16 bg-[#0d2e1c] py-6 text-[12.5px] text-[#b9cbbf]">
-      <div className="mx-auto grid max-w-3xl gap-1.5 px-4 lg:max-w-6xl">
+      <div className="mx-auto grid max-w-3xl gap-1.5 px-4 lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px]">
         <b className="text-white">{r('empresa')}</b>
         <span>{r('endereco')}</span>
         <span>{r('contato')}</span>
