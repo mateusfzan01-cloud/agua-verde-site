@@ -35,6 +35,10 @@ export default async function LojaLayout({
   return (
     <html lang={htmlLang[locale]} className={`${inter.variable} ${outfit.variable}`}>
       <body className="overflow-x-clip bg-[#fafbfa] font-sans text-[#1a1a2e] antialiased">
+        {/* Sem JS, o <Reveal> nunca marca is-visible: mostra tudo direto */}
+        <noscript>
+          <style>{'.reveal{opacity:1;transform:none}'}</style>
+        </noscript>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <MoedaProvider>
             <LojaHeader />

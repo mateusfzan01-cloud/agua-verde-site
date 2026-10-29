@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server'
 import { ShieldCheck } from 'lucide-react'
 import type { Locale } from '@/i18n/routing'
 import { CONTADOR_ATUALIZA_SOZINHO, VIAGENS_REALIZADAS } from '@/lib/loja/home'
+import { CountUp } from '@/components/shared/CountUp'
 
 /**
  * "8.211 viagens realizadas". O selo "Atualizado a cada hora" só aparece quando o número
@@ -19,7 +20,7 @@ export async function ContadorDeViagens({ locale }: { locale: Locale }) {
       )}
       <div className="flex flex-wrap items-baseline gap-2.5">
         <span className="font-heading text-[40px] font-bold leading-none tabular-nums text-[#1a5c38]">
-          {VIAGENS_REALIZADAS.toLocaleString(locale === 'pt' ? 'pt-BR' : locale === 'es' ? 'es-AR' : 'en-GB')}
+          <CountUp value={VIAGENS_REALIZADAS} localeTag={locale === 'pt' ? 'pt-BR' : locale === 'es' ? 'es-AR' : 'en-GB'} />
         </span>
         <b className="font-heading text-xl">{t('prova')}</b>
       </div>

@@ -13,6 +13,7 @@ import { HeroBusca } from '@/components/loja/home/HeroBusca'
 import { MaisReservados, type ItemDaLista } from '@/components/loja/home/MaisReservados'
 import { Tripadvisor } from '@/components/loja/home/Tripadvisor'
 import { Promessas } from '@/components/loja/Promessas'
+import { Reveal } from '@/components/shared/Reveal'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -61,16 +62,28 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
     <div className="grid gap-0">
       <HeroBusca locale={l} />
       <div className="mx-auto grid w-full max-w-3xl gap-8 pt-6">
-        <Promessas locale={l} />
-        <CarrosselDeDestaques slides={slides} />
-        <Tripadvisor locale={l} />
-        <MaisReservados
-          transfers={maisReservados('transfer').map((i) => paraLista(i.produto, i.rank))}
-          passeios={maisReservados('passeio').map((i) => paraLista(i.produto, i.rank))}
-        />
+        <Reveal>
+          <Promessas locale={l} />
+        </Reveal>
+        <Reveal>
+          <CarrosselDeDestaques slides={slides} />
+        </Reveal>
+        <Reveal>
+          <Tripadvisor locale={l} />
+        </Reveal>
+        <Reveal>
+          <MaisReservados
+            transfers={maisReservados('transfer').map((i) => paraLista(i.produto, i.rank))}
+            passeios={maisReservados('passeio').map((i) => paraLista(i.produto, i.rank))}
+          />
+        </Reveal>
         <div className="grid gap-4 md:grid-cols-2 md:items-start">
-          <ContadorDeViagens locale={l} />
-          <AcompanhamentoExemplo />
+          <Reveal>
+            <ContadorDeViagens locale={l} />
+          </Reveal>
+          <Reveal delay={150}>
+            <AcompanhamentoExemplo />
+          </Reveal>
         </div>
       </div>
     </div>
