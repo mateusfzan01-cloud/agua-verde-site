@@ -7,6 +7,7 @@
 - **Resultado**: PR [mateusfzan01-cloud/agua-verde-site#1](https://github.com/mateusfzan01-cloud/agua-verde-site/pull/1) mesclado em 09/10 (squash `2ce0258`). Plano aprovado pelo dono.
 - **Página do plano** (privada, compartilhar pelo menu Share): https://claude.ai/artifact/3BYTcv4neigwsy6sYvQaus
 - **Documento principal**: `docs/loja/PLANO_LOJA_PROPRIA_V1.md` (fonte da verdade; este log registra o caminho, não repete o plano).
+- **Atualizado em 29/10/2026**: a §10 registra o que aconteceu depois desta sessão (protótipos, código, troca de pagamento, banco). As §5 e §8 refletem o estado de 09/10.
 
 ---
 
@@ -115,3 +116,86 @@ As 30 decisões estão no §2 do plano. As que mais mudam o rumo:
 4. O Sonnet 5.5 recusa `tool_choice` `tool`/`any` (HTTP 400). Não copiar o padrão da automação de e-mails para a IA do WhatsApp.
 5. O revisor Codex do repositório roda quando o PR sai do rascunho; esperar a revisão antes do merge.
 6. Ao separar fato de resumo de busca: só citar como fato o que foi lido na página original.
+
+---
+
+## 10. Atualização em 29/10/2026: o que aconteceu depois desta sessão
+
+Levantado em 29/10/2026 lendo o histórico da sessão filha, a lista de PRs e os documentos nas branches `claude/vigilant-bell-34q719` e `claude/loja-codigo-b`.
+
+### 10.1 A sessão filha
+
+- **Criada por esta sessão em 09/10** para a frente A (protótipos e conteúdo): "Loja Água Verde: protótipos e conteúdo (frente A)", `session_01XR2N8HGax2hFiLKL3gHU8d`.
+- Seguiu além da frente A: fez também o código da loja (frente B) e parte da frente C, conversando direto com o dono.
+- **Modelo**: começou em Claude Opus 5.5; o dono trocou para Claude Sonnet 5.5.
+- **Custo registrado**: ~US$ 86 até 29/10.
+- **Estado em 29/10**: parada, esperando o dono (última resposta às 14h18 UTC: a lista das variáveis da Vercel).
+- **Protótipos publicados**: https://claude.ai/artifact/MPT3GSTEcgBsxMSx6UwAjf
+
+### 10.2 PRs depois do #2
+
+| PR | Conteúdo | Situação em 29/10 |
+|:--|:--|:--|
+| #3 | Protótipos das 4 telas e conteúdo (traduções, termos, mensagens de WhatsApp, pedido ao TripAdvisor); decisões 35 a 38 | Aberto, rascunho (branch `claude/vigilant-bell-34q719`) |
+| #4 | Código da loja ("Prompt B"), sem efeito em produção | Aberto, rascunho (branch `claude/loja-codigo-b`) |
+| #5 | Documento do pagamento Stripe + Woovi e do pós-pagamento até o PWA e o app (`PLANO_PAGAMENTO_RESERVA_PWA_APP.md`) | Mesclado em `master` em 25/10 |
+| #6 | Um provedor por forma de pagamento; chave `(gateway, evento_id)` | Mesclado no código da loja em 25/10 |
+| #7 | Woovi no Pix | Mesclado no código da loja em 26/10 |
+| #8 | Home com vídeo de Porto de Galinhas, animações, seções da home antiga e fotos da frota (veio de outra sessão do dono, no app de desktop) | Aberto |
+| #9 | Stripe no cartão (página hospedada) | Mesclado no código da loja em 29/10 |
+
+Também entrou em `master` um commit de CI (`1fe514d`) que configura um executor próprio (`dell-agua-verde-site`).
+
+### 10.3 Decisões novas (31 a 38, detalhes no plano)
+
+| # | Decisão |
+|:--|:--|
+| 31 | **Pagamento revisado**: cartão pela **Stripe** e Pix pela **Woovi**, condicionado à Stripe aceitar a atividade (ela trata transporte e agência de viagem como atividade restrita). Substitui o "um gateway só" da decisão 18 |
+| 32 | Mercado Pago nunca teve conta; o código fica desligado. **Contingência**: se a Stripe não aprovar a produção até **15/11**, abre-se conta no Mercado Pago para o cartão |
+| 33 | Reembolso: cartão automático pela Stripe; Pix manual pelo admin Caio no painel da Woovi |
+| 34 | Avisos: push só para o admin Caio; e-mail para `reservas@uluwatour.tur.br`; uma Edge Function `loja-pedido-pago`; checkout pergunta passageiros e malas |
+| 35 | Testes no domínio **`aguaverdeviagens.com.br`** (pedido do irmão do dono), no lugar de `staging.aguaverde.tur.br`; `aguaverde.tur.br` segue como domínio oficial |
+| 36 | Passeio: vaga garantida no pagamento (sem confirmação em 24 h); cancelamento grátis até 48 h antes (24 h na alta temporada). Substitui a decisão 20 |
+| 37 | Contador "8.211 viagens" na home, atualizado a cada hora por uma função do banco que só devolve o número (fica para a etapa C) |
+| 38 | Destaques na home: faixa de aviso e carrossel com 4 slides, em PT/ES/EN |
+
+### 10.4 Estado técnico
+
+- **Código da loja (branch `claude/loja-codigo-b`)**:
+  - funciona de ponta a ponta em PT/ES/EN;
+  - 44 produtos à venda;
+  - checkout em 3 passos;
+  - reserva com link secreto, cancelamento e "minha reserva";
+  - 46 redirects 301 da Paytour;
+  - Woovi e Stripe ligados por variáveis.
+- **Testes**: 181 passando e checagem de tipos sem erro (29/10).
+- **Banco**: as **tabelas da loja foram criadas em 17/10/2026** e estão vazias. Funções criadas:
+  - `confirmar_pedido` e `reembolsar_pedido`;
+  - `reserva_por_token`;
+  - `expirar_pedidos_pendentes`, ainda sem agendamento;
+  - `proximo_numero_pedido`.
+- **O que o banco ainda não faz**: o site ainda não grava nele (`LOJA_REPOSITORIO` não configurado).
+- **Pós-pagamento**: `PLANO_PAGAMENTO_RESERVA_PWA_APP.md` lista o que falta. Ninguém da equipe é avisado de pedido pago, a viagem nasce sem passageiros nem voo preenchidos, o passageiro ainda não recebe o voucher e a tela "Pedidos do site" não existe no PWA nem no app.
+- **Em produção, nada mudou para o visitante**: até `LOJA_HABILITADA=true`, a home e as páginas atuais continuam iguais.
+
+### 10.5 Pendências do dono em 29/10
+
+1. Colocar as variáveis na Vercel, **só em Preview**. Lista em `docs/loja/CODIGO_LOJA_B.md` e na última resposta da sessão filha.
+   - Banco: `LOJA_REPOSITORIO`, `SUPABASE_SERVICE_ROLE_KEY`.
+   - Pix: `LOJA_GATEWAY_PIX`, `WOOVI_APP_ID`, `WOOVI_API_URL`.
+   - Cartão: `LOJA_GATEWAY_CARTAO`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
+   - Endereço: `LOJA_URL_BASE`.
+2. Cadastrar os webhooks da Woovi e da Stripe apontando para `LOJA_URL_BASE`. O endereço precisa estar aberto para a internet: apontar `aguaverdeviagens.com.br` para a Vercel, ou desligar a proteção de deploys da prévia.
+3. Confirmar a subida do Supabase para o porte Small.
+4. Dar o "pode" para o teste de compra de R$ 1.
+5. Enviar uma foto grande para o topo da home (a atual é uma miniatura de 370 px).
+6. Conseguir a aprovação de produção da Stripe até 15/11; se não vier, abrir a conta no Mercado Pago (decisão 32).
+7. Definir as datas da alta temporada (decisão 36) e o que o contador conta (decisão 37).
+8. Conferir qual e-mail existe de fato para o rodapé: `contato@` ou `reservas@`.
+9. Seguem em aberto desde 09/10: plano da Vercel, acesso de leitura ao Google Ads, número CADASTUR e regra do adicional por passageiro.
+
+### 10.6 O que ficou desatualizado
+
+- `HANDOFF_PROXIMAS_SESSOES.md`: a tabela de frentes ainda mostra A como "liberada" e B como "aguardando A". As duas já foram feitas, e C está em andamento.
+- §5 e §8 deste log: refletem 09/10.
+
