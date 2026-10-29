@@ -37,7 +37,8 @@ const itens = [
   },
 ]
 
-export function PorQueAguaVerde() {
+/** `children` entra depois dos diferenciais (na home: contador de viagens e exemplo do acompanhamento). */
+export function PorQueAguaVerde({ children }: { children?: React.ReactNode }) {
   return (
     <section className="grid gap-6">
       <Reveal className="grid justify-items-center gap-2 text-center">
@@ -57,6 +58,7 @@ export function PorQueAguaVerde() {
           </Reveal>
         ))}
       </div>
+      {children}
     </section>
   )
 }

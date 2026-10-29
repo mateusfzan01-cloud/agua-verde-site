@@ -62,6 +62,19 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
       : [],
   )
 
+  // Contador de viagens e exemplo do link de acompanhamento. Em português entram no fim de
+  // "Por que Água Verde?"; nos outros idiomas (sem essa seção) ficam depois de "Mais reservados".
+  const provaEAcompanhamento = (
+    <div className="grid gap-4 md:grid-cols-2 md:items-start">
+      <Reveal>
+        <ContadorDeViagens locale={l} />
+      </Reveal>
+      <Reveal delay={150}>
+        <AcompanhamentoExemplo />
+      </Reveal>
+    </div>
+  )
+
   return (
     <div className="grid gap-0">
       <HeroBusca locale={l} />
@@ -82,18 +95,11 @@ export default async function HomeDaLoja({ params }: { params: Promise<{ locale:
             passeios={maisReservados('passeio').map((i) => paraLista(i.produto, i.rank))}
           />
         </Reveal>
-        <div className="grid gap-4 md:grid-cols-2 md:items-start">
-          <Reveal>
-            <ContadorDeViagens locale={l} />
-          </Reveal>
-          <Reveal delay={150}>
-            <AcompanhamentoExemplo />
-          </Reveal>
-        </div>
+        {l !== 'pt' && provaEAcompanhamento}
         {/* Seções da home antiga: textos só em português por enquanto */}
         {l === 'pt' && (
           <>
-            <PorQueAguaVerde />
+            <PorQueAguaVerde>{provaEAcompanhamento}</PorQueAguaVerde>
             {/* Largura total da tela, como o topo */}
             <div className="ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]">
               <Depoimentos subtitulo={`Avaliações de passageiros reais. Nota ${TRIPADVISOR.nota} no Tripadvisor, com ${TRIPADVISOR.avaliacoes} avaliações.`} />
