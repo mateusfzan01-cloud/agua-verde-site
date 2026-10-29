@@ -11,7 +11,7 @@
 |:--|:--|:--|
 | A. Protótipos das 4 telas + conteúdo (traduções, termos, templates WhatsApp, pedido TripAdvisor) | nada | **liberada** |
 | B. Código do site sem efeito em produção (rotas, i18n, catálogo, widget, camada de pagamento simulada, migrations escritas e não aplicadas) | aprovação das telas de A | aguardando A |
-| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | conta Mercado Pago; "pode" do dono para o banco; Supabase em Small | bloqueada |
+| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | "pode" do dono para o banco; Supabase em Small. O pós-pagamento (trilha A do `PLANO_PAGAMENTO_RESERVA_PWA_APP.md`) roda com o gateway simulado e **não depende de conta nenhuma**; os adaptadores Stripe e Woovi (trilha B) precisam das chaves de sandbox na Vercel (Preview). Mercado Pago: nunca houve conta; código dormente (decisão 40) | parcialmente liberada |
 | D. Auditoria do Google Ads | acesso de leitura à conta | bloqueada |
 | E. Manutenção do Supabase (pg_net, índices) | "pode" explícito do dono | bloqueada |
 
@@ -58,8 +58,13 @@ npm run build tem de passar. PR em rascunho.
 ## Prompt C — checkout real e integrações (quando desbloqueado)
 
 ```
-Pré-requisitos confirmados pelo dono: conta Mercado Pago ativa (credenciais nos segredos), Supabase em Small,
-"pode" explícito para aplicar as migrations da loja. Antes de qualquer alteração compartilhada, fazer a análise
+Leia docs/loja/PLANO_PAGAMENTO_RESERVA_PWA_APP.md (aprovado em 2026-10-21) e siga as trilhas A e B dele.
+Pré-requisitos confirmados pelo dono: Supabase em Small, "pode" explícito para aplicar as migrations da loja.
+Provedores (decisões 39–42): cartão na Stripe e Pix na Woovi, escolhidos por LOJA_GATEWAY_CARTAO e
+LOJA_GATEWAY_PIX; `gateway_eventos` com chave (gateway, evento_id) na primeira migration; reembolso de Pix é
+manual (status reembolso_pendente); avisos por uma única Edge Function `loja-pedido-pago` (push só ao admin Caio,
+e-mail reservas@uluwatour.tur.br, voucher ao passageiro). Mercado Pago fica dormente (contingência 15/11).
+Antes de qualquer alteração compartilhada, fazer a análise
 de risco para o PWA exigida no CLAUDE.md do appnativo-aguaverde. Implementar §4.2, §4.5, §4.7 do plano:
 aplicar migrations, Edge Function do webhook com gateway_eventos, confirmar_pedido transacional, cron de
 expiração, avisos (push no app, e-mail, WhatsApp), telas "Pedidos do site" no PWA e no app nativo.

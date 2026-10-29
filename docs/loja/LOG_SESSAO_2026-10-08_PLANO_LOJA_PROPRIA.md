@@ -136,7 +136,7 @@ Levantado em 29/10/2026 lendo o histórico da sessão filha, a lista de PRs e os
 
 | PR | Conteúdo | Situação em 29/10 |
 |:--|:--|:--|
-| #3 | Protótipos das 4 telas e conteúdo (traduções, termos, mensagens de WhatsApp, pedido ao TripAdvisor); correção do WhatsApp com o 9; decisões 31 a 38 da numeração das branches | Aberto, rascunho, **com conflito com a `master`** (branch `claude/vigilant-bell-34q719`) |
+| #3 | Protótipos das 4 telas e conteúdo (traduções, termos, mensagens de WhatsApp, pedido ao TripAdvisor); correção do WhatsApp com o 9; decisões 31 a 38 da numeração das branches | Aberto, rascunho; conflito com a `master` resolvido em 29/10 (branch `claude/vigilant-bell-34q719`) |
 | #4 | Código da loja ("Prompt B"), sem efeito em produção | Aberto, rascunho (branch `claude/loja-codigo-b`) |
 | #5 | Documento do pagamento Stripe + Woovi e do pós-pagamento até o PWA e o app (`PLANO_PAGAMENTO_RESERVA_PWA_APP.md`) | Mesclado em `master` em 25/10 |
 | #6 | Um provedor por forma de pagamento; chave `(gateway, evento_id)` | Mesclado no código da loja em 25/10 |
@@ -146,9 +146,9 @@ Levantado em 29/10/2026 lendo o histórico da sessão filha, a lista de PRs e os
 
 Também entrou em `master` um commit de CI (`1fe514d`) que configura um executor próprio (`dell-agua-verde-site`).
 
-### 10.3 Decisões novas depois de 09/10 (atenção: numeração duplicada)
+### 10.3 Decisões novas depois de 09/10
 
-Duas sessões acrescentaram decisões ao §2 do plano com os **mesmos números**. Até alguém reconciliar, os números 31 a 34 querem dizer coisas diferentes conforme a branch.
+Duas sessões acrescentaram decisões ao §2 do plano com os **mesmos números** (31 a 34). **Resolvido em 29/10**, no merge da `master` no PR #3: as decisões da branch ficaram 31 a 38, e as quatro de pagamento passaram a ser **39 a 42**. As citações delas foram renumeradas no plano principal, no `PLANO_PAGAMENTO_RESERVA_PWA_APP.md`, no `perguntas-suporte-gateways.md` e no `HANDOFF_PROXIMAS_SESSOES.md`.
 
 **Na branch dos protótipos (`claude/vigilant-bell-34q719`, PR #3) e na do código (`claude/loja-codigo-b`, PR #4):**
 
@@ -163,16 +163,16 @@ Duas sessões acrescentaram decisões ao §2 do plano com os **mesmos números**
 | 37 | Contador "8.211 viagens" na home, atualizado a cada hora por uma função do banco que só devolve o número |
 | 38 | Destaques na home: faixa de aviso e carrossel com 4 slides, em PT/ES/EN |
 
-**Na `master` (PR #5, `PLANO_PAGAMENTO_RESERVA_PWA_APP.md`):**
+**Vindas da `master` (PR #5, `PLANO_PAGAMENTO_RESERVA_PWA_APP.md`), já com a numeração nova:**
 
 | # | Decisão |
 |:--|:--|
-| 31 | **Pagamento revisado**: cartão pela **Stripe** e Pix pela **Woovi**, condicionado à Stripe aceitar a atividade (ela trata transporte e agência de viagem como atividade restrita). Substitui o "um gateway só" da decisão 18 |
-| 32 | Mercado Pago nunca teve conta; o código fica desligado. **Contingência**: se a Stripe não aprovar a produção até **15/11**, abre-se conta no Mercado Pago para o cartão |
-| 33 | Reembolso: cartão automático pela Stripe; Pix manual pelo admin Caio no painel da Woovi |
-| 34 | Avisos: push só para o admin Caio; e-mail para `reservas@uluwatour.tur.br`; uma Edge Function `loja-pedido-pago`; checkout pergunta passageiros e malas |
+| 39 | **Pagamento revisado**: cartão pela **Stripe** e Pix pela **Woovi**, condicionado à Stripe aceitar a atividade (ela trata transporte e agência de viagem como atividade restrita). Substitui o "um gateway só" da decisão 18 |
+| 40 | Mercado Pago nunca teve conta; o código fica desligado. **Contingência**: se a Stripe não aprovar a produção até **15/11**, abre-se conta no Mercado Pago para o cartão |
+| 41 | Reembolso: cartão automático pela Stripe; Pix manual pelo admin Caio no painel da Woovi |
+| 42 | Avisos: push só para o admin Caio; e-mail para `reservas@uluwatour.tur.br`; uma Edge Function `loja-pedido-pago`; checkout pergunta passageiros e malas |
 
-**Recomendação**: ao resolver o conflito do PR #3 (ou do #4) com a `master`, manter 31 a 38 como estão nas branches e renumerar as quatro de pagamento para **39 a 42**. Corrigir as referências "decisões 31 a 34" no `PLANO_PAGAMENTO_RESERVA_PWA_APP.md` e no `HANDOFF_PROXIMAS_SESSOES.md`.
+**Pendente**: a branch do código (`claude/loja-codigo-b`, PR #4) ainda não recebeu essa renumeração. Os documentos dela que citam o pagamento como "decisão 32" (por exemplo, o `CODIGO_LOJA_B.md`, que diz que o Mercado Pago fica dormente pela "decisão 32") precisam passar para 40 quando a `master` for juntada a ela.
 
 ### 10.4 Estado técnico
 
@@ -213,5 +213,5 @@ Duas sessões acrescentaram decisões ao §2 do plano com os **mesmos números**
 
 - `HANDOFF_PROXIMAS_SESSOES.md`: a tabela de frentes ainda mostra A como "liberada" e B como "aguardando A". As duas já foram feitas, e C está em andamento.
 - §5 e §8 deste log: refletem 09/10.
-- **PR #3 em conflito com a `master`** (estado "dirty" em 29/10): a `master` recebeu o PR #5 e um commit de CI depois que a branch dos protótipos saiu dela. O conflito mais visível é a numeração das decisões (§10.3). Esta atualização do log foi gravada nessa branch, então só chega à `master` quando o PR #3 for resolvido e mesclado.
+- O PR #3 estava em conflito com a `master` em 29/10, por causa da numeração das decisões (§10.3). Foi resolvido no mesmo dia com um merge da `master` na branch. Esta atualização do log está nessa branch e chega à `master` quando o PR #3 for mesclado.
 

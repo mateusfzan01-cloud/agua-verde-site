@@ -175,3 +175,11 @@ O site faz parte de um ecossistema maior:
 - **n8n** — automação que cria viagens no Supabase via e-mail de OTAs (4.888 viagens existentes)
 
 Referência completa: `AGENTS.md` e `implementation_plan.md`.
+
+---
+
+## Execução Híbrida de CI e Offload Local (`dell-ci` × Cloud)
+
+- **GitHub Actions (`.github/workflows/ci.yml`):** Qualquer push ou PR interno na branch `master` (criado pelo Claude Web, Codex Cloud ou máquina local) roda automaticamente no runner dedicado `dell-agua-verde-site` (`[self-hosted, linux, dell]`) no servidor `dell-ci`.
+- **Agentes em Cloud (Claude Web / Codex Cloud):** Nunca devem tentar `ssh dell-ci` (`192.168.18.168` é LAN privada). Executam `npx tsc --noEmit` e `npm run build` no próprio ambiente cloud e validam pelo check do GitHub Actions no PR.
+- **Agentes na Máquina Local (Windows na LAN):** Para rodar `npm run build` ou checagens pesadas sem travar o notebook Windows, use o wrapper `dell-run` (`node C:/Users/mzanl/Documents/scripts/run-on-dell.mjs <comando>`, ex.: `dell-run npm run build`), que sincroniza para `~/workspaces/agua-verde-site` no `dell-ci` quando `MemAvailable >= 2000 MB` e o runner estiver livre, ou faz fallback seguro para a máquina local. Nunca execute `rg` na raiz `C:\Users\mzanl`.
