@@ -10,6 +10,8 @@ import { Footer } from '@/components/layout/Footer'
 import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
 import { FormOrcamento } from '@/components/home/FormOrcamento'
 import { FaqAccordion } from '@/components/transfer-porto-de-galinhas/FaqAccordion'
+import { ComparativoTransporte } from '@/components/shared/ComparativoTransporte'
+import { AVALIACAO_PUBLICA, FAIXA_PRECO, PRECOS_ATUALIZADOS_EM } from '@/lib/json-ld'
 
 export const metadata: Metadata = {
   title: 'Transfer Privado para Porto de Galinhas | Água Verde — Aeroporto de Recife',
@@ -68,11 +70,11 @@ const jsonLd = {
           latitude: -8.05428,
           longitude: -34.8813,
         },
-        priceRange: 'R$ 320 – R$ 580',
+        priceRange: FAIXA_PRECO,
         aggregateRating: {
           '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '47',
+          ratingValue: AVALIACAO_PUBLICA.ratingValue,
+          reviewCount: AVALIACAO_PUBLICA.reviewCount,
         },
       },
       areaServed: [
@@ -290,8 +292,9 @@ export default function TransferPortoDeGalinhasPage() {
                   className="text-lg lg:text-xl text-white/80 mb-8 max-w-xl leading-relaxed animate-fade-in-up"
                   style={{ animationDelay: '0.3s' }}
                 >
-                  Do aeroporto de Recife direto para as piscinas naturais mais famosas do
-                  Brasil. Conforto, pontualidade e motorista que monitora seu voo.
+                  O transfer privado do Aeroporto do Recife para Porto de Galinhas custa a partir de
+                  R$ 350 para até 3 passageiros, com cerca de 70 km e 1h15 de viagem. Veículo
+                  exclusivo e climatizado, com monitoramento de voo incluído.
                 </p>
 
                 {/* Route visual */}
@@ -389,7 +392,7 @@ export default function TransferPortoDeGalinhasPage() {
                 { value: '~70 km', label: 'Distância total' },
                 { value: '~1h 15min', label: 'Tempo médio de percurso' },
                 { value: 'R$ 350', label: 'A partir de (1–3 pax)' },
-                { value: '4.9 ★', label: 'Avaliação dos passageiros' },
+                { value: `${AVALIACAO_PUBLICA.ratingValue} ★`, label: 'Avaliação dos passageiros' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-2xl lg:text-3xl font-heading font-bold text-white mb-1">
@@ -399,6 +402,9 @@ export default function TransferPortoDeGalinhasPage() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-center text-xs text-white/60">
+              Preços atualizados em {PRECOS_ATUALIZADOS_EM}. Valores &quot;a partir de&quot; para 1 a 3 passageiros.
+            </p>
           </div>
         </section>
 
@@ -737,6 +743,8 @@ export default function TransferPortoDeGalinhasPage() {
             </div>
           </div>
         </section>
+
+        <ComparativoTransporte destino="Porto de Galinhas" precoAPartirDe={350} />
 
         {/* ── FAQ ───────────────────────────────────────────────── */}
         <section className="py-24 bg-[#fafbfa]">

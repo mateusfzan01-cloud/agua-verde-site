@@ -7,12 +7,12 @@ import {
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
-import { getOrganizationSchema } from '@/lib/json-ld'
+import { AVALIACAO_PUBLICA, getOrganizationSchema } from '@/lib/json-ld'
 
 const numeros = [
   { valor: '4.800+', label: 'Viagens realizadas' },
   { valor: '89', label: 'Motoristas ativos' },
-  { valor: '4.9', label: 'Avaliação média' },
+  { valor: AVALIACAO_PUBLICA.ratingValue, label: 'Avaliação média' },
   { valor: '3', label: 'Idiomas atendidos' },
 ]
 
@@ -167,6 +167,12 @@ export default function QuemSomosPage() {
                     Maragogi e Praia de Carneiros.
                   </p>
                   <p>
+                    A empresa nasceu como Uluwatour Viagens & Receptivos e hoje opera como
+                    Água Verde Transfers: mesma equipe, mesmo CNPJ e a mesma operação. O nome
+                    antigo ainda aparece no nosso perfil do TripAdvisor, com mais de 110
+                    avaliações e selo Travellers&apos; Choice.
+                  </p>
+                  <p>
                     Com o tempo, construímos um ecossistema digital próprio: sistema de
                     gestão de viagens, rastreamento GPS em tempo real e app exclusivo para
                     motoristas. Hoje, mais de 4.800 viagens realizadas refletem um padrão de
@@ -313,7 +319,11 @@ export default function QuemSomosPage() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { value: '89', label: 'Motoristas ativos', sub: 'Na plataforma' },
-                  { value: '4.9', label: 'Avaliação média', sub: 'Em 47+ avaliações' },
+                  {
+                    value: AVALIACAO_PUBLICA.ratingValue,
+                    label: 'Avaliação média',
+                    sub: `Em ${AVALIACAO_PUBLICA.reviewCount} avaliações no ${AVALIACAO_PUBLICA.fonte}`,
+                  },
                   { value: '100%', label: 'Rastreados', sub: 'GPS em tempo real' },
                   { value: '24h', label: 'Disponibilidade', sub: 'Todos os dias' },
                 ].map((stat) => (

@@ -1,4 +1,5 @@
 import { Star, Quote } from 'lucide-react'
+import { AVALIACAO_PUBLICA } from '@/lib/json-ld'
 
 const depoimentos = [
   {
@@ -58,7 +59,8 @@ export function Depoimentos() {
             O que dizem nossos passageiros
           </h2>
           <p className="text-lg text-[#5a6570] max-w-2xl mx-auto">
-            Avaliações verificadas de passageiros reais. Média de 4.9 estrelas em mais de 47 viagens avaliadas.
+            Avaliações verificadas de passageiros reais. Média de {AVALIACAO_PUBLICA.ratingValue} estrelas em{' '}
+            {AVALIACAO_PUBLICA.reviewCount} avaliações no {AVALIACAO_PUBLICA.fonte}.
           </p>
         </div>
 
