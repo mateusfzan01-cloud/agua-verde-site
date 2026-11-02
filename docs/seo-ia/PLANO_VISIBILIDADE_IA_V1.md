@@ -3,7 +3,7 @@
 > **Objetivo:** fazer o ChatGPT, o Perplexity, o Gemini e o modo IA do Google citarem a Água Verde Transfers quando alguém perguntar sobre transfer em Recife, Porto de Galinhas, Praia dos Carneiros e Maragogi.
 > **Origem:** sessão de brainstorm de 31/10 a 02/11/2026.
 > **Lançamento do site novo:** previsto para o fim de novembro de 2026.
-> **Status:** v1. Itens de código da seção 5.1 implementados no PR desta branch. Itens fora do código dependem do dono.
+> **Status:** v1. Itens de código da seção 5.1 implementados no PR #10. Itens fora do código dependem do dono. Pendências de confirmação na seção 6.
 
 ---
 
@@ -72,7 +72,8 @@ Os números vêm de empresas de SEO e divergem entre si. Use como direção, nã
 - [x] Nota "4,9" nas barras de números das landings trocada pela nota pública.
 - [x] `robots.txt` liberando os robôs de IA pelo nome (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended e outros).
 - [x] `llms.txt` com resumo da empresa, fatos principais e links das páginas.
-- [ ] Praia dos Carneiros: revisar se a página responde "quanto custa" melhor que qualquer concorrente (ninguém publica preço em reais).
+- [x] Quem Somos com metadata própria (título, descrição com "antes Uluwatour Viagens & Receptivos", canonical). A página herdava a descrição do layout raiz.
+- [ ] Praia de Carneiros: revisar se a página responde "quanto custa" melhor que qualquer concorrente (ninguém publica preço em reais).
 
 ### 5.2 No dia do lançamento — fora do código (dono)
 
@@ -99,6 +100,9 @@ Os números vêm de empresas de SEO e divergem entre si. Use como direção, nã
 2. **Nota e avaliações.** Confirmar que 4,7 e 112 batem com o TripAdvisor hoje. Se mudou, editar só `AVALIACAO_PUBLICA` em `src/lib/json-ld.ts`.
 3. **Quem controla a Cloudflare/DNS de aguaverde.tur.br.** Ver no Registro.br quais são os servidores de nome. Se forem da Paytour, o problema some no lançamento. Se forem de vocês, revisar as regras de robôs.
 4. **Preço de R$ 350.** Mantido nesta versão. Se a estratégia for competir com os R$ 150 das pousadas, o texto das páginas muda, não o plano.
+5. **Dois números de avaliação na mesma home.** O bloco `SocialProof.tsx` ainda diz "4,9 com 47 avaliações no Google", com o logo do Google. O resto do site agora diz "4,7 com 112 no TripAdvisor". Não mexemos porque é uma afirmação sobre outra fonte, que não dá para verificar daqui. Decidir: trocar o bloco para o TripAdvisor, atualizar com os números reais do Google, ou remover.
+6. **Duas afirmações no texto de Quem Somos.** "mesmo CNPJ" e "selo Travellers' Choice" vieram do diagnóstico de maio. Confirmar que continuam verdadeiras. O "mais de 110 avaliações" do mesmo parágrafo é número escrito à mão; revisar junto com a constante quando a contagem mudar.
+7. **Teste dos robôs no dia do lançamento.** O preview da Vercel exige login, então o teste `curl -A GPTBot` só vale no domínio de produção. Fazer no dia.
 
 ---
 
