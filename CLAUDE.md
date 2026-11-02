@@ -1,13 +1,13 @@
 # CLAUDE.md — agua-verde-site
 
 > Guia principal para o Claude Code trabalhar neste projeto.
-> Última atualização: 2026-10-09
+> Última atualização: 2026-11-02
 
 ---
 
 ## O Projeto
 
-Novo site institucional da **Água Verde Transfers** (`aguaverde.tur.br`), substituindo o site atual da plataforma Starter. Empresa de **transfer privado** (transporte ponto a ponto) baseada em Recife/PE — NÃO é uma agência de excursões/passeios.
+Novo site institucional da **Água Verde Transfers** (`aguaverde.tur.br`; nome oficial da empresa: **Água Verde Transfers & Receptivos**, usado nos dados estruturados e no llms.txt; "Água Verde Transfers" é o nome curto da interface e do logo), substituindo o site atual da plataforma Starter. Empresa de **transfer privado** (transporte ponto a ponto) baseada em Recife/PE — NÃO é uma agência de excursões/passeios.
 
 **Objetivo do site**: captar leads via SEO + formulário de orçamento, converter via WhatsApp, e oferecer rastreamento de viagem por token.
 
@@ -24,6 +24,7 @@ Site institucional completo com 12 páginas (10 estáticas + 1 dinâmica) e infr
 | `/` | Estática | Home: Hero, Stats, RotasGrid, Diferenciais, App, Depoimentos, FormOrcamento + JSON-LD |
 | `/transfer-porto-de-galinhas` | Estática | Landing page SEO — transfer REC↔PDG (~70km, R$350) + JSON-LD |
 | `/transfer-praia-de-carneiros` | Estática | Landing page SEO — transfer REC↔Carneiros (~115km, R$420) + JSON-LD |
+| `/transfer-maragogi` | Estática | Landing page SEO — transfer REC↔Maragogi (~130km, R$580) + JSON-LD |
 | `/quem-somos` | Estática | Sobre a empresa, frota, motoristas, valores + JSON-LD |
 | `/contato` | Estática + form client | Canais de contato, horários, formulário + JSON-LD (ContactPoint) |
 | `/politica-de-privacidade` | Estática | Texto LGPD |
@@ -81,18 +82,20 @@ src/
 │   │   ├── page.tsx                # Server component
 │   │   └── TripTracker.tsx         # Client component com Supabase
 │   ├── transfer-porto-de-galinhas/page.tsx  # + JSON-LD (Service + FAQPage + BreadcrumbList)
-│   └── transfer-praia-de-carneiros/page.tsx # + JSON-LD (Service + FAQPage + BreadcrumbList)
+│   ├── transfer-praia-de-carneiros/page.tsx # + JSON-LD (Service + FAQPage + BreadcrumbList)
+│   └── transfer-maragogi/page.tsx  # + JSON-LD (Service + FAQPage + BreadcrumbList)
 ├── components/
 │   ├── layout/Header.tsx           # Nav fixo com dropdown Destinos + <noscript> fallback
 │   ├── layout/Footer.tsx           # Links reais para Privacidade e Termos
 │   ├── home/FormOrcamento.tsx      # Aceita initialOrigem e initialDestino
 │   ├── home/RotasGrid.tsx          # 4 cards; PDG e Carneiros têm links para landing pages
 │   ├── shared/WhatsAppFloat.tsx
+│   ├── shared/ComparativoTransporte.tsx  # Tabela transfer × táxi × Uber por critérios (sem preços de terceiros)
 │   ├── transfer-porto-de-galinhas/FaqAccordion.tsx
 │   └── transfer-praia-de-carneiros/FaqAccordion.tsx
 └── lib/
     ├── supabase.ts                 # Cliente Supabase + tipos Viagem/StatusViagem
-    ├── json-ld.ts                  # getOrganizationSchema() reutilizável em todo o site
+    ├── json-ld.ts                  # getOrganizationSchema() + AVALIACAO_PUBLICA, FAIXA_PRECO, PRECOS_ATUALIZADOS_EM (fonte única dos números públicos)
     └── utils.ts                    # cn() com clsx + tailwind-merge
 ```
 
@@ -139,7 +142,8 @@ No Header, usar `public/images/logo-agua-verde.png`. Não substituir por texto "
 
 - **Root layout**: `metadataBase: 'https://aguaverde.tur.br'`, `og:image`, `twitter:card`
 - **Sitemap**: `src/app/sitemap.ts` → 7 URLs indexáveis
-- **Robots**: `src/app/robots.ts` → disallow `/acompanhar/`
+- **Robots**: `src/app/robots.ts` → disallow `/acompanhar/`; robôs de IA (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended etc.) liberados pelo nome
+- **llms.txt**: `public/llms.txt` → resumo da empresa, fatos principais (rotas, preços, contato) e links das páginas
 - **JSON-LD**: Utilitário `src/lib/json-ld.ts` com `getOrganizationSchema()` reutilizável
 - **JSON-LD por página**: Home (Organization+WebSite), Quem Somos (Organization+BreadcrumbList), Contato (Organization+ContactPoint), Landings (Service+FAQPage+BreadcrumbList+LocalBusiness)
 - **Header**: `<noscript>` fallback para links do dropdown de Destinos
@@ -155,6 +159,7 @@ No Header, usar `public/images/logo-agua-verde.png`. Não substituir por texto "
 | **Fase 2** — Webhook orçamentos + Blog | Alta | Imediato após deploy |
 | **Fase 3** — Loja própria (substitui a Paytour) | **Aprovada em 2026-10-09** | Plano em `docs/loja/PLANO_LOJA_PROPRIA_V1.md`; semana 1 em 13/10 |
 | **Fase 4** — SEO conteúdo contínuo | Média | Paralela à Fase 2 |
+| **Fase 5** — Visibilidade em buscadores de IA (GEO) | Alta | Plano em `docs/seo-ia/PLANO_VISIBILIDADE_IA_V1.md`. Itens de código feitos antes do lançamento (fim de nov/2026); redirect, Bing e Google Meu Negócio no dia do lançamento; TripAdvisor, fóruns e dados únicos depois |
 
 **Fase 2 inclui:**
 - Edge Function `notificar-orcamento` → WhatsApp + email para admin ao receber orçamento

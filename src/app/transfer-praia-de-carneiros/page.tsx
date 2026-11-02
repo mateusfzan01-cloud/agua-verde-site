@@ -10,6 +10,8 @@ import { Footer } from '@/components/layout/Footer'
 import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
 import { FormOrcamento } from '@/components/home/FormOrcamento'
 import { FaqAccordion } from '@/components/transfer-praia-de-carneiros/FaqAccordion'
+import { ComparativoTransporte } from '@/components/shared/ComparativoTransporte'
+import { AVALIACAO_PUBLICA, FAIXA_PRECO, PRECOS_ATUALIZADOS_EM, getAggregateRatingSchema } from '@/lib/json-ld'
 
 export const metadata: Metadata = {
   title: 'Transfer Privado para Praia de Carneiros | Água Verde — Aeroporto de Recife',
@@ -52,7 +54,7 @@ const jsonLd = {
         'Transfer privado com veículo exclusivo entre o Aeroporto Internacional do Recife (REC) e Praia de Carneiros, Tamandaré-PE. Motoristas profissionais, frota climatizada e monitoramento de voo em tempo real.',
       provider: {
         '@type': 'LocalBusiness',
-        name: 'Água Verde Transfers',
+        name: 'Água Verde Transfers & Receptivos',
         url: 'https://aguaverde.tur.br',
         telephone: '+55-81-9947-3200',
         address: {
@@ -63,12 +65,8 @@ const jsonLd = {
           postalCode: '51021-140',
           addressCountry: 'BR',
         },
-        priceRange: 'R$ 320 – R$ 580',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '47',
-        },
+        priceRange: FAIXA_PRECO,
+        aggregateRating: getAggregateRatingSchema(),
       },
       areaServed: [
         { '@type': 'City', name: 'Recife' },
@@ -278,8 +276,9 @@ export default function TransferPraiaDeCarneirosPage() {
                   className="text-lg lg:text-xl text-white/80 mb-8 max-w-xl leading-relaxed animate-fade-in-up"
                   style={{ animationDelay: '0.3s' }}
                 >
-                  Do aeroporto de Recife até as águas mais calmas de Pernambuco.
-                  Veículo exclusivo, motorista profissional e monitoramento do voo incluso.
+                  O transfer privado do Aeroporto do Recife para a Praia de Carneiros custa a partir
+                  de R$ 420 para até 3 passageiros, com cerca de 115 km e 1h45 de viagem. Veículo
+                  exclusivo e climatizado, com monitoramento de voo incluído.
                 </p>
 
                 <div
@@ -373,7 +372,7 @@ export default function TransferPraiaDeCarneirosPage() {
                 { value: '~115 km', label: 'Distância total' },
                 { value: '~1h 45min', label: 'Tempo médio de percurso' },
                 { value: 'R$ 420', label: 'A partir de (1–3 pax)' },
-                { value: '4.9 ★', label: 'Avaliação dos passageiros' },
+                { value: `${AVALIACAO_PUBLICA.ratingValue} ★`, label: 'Avaliação dos passageiros' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-2xl lg:text-3xl font-heading font-bold text-white mb-1">
@@ -383,6 +382,9 @@ export default function TransferPraiaDeCarneirosPage() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-center text-xs text-white/60">
+              Preços atualizados em {PRECOS_ATUALIZADOS_EM}. Valores &quot;a partir de&quot; para 1 a 3 passageiros.
+            </p>
           </div>
         </section>
 
@@ -716,6 +718,8 @@ export default function TransferPraiaDeCarneirosPage() {
             </div>
           </div>
         </section>
+
+        <ComparativoTransporte destino="a Praia de Carneiros" precoAPartirDe={420} />
 
         {/* ── FAQ ───────────────────────────────────────────────── */}
         <section className="py-24 bg-[#fafbfa]">
