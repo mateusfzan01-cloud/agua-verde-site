@@ -11,7 +11,7 @@ import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
 import { FormOrcamento } from '@/components/home/FormOrcamento'
 import { FaqAccordion } from '@/components/transfer-praia-de-carneiros/FaqAccordion'
 import { ComparativoTransporte } from '@/components/shared/ComparativoTransporte'
-import { AVALIACAO_PUBLICA, FAIXA_PRECO, PRECOS_ATUALIZADOS_EM } from '@/lib/json-ld'
+import { AVALIACAO_PUBLICA, FAIXA_PRECO, PRECOS_ATUALIZADOS_EM, getAggregateRatingSchema } from '@/lib/json-ld'
 
 export const metadata: Metadata = {
   title: 'Transfer Privado para Praia de Carneiros | Água Verde — Aeroporto de Recife',
@@ -66,11 +66,7 @@ const jsonLd = {
           addressCountry: 'BR',
         },
         priceRange: FAIXA_PRECO,
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: AVALIACAO_PUBLICA.ratingValue,
-          reviewCount: AVALIACAO_PUBLICA.reviewCount,
-        },
+        aggregateRating: getAggregateRatingSchema(),
       },
       areaServed: [
         { '@type': 'City', name: 'Recife' },
@@ -723,7 +719,7 @@ export default function TransferPraiaDeCarneirosPage() {
           </div>
         </section>
 
-        <ComparativoTransporte destino="Praia de Carneiros" precoAPartirDe={420} />
+        <ComparativoTransporte destino="a Praia de Carneiros" precoAPartirDe={420} />
 
         {/* ── FAQ ───────────────────────────────────────────────── */}
         <section className="py-24 bg-[#fafbfa]">

@@ -11,6 +11,15 @@ export const FAIXA_PRECO = 'R$ 350 – R$ 580'
 /** Mês da última revisão dos preços publicados. Exibido nas landing pages. */
 export const PRECOS_ATUALIZADOS_EM = 'novembro de 2026'
 
+/** AggregateRating do schema.org. Só ratingValue e reviewCount: `fonte` não é propriedade do schema. */
+export function getAggregateRatingSchema() {
+  return {
+    '@type': 'AggregateRating',
+    ratingValue: AVALIACAO_PUBLICA.ratingValue,
+    reviewCount: AVALIACAO_PUBLICA.reviewCount,
+  }
+}
+
 export function getOrganizationSchema() {
   return {
     '@type': 'Organization',
@@ -36,11 +45,7 @@ export function getOrganizationSchema() {
       longitude: -34.8813,
     },
     priceRange: FAIXA_PRECO,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: AVALIACAO_PUBLICA.ratingValue,
-      reviewCount: AVALIACAO_PUBLICA.reviewCount,
-    },
+    aggregateRating: getAggregateRatingSchema(),
     sameAs: [
       'https://www.instagram.com/aguaverdeviagens/',
       'https://www.tripadvisor.com.br/Attraction_Review-g304560-d12087015-Reviews-Uluwatour_Viagens_Receptivos-Recife_State_of_Pernambuco.html',

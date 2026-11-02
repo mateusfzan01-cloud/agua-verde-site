@@ -11,7 +11,7 @@ import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
 import { FormOrcamento } from '@/components/home/FormOrcamento'
 import { FaqAccordion } from '@/components/transfer-porto-de-galinhas/FaqAccordion'
 import { ComparativoTransporte } from '@/components/shared/ComparativoTransporte'
-import { AVALIACAO_PUBLICA, FAIXA_PRECO, PRECOS_ATUALIZADOS_EM } from '@/lib/json-ld'
+import { AVALIACAO_PUBLICA, FAIXA_PRECO, PRECOS_ATUALIZADOS_EM, getAggregateRatingSchema } from '@/lib/json-ld'
 
 export const metadata: Metadata = {
   title: 'Transfer Privado para Porto de Galinhas | Água Verde — Aeroporto de Recife',
@@ -71,11 +71,7 @@ const jsonLd = {
           longitude: -34.8813,
         },
         priceRange: FAIXA_PRECO,
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: AVALIACAO_PUBLICA.ratingValue,
-          reviewCount: AVALIACAO_PUBLICA.reviewCount,
-        },
+        aggregateRating: getAggregateRatingSchema(),
       },
       areaServed: [
         { '@type': 'City', name: 'Recife' },

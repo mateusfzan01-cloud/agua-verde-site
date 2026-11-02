@@ -12,11 +12,11 @@ import { AVALIACAO_PUBLICA, getOrganizationSchema } from '@/lib/json-ld'
 export const metadata: Metadata = {
   title: 'Quem Somos | Água Verde Transfers',
   description:
-    'Transfer privado em Recife e no litoral de Pernambuco. Frota própria, motoristas profissionais e atendimento em três idiomas. Antes conhecida como Uluwatour Viagens & Receptivos.',
+    'Transfer privado em Recife e litoral de Pernambuco, antes Uluwatour Viagens & Receptivos. Frota própria, motoristas profissionais, atendimento em três idiomas.',
   openGraph: {
     title: 'Quem Somos | Água Verde Transfers',
     description:
-      'Transfer privado em Recife e no litoral de Pernambuco. Frota própria, motoristas profissionais e atendimento em três idiomas. Antes conhecida como Uluwatour Viagens & Receptivos.',
+      'Transfer privado em Recife e litoral de Pernambuco, antes Uluwatour Viagens & Receptivos. Frota própria, motoristas profissionais, atendimento em três idiomas.',
     type: 'website',
     images: [
       {
