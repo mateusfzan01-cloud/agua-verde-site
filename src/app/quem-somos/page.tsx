@@ -9,6 +9,29 @@ import { Footer } from '@/components/layout/Footer'
 import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
 import { AVALIACAO_PUBLICA, getOrganizationSchema } from '@/lib/json-ld'
 
+export const metadata: Metadata = {
+  title: 'Quem Somos | Água Verde Transfers',
+  description:
+    'Transfer privado em Recife e no litoral de Pernambuco. Frota própria, motoristas profissionais e atendimento em três idiomas. Antes conhecida como Uluwatour Viagens & Receptivos.',
+  openGraph: {
+    title: 'Quem Somos | Água Verde Transfers',
+    description:
+      'Transfer privado em Recife e no litoral de Pernambuco. Frota própria, motoristas profissionais e atendimento em três idiomas. Antes conhecida como Uluwatour Viagens & Receptivos.',
+    type: 'website',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1200&auto=format&fit=crop',
+        width: 1200,
+        height: 630,
+        alt: 'Quem somos - Água Verde Transfers',
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/quem-somos',
+  },
+}
+
 const numeros = [
   { valor: '4.800+', label: 'Viagens realizadas' },
   { valor: '89', label: 'Motoristas ativos' },
