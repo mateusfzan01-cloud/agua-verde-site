@@ -54,7 +54,7 @@ const jsonLd = {
         'Transfer privado com veículo exclusivo entre o Aeroporto Internacional do Recife (REC) e Maragogi, Alagoas. Motoristas profissionais, frota climatizada e monitoramento de voo em tempo real.',
       provider: {
         '@type': 'LocalBusiness',
-        name: 'Água Verde Transfers',
+        name: 'Água Verde Transfers & Receptivos',
         url: 'https://aguaverde.tur.br',
         telephone: '+55-81-9947-3200',
         address: {

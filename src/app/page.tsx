@@ -43,7 +43,7 @@ export default function HomePage() {
             '@graph': [
               {
                 '@type': 'WebSite',
-                name: 'Água Verde Transfers',
+                name: 'Água Verde Transfers & Receptivos',
                 url: 'https://aguaverde.tur.br',
               },
               getOrganizationSchema(),

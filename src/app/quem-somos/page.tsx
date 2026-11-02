@@ -191,7 +191,7 @@ export default function QuemSomosPage() {
                   </p>
                   <p>
                     A empresa nasceu como Uluwatour Viagens & Receptivos e hoje opera como
-                    Água Verde Transfers: mesma equipe, mesmo CNPJ e a mesma operação. O nome
+                    Água Verde Transfers & Receptivos: mesma equipe, mesmo CNPJ e a mesma operação. O nome
                     antigo ainda aparece no nosso perfil do TripAdvisor, com mais de 110
                     avaliações e selo Travellers&apos; Choice.
                   </p>

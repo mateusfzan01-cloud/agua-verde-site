@@ -23,8 +23,8 @@ export function getAggregateRatingSchema() {
 export function getOrganizationSchema() {
   return {
     '@type': 'Organization',
-    name: 'Água Verde Transfers',
-    alternateName: ['Água Verde Viagens & Receptivos', 'Uluwatour', 'Uluwatour Viagens & Receptivos'],
+    name: 'Água Verde Transfers & Receptivos',
+    alternateName: ['Água Verde Transfers', 'Água Verde Viagens & Receptivos', 'Uluwatour', 'Uluwatour Viagens & Receptivos'],
     url: 'https://aguaverde.tur.br',
     telephone: '+55-81-9947-3200',
     email: 'contato@aguaverde.tur.br',
