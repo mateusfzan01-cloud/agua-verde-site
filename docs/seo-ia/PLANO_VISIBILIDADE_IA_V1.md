@@ -49,8 +49,8 @@ Os números vêm de empresas de SEO e divergem entre si. Use como direção, nã
 
 | Decisão | Escolha | Por quê | Custo se estiver errada |
 |:--|:--|:--|:--|
-| Nome principal | **Água Verde Transfers** | É o nome do logo e o que o site já usa em todas as páginas | Trocar uma constante e alguns textos |
-| Nomes alternativos nos dados estruturados | "Água Verde Viagens & Receptivos", "Uluwatour", "Uluwatour Viagens & Receptivos" | É assim que a IA aprende que são a mesma empresa | Nenhum |
+| Nome principal | **Água Verde Transfers & Receptivos** (definido pelo dono em 02/11/2026) | É o nome da empresa nos dados estruturados, no llms.txt e no texto de Quem Somos. Na interface, "Água Verde Transfers" segue como nome curto, igual ao logo | Trocar uma constante e três textos |
+| Nomes alternativos nos dados estruturados | "Água Verde Transfers", "Água Verde Viagens & Receptivos", "Uluwatour", "Uluwatour Viagens & Receptivos" | É assim que a IA aprende que são a mesma empresa | Nenhum |
 | Nota e quantidade de avaliações | **4,7 com 112 avaliações** (TripAdvisor, diagnóstico de 27/05/2026) | Era 4,9 com 47 no site. Número público e verificável vale mais que número interno | Editar um lugar só (`src/lib/json-ld.ts`) |
 | Faixa de preço nos dados estruturados | **R$ 350 a R$ 580** | Era "R$ 320 a 580". Nenhuma página mostra R$ 320 | Editar a mesma constante |
 | Preço de R$ 350 para Porto de Galinhas | **Mantido**, com explicação do que está incluído | O dono não pediu mudança. A página passa a dizer o que o táxi não tem | Mudar o número nas páginas |
@@ -65,7 +65,7 @@ Os números vêm de empresas de SEO e divergem entre si. Use como direção, nã
 
 - [x] Uma fonte única para nota, avaliações, faixa de preço e data de atualização (`src/lib/json-ld.ts`), usada por todas as páginas.
 - [x] Nomes alternativos (`alternateName`) nos dados estruturados da empresa.
-- [x] Página Quem Somos com a ponte em texto corrido: "nasceu como Uluwatour Viagens & Receptivos e hoje opera como Água Verde Transfers".
+- [x] Página Quem Somos com a ponte em texto corrido: "nasceu como Uluwatour Viagens & Receptivos e hoje opera como Água Verde Transfers & Receptivos".
 - [x] Nas três landing pages (Porto de Galinhas, Praia dos Carneiros, Maragogi): primeira frase abaixo do título responde preço, distância e tempo.
 - [x] Nas três landing pages: linha visível "Preços atualizados em novembro de 2026".
 - [x] Nas três landing pages: comparativo "transfer privado × táxi × Uber" por critérios, sem preços de terceiros.
@@ -81,12 +81,12 @@ Os números vêm de empresas de SEO e divergem entre si. Use como direção, nã
 - [ ] Confirmar que a proteção contra robôs da Vercel não bloqueia os robôs de IA. A Vercel tem regras próprias ("Bot Protection" e regras de firewall para AI bots). Testar com `curl -A GPTBot https://aguaverde.tur.br/` e esperar resposta 200.
 - [ ] Cadastrar o site no Google Search Console e enviar o sitemap.
 - [ ] Cadastrar o site no **Bing Webmaster Tools** e enviar o sitemap. É o índice que o ChatGPT usa.
-- [ ] Google Meu Negócio: nome "Água Verde Transfers", site novo, telefone e endereço iguais aos do site.
+- [ ] Google Meu Negócio: nome "Água Verde Transfers & Receptivos", site novo, telefone e endereço iguais aos do site.
 - [ ] Trocar o e-mail do nome antigo em qualquer lugar que ainda apareça.
 
 ### 5.3 Depois do lançamento — dezembro em diante
 
-- [ ] Pedir ao TripAdvisor a troca do nome do perfil para "Água Verde Transfers (antes Uluwatour)". Pedido documental: comprovar mesmo CNPJ e a mudança de marca. Não depender disso para o resto.
+- [ ] Pedir ao TripAdvisor a troca do nome do perfil para "Água Verde Transfers & Receptivos (antes Uluwatour)". Pedido documental: comprovar mesmo CNPJ e a mudança de marca. Não depender disso para o resto.
 - [ ] Responder perguntas antigas e novas no fórum do TripAdvisor e no Reddit ("how to get from Recife airport to Porto de Galinhas") com o nome certo e link.
 - [ ] Publicar um artigo com dados reais das viagens (tempo médio por horário, quantos voos atrasados foram esperados). Nenhum concorrente consegue copiar.
 - [ ] Versões em inglês e espanhol das landing pages (a base de idiomas já está no projeto, só adiada).

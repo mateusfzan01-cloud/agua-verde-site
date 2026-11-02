@@ -7,7 +7,7 @@
 
 ## O Projeto
 
-Novo site institucional da **Água Verde Transfers** (`aguaverde.tur.br`), substituindo o site atual da plataforma Starter. Empresa de **transfer privado** (transporte ponto a ponto) baseada em Recife/PE — NÃO é uma agência de excursões/passeios.
+Novo site institucional da **Água Verde Transfers** (`aguaverde.tur.br`; nome oficial da empresa: **Água Verde Transfers & Receptivos**, usado nos dados estruturados e no llms.txt; "Água Verde Transfers" é o nome curto da interface e do logo), substituindo o site atual da plataforma Starter. Empresa de **transfer privado** (transporte ponto a ponto) baseada em Recife/PE — NÃO é uma agência de excursões/passeios.
 
 **Objetivo do site**: captar leads via SEO + formulário de orçamento, converter via WhatsApp, e oferecer rastreamento de viagem por token.
 
