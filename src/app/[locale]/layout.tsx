@@ -13,7 +13,7 @@ import { FaixaDeAviso } from '@/components/loja/home/FaixaDeAviso'
 export const metadata: Metadata = {
   metadataBase: new URL('https://aguaverde.tur.br'),
   title: { default: 'Água Verde Transfers', template: '%s' },
-  openGraph: { type: 'website', siteName: 'Água Verde Viagens e Receptivos' },
+  openGraph: { type: 'website', siteName: 'Água Verde Transfers & Receptivos' },
 }
 
 export function generateStaticParams() {
