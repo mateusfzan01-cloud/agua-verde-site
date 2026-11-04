@@ -61,6 +61,7 @@ export async function iniciarPagamento(
     meio,
     descricao: `Água Verde ${pedido.numero}`,
     expiraEm: pedido.expiraEm,
+    idioma: pedido.idioma,
     pagador: { nome: pedido.passageiro.nome, email: pedido.passageiro.email, telefone: pedido.passageiro.telefone, cpf: pedido.passageiro.cpf },
   })
   pedido.gateway = gateway.nome

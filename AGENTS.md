@@ -279,6 +279,12 @@ A regra "e-commerce só após >20 orçamentos/mês por 2 meses" foi escrita para
 - [ ] JSON-LD adequado para o tipo de página?
 - [ ] Build passa sem erros? (`npm run build`)
 
+### 10.1 Diretiva Híbrida de CI e Offload Local (`dell-ci` × Cloud)
+
+- **CI/CD no GitHub Actions (`.github/workflows/ci.yml`):** Pushes e PRs internos na branch `master` (vindos do Codex Cloud, Claude Web ou máquina local) executam automaticamente no runner dedicado `dell-agua-verde-site` (`[self-hosted, linux, dell]`) instalado no servidor `dell-ci` (Ubuntu Server 26.04.1 LTS, Node 24 LTS).
+- **Agentes em Ambiente Cloud (Codex Cloud / Claude App Web):** Como não possuem rota para a LAN privada (`192.168.18.168`), **nunca devem tentar `ssh dell-ci`**. Devem rodar `npx tsc --noEmit`, `npm run lint` e `npm run build` no próprio container cloud e validar o PR pelos checks do GitHub Actions no runner do Dell.
+- **Agentes na Máquina Local (Windows na LAN):** Para validar `npm run build`, `npm run lint` ou `npx tsc --noEmit` sem sobrecarregar a CPU/RAM do notebook Windows, use o wrapper global `dell-run` (`node C:/Users/mzanl/Documents/scripts/run-on-dell.mjs <comando>`, ex.: `dell-run npm run build`), que verifica se `dell-ci` está acessível com `MemAvailable >= 2000 MB` e runner livre (`! pgrep -f Runner.Worker`), sincronizando os arquivos para `~/workspaces/agua-verde-site`. Caso o `dell-ci` esteja ocupado ou inacessível, o wrapper faz fallback automático seguro para a máquina local. Nunca execute buscas `rg` na raiz `C:\Users\mzanl` (restrinja sempre ao diretório do projeto).
+
 ---
 
 ## 11. Infraestrutura SEO

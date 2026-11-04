@@ -2,6 +2,8 @@
 
 **Data da pesquisa:** 8 de outubro de 2026
 **Contexto:** site Next.js 15 na Vercel + Supabase Pro (já pago); ticket médio R$ 180–700; 40–150 vendas/mês; clientes brasileiros e estrangeiros (muitos hispanofalantes); teto de custo fixo R$ 250–300/mês.
+> **Correção de 2026-10-19:** a linha "Hotéis, agências de viagem e serviços de transporte — R" da fonte [34] pertence à seção da **Tailândia** da lista de negócios restritos da Stripe, e não ao Brasil. Onde este relatório diz que a Stripe Brasil restringe esse segmento, leia: a seção do Brasil não tem restrição de viagem; valem as regras globais ("serviços e clubes de reservas de viagem" restrita, "serviços de uso compartilhado" proibida). Detalhes no plano, §7.3-B.
+
 **Método:** todos os números abaixo foram lidos diretamente das páginas oficiais em 08/10/2026 (curl ou navegador headless). Quando o número não existe publicamente, está marcado como **não publicado**. Conversões cambiais usam PTAX de venda do Banco Central: **USD = R$ 5,0119 (08/10/2026)**; **EUR ≈ R$ 5,60 (05/10/2026)** — fonte: API PTAX do BCB (`https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/`).
 
 ---

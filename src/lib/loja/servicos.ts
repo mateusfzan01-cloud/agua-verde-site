@@ -5,7 +5,7 @@
  *
  *   LOJA_REPOSITORIO=supabase        grava os pedidos no Supabase (precisa de SUPABASE_SERVICE_ROLE_KEY)
  *   LOJA_GATEWAY_PIX=<provedor>      quem cobra o Pix    (decisão 31: woovi; também simulado | mercadopago)
- *   LOJA_GATEWAY_CARTAO=<provedor>   quem cobra o cartão (decisão 31: stripe, etapa B3; hoje: simulado | mercadopago)
+ *   LOJA_GATEWAY_CARTAO=<provedor>   quem cobra o cartão (decisão 31: stripe; também simulado | mercadopago)
  *
  * Um provedor por forma de pagamento: cada pedido lembra quem o cobrou (`pedidos.gateway`), e o reembolso
  * e a consulta sempre voltam a esse mesmo provedor. `LOJA_GATEWAY=<provedor>` (forma antiga) vale para os
@@ -22,6 +22,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { GatewayMercadoPago } from './pagamento/mercadopago'
 import { GatewaySimulado } from './pagamento/simulado'
+import { GatewayStripe } from './pagamento/stripe'
 import { GatewayWoovi, HOST_SANDBOX } from './pagamento/woovi'
 import type { GatewayDePagamento, MeioDePagamento } from './pagamento/gateway'
 import { RepositorioEmMemoria } from './repositorio-memoria'
@@ -35,21 +36,24 @@ const global = globalThis as unknown as {
   __lojaSupabase?: RepositorioSupabase
   __lojaMercadoPago?: GatewayMercadoPago
   __lojaWoovi?: GatewayWoovi
+  __lojaStripe?: GatewayStripe
 }
 
-export type NomeDoProvedor = 'simulado' | 'mercadopago' | 'woovi'
+export type NomeDoProvedor = 'simulado' | 'mercadopago' | 'woovi' | 'stripe'
 
 const PROVEDORES: Record<NomeDoProvedor, () => GatewayDePagamento> = {
   simulado: () => gatewaySimulado(),
   mercadopago: () => gatewayMercadoPago(),
   woovi: () => gatewayWoovi(),
+  stripe: () => gatewayStripe(),
 }
 
-/** Formas de pagamento que cada provedor cobra (a Woovi é só Pix). */
+/** Formas de pagamento que cada provedor cobra (a Woovi é só Pix; a Stripe, só cartão). */
 const MEIOS_DO_PROVEDOR: Record<NomeDoProvedor, readonly MeioDePagamento[]> = {
   simulado: ['pix', 'cartao'],
   mercadopago: ['pix', 'cartao'],
   woovi: ['pix'],
+  stripe: ['cartao'],
 }
 
 function ehProvedor(nome: string): nome is NomeDoProvedor {
@@ -116,6 +120,14 @@ function gatewayWoovi(): GatewayWoovi {
   return (global.__lojaWoovi ??= new GatewayWoovi({
     appId: exigir('WOOVI_APP_ID'),
     urlApi: process.env.WOOVI_API_URL?.trim() || HOST_SANDBOX,
+  }))
+}
+
+function gatewayStripe(): GatewayStripe {
+  return (global.__lojaStripe ??= new GatewayStripe({
+    chaveSecreta: exigir('STRIPE_SECRET_KEY'),
+    segredoWebhook: exigir('STRIPE_WEBHOOK_SECRET'),
+    urlBase: exigir('LOJA_URL_BASE').replace(/\/$/, ''),
   }))
 }
 

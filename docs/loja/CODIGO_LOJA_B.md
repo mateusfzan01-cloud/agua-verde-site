@@ -103,11 +103,26 @@ Tudo vem **desligado**: sem nenhuma variável, a loja segue com pedidos em memó
 | `LOJA_GATEWAY_PIX=<provedor>` | quem cobra o **Pix**: `woovi` (decisão 31), `simulado` ou `mercadopago`. Provedor real exige `LOJA_REPOSITORIO=supabase`, senão a loja nem sobe |
 | `WOOVI_APP_ID` | AppID da aplicação no painel da Woovi (de sandbox ou de produção). Obrigatório com `LOJA_GATEWAY_PIX=woovi` |
 | `WOOVI_API_URL` | endereço da API da Woovi. **Sem ela, vai para o sandbox** (`https://api.woovi-sandbox.com`); em produção, `https://api.woovi.com`. O AppID tem de ser do mesmo ambiente |
-| `LOJA_GATEWAY_CARTAO=<provedor>` | quem cobra o **cartão** (decisão 31: `stripe`, etapa B3; hoje aceita `simulado` ou `mercadopago`). Cada pedido lembra quem o cobrou (`pedidos.gateway`); reembolso e consulta voltam a esse provedor. `LOJA_GATEWAY=<provedor>` (forma antiga) vale para os dois quando as novas não existem |
+| `LOJA_GATEWAY_CARTAO=<provedor>` | quem cobra o **cartão**: `stripe` (decisão 31), `simulado` ou `mercadopago`. Cada pedido lembra quem o cobrou (`pedidos.gateway`); reembolso e consulta voltam a esse provedor. `LOJA_GATEWAY=<provedor>` (forma antiga) vale para os dois quando as novas não existem |
 | `MERCADOPAGO_ACCESS_TOKEN` | credencial do Mercado Pago (de teste `TEST-...` ou de produção). **Nunca houve conta** (decisão 32): o adaptador fica dormente, só para a contingência de 15/11 |
 | `MERCADOPAGO_WEBHOOK_SECRET` | "chave secreta" do webhook, do painel do Mercado Pago |
 | `LOJA_URL_BASE` | endereço público do site, ex.: `https://aguaverdeviagens.com.br` (usado no aviso e no retorno do cartão) |
 | `LOJA_PERMITE_VIAGEM_REAL_EM_TESTE=true` | só se quiser banco real **com gateway simulado**: o "Simular pagamento" passa a criar viagens de verdade (aparecem para a equipe). Sem isso, volta para a memória |
+
+| `STRIPE_SECRET_KEY` | chave **secreta** da Stripe (`sk_test_...` no sandbox, `sk_live_...` em produção). Obrigatória com `LOJA_GATEWAY_CARTAO=stripe`. A chave publicável (`pk_...`) é recusada com erro claro: o site não usa a publicável |
+| `STRIPE_WEBHOOK_SECRET` | segredo do endpoint de webhook (`whsec_...`), mostrado pela Stripe ao cadastrar o endpoint. Cada endpoint tem o seu |
+
+No painel da **Stripe** (sandbox da conta do dono; decisão D17): em Desenvolvedores > Webhooks, cadastrar o endpoint
+`<LOJA_URL_BASE>/api/loja/webhook/stripe` com os eventos **checkout.session.completed**,
+**checkout.session.async_payment_succeeded** e **checkout.session.async_payment_failed**, e copiar o segredo do endpoint para
+`STRIPE_WEBHOOK_SECRET`; a chave secreta vai em `STRIPE_SECRET_KEY`. As duas só na Vercel (Preview), nunca no chat. O que o
+adaptador garante (testes em `src/lib/loja/pagamento/stripe.test.ts`): pagamento na **página hospedada** da Stripe (só cartão,
+idioma do pedido, botão "Reservar", volta para `/checkout/<pedido>` no mesmo idioma), valor em centavos, validade entre 31 minutos
+e 23 horas, um segundo clique no mesmo minuto reaproveita a mesma sessão (o prazo entra na chave de idempotência, porque a Stripe
+recusa a mesma chave com parâmetros diferentes), aviso só vale com a assinatura do segredo do endpoint sobre o corpo cru e com
+menos de 5 minutos (esse segredo é exclusivo da conta da loja, então não precisa da consulta extra que a Woovi exige), sessão de
+fora da loja ou em outra moeda é ignorada, e reembolso pelo pagamento com chave de idempotência (repetir não devolve duas vezes).
+Biblioteca oficial `stripe` 22.6.2, versão fixa.
 
 No painel da **Woovi** (sandbox em `app.woovi-sandbox.com`, produção em `app.woovi.com`): criar a aplicação de API, copiar o
 AppID para `WOOVI_APP_ID` e cadastrar o webhook `<LOJA_URL_BASE>/api/loja/webhook/woovi` com os eventos

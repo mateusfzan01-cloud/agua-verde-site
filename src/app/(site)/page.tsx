@@ -8,7 +8,7 @@ import { Depoimentos } from '@/components/home/Depoimentos'
 import { SocialProof } from '@/components/home/SocialProof'
 import { FormOrcamento } from '@/components/home/FormOrcamento'
 import { WhatsAppFloat } from '@/components/shared/WhatsAppFloat'
-import { getOrganizationSchema } from '@/lib/json-ld'
+import { AVALIACAO_PUBLICA, getOrganizationSchema } from '@/lib/json-ld'
 import { Check, Clock, Shield, Globe, Car, Headphones, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default function HomePage() {
             '@graph': [
               {
                 '@type': 'WebSite',
-                name: 'Água Verde Transfers',
+                name: 'Água Verde Transfers & Receptivos',
                 url: 'https://aguaverde.tur.br',
               },
               getOrganizationSchema(),
@@ -65,7 +65,7 @@ export default function HomePage() {
               {[
                 { value: '4.888+', label: 'Viagens realizadas' },
                 { value: '89', label: 'Motoristas profissionais' },
-                { value: '4.9/5', label: 'Avaliação média' },
+                { value: `${AVALIACAO_PUBLICA.ratingValue}/5`, label: `Avaliação média no ${AVALIACAO_PUBLICA.fonte}` },
                 { value: '3', label: 'Idiomas atendidos' },
               ].map((stat) => (
                 <div key={stat.label}>
