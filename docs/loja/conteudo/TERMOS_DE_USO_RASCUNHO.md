@@ -36,7 +36,7 @@ Também não dizem nada sobre passeios, vaga garantida no pagamento, cobrança e
 
 ## 1. Quem somos
 
-Somos a **Água Verde Viagens e Receptivos** [CONFERIR: razão social completa, se diferente do nome fantasia], CNPJ 17.427.292/0001-46, com sede na Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE [CONFERIR: CEP]. Somos agência de turismo receptivo cadastrada no Ministério do Turismo, CADASTUR nº [CONFERIR: número CADASTUR]. Já usamos a marca **Uluwatour**; é a mesma empresa.
+Somos a **Água Verde Transfers & Receptivos** [CONFERIR: razão social completa, se diferente do nome fantasia], CNPJ 17.427.292/0001-46, com sede na Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE [CONFERIR: CEP]. Somos agência de turismo receptivo cadastrada no Ministério do Turismo, CADASTUR nº [CONFERIR: número CADASTUR]. Já usamos a marca **Uluwatour**; é a mesma empresa.
 
 Neste texto, "nós" é a Água Verde. "Você" é quem compra ou viaja.
 
@@ -189,7 +189,7 @@ Estes termos seguem a lei brasileira. Fica eleito o foro de Recife/PE, sem preju
 
 ## 1. Quiénes somos
 
-Somos **Água Verde Viagens e Receptivos** [CONFERIR: razón social completa], CNPJ (registro fiscal brasileño) 17.427.292/0001-46, con sede en Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE, Brasil. Somos una agencia de turismo receptivo registrada en el Ministerio de Turismo de Brasil, CADASTUR nº [CONFERIR]. Antes usábamos la marca **Uluwatour**; es la misma empresa.
+Somos **Água Verde Transfers & Receptivos** [CONFERIR: razón social completa], CNPJ (registro fiscal brasileño) 17.427.292/0001-46, con sede en Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE, Brasil. Somos una agencia de turismo receptivo registrada en el Ministerio de Turismo de Brasil, CADASTUR nº [CONFERIR]. Antes usábamos la marca **Uluwatour**; es la misma empresa.
 
 En este texto, "nosotros" es Água Verde. "Tú" eres quien compra o viaja.
 
@@ -340,7 +340,7 @@ Last updated: [publication date]
 
 ## 1. Who we are
 
-We are **Água Verde Viagens e Receptivos** [CONFERIR: full legal name], CNPJ (Brazilian company number) 17.427.292/0001-46, at Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE, Brazil. We are an inbound tour operator registered with the Brazilian Ministry of Tourism, CADASTUR no. [CONFERIR]. We used to trade as **Uluwatour**; it is the same company.
+We are **Água Verde Transfers & Receptivos** [CONFERIR: full legal name], CNPJ (Brazilian company number) 17.427.292/0001-46, at Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE, Brazil. We are an inbound tour operator registered with the Brazilian Ministry of Tourism, CADASTUR no. [CONFERIR]. We used to trade as **Uluwatour**; it is the same company.
 
 In this text, "we" means Água Verde. "You" means the person who books or travels.
 

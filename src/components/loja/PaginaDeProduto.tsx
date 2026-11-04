@@ -31,7 +31,7 @@ export async function PaginaDeProduto({ locale, produto }: { locale: Locale; pro
     '@type': 'Service',
     name: produto.nome[locale],
     description: produto.seo.descricao[locale],
-    provider: { '@type': 'TravelAgency', name: 'Água Verde Viagens e Receptivos', url: 'https://aguaverde.tur.br' },
+    provider: { '@type': 'TravelAgency', name: 'Água Verde Transfers & Receptivos', url: 'https://aguaverde.tur.br' },
     areaServed: 'Pernambuco, Brasil',
     image: produto.imagens.slice(0, 3),
     offers: { '@type': 'Offer', priceCurrency: 'BRL', price: precoAPartirDe(produto), availability: 'https://schema.org/InStock' },

@@ -12,7 +12,7 @@
 | URL | https://www.tripadvisor.com.br/Attraction_Review-g304560-d12087015-Reviews-Uluwatour_Viagens_Receptivos-Recife_State_of_Pernambuco.html |
 | ID do perfil (está na URL) | d12087015 |
 | Nome atual | Uluwatour Viagens Receptivos |
-| Nome pedido | **Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)** |
+| Nome pedido | **Uluwatour Viagens & Receptivos (Água Verde Transfers & Receptivos)** |
 | Objetivo | trocar só o nome; manter avaliações, nota, prêmios e histórico |
 
 ## Passo a passo
@@ -41,9 +41,9 @@ Depois de aprovado: conferir se a URL do perfil mudou e atualizar o link em `CLA
 ## Riscos
 
 - **O TripAdvisor pode recusar nomes com descrição ou parênteses.** As regras costumam pedir que o nome do perfil seja o nome que o cliente vê na empresa (site, placa, documentos), sem palavras extras. [CONFERIR] Para reduzir o risco:
-  - deixar o nome "Uluwatour" visível no site novo antes de enviar (por exemplo, em "Quem somos": "Água Verde Viagens e Receptivos, antiga Uluwatour"), para o suporte encontrar os dois nomes juntos;
+  - deixar o nome "Uluwatour" visível no site novo antes de enviar (por exemplo, em "Quem somos": "Água Verde Transfers & Receptivos, antiga Uluwatour"), para o suporte encontrar os dois nomes juntos;
   - citar que a Expedia já exibe o operador como "Agua Verde Viagens & Receptivos ( Antiga Uluwatour)";
-  - ter um plano B, decidido antes: aceitar "Água Verde Viagens e Receptivos (antiga Uluwatour)" ou só "Água Verde Viagens e Receptivos" [CONFERIR: o dono decide se aceita essas alternativas].
+  - ter um plano B, decidido antes: aceitar "Água Verde Transfers & Receptivos (antiga Uluwatour)" ou só "Água Verde Transfers & Receptivos" [CONFERIR: o dono decide se aceita essas alternativas].
 - Mudanças de nome às vezes são tratadas como "nova empresa" e o suporte pergunta se houve mudança de dono. O texto deixa claro que **não houve**: mesmo CNPJ, mesmos donos, mesmo serviço.
 
 ---
@@ -61,12 +61,12 @@ Sou [NOME], [cargo: sócio/proprietário] da empresa responsável pelo perfil ab
 
 Peço a alteração do nome do perfil para:
 
-**Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)**
+**Uluwatour Viagens & Receptivos (Água Verde Transfers & Receptivos)**
 
 Motivo:
 
 - É a mesma empresa: mesmo CNPJ (17.427.292/0001-46), mesmos donos, mesmo endereço e mesmo serviço de transfer e passeios em Recife.
-- Mudamos a marca comercial de Uluwatour para Água Verde Viagens e Receptivos. Não houve venda nem troca de dono.
+- Mudamos a marca comercial de Uluwatour para Água Verde Transfers & Receptivos. Não houve venda nem troca de dono.
 - Nossos clientes nos procuram pelos dois nomes. Manter "Uluwatour" no início evita confusão para quem já nos conhece; o nome entre parênteses mostra a marca atual.
 
 Peço que as avaliações, a nota e os prêmios do perfil sejam mantidos, pois se referem ao mesmo serviço.
@@ -77,7 +77,7 @@ Fico à disposição para enviar outros documentos.
 
 Obrigado,
 [NOME]
-Água Verde Viagens e Receptivos
+Água Verde Transfers & Receptivos
 reservas@aguaverde.tur.br · +55 81 99947-3200
 Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE, Brasil
 
@@ -96,12 +96,12 @@ I am [NAME], [title: owner/partner] of the business that manages this listing:
 
 Please change the listing name to:
 
-**Uluwatour Viagens & Receptivos (Água Verde Viagens e Receptivos)**
+**Uluwatour Viagens & Receptivos (Água Verde Transfers & Receptivos)**
 
 Reason:
 
 - It is the same company: same Brazilian company number (CNPJ 17.427.292/0001-46), same owners, same address and the same transfer and tour service in Recife, Brazil.
-- We changed our trading name from Uluwatour to Água Verde Viagens e Receptivos. There was no sale and no change of ownership.
+- We changed our trading name from Uluwatour to Água Verde Transfers & Receptivos. There was no sale and no change of ownership.
 - Our customers look for us under both names. Keeping "Uluwatour" first avoids confusion for past guests; the name in brackets shows our current brand.
 
 Please keep the existing reviews, rating and awards on the listing, as they refer to the same service.
@@ -112,7 +112,7 @@ I am happy to send any other documents you need.
 
 Thank you,
 [NAME]
-Água Verde Viagens e Receptivos
+Água Verde Transfers & Receptivos
 reservas@aguaverde.tur.br · +55 81 99947-3200
 Rua Jonathas de Vasconcelos, 788, Boa Viagem, Recife/PE, Brazil
 
