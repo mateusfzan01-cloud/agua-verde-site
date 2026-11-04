@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { MapPin, ArrowRight, Star, Shield, Clock, Car } from 'lucide-react'
+import { AVALIACAO_PUBLICA } from '@/lib/json-ld'
 
 export function Hero() {
   return (
@@ -25,7 +26,7 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
             <Star className="w-4 h-4 text-[#d4a853] fill-[#d4a853]" />
-            <span className="text-sm font-medium text-white/90">4.9 de 5 — 47 avaliações verificadas</span>
+            <span className="text-sm font-medium text-white/90">{AVALIACAO_PUBLICA.ratingValue} de 5 — {AVALIACAO_PUBLICA.reviewCount} avaliações no {AVALIACAO_PUBLICA.fonte}</span>
           </div>
 
           {/* Headline */}
