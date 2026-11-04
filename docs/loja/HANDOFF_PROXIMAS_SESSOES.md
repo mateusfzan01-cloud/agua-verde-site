@@ -2,6 +2,7 @@
 
 > Escrito em 09/10/2026, ao fim da sessão de planejamento (log em `LOG_SESSAO_2026-10-08_PLANO_LOJA_PROPRIA.md`).
 > Cada bloco abaixo é um prompt pronto para abrir uma sessão nova no repositório `agua-verde-site`.
+> Atualizado em 10/10/2026: Prompt A entregue no PR #3; testes da loja no domínio `aguaverdeviagens.com.br` (decisão 35).
 > Ordem recomendada: A agora; B depois que o dono aprovar as telas de A; C e D quando os bloqueios indicados forem resolvidos.
 
 ## O que está liberado e o que está bloqueado
@@ -10,7 +11,7 @@
 |:--|:--|:--|
 | A. Protótipos das 4 telas + conteúdo (traduções, termos, templates WhatsApp, pedido TripAdvisor) | nada | **liberada** |
 | B. Código do site sem efeito em produção (rotas, i18n, catálogo, widget, camada de pagamento simulada, migrations escritas e não aplicadas) | aprovação das telas de A | aguardando A |
-| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | "pode" do dono para o banco; Supabase em Small. O pós-pagamento (trilha A do `PLANO_PAGAMENTO_RESERVA_PWA_APP.md`) roda com o gateway simulado e **não depende de conta nenhuma**; os adaptadores Stripe e Woovi (trilha B) precisam das chaves de sandbox na Vercel (Preview). Mercado Pago: nunca houve conta; código dormente (decisão 32) | parcialmente liberada |
+| C. Checkout real, tabelas no banco, Edge Functions, telas no PWA e no app | "pode" do dono para o banco; Supabase em Small. O pós-pagamento (trilha A do `PLANO_PAGAMENTO_RESERVA_PWA_APP.md`) roda com o gateway simulado e **não depende de conta nenhuma**; os adaptadores Stripe e Woovi (trilha B) precisam das chaves de sandbox na Vercel (Preview). Mercado Pago: nunca houve conta; código dormente (decisão 40) | parcialmente liberada |
 | D. Auditoria do Google Ads | acesso de leitura à conta | bloqueada |
 | E. Manutenção do Supabase (pg_net, índices) | "pode" explícito do dono | bloqueada |
 
@@ -46,7 +47,12 @@ middleware next-intl com /es e /en; rotas /transfers, /passeios, /transfers/[slu
 de docs/loja/conteudo/; widget de reserva com cálculo de preço (§4.3) e testes; páginas de checkout e confirmação
 com a camada de pagamento atrás da interface do §4.7 (criarCobranca, consultarPagamento, reembolsar, validarWebhook)
 em implementação simulada; redirects 301 dos slugs da Paytour; migrations SQL das tabelas da loja escritas em
-supabase/migrations/ mas NÃO aplicadas. npm run build tem de passar. PR em rascunho.
+supabase/migrations/ mas NÃO aplicadas. Quando o host for aguaverdeviagens.com.br (domínio de testes, decisão 35),
+responder com X-Robots-Tag: noindex e robots.txt com Disallow: / (o domínio oficial continua aguaverde.tur.br).
+O preço é por veículo, como na Paytour (§4.3; docs/loja/conteudo/veiculos-paytour.json); site só no modo claro.
+Passeio: vaga garantida no pagamento (sem confirmação em 24 h) e cancelamento grátis até 48 h antes, 24 h na alta
+temporada (decisão 36; transfer segue com 24 h); a lista de datas da alta temporada é uma configuração a definir.
+npm run build tem de passar. PR em rascunho.
 ```
 
 ## Prompt C — checkout real e integrações (quando desbloqueado)
@@ -54,7 +60,7 @@ supabase/migrations/ mas NÃO aplicadas. npm run build tem de passar. PR em rasc
 ```
 Leia docs/loja/PLANO_PAGAMENTO_RESERVA_PWA_APP.md (aprovado em 2026-10-21) e siga as trilhas A e B dele.
 Pré-requisitos confirmados pelo dono: Supabase em Small, "pode" explícito para aplicar as migrations da loja.
-Provedores (decisões 31–34): cartão na Stripe e Pix na Woovi, escolhidos por LOJA_GATEWAY_CARTAO e
+Provedores (decisões 39–42): cartão na Stripe e Pix na Woovi, escolhidos por LOJA_GATEWAY_CARTAO e
 LOJA_GATEWAY_PIX; `gateway_eventos` com chave (gateway, evento_id) na primeira migration; reembolso de Pix é
 manual (status reembolso_pendente); avisos por uma única Edge Function `loja-pedido-pago` (push só ao admin Caio,
 e-mail reservas@uluwatour.tur.br, voucher ao passageiro). Mercado Pago fica dormente (contingência 15/11).
@@ -62,7 +68,7 @@ Antes de qualquer alteração compartilhada, fazer a análise
 de risco para o PWA exigida no CLAUDE.md do appnativo-aguaverde. Implementar §4.2, §4.5, §4.7 do plano:
 aplicar migrations, Edge Function do webhook com gateway_eventos, confirmar_pedido transacional, cron de
 expiração, avisos (push no app, e-mail, WhatsApp), telas "Pedidos do site" no PWA e no app nativo.
-Homologar em staging com compras de R$ 1 e estorno.
+Homologar no domínio de testes aguaverdeviagens.com.br (decisão 35) com compras de R$ 1 e estorno.
 ```
 
 ## Prompt D — auditoria do Google Ads (quando houver acesso)

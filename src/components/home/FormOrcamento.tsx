@@ -68,7 +68,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           Tentar novamente
         </button>
         <a
-          href="https://wa.me/558199473200"
+          href="https://wa.me/5581999473200"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#25d366] text-white font-medium rounded-full hover:bg-[#25d366]/90 transition-colors"
@@ -93,7 +93,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
           Recebemos sua solicitação. Nossa equipe entrará em contato em breve via WhatsApp ou e-mail com seu orçamento personalizado.
         </p>
         <a
-          href="https://wa.me/558199473200"
+          href="https://wa.me/5581999473200"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#1a5c38] text-white font-medium rounded-full hover:bg-[#1a5c38]/90 transition-colors"
@@ -131,7 +131,7 @@ export function FormOrcamento({ initialOrigem, initialDestino }: FormOrcamentoPr
             type="tel"
             name="telefone"
             required
-            placeholder="+55 81 9947-3200"
+            placeholder="+55 81 99947-3200"
             className="w-full px-4 py-3 rounded-xl border border-[#1a5c38]/15 bg-[#fafbfa] text-[#1a1a2e] placeholder:text-[#5a6570]/50 focus:outline-none focus:ring-2 focus:ring-[#1a5c38]/20 focus:border-[#1a5c38] transition-all"
           />
         </div>
