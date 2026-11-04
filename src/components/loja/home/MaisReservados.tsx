@@ -39,7 +39,7 @@ export function MaisReservados({ transfers, passeios }: { transfers: ItemDaLista
         ))}
       </div>
 
-      <div className="grid gap-2.5 sm:grid-cols-2">
+      <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {itens.map((i) => (
           <Link key={i.href} href={i.href} className="grid grid-cols-[92px_1fr] items-center gap-3 rounded-[14px] border border-[#dde5df] bg-white p-2 text-left">
             <div className="relative h-[76px] w-[92px] overflow-hidden rounded-[10px] bg-[#e6f2ea]">
