@@ -36,7 +36,7 @@ Também a conferir: os **códigos de idioma** dos templates atuais (`es` ou `es_
 | Poucas variáveis em texto curto pode ser rejeitado | Os corpos têm texto fixo suficiente em volta das variáveis |
 | Corpo: máximo **1024 caracteres** | Todos ficam entre 218 e 363 caracteres (contagem na §6), com folga para os valores das variáveis |
 | Cabeçalho de texto: máx. 60 caracteres e no máximo 1 variável | Cabeçalhos fixos, sem variável |
-| Rodapé: máx. 60 caracteres, sem variável | "Água Verde Viagens e Receptivos" (31) |
+| Rodapé: máx. 60 caracteres, sem variável | "Água Verde Transfers & Receptivos" (33) |
 | Botões: texto até 25 caracteres; até 2 botões de URL; até 10 botões no total | Respeitado |
 | URL dinâmica: a variável só pode ficar **no fim** da URL; o domínio é fixo | `https://aguaverde.tur.br/reserva/{{1}}` e `https://aguaverde.tur.br/acompanhar/{{1}}` |
 | No envio, o valor de uma variável não pode ter quebra de linha, tabulação nem mais de 4 espaços seguidos | O código de envio deve limpar os valores (ex.: endereço com quebra de linha) |
@@ -88,7 +88,7 @@ Total pago: {{7}}
 O link para acompanhar o motorista chega antes da viagem. Para ver os detalhes ou cancelar, use o botão abaixo. O cancelamento é grátis até 24 h antes do horário marcado.
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — texto `Ver reserva` — `https://aguaverde.tur.br/reserva/{{1}}`
@@ -105,7 +105,7 @@ O link para acompanhar o motorista chega antes da viagem. Para ver os detalhes o
 > Total pago: R$ 180,00
 >
 > O link para acompanhar o motorista chega antes da viagem. Para ver os detalhes ou cancelar, use o botão abaixo. O cancelamento é grátis até 24 h antes do horário marcado.
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [Ver reserva → https://aguaverde.tur.br/reserva/q8Zk2nVt4LxR7wPa9cHs3JdF6mYb1EgU] [Falar com a equipe]
 
 ### es
@@ -125,7 +125,7 @@ Total pagado: {{7}}
 El enlace para seguir al conductor llega antes del viaje. Para ver los detalles o cancelar, usa el botón de abajo. La cancelación es gratis hasta 24 h antes del horario reservado.
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `Ver reserva` — `https://aguaverde.tur.br/es/reserva/{{1}}`
@@ -142,7 +142,7 @@ El enlace para seguir al conductor llega antes del viaje. Para ver los detalles 
 > Total pagado: R$ 180,00 (reales)
 >
 > El enlace para seguir al conductor llega antes del viaje. Para ver los detalles o cancelar, usa el botón de abajo. La cancelación es gratis hasta 24 h antes del horario reservado.
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [Ver reserva → https://aguaverde.tur.br/es/reserva/q8Zk2nVt4LxR7wPa9cHs3JdF6mYb1EgU] [Hablar con el equipo]
 
 ### en
@@ -162,7 +162,7 @@ Total paid: {{7}}
 You will get a link to track your driver before the trip. To see the details or cancel, use the button below. Cancellation is free up to 24 h before your booked time.
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `View booking` — `https://aguaverde.tur.br/en/reserva/{{1}}`
@@ -179,7 +179,7 @@ You will get a link to track your driver before the trip. To see the details or 
 > Total paid: R$ 180.00 (BRL)
 >
 > You will get a link to track your driver before the trip. To see the details or cancel, use the button below. Cancellation is free up to 24 h before your booked time.
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [View booking → https://aguaverde.tur.br/en/reserva/q8Zk2nVt4LxR7wPa9cHs3JdF6mYb1EgU] [Talk to our team]
 
 ---
@@ -218,7 +218,7 @@ Ponto de encontro: {{5}}
 Mostre este voucher ao motorista, se ele pedir. No dia da viagem, toque em "Acompanhar viagem" para ver o motorista chegando em tempo real. Guarde esta mensagem.
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `Ver voucher` — `https://aguaverde.tur.br/reserva/{{1}}`
@@ -233,7 +233,7 @@ Mostre este voucher ao motorista, se ele pedir. No dia da viagem, toque em "Acom
 > Ponto de encontro: Saída do desembarque, motorista com placa com seu nome
 >
 > Mostre este voucher ao motorista, se ele pedir. No dia da viagem, toque em "Acompanhar viagem" para ver o motorista chegando em tempo real. Guarde esta mensagem.
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [Ver voucher → https://aguaverde.tur.br/reserva/q8Zk2nVt4LxR7wPa9cHs3JdF6mYb1EgU] [Acompanhar viagem → https://aguaverde.tur.br/acompanhar/7f3c9a1e5b2d4c8f]
 
 ### es
@@ -251,7 +251,7 @@ Punto de encuentro: {{5}}
 Muestra este voucher al conductor si te lo pide. El día del viaje, toca "Seguir mi viaje" para ver al conductor llegar en tiempo real. Guarda este mensaje.
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `Ver voucher` — `https://aguaverde.tur.br/es/reserva/{{1}}`
@@ -266,7 +266,7 @@ Muestra este voucher al conductor si te lo pide. El día del viaje, toca "Seguir
 > Punto de encuentro: Salida de llegadas, conductor con cartel con tu nombre
 >
 > Muestra este voucher al conductor si te lo pide. El día del viaje, toca "Seguir mi viaje" para ver al conductor llegar en tiempo real. Guarda este mensaje.
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [Ver voucher → https://aguaverde.tur.br/es/reserva/q8Zk2nVt4LxR7wPa9cHs3JdF6mYb1EgU] [Seguir mi viaje → https://aguaverde.tur.br/acompanhar/7f3c9a1e5b2d4c8f]
 
 ### en
@@ -284,7 +284,7 @@ Meeting point: {{5}}
 Show this voucher to the driver if asked. On the day of your trip, tap "Track my trip" to see your driver arrive in real time. Please keep this message.
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `View voucher` — `https://aguaverde.tur.br/en/reserva/{{1}}`
@@ -299,7 +299,7 @@ Show this voucher to the driver if asked. On the day of your trip, tap "Track my
 > Meeting point: Arrivals exit, driver holding a sign with your name
 >
 > Show this voucher to the driver if asked. On the day of your trip, tap "Track my trip" to see your driver arrive in real time. Please keep this message.
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [View voucher → https://aguaverde.tur.br/en/reserva/q8Zk2nVt4LxR7wPa9cHs3JdF6mYb1EgU] [Track my trip → https://aguaverde.tur.br/acompanhar/7f3c9a1e5b2d4c8f]
 
 ---
@@ -334,7 +334,7 @@ Embarque: {{4}}
 No aeroporto, o motorista espera até 60 min depois do pouso, com uma placa com seu nome. Em hotel ou endereço, a espera é de 15 min. Os dados do motorista aparecem no link de acompanhamento. Algum dado mudou? Toque em "Preciso alterar".
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `Acompanhar viagem` — `https://aguaverde.tur.br/acompanhar/{{1}}`
@@ -350,7 +350,7 @@ No aeroporto, o motorista espera até 60 min depois do pouso, com uma placa com 
 > Embarque: Aeroporto do Recife, voo G3 1234
 >
 > No aeroporto, o motorista espera até 60 min depois do pouso, com uma placa com seu nome. Em hotel ou endereço, a espera é de 15 min. Os dados do motorista aparecem no link de acompanhamento. Algum dado mudou? Toque em "Preciso alterar".
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [Acompanhar viagem → https://aguaverde.tur.br/acompanhar/7f3c9a1e5b2d4c8f] [Está tudo certo] [Preciso alterar]
 
 ### es
@@ -368,7 +368,7 @@ Recogida: {{4}}
 En el aeropuerto, el conductor espera hasta 60 min después del aterrizaje, con un cartel con tu nombre. En hotel o dirección, la espera es de 15 min. Los datos del conductor aparecen en el enlace de seguimiento. ¿Cambió algún dato? Toca "Necesito cambiar algo".
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `Seguir mi viaje` — `https://aguaverde.tur.br/acompanhar/{{1}}`
@@ -384,7 +384,7 @@ En el aeropuerto, el conductor espera hasta 60 min después del aterrizaje, con 
 > Recogida: Aeropuerto de Recife, vuelo G3 1234
 >
 > En el aeropuerto, el conductor espera hasta 60 min después del aterrizaje, con un cartel con tu nombre. En hotel o dirección, la espera es de 15 min. Los datos del conductor aparecen en el enlace de seguimiento. ¿Cambió algún dato? Toca "Necesito cambiar algo".
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [Seguir mi viaje → https://aguaverde.tur.br/acompanhar/7f3c9a1e5b2d4c8f] [Todo en orden] [Necesito cambiar algo]
 
 ### en
@@ -402,7 +402,7 @@ Pickup: {{4}}
 At the airport, your driver waits up to 60 min after landing, holding a sign with your name. At a hotel or address, the wait is 15 min. Your driver's details are on the tracking link. Has anything changed? Tap "I need to change".
 ```
 
-**Rodapé:** `Água Verde Viagens e Receptivos`
+**Rodapé:** `Água Verde Transfers & Receptivos`
 
 **Botões:**
 1. URL dinâmica — `Track my trip` — `https://aguaverde.tur.br/acompanhar/{{1}}`
@@ -418,7 +418,7 @@ At the airport, your driver waits up to 60 min after landing, holding a sign wit
 > Pickup: Recife Airport, flight G3 1234
 >
 > At the airport, your driver waits up to 60 min after landing, holding a sign with your name. At a hotel or address, the wait is 15 min. Your driver's details are on the tracking link. Has anything changed? Tap "I need to change".
-> *Água Verde Viagens e Receptivos*
+> *Água Verde Transfers & Receptivos*
 > [Track my trip → https://aguaverde.tur.br/acompanhar/7f3c9a1e5b2d4c8f] [All good] [I need to change]
 
 ---
@@ -498,7 +498,7 @@ Contagem dos textos com as variáveis ainda como `{{n}}`. O limite da Meta é 10
         ]]
       }
     },
-    { "type": "FOOTER", "text": "Água Verde Viagens e Receptivos" },
+    { "type": "FOOTER", "text": "Água Verde Transfers & Receptivos" },
     {
       "type": "BUTTONS",
       "buttons": [
