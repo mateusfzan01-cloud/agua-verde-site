@@ -2,9 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [master, main]
+    branches: [master, main, claude/loja-codigo-b]
   pull_request:
-    branches: [master, main]
+    # claude/loja-codigo-b: branch de integração da loja própria (as PRs da loja apontam para ele)
+    branches: [master, main, claude/loja-codigo-b]
 
 permissions:
   contents: read
@@ -34,6 +35,14 @@ jobs:
 
       - name: TypeScript check
         run: npx tsc --noEmit
+
+      - name: Testes (vitest)
+        run: npx vitest run
+
+      - name: Migrations da loja num Postgres em memória (PGlite)
+        run: |
+          npm install --no-save --no-audit --no-fund @electric-sql/pglite
+          node supabase/pendentes/testar.mjs
 
       - name: Build Next.js
         env:
