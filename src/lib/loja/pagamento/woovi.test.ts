@@ -130,7 +130,7 @@ describe('consultarPagamento', () => {
 })
 
 describe('reembolsar', () => {
-  it('Pix é reembolsado à mão pelo painel (decisão 33): devolve ok:false sem chamar a API', async () => {
+  it('Pix é reembolsado à mão pelo painel (decisão 41): devolve ok:false sem chamar a API', async () => {
     const { f, chamadas } = mockFetch({})
     expect(await gw(f).reembolsar()).toEqual({ ok: false })
     expect(chamadas).toHaveLength(0)

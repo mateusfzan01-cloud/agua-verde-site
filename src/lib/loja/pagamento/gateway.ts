@@ -37,7 +37,7 @@ export interface Cobranca {
 export interface EventoDoGateway {
   /**
    * Nome do provedor que mandou o aviso (`GatewayDePagamento.nome`). Com dois provedores
-   * (decisão 31: cartão na Stripe, Pix na Woovi) os ids de evento são independentes e podem
+   * (decisão 39: cartão na Stripe, Pix na Woovi) os ids de evento são independentes e podem
    * coincidir, então a duplicata é reconhecida pelo par (gateway, eventoId).
    */
   gateway: string

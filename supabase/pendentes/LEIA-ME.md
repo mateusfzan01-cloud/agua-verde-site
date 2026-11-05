@@ -1,6 +1,6 @@
 # Migrations da loja: aplicadas em 17/10/2026 e 23/10/2026
 
-As tabelas e funções da loja própria (plano §4.2, decisões 31 a 38) **já estão no banco** (projeto `yblywknncmrbtxyhwbzr`),
+As tabelas e funções da loja própria (plano §4.2, decisões 31 a 42) **já estão no banco** (projeto `yblywknncmrbtxyhwbzr`),
 aplicadas no Prompt C com o "pode" do dono. Os arquivos ficam em `supabase/migrations/` com a mesma versão do banco.
 Nenhuma tabela existente foi alterada; as novas estão **vazias** e o site ainda não grava nelas.
 

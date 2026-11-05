@@ -12,7 +12,7 @@ import { avaliarCancelamento, HORA_REFERENCIA_PASSEIO, type PeriodoAltaTemporada
 import type { GatewayDePagamento, MeioDePagamento } from './pagamento/gateway'
 import type { Pedido, RepositorioDePedidos } from './pedidos-tipos'
 
-/** Um provedor por forma de pagamento (decisão 31): o Pix e o cartão podem ser empresas diferentes. */
+/** Um provedor por forma de pagamento (decisão 39): o Pix e o cartão podem ser empresas diferentes. */
 export interface Gateways {
   pix: GatewayDePagamento
   cartao: GatewayDePagamento

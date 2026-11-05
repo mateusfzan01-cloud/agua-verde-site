@@ -1,4 +1,4 @@
--- Loja própria: dois provedores de pagamento (plano §4.7 item 3 e decisão 31: cartão na Stripe, Pix na Woovi;
+-- Loja própria: dois provedores de pagamento (plano §4.7 item 3 e decisão 39: cartão na Stripe, Pix na Woovi;
 -- detalhes em docs/loja/PLANO_PAGAMENTO_RESERVA_PWA_APP.md, etapa B1).
 --
 -- 1. gateway_eventos passa a identificar o provedor: os ids de evento da Stripe e da Woovi são independentes

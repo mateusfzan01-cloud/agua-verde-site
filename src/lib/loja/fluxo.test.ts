@@ -366,7 +366,7 @@ describe('webhook: valor, atraso, reembolso e avisos que não interessam', () =>
   })
 })
 
-describe('dois provedores (decisão 31): Pix e cartão em empresas diferentes', () => {
+describe('dois provedores (decisão 39): Pix e cartão em empresas diferentes', () => {
   /** Provedor de mentira com nome próprio: cobra, consulta, reembolsa e assina o aviso só com o nome. */
   class GatewayFalso implements GatewayDePagamento {
     cobrancas = new Map<string, { pedidoId: string; valor: number; status: StatusNoGateway }>()

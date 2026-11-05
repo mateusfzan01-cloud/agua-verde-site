@@ -4,8 +4,8 @@
  * de ambiente (docs/loja/CODIGO_LOJA_B.md):
  *
  *   LOJA_REPOSITORIO=supabase        grava os pedidos no Supabase (precisa de SUPABASE_SERVICE_ROLE_KEY)
- *   LOJA_GATEWAY_PIX=<provedor>      quem cobra o Pix    (decisão 31: woovi; também simulado | mercadopago)
- *   LOJA_GATEWAY_CARTAO=<provedor>   quem cobra o cartão (decisão 31: stripe; também simulado | mercadopago)
+ *   LOJA_GATEWAY_PIX=<provedor>      quem cobra o Pix    (decisão 39: woovi; também simulado | mercadopago)
+ *   LOJA_GATEWAY_CARTAO=<provedor>   quem cobra o cartão (decisão 39: stripe; também simulado | mercadopago)
  *
  * Um provedor por forma de pagamento: cada pedido lembra quem o cobrou (`pedidos.gateway`), e o reembolso
  * e a consulta sempre voltam a esse mesmo provedor. `LOJA_GATEWAY=<provedor>` (forma antiga) vale para os
