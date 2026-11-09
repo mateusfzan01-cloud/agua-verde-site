@@ -10,7 +10,7 @@ export function FaixaDeAviso() {
   if (!visivel) return null
   return (
     <div className="flex items-center gap-2 border-b border-[#dde5df] bg-[#f8efd9] py-2 pl-4 pr-2 text-[13px]">
-      <p className="mx-auto flex max-w-6xl flex-1 leading-snug">
+      <p className="mx-auto flex max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] flex-1 leading-snug">
         <span>
           <b>{t('faixa1')}</b> {t('faixa2')}
         </span>

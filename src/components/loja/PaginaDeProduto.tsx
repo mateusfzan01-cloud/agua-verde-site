@@ -78,7 +78,7 @@ export async function PaginaDeProduto({ locale, produto }: { locale: Locale; pro
         </aside>
 
         <div className="grid content-start gap-6 lg:col-start-1 lg:row-start-2">
-          <Promessas locale={locale} />
+          <Promessas locale={locale} estreita />
           <Tripadvisor locale={locale} />
           <TextoRico texto={produto.descricao[locale]} className="text-[15px] leading-relaxed" />
 
