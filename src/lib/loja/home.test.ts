@@ -7,11 +7,11 @@ describe('home da loja', () => {
     expect(rotas.length).toBeGreaterThan(20)
     for (const r of rotas) expect(r.ida || r.idaVolta, `${r.origem} → ${r.destino}`).toBeTruthy()
     const pdg = rotas.find((r) => r.origem === 'Aeroporto Internacional do Recife' && r.destino.startsWith('Porto de Galinhas'))!
-    expect(pdg.ida?.preco).toBe(220)
-    expect(pdg.idaVolta?.preco).toBe(400)
+    expect(pdg.ida?.preco).toBe(350)
+    expect(pdg.idaVolta?.preco).toBe(640)
     const maragogi = rotas.find((r) => r.destino.startsWith('Maragogi') && r.origem === 'Aeroporto Internacional do Recife')!
-    expect(maragogi.ida?.preco).toBe(380)
-    expect(maragogi.idaVolta?.preco).toBe(740)
+    expect(maragogi.ida?.preco).toBe(580)
+    expect(maragogi.idaVolta?.preco).toBe(1130)
   })
   it('não há rota repetida', () => {
     const chaves = rotasDaBusca().map((r) => `${r.origem}|${r.destino}`)

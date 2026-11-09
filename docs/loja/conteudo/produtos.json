@@ -277,7 +277,7 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Porto de Galinhas / Muro Alto",
     "sentido": "ida_volta",
-    "preco_base": 400.0,
+    "preco_base": 640.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [
@@ -326,37 +326,38 @@
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): mantido o horário operacional de saída para o voo de volta (3 h antes do voo; 3,5 h com trânsito). Possível conflito para o dono decidir: com a espera grátis de 15 min no hotel, o cliente atrasado ainda chega com folga? E o cliente pode pedir outro horário?",
       "Texto completo (09/10/2026): o original tinha a seção 'O que está incluso' com pedágio, receptivo no aeroporto e kit de boas-vindas; todos mantidos",
-      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'"
+      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'",
+      "Preços alinhados em 09/11/2026 ao site aguaverde.tur.br (decisão do dono: o preço do site é o oficial). O site não publica ida e volta: aplicado o mesmo fator da ida (×1.591) a todos os veículos, arredondados a R$ 10."
     ],
     "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
-        "preco": 400.0
+        "preco": 640.0
       },
       {
         "tipo": "sedan_executivo",
-        "preco": 440.0
+        "preco": 700.0
       },
       {
         "tipo": "spin",
-        "preco": 450.0
+        "preco": 720.0
       },
       {
         "tipo": "mini_van",
-        "preco": 1000.0
+        "preco": 1590.0
       },
       {
         "tipo": "sprinter",
-        "preco": 1200.0
+        "preco": 1910.0
       },
       {
         "tipo": "micro_onibus",
-        "preco": 3000.0
+        "preco": 4770.0
       },
       {
         "tipo": "bmw_x1",
-        "preco": 800.0
+        "preco": 1270.0
       }
     ],
     "modelo_preco": "por_veiculo",
@@ -542,7 +543,7 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Porto de Galinhas / Muro Alto",
     "sentido": "ida",
-    "preco_base": 220.0,
+    "preco_base": 350.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [
@@ -595,37 +596,38 @@
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preços alinhados em 09/11/2026 ao site aguaverde.tur.br (decisão do dono: o preço do site é o oficial). Sedan econômico de R$ 220 para R$ 350 (valor publicado no site); demais veículos na mesma proporção (×1.591), arredondados a R$ 10."
     ],
     "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
-        "preco": 220.0
+        "preco": 350.0
       },
       {
         "tipo": "sedan_executivo",
-        "preco": 250.0
+        "preco": 400.0
       },
       {
         "tipo": "spin",
-        "preco": 280.0
+        "preco": 450.0
       },
       {
         "tipo": "mini_van",
-        "preco": 550.0
+        "preco": 880.0
       },
       {
         "tipo": "sprinter",
-        "preco": 700.0
+        "preco": 1110.0
       },
       {
         "tipo": "micro_onibus",
-        "preco": 1500.0
+        "preco": 2390.0
       },
       {
         "tipo": "bmw_x1",
-        "preco": 450.0
+        "preco": 720.0
       }
     ],
     "modelo_preco": "por_veiculo",
@@ -797,7 +799,7 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Praia dos Carneiros",
     "sentido": "ida",
-    "preco_base": 320.0,
+    "preco_base": 420.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [
@@ -839,33 +841,34 @@
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preços alinhados em 09/11/2026 ao site aguaverde.tur.br (decisão do dono: o preço do site é o oficial). Sedan econômico de R$ 320 para R$ 420 (valor publicado no site); demais veículos na mesma proporção (×1.312), arredondados a R$ 10."
     ],
     "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
-        "preco": 320.0
+        "preco": 420.0
       },
       {
         "tipo": "sedan_executivo",
-        "preco": 350.0
+        "preco": 460.0
       },
       {
         "tipo": "spin",
-        "preco": 400.0
+        "preco": 520.0
       },
       {
         "tipo": "mini_van",
-        "preco": 750.0
+        "preco": 980.0
       },
       {
         "tipo": "sprinter",
-        "preco": 850.0
+        "preco": 1120.0
       },
       {
         "tipo": "micro_onibus",
-        "preco": 1700.0
+        "preco": 2230.0
       }
     ],
     "modelo_preco": "por_veiculo",
@@ -1357,7 +1360,7 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Maragogi (AL)",
     "sentido": "ida_volta",
-    "preco_base": 740.0,
+    "preco_base": 1130.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [
@@ -1406,33 +1409,34 @@
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): mantido o horário operacional de saída para o voo de volta (cerca de 4 h antes do voo; 5 h com trânsito no Recife). Possível conflito para o dono decidir: com a espera grátis de 15 min no hotel, o cliente atrasado ainda chega com folga? E o cliente pode pedir outro horário?",
-      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito' e espaço antes de vírgula"
+      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito' e espaço antes de vírgula",
+      "Preços alinhados em 09/11/2026 ao site aguaverde.tur.br (decisão do dono: o preço do site é o oficial). O site não publica ida e volta: aplicado o mesmo fator da ida (×1.526) a todos os veículos, arredondados a R$ 10."
     ],
     "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
-        "preco": 740.0
+        "preco": 1130.0
       },
       {
         "tipo": "sedan_executivo",
-        "preco": 800.0
+        "preco": 1220.0
       },
       {
         "tipo": "spin",
-        "preco": 850.0
+        "preco": 1300.0
       },
       {
         "tipo": "mini_van",
-        "preco": 1600.0
+        "preco": 2440.0
       },
       {
         "tipo": "sprinter",
-        "preco": 2500.0
+        "preco": 3820.0
       },
       {
         "tipo": "micro_onibus",
-        "preco": 3800.0
+        "preco": 5800.0
       }
     ],
     "modelo_preco": "por_veiculo",
@@ -1480,7 +1484,7 @@
     "origem_padrao": "Boa Viagem, Pina ou Piedade (Recife/Jaboatão)",
     "destino_padrao": "Porto de Galinhas",
     "sentido": "ida",
-    "preco_base": 220.0,
+    "preco_base": 320.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [
@@ -1525,33 +1529,34 @@
       "Texto completo (09/10/2026): política aplicada: espera grátis de 15 min no endereço; cancelamento grátis até 24 h antes",
       "Texto completo (09/10/2026): o original descreve só o sentido de ida; na volta o embarque é no endereço do destino",
       "Texto completo (09/10/2026): ERRO NO ORIGINAL corrigido: o texto dizia 'seguir viagem até endereço em Maragogi'; trocado por Porto de Galinhas (destino do produto). Confirmar",
-      "Texto completo (09/10/2026): corrigido 'PIna' → 'Pina'"
+      "Texto completo (09/10/2026): corrigido 'PIna' → 'Pina'",
+      "Preços alinhados em 09/11/2026 ao site aguaverde.tur.br (decisão do dono: o preço do site é o oficial). Sedan econômico de R$ 220 para R$ 320 (valor publicado no site); demais veículos na mesma proporção (×1.455), arredondados a R$ 10."
     ],
     "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
-        "preco": 220.0
+        "preco": 320.0
       },
       {
         "tipo": "sedan_executivo",
-        "preco": 250.0
+        "preco": 360.0
       },
       {
         "tipo": "spin",
-        "preco": 280.0
+        "preco": 410.0
       },
       {
         "tipo": "mini_van",
-        "preco": 550.0
+        "preco": 800.0
       },
       {
         "tipo": "sprinter",
-        "preco": 700.0
+        "preco": 1020.0
       },
       {
         "tipo": "micro_onibus",
-        "preco": 1500.0
+        "preco": 2180.0
       }
     ],
     "modelo_preco": "por_veiculo",
@@ -2208,7 +2213,7 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Maragogi (AL)",
     "sentido": "ida",
-    "preco_base": 380.0,
+    "preco_base": 580.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [
@@ -2256,37 +2261,38 @@
       "Texto completo (09/10/2026): textos (descricao, inclusos, nao_inclusos, duracao_min) refeitos a partir do texto completo da Paytour (campo descricao_paytour). As notas anteriores que falam de 'texto cortado' ou 'descrição completa não obtida' ficam superadas; dúvidas que continuam abertas estão repetidas abaixo",
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
-      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)"
+      "Texto completo (09/10/2026): o original só descreve a chegada ao aeroporto; para o sentido hotel → aeroporto o texto diz só a regra de espera em endereço. Falta dizer com quanta antecedência do voo o motorista busca no retorno (só os produtos de ida e volta informam)",
+      "Preços alinhados em 09/11/2026 ao site aguaverde.tur.br (decisão do dono: o preço do site é o oficial). Sedan econômico de R$ 380 para R$ 580 (valor publicado no site); demais veículos na mesma proporção (×1.526), arredondados a R$ 10."
     ],
     "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
-        "preco": 380.0
+        "preco": 580.0
       },
       {
         "tipo": "sedan_executivo",
-        "preco": 400.0
+        "preco": 610.0
       },
       {
         "tipo": "spin",
-        "preco": 450.0
+        "preco": 690.0
       },
       {
         "tipo": "mini_van",
-        "preco": 900.0
+        "preco": 1370.0
       },
       {
         "tipo": "sprinter",
-        "preco": 1400.0
+        "preco": 2140.0
       },
       {
         "tipo": "micro_onibus",
-        "preco": 2200.0
+        "preco": 3360.0
       },
       {
         "tipo": "bmw_x1",
-        "preco": 750.0
+        "preco": 1140.0
       }
     ],
     "modelo_preco": "por_veiculo",
@@ -2696,7 +2702,7 @@
     "origem_padrao": "Aeroporto Internacional do Recife",
     "destino_padrao": "Praia dos Carneiros",
     "sentido": "ida_volta",
-    "preco_base": 600.0,
+    "preco_base": 790.0,
     "duracao_min": null,
     "confirmacao": "imediata",
     "imagens": [
@@ -2741,33 +2747,34 @@
       "Texto completo (09/10/2026): corrigido 'monitando' → 'monitorando', 'aguarando' → 'aguardando', 'Pontualide' → 'Pontualidade', 'boas vindas' → 'boas-vindas'; 'papel em seu nome' virou 'placa com o seu nome'",
       "Texto completo (09/10/2026): política aplicada: espera grátis de 60 min no aeroporto (a partir do pouso) e 15 min em endereço; cancelamento grátis até 24 h antes. O original não falava de espera nem de cancelamento",
       "Texto completo (09/10/2026): mantido o horário operacional de saída para o voo de volta (4 h antes do voo; 4,5 h com trânsito). Possível conflito para o dono decidir: com a espera grátis de 15 min no hotel, o cliente atrasado ainda chega com folga? E o cliente pode pedir outro horário?",
-      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'"
+      "Texto completo (09/10/2026): corrigido 'transito' → 'trânsito'",
+      "Preços alinhados em 09/11/2026 ao site aguaverde.tur.br (decisão do dono: o preço do site é o oficial). O site não publica ida e volta: aplicado o mesmo fator da ida (×1.312) a todos os veículos, arredondados a R$ 10."
     ],
     "max_por_compra": 10,
     "veiculos": [
       {
         "tipo": "sedan_economico",
-        "preco": 600.0
+        "preco": 790.0
       },
       {
         "tipo": "sedan_executivo",
-        "preco": 640.0
+        "preco": 840.0
       },
       {
         "tipo": "spin",
-        "preco": 700.0
+        "preco": 920.0
       },
       {
         "tipo": "mini_van",
-        "preco": 1400.0
+        "preco": 1840.0
       },
       {
         "tipo": "sprinter",
-        "preco": 1600.0
+        "preco": 2100.0
       },
       {
         "tipo": "micro_onibus",
-        "preco": 3200.0
+        "preco": 4200.0
       }
     ],
     "modelo_preco": "por_veiculo",

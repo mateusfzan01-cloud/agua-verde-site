@@ -59,7 +59,7 @@ describe('criarPedido', () => {
     expect(p.status).toBe('pendente_pagamento')
     expect(p.numero).toMatch(/^AV-\d{4}-000001$/)
     expect(p.tokenAcesso.length).toBeGreaterThanOrEqual(32)
-    expect(p.valorTotal).toBe(740)
+    expect(p.valorTotal).toBe(1130)
     expect(p.itens).toHaveLength(2)
     expect(p.itens[1]).toMatchObject({ origem: maragogiIdaVolta.destinoPadrao, destino: maragogiIdaVolta.origemPadrao, dataIso: '2026-12-22', hora: '10:00' })
     expect(p.passageiro.email).toBe('lucia@exemplo.com')
