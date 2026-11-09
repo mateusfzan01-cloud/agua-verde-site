@@ -1,5 +1,5 @@
 /**
- * Woovi (Pix) atrás da interface do gateway (plano §4.7; decisão 31: Pix na Woovi, cartão na Stripe).
+ * Woovi (Pix) atrás da interface do gateway (plano §4.7; decisão 39: Pix na Woovi, cartão na Stripe).
  *
  * - Cobrança: POST /api/v1/charge?return_existing=true com `correlationID` = id do pedido; repetir a
  *   chamada devolve a cobrança que já existe (idempotência). Valor em centavos.
@@ -9,7 +9,7 @@
  *   Woovi publica a velha e a nova), guardadas por 1 hora. A assinatura é a mesma para todas as contas da
  *   Woovi, então ela só prova que o aviso veio da Woovi, não que a cobrança é desta loja: o estado e o valor
  *   vêm de uma consulta à API com o AppID da loja (GET /api/v1/charge/{correlationID}).
- * - Só cobra Pix. Reembolso de Pix é manual pelo painel da Woovi (decisão 33): `reembolsar` não chama a API.
+ * - Só cobra Pix. Reembolso de Pix é manual pelo painel da Woovi (decisão 41): `reembolsar` não chama a API.
  * - Só vale cobrança cujo correlationID é um id de pedido nosso (a conta pode ter outros usos).
  *
  * Fontes (2026-10-26): developers.woovi.com (criar cobrança, eventos do webhook, validação da assinatura,
@@ -127,7 +127,7 @@ export class GatewayWoovi implements GatewayDePagamento {
   }
 
   async criarCobranca(e: EntradaDeCobranca): Promise<Cobranca> {
-    if (e.meio !== 'pix') throw new Error('A Woovi só cobra Pix (decisão 31: cartão na Stripe)')
+    if (e.meio !== 'pix') throw new Error('A Woovi só cobra Pix (decisão 39: cartão na Stripe)')
     const restante = e.expiraEm ? Math.ceil((e.expiraEm.getTime() - this.agora()) / 1000) : VALIDADE_PADRAO_S
     const cpf = e.pagador.cpf?.replace(/\D/g, '')
 
@@ -166,7 +166,7 @@ export class GatewayWoovi implements GatewayDePagamento {
     }
   }
 
-  /** Reembolso de Pix é manual, pelo painel da Woovi (decisão 33). Nunca chama a API daqui. */
+  /** Reembolso de Pix é manual, pelo painel da Woovi (decisão 41). Nunca chama a API daqui. */
   async reembolsar(): Promise<{ ok: boolean; reembolsoRef?: string }> {
     return { ok: false }
   }

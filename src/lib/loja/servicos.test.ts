@@ -86,7 +86,7 @@ describe('escolha do provedor por forma de pagamento', () => {
     aviso.mockRestore()
   })
 
-  it('Woovi no Pix (decisão 31): sobe com o AppID e responde pelo nome na rota do webhook', async () => {
+  it('Woovi no Pix (decisão 39): sobe com o AppID e responde pelo nome na rota do webhook', async () => {
     const s = await carregar({ ...credenciais, LOJA_GATEWAY_PIX: 'woovi', LOJA_GATEWAY_CARTAO: 'mercadopago', WOOVI_APP_ID: 'app-teste' })
     const d = s.dependencias()
     expect([d.gateways.pix.nome, d.gateways.cartao.nome]).toEqual(['woovi', 'mercadopago'])
@@ -103,7 +103,7 @@ describe('escolha do provedor por forma de pagamento', () => {
     expect(() => s3.dependencias()).toThrow(/LOJA_GATEWAY=woovi: este provedor não cobra cartão/)
   })
 
-  it('a combinação da decisão 31 (Woovi no Pix, Stripe no cartão) sobe e cada rota de webhook acha o seu provedor', async () => {
+  it('a combinação da decisão 39 (Woovi no Pix, Stripe no cartão) sobe e cada rota de webhook acha o seu provedor', async () => {
     const s = await carregar({
       ...credenciais, LOJA_GATEWAY_PIX: 'woovi', LOJA_GATEWAY_CARTAO: 'stripe', WOOVI_APP_ID: 'app-teste',
       STRIPE_SECRET_KEY: 'sk_test_x', STRIPE_WEBHOOK_SECRET: 'whsec_x',

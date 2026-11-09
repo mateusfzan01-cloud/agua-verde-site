@@ -1,5 +1,5 @@
 /**
- * Stripe (cartão) atrás da interface do gateway (plano de pagamento, etapa B3; decisões 31 e D14).
+ * Stripe (cartão) atrás da interface do gateway (plano de pagamento, etapa B3; decisões 39 e D14).
  *
  * - Cobrança: Checkout Session HOSPEDADA pela Stripe (o cliente digita o cartão na página da Stripe):
  *   `mode=payment`, só cartão, idioma do pedido, botão "Reservar" (`submit_type=book`),
@@ -91,7 +91,7 @@ export class GatewayStripe implements GatewayDePagamento {
   }
 
   async criarCobranca(e: EntradaDeCobranca): Promise<Cobranca> {
-    if (e.meio !== 'cartao') throw new Error('A Stripe só cobra cartão nesta loja (decisão 31: Pix na Woovi)')
+    if (e.meio !== 'cartao') throw new Error('A Stripe só cobra cartão nesta loja (decisão 39: Pix na Woovi)')
     const agora = this.agora()
     // Prazo do pedido, respeitando o mínimo e o máximo da Stripe. Arredondado para o minuto seguinte para
     // que um segundo clique no mesmo minuto repita os mesmos parâmetros e reaproveite a mesma sessão.

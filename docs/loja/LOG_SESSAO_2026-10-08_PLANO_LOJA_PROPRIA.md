@@ -172,7 +172,7 @@ Duas sessões acrescentaram decisões ao §2 do plano com os **mesmos números**
 | 41 | Reembolso: cartão automático pela Stripe; Pix manual pelo admin Caio no painel da Woovi |
 | 42 | Avisos: push só para o admin Caio; e-mail para `reservas@uluwatour.tur.br`; uma Edge Function `loja-pedido-pago`; checkout pergunta passageiros e malas |
 
-**Pendente**: a branch do código (`claude/loja-codigo-b`, PR #4) ainda não recebeu essa renumeração. Os documentos dela que citam o pagamento como "decisão 32" (por exemplo, o `CODIGO_LOJA_B.md`, que diz que o Mercado Pago fica dormente pela "decisão 32") precisam passar para 40 quando a `master` for juntada a ela.
+**Resolvido em 05/11/2026**: a branch do código (`claude/loja-codigo-b`, PR #4) recebeu a mesma renumeração. As citações do pagamento no código, nos testes e nos documentos passaram para o número novo: Stripe + Woovi 31 → 39, Mercado Pago dormente 32 → 40, reembolso manual do Pix 33 → 41 (adaptadores `woovi.ts`, `stripe.ts`, `gateway.ts`, `servicos.ts`, `fluxo.ts`, os testes deles, `CODIGO_LOJA_B.md`, `CLAUDE.md` e o comentário da migration `loja_dois_provedores`, que já está aplicada no banco: só o comentário do arquivo mudou, o banco não foi tocado). Ficaram como estavam as citações que já usam o sentido da branch: limite de 10 (32), arrependimento (33), domínio de testes (35), passeio (36), contador (37) e destaques (38).
 
 ### 10.4 Estado técnico
 

@@ -316,6 +316,33 @@ describe('webhook: valor, atraso, reembolso e avisos que não interessam', () =>
     expect((await processarWebhook(deps, gateway, corpo, cab, agora)).corpo).toBe('duplicado')
   })
 
+  it('aviso reenviado depois de falha na confirmação ainda confirma o pedido (não morre como duplicado)', async () => {
+    const p = await pedidoPendente()
+    const { corpo, cab } = await avisoAssinado(p, {})
+    const confirmar = repo.confirmarPedido.bind(repo)
+    let falhas = 1
+    repo.confirmarPedido = async (...args) => {
+      if (falhas-- > 0) throw new Error('banco fora do ar')
+      return confirmar(...args)
+    }
+    await expect(processarWebhook(deps, gateway, corpo, cab, agora)).rejects.toThrow('banco fora do ar')
+    expect((await repo.buscarPorId(p.id))!.status).toBe('pendente_pagamento')
+    // o provedor reenvia o mesmo aviso: agora o pedido é confirmado
+    expect((await processarWebhook(deps, gateway, corpo, cab, agora)).corpo).toBe('ok')
+    expect((await repo.buscarPorId(p.id))!.status).toBe('pago')
+    // e um terceiro envio, com o pedido já pago, é duplicata de verdade
+    expect((await processarWebhook(deps, gateway, corpo, cab, agora)).corpo).toBe('duplicado')
+  })
+
+  it('aviso repetido com valor diferente não confirma nem repete a auditoria', async () => {
+    const p = await pedidoPendente()
+    const { corpo, cab } = await avisoAssinado(p, { valor: 1 })
+    await processarWebhook(deps, gateway, corpo, cab, agora)
+    expect((await processarWebhook(deps, gateway, corpo, cab, agora)).corpo).toBe('valor_divergente')
+    expect((await repo.buscarPorId(p.id))!.status).toBe('pendente_pagamento')
+    expect(repo.auditoriaDoPedido(p.id).filter((e) => e.tipo === 'valor_divergente')).toHaveLength(1)
+  })
+
   it('aviso de reembolso para pedido que não estava pago não muda nada', async () => {
     const p = await pedidoPendente()
     const { corpo, cab } = await avisoAssinado(p, { status: 'reembolsado' })
@@ -339,7 +366,7 @@ describe('webhook: valor, atraso, reembolso e avisos que não interessam', () =>
   })
 })
 
-describe('dois provedores (decisão 31): Pix e cartão em empresas diferentes', () => {
+describe('dois provedores (decisão 39): Pix e cartão em empresas diferentes', () => {
   /** Provedor de mentira com nome próprio: cobra, consulta, reembolsa e assina o aviso só com o nome. */
   class GatewayFalso implements GatewayDePagamento {
     cobrancas = new Map<string, { pedidoId: string; valor: number; status: StatusNoGateway }>()

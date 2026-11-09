@@ -47,6 +47,8 @@ export function validarAgenda(
     else if (a.dataVolta < minima) erros.push('data_no_passado')
     else if (dataExiste(a.data) && a.dataVolta < a.data) erros.push('volta_antes_da_ida')
     if (!horaValida(a.horaVolta)) erros.push('hora_invalida')
+    // Mesmo dia: a volta tem de sair depois da ida (HH:MM compara certo como texto).
+    else if (a.dataVolta === a.data && horaValida(a.hora) && a.horaVolta < a.hora) erros.push('volta_antes_da_ida')
   }
   return [...new Set(erros)]
 }

@@ -12,7 +12,7 @@ import { avaliarCancelamento, HORA_REFERENCIA_PASSEIO, type PeriodoAltaTemporada
 import type { GatewayDePagamento, MeioDePagamento } from './pagamento/gateway'
 import type { Pedido, RepositorioDePedidos } from './pedidos-tipos'
 
-/** Um provedor por forma de pagamento (decisão 31): o Pix e o cartão podem ser empresas diferentes. */
+/** Um provedor por forma de pagamento (decisão 39): o Pix e o cartão podem ser empresas diferentes. */
 export interface Gateways {
   pix: GatewayDePagamento
   cartao: GatewayDePagamento
@@ -97,13 +97,22 @@ export async function processarWebhook(
   const evento = { ...validado, gateway: gateway.nome }
 
   const novo = await repo.registrarEventoDoGateway(evento)
-  if (!novo) return { status: 200, corpo: 'duplicado' }
+
+  // O evento é gravado ANTES de confirmar/reembolsar. Se esse passo seguinte falhou (500), o provedor
+  // reenvia o mesmo aviso: ele não pode morrer aqui como "duplicado" enquanto o pedido ainda não
+  // refletiu o evento. Repetição só segue adiante se o pedido ainda precisa do que o evento diz
+  // (confirmar e reembolsar são idempotentes); em qualquer outro caso, é duplicata de verdade.
+  const pedido = await repo.buscarPorId(evento.pedidoId)
+  if (!novo) {
+    const faltaConfirmar = evento.status === 'aprovado' && (pedido?.status === 'pendente_pagamento' || pedido?.status === 'expirado')
+    const faltaReembolsar = evento.status === 'reembolsado' && pedido?.status === 'pago'
+    if (!faltaConfirmar && !faltaReembolsar) return { status: 200, corpo: 'duplicado' }
+  }
 
   // Um aviso só vale para pedido cobrado pelo MESMO provedor: o aviso de um (por exemplo, o simulado)
   // nunca paga nem reembolsa um pedido do outro. Fica registrado para a equipe ver.
-  const pedido = await repo.buscarPorId(evento.pedidoId)
   if (pedido && pedido.gateway && pedido.gateway !== gateway.nome) {
-    await repo.registrarAuditoria({
+    if (novo) await repo.registrarAuditoria({
       pedidoId: pedido.id,
       tipo: 'provedor_divergente',
       detalhes: { avisoDe: gateway.nome, pedidoCobradoPor: pedido.gateway, eventoId: evento.eventoId, gatewayRef: evento.gatewayRef },
@@ -114,12 +123,14 @@ export async function processarWebhook(
 
   if (evento.status === 'aprovado') {
     if (pedido && evento.valor !== undefined && Math.abs(evento.valor - pedido.valorTotal) > 0.005) {
-      await repo.registrarAuditoria({
-        pedidoId: pedido.id,
-        tipo: 'valor_divergente',
-        detalhes: { pago: evento.valor, esperado: pedido.valorTotal, gatewayRef: evento.gatewayRef },
-        em: agora,
-      })
+      if (novo) {
+        await repo.registrarAuditoria({
+          pedidoId: pedido.id,
+          tipo: 'valor_divergente',
+          detalhes: { pago: evento.valor, esperado: pedido.valorTotal, gatewayRef: evento.gatewayRef },
+          em: agora,
+        })
+      }
       return { status: 200, corpo: 'valor_divergente' }
     }
     await repo.confirmarPedido(evento.pedidoId, evento.gatewayRef, agora)

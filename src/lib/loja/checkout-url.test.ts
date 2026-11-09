@@ -34,5 +34,9 @@ describe('datas', () => {
     expect(validarAgenda({ tipo: 'passeio', sentido: 'n/a', data: '2026-12-02' }, agora)).toEqual([])
     expect(validarAgenda({ tipo: 'transfer', sentido: 'ida', data: '2026-02-30', hora: '25:00' }, agora)).toEqual(['data_invalida', 'hora_invalida'])
     expect(validarAgenda({ tipo: 'transfer', sentido: 'ida_volta', data: '2026-12-10', hora: '09:00', dataVolta: '2026-12-09', horaVolta: '09:00' }, agora)).toEqual(['volta_antes_da_ida'])
+    // mesmo dia: a volta tem de ser depois da ida
+    const mesmoDia = { tipo: 'transfer', sentido: 'ida_volta', data: '2026-12-15', dataVolta: '2026-12-15' } as const
+    expect(validarAgenda({ ...mesmoDia, hora: '18:00', horaVolta: '09:00' }, agora)).toEqual(['volta_antes_da_ida'])
+    expect(validarAgenda({ ...mesmoDia, hora: '09:00', horaVolta: '18:00' }, agora)).toEqual([])
   })
 })
