@@ -52,7 +52,7 @@ describe('calcularPreco, por veículo', () => {
   it('ida e volta tem um preço só, sem multiplicar por duas pernas', () => {
     const p = produtoPorSlug('aeroporto-recife-maragogi-ida-e-volta')!
     const r = calcularPreco(p, { veiculos: { sedan_economico: 1 } })
-    expect(r).toMatchObject({ ok: true, total: 740 })
+    expect(r).toMatchObject({ ok: true, total: 1130 })
   })
 })
 

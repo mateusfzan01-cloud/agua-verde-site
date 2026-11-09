@@ -52,6 +52,17 @@ O texto de cada produto foi reescrito a partir do original completo da Paytour (
 - Preços que mudaram desde jul/2025: Porto de Galinhas ida 180 → 220 e ida e volta 340 → 400; Boa Viagem → Porto de Galinhas 180 → 220; Maragogi ida 360 → 380 e ida e volta 700 → 740; City tour Recife e Olinda 450 → 550; City tour Olinda e Brennand 540 → 620.
 - Para refazer: `python3 docs/loja/conteudo/scripts/aplicar_coleta.py` (da raiz do repositório).
 
+## Preços alinhados ao site (09/11/2026)
+
+O site institucional (`aguaverde.tur.br`, código em `src/app/(site)/`, `public/llms.txt` e `src/lib/json-ld.ts`) publica "a partir de" para 1 a 3 passageiros: Aeroporto → Porto de Galinhas R$ 350, Aeroporto → Praia dos Carneiros R$ 420, Aeroporto → Maragogi R$ 580 e hotel em Recife → Porto de Galinhas R$ 320. O dono decidiu que **o preço do site é o oficial**, então o catálogo da loja foi ajustado nesses trajetos:
+
+- Sedan econômico = preço do site. Os outros veículos do mesmo produto subiram na mesma proporção, arredondados a R$ 10 (o site não publica preço de van, Sprinter, micro-ônibus ou BMW).
+- Ida e volta: o site não publica. Foi aplicado o mesmo fator da ida correspondente (Porto de Galinhas ×1,59, Carneiros ×1,31, Maragogi ×1,53).
+- Os demais 20 transfers e os 17 passeios não têm preço no site e ficaram como na coleta de 09/10/2026.
+- O site também cita hotel em Recife → Carneiros (R$ 400) e → Maragogi (R$ 540), mas a loja não tem esses produtos; nada foi criado.
+
+Cada produto alterado tem o detalhe em `notas_revisao`. Antes e depois, por veículo, no PR que fez a mudança.
+
 ## Pendências para o dono decidir
 
 1. **Textos completos**: resolvido. Revisar as dúvidas anotadas produto a produto (`notas_revisao`), principalmente: horário de busca para o voo de volta, inclusos dos passeios de barco, mergulho para credenciados e carro para noivas (quantas horas o preço cobre).
