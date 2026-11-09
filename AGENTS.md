@@ -248,11 +248,12 @@ A regra "e-commerce só após >20 orçamentos/mês por 2 meses" foi escrita para
 | Serviço | Detalhe |
 |:--------|:--------|
 | Supabase | Project ID: `yblywknncmrbtxyhwbzr` |
-| WhatsApp | `https://wa.me/558199473200` |
+| WhatsApp | `https://wa.me/5581999473200` |
 | Instagram | `https://www.instagram.com/aguaverdeviagens/` |
 | E-mail | `contato@aguaverde.tur.br` |
 | TripAdvisor | `https://www.tripadvisor.com.br/Attraction_Review-g304560-d12087015-Reviews-Uluwatour_Viagens_Receptivos-Recife_State_of_Pernambuco.html`
 | PWA público | `https://app.aguaverde.tur.br/acompanhar/:token` |
+| Domínio de testes | `aguaverdeviagens.com.br` — homologação da loja (2026-10-10), fora do Google; oficial continua `aguaverde.tur.br` |
 
 ---
 

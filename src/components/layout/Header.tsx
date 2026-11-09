@@ -113,7 +113,7 @@ export function Header() {
           {/* CTA Desktop */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://wa.me/558199473200"
+              href="https://wa.me/5581999473200"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1a5c38] text-white text-sm font-medium rounded-full hover:bg-[#1a5c38]/90 transition-colors"
@@ -184,7 +184,7 @@ export function Header() {
           </a>
 
           <a
-            href="https://wa.me/558199473200"
+            href="https://wa.me/5581999473200"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#1a5c38] text-white text-sm font-medium rounded-full"

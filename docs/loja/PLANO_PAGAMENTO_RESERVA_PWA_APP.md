@@ -1,7 +1,7 @@
 # Plano: do pagamento no site até a reserva no PWA e no app nativo
 
 > Data: 2026-10-19 · Revisado e **aprovado pelo dono em 2026-10-21** depois de 4 rodadas de perguntas (decisões na §5) · Autor: Claude Code com Mateus Zanlorenzi
-> Complementa o `PLANO_LOJA_PROPRIA_V1.md` (§4.1, §4.5, §4.7, decisões 22, 23, 25, 31 a 34 e 36). Tudo o que está em "O que já existe" foi conferido lendo o código dos três repositórios em 2026-10-19: `agua-verde-site` (branch `claude/loja-codigo-b`), `agua-verde-app` (PWA) e `appnativo-aguaverde` (app). Nada foi presumido.
+> Complementa o `PLANO_LOJA_PROPRIA_V1.md` (§4.1, §4.5, §4.7, decisões 22, 23, 25, 39 a 42 e 36). Tudo o que está em "O que já existe" foi conferido lendo o código dos três repositórios em 2026-10-19: `agua-verde-site` (branch `claude/loja-codigo-b`), `agua-verde-app` (PWA) e `appnativo-aguaverde` (app). Nada foi presumido.
 
 ---
 
@@ -30,7 +30,7 @@ Este plano fecha essas lacunas em duas trilhas paralelas (§4), dentro das seman
 |:--|:--|:--|
 | Fluxo do pedido | `src/lib/loja/fluxo.ts` | `iniciarPagamento`, `processarWebhook`, `estadoDoPedido`, `cancelarPedido`, `reenviarVoucher`, `pedirLinkDaReserva` |
 | Interface do gateway | `src/lib/loja/pagamento/gateway.ts` | `criarCobranca`, `consultarPagamento`, `reembolsar`, `validarWebhook` |
-| Mercado Pago | `src/lib/loja/pagamento/mercadopago.ts` + `src/app/api/loja/webhook/mercadopago/route.ts` | implementado e testado; **nunca houve conta**; fica **dormente** (decisão 32) |
+| Mercado Pago | `src/lib/loja/pagamento/mercadopago.ts` + `src/app/api/loja/webhook/mercadopago/route.ts` | implementado e testado; **nunca houve conta**; fica **dormente** (decisão 40) |
 | Repositório | `src/lib/loja/repositorio-supabase.ts` | grava pedidos e chama as funções SQL com a chave de serviço |
 | Ligação das peças | `src/lib/loja/servicos.ts` | escolhe memória ou Supabase, simulado ou Mercado Pago. `enviarLinkDaReserva` **só escreve no log** |
 | Checkout | `src/components/loja/CheckoutEmPassos.tsx` | nome, WhatsApp com DDI, e-mail, voo, hotel/endereço, observações, CPF opcional. **Não pede número de passageiros nem malas** (a seleção do produto tem `pessoas` ou `veiculos`) |
@@ -42,7 +42,7 @@ Este plano fecha essas lacunas em duas trilhas paralelas (§4), dentro das seman
 - `reembolsar_pedido(pedido, motivo)`, só `service_role`: marca `reembolsado` e **cancela as viagens do pedido que ainda estão `pendente` ou `vinculada`**.
 - `reserva_por_token`, `expirar_pedidos_pendentes` (cron **ainda não agendado**), `proximo_numero_pedido`.
 - RLS: `pedidos`, `pedido_itens`, `pedido_eventos`, `gateway_eventos` têm **leitura para admin/gerente** (`is_admin_or_gerente()`); nenhuma escrita por usuário.
-- `pedidos.status` aceita hoje: `pendente_pagamento`, `pago`, `cancelado`, `reembolsado`, `expirado`. O Pix manual (decisão 33) pede um status a mais, `reembolso_pendente`.
+- `pedidos.status` aceita hoje: `pendente_pagamento`, `pago`, `cancelado`, `reembolsado`, `expirado`. O Pix manual (decisão 41) pede um status a mais, `reembolso_pendente`.
 - `gateway_eventos.evento_id` é a chave primária **sozinha**. Com dois provedores ela vira `(gateway, evento_id)` (§4.7 do plano principal), na **primeira** migration deste plano.
 - Decisão 36: passeios **não** passam mais por "aguardando confirmação"; pagou, está garantido.
 
@@ -74,12 +74,12 @@ Este plano fecha essas lacunas em duas trilhas paralelas (§4), dentro das seman
 - Push: `send-push-notification` manda para **um motorista** por vez e respeita `perfis.pref_notif_viagens`, `_lembretes`, `_cancelamentos`. **Não existe push de "viagem nova" para admin/gerente** em nenhum dos dois repositórios.
 - Perfil que vai receber o push de pedido pago: **Caio Zanlorenzi, admin** (id `2c7574d6-…`), com push cadastrado e preferência "viagens" ligada. Existe também um perfil motorista com o mesmo nome, sem push; não é o alvo.
 
-### 1.6 Provedores de pagamento (decisão 32)
+### 1.6 Provedores de pagamento (decisão 40)
 
 | Provedor | Papel | Situação em 2026-10-21 |
 |:--|:--|:--|
 | **Stripe** | cartão (nacional e internacional Visa/Master) | conta criada pelo dono em **sandbox**; ativação de produção ainda não pedida; só o produto "Payments" (Invoicing fora) |
-| **Woovi** | Pix | nenhuma conta ainda; sandbox separado em `app.woovi-sandbox.com`; tem API de reembolso (`POST /api/v1/charge/{id}/refund`, idempotente, valor opcional), mas o reembolso de Pix será **manual** (decisão 33) |
+| **Woovi** | Pix | nenhuma conta ainda; sandbox separado em `app.woovi-sandbox.com`; tem API de reembolso (`POST /api/v1/charge/{id}/refund`, idempotente, valor opcional), mas o reembolso de Pix será **manual** (decisão 41) |
 | Mercado Pago | nenhum | nunca houve conta; código dormente; **contingência do cartão** se a Stripe não aprovar até **15/11** |
 
 ---
@@ -96,7 +96,7 @@ Este plano fecha essas lacunas em duas trilhas paralelas (§4), dentro das seman
 | L6 | Cron `loja-expirar-pedidos` não agendado | comentário na migration `loja_funcoes` |
 | L7 | Chave de `gateway_eventos` sem o nome do gateway; `servicos.ts` escolhe **um** provedor para tudo | migration `loja_pedidos`; `usaMercadoPago()` |
 | L8 | Adaptadores Stripe e Woovi não existem; só o do Mercado Pago, sem conta | §1.6 |
-| L9 | Pix manual precisa de um status e de um botão que não existem (`reembolso_pendente`, "Marcar como reembolsado") | decisão 33 |
+| L9 | Pix manual precisa de um status e de um botão que não existem (`reembolso_pendente`, "Marcar como reembolsado") | decisão 41 |
 
 ---
 
@@ -133,7 +133,7 @@ Por que **uma** Edge Function manda todos os avisos (equipe e passageiro): o Res
 
 Por que o reembolso do cartão fica **no site** e não numa Edge Function: a chamada ao gateway (`gateway.reembolsar`) já está implementada e testada lá, atrás da interface que serve para Stripe (e Mercado Pago, se a contingência for acionada). O PWA e o app chamam uma rota do site com o JWT do Supabase; o site valida o usuário (`supabase.auth.getUser(jwt)`) e confere `is_admin_or_gerente()` por RPC antes de agir.
 
-Por que o Pix é **manual**: decisão do dono (33). O Caio devolve pelo painel da Woovi; o sistema só registra e cobra o fechamento. A API de reembolso da Woovi existe e fica como opção futura sem mudar o desenho.
+Por que o Pix é **manual**: decisão do dono (41). O Caio devolve pelo painel da Woovi; o sistema só registra e cobra o fechamento. A API de reembolso da Woovi existe e fica como opção futura sem mudar o desenho.
 
 ---
 

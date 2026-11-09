@@ -95,7 +95,7 @@ export function TripTracker({ token }: Props) {
             : 'O código informado não corresponde a nenhuma viagem. Verifique o link ou entre em contato conosco.'}
         </p>
         <a
-          href="https://wa.me/558199473200"
+          href="https://wa.me/5581999473200"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#1a5c38] text-white font-semibold rounded-full hover:bg-[#27ae60] transition-colors text-sm"
@@ -245,7 +245,7 @@ export function TripTracker({ token }: Props) {
           Dúvidas ou precisa de suporte? Nossa equipe está disponível.
         </p>
         <a
-          href="https://wa.me/558199473200"
+          href="https://wa.me/5581999473200"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-full hover:opacity-90 transition-opacity text-sm"

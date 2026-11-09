@@ -26,7 +26,7 @@ export function getOrganizationSchema() {
     name: 'Água Verde Transfers & Receptivos',
     alternateName: ['Água Verde Transfers', 'Água Verde Viagens & Receptivos', 'Uluwatour', 'Uluwatour Viagens & Receptivos'],
     url: 'https://aguaverde.tur.br',
-    telephone: '+55-81-9947-3200',
+    telephone: '+55-81-99947-3200',
     email: 'contato@aguaverde.tur.br',
     taxID: '17.427.292/0001-4',
     description:
@@ -53,7 +53,7 @@ export function getOrganizationSchema() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      telephone: '+55-81-9947-3200',
+      telephone: '+55-81-99947-3200',
       availableLanguage: ['Portuguese', 'English', 'Spanish'],
       contactOption: 'TollFree',
     },
